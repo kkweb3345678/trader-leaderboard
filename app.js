@@ -27,7 +27,6 @@ const short = address => address.slice(0,6) + '…' + address.slice(-4);
 const icon = name => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const tone = n => n === null ? 'unknown' : n === 0 ? 'zero' : n < 0 ? 'negative' : 'positive';
 const paper = w => metric(w,'realized') !== null && metric(w,'pnl') !== null && Math.abs(w.realized) < 1 && w.pnl > 100000;
-const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 function ratio(w) {
   const pnl = metric(w,'pnl'), realized = metric(w,'realized');
   if (pnl === null || realized === null || pnl <= 0) return null;
@@ -181,7 +180,7 @@ function renderPagination(total) {
   $('next-page').disabled = PAGE === pages;
 }
 
-function render(animate = false, {syncURL = true} = {}) {
+function render(_animate = false, {syncURL = true} = {}) {
   if (!DATA) return;
   const sampleTotal = DATA[TAB].length;
   const filtered = sorted().filter(w => w.address.toLowerCase().includes(QUERY) && passesLab(w));
@@ -220,13 +219,8 @@ function render(animate = false, {syncURL = true} = {}) {
   renderProduct();
   if (syncURL) syncWorkspaceURL();
   announce(`${PERIODS[TAB]}，依${SORT_NAMES[SORT]}由高到低排序，第 ${PAGE} 頁，${QUERY || labEnabled() ? '篩選符合 ' : '共 '}${total} 個錢包。${refreshFailed ? '更新失敗，仍顯示上一份成功快照。' : ''}`);
-  for (const id of ['rows','cards']) {
-    const el = $(id);
-    el.getAnimations().forEach(animation => animation.cancel());
-    if (animate && !reducedMotion()) {
-      el.animate([{opacity:.55},{opacity:1}],{duration:150,easing:'ease-out'});
-    }
-  }
+  // Sorting and pagination are frequent actions: keep rows fully readable immediately.
+  // Retain the first argument for existing research/home callers.
 }
 
 function announce(text) { $('announcement').textContent = text; }

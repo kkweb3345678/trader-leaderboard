@@ -86,6 +86,11 @@ window.ResearchShell = (() => {
     // Keep nodes stable during data renders so keyboard focus is not lost.
     if(secondary.dataset.group!==group?.key){secondary.dataset.group=group?.key||'';secondary.innerHTML=group?`<div class="shell section-nav-inner"><span class="section-nav-label">${group.label}</span>${keys.map(key=>routeLink(key)).join('')}${group.key==='data'?'<a href="./index.html#feed">我的關注</a>':''}</div>`:'';}
     secondary.querySelectorAll('[data-navkey]').forEach(link=>{if(link.dataset.navkey===active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+    // Reveal the current destination in the horizontal phone navigation without moving the page.
+    const strip=secondary.querySelector('.section-nav-inner'),current=strip?.querySelector('[aria-current="page"]');
+    if(strip&&current){const frame=strip.getBoundingClientRect(),item=current.getBoundingClientRect();
+      if(item.left<frame.left)strip.scrollLeft+=item.left-frame.left-12;
+      else if(item.right>frame.right)strip.scrollLeft+=item.right-frame.right+12;}
   }
   function mount({active,localRoutes=false}) {
     const root = document.getElementById('product-shell');
@@ -99,6 +104,7 @@ window.ResearchShell = (() => {
     const menus=[...root.querySelectorAll('.nav-category')];
     menus.forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)menus.filter(other=>other!==menu).forEach(other=>other.open=false);}));
     document.addEventListener('click',event=>menus.forEach(menu=>{if(!menu.contains(event.target)||event.target.closest('a'))menu.open=false;}));
+    document.addEventListener('focusin',event=>menus.forEach(menu=>{if(menu.open&&!menu.contains(event.target))menu.open=false;}));
     document.addEventListener('keydown',event=>{if(event.key==='Escape')menus.forEach(menu=>{if(menu.open){menu.open=false;menu.querySelector('summary').focus();}});});
     setActive(active);
     document.getElementById('theme-toggle').addEventListener('click',() => {

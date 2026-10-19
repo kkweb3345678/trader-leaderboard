@@ -66,5 +66,5 @@ test('symbols are escaped in table and detail; source and complete wallet addres
 test('new page is a standalone route, present in SEO and loading a shared shell',()=>{
   const shell=readFileSync(new URL('./shell.js',import.meta.url),'utf8');
   assert.match(shell,/key:'tokens'/);assert.match(shell,/\['wallets','referral','learn','tokens'\]/);
-  const page=readFileSync(new URL('./tokens.html',import.meta.url),'utf8');assert.match(page,/shell.js\?v=token-explorer-1/);assert.match(page,/不是代幣數量/);
+  const page=readFileSync(new URL('./tokens.html',import.meta.url),'utf8');assert.match(page,/<script\b[^>]*\bsrc="\.\/shell\.js\?v=[A-Za-z0-9_-]+"[^>]*><\/script>/);assert.match(page,/不是代幣數量/);
 });

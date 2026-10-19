@@ -36,6 +36,7 @@ if(typeof document!=='undefined'){
     $('tokens-page').textContent=`第 ${selection.page} / ${selection.pages} 頁`;
     $('tokens-prev').disabled=selection.page===1;$('tokens-next').disabled=selection.page===selection.pages;
     $('tokens-empty').hidden=selection.total>0;
+    $('tokens-reset-filters').hidden=!state.q.trim()&&!state.shared;
     document.querySelector('.tokens-table-wrap').hidden=selection.total===0;
   }
   function render({focus=false}={}){
@@ -60,14 +61,19 @@ if(typeof document!=='undefined'){
   }
   async function load(){
     if(busy)return;busy=true;$('tokens-refresh').disabled=true;$('tokens-retry').disabled=true;$('tokens-error').hidden=true;
+    $('tokens-refresh').textContent='讀取中…';$('tokens-refresh').setAttribute('aria-busy','true');
+    $('tokens-overview').setAttribute('aria-busy','true');$('token-detail').setAttribute('aria-busy','true');
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),10000);
     try{const response=await fetch('./wallet-trades.json?t='+Date.now(),{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('load');const next=await response.json(),nextIndex=buildTokenIndex(next);snapshot=next;index=nextIndex;overview();render();}
     catch(_){if(index){$('tokens-warning').hidden=false;$('tokens-warning').textContent='重新讀取失敗，仍顯示上一份成功載入的快照；可稍後再試。';}else{$('tokens-error').hidden=false;$('tokens-updated').textContent='資料尚未載入';}}
-    finally{clearTimeout(timer);busy=false;$('tokens-loading').hidden=true;$('tokens-refresh').disabled=false;$('tokens-retry').disabled=false;}
+    finally{clearTimeout(timer);busy=false;$('tokens-loading').hidden=true;$('tokens-refresh').disabled=false;$('tokens-retry').disabled=false;
+      $('tokens-refresh').textContent='重新讀取資料';$('tokens-refresh').removeAttribute('aria-busy');
+      $('tokens-overview').removeAttribute('aria-busy');$('token-detail').removeAttribute('aria-busy');}
   }
   function changeList(){state.q=$('token-search').value;state.sort=$('token-sort').value;state.shared=$('token-shared').checked;state.page=1;if(index)renderList();sync();}
   $('token-search').addEventListener('input',changeList);$('token-sort').addEventListener('change',changeList);$('token-shared').addEventListener('change',changeList);
-  $('tokens-clear').addEventListener('click',()=>{state={...state,q:'',shared:false,page:1};render();sync();$('token-search').focus();});
+  function clearFilters(){state={...state,q:'',shared:false,page:1};render();sync();$('token-search').focus({preventScroll:true});}
+  $('tokens-clear').addEventListener('click',clearFilters);$('tokens-reset-filters').addEventListener('click',clearFilters);
   for(const [id,step] of [['tokens-prev',-1],['tokens-next',1]])$(id).addEventListener('click',()=>{state.page+=step;render({focus:true});sync();});
   document.addEventListener('click',event=>{
     const link=event.target.closest('a[data-token]');
