@@ -7,7 +7,7 @@
   <script src="./analytics.js?v=1" defer></script>
   <script src="./shell.js?v=polish-1"></script>
   <script src="./money-format.js?v=1" defer></script>
-  <script src="./tokens.js?v=polish-1" type="module"></script>
+  <script src="./tokens.js?v=flow-2" type="module"></script>
   <link rel="icon" href="./assets/brand.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css?v=product-1">
   <link rel="stylesheet" href="./product.css?v=cohesion-2">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="./navigation.css?v=1">
   <link rel="stylesheet" href="./site-info.css?v=2">
   <link rel="stylesheet" href="./tokens.css?v=verify-1">
+  <link rel="stylesheet" href="./product-refinement.css?v=flow-2">
   <!-- site-metadata:start -->
   <title>幣種交易明細｜落袋研究室</title>
   <meta name="description" content="從幣種查看哪些已收錄 Solana 錢包交易過，比較近七日買賣金額、次數與損益。按合約分開整理，清楚標示樣本範圍與來源時間。">
@@ -24,16 +25,20 @@
   <meta property="og:locale" content="zh_TW">
   <meta property="og:site_name" content="落袋研究室">
   <meta property="og:title" content="幣種交易明細｜落袋研究室">
-  <meta property="og:description" content="先選幣種，再看哪些已收錄錢包交易過，以及各自買賣多少。">
+  <meta property="og:description" content="從幣種查看哪些已收錄 Solana 錢包交易過，比較近七日買賣金額、次數與損益。按合約分開整理，清楚標示樣本範圍與來源時間。">
   <meta property="og:url" content="https://kkweb3345678.github.io/trader-leaderboard/tokens.html">
   <meta property="og:image" content="https://kkweb3345678.github.io/trader-leaderboard/assets/social/home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="落袋研究室 · 公開來源・非託管・逐項標示">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@kkweb3345678">
   <meta name="twitter:title" content="幣種交易明細｜落袋研究室">
-  <meta name="twitter:description" content="從幣種查看已收錄 Solana 錢包的近七日買賣金額、次數與損益。">
+  <meta name="twitter:description" content="從幣種查看哪些已收錄 Solana 錢包交易過，比較近七日買賣金額、次數與損益。按合約分開整理，清楚標示樣本範圍與來源時間。">
   <meta name="twitter:image" content="https://kkweb3345678.github.io/trader-leaderboard/assets/social/home.png">
+  <meta name="twitter:image:alt" content="落袋研究室 · 公開來源・非託管・逐項標示">
+
   <!-- site-metadata:end -->
-  <link rel="stylesheet" href="./product-refinement.css?v=polish-1">
 </head>
 <body class="tokens-page">
   <a class="skip" href="#main-content">跳至主要內容</a>
@@ -41,8 +46,8 @@
   <div class="product-layout">
   <main class="shell product-main" id="main-content">
     <header class="tokens-hero">
-      <div><p class="eyebrow">鏈上數據 / SOLANA</p><h1 id="page-title" tabindex="-1">幣種交易明細</h1><p class="tokens-lede">先選幣種，看看哪些錢包買了多少、賣了多少。</p></div>
-      <a class="button" href="./index.html?view=leaderboard&tab=week&sort=volume">從錢包看排行榜 <span aria-hidden="true">↗</span></a>
+      <div><h1 id="page-title" tabindex="-1">幣種交易明細</h1><p class="tokens-lede">先選幣種，看看哪些錢包買了多少、賣了多少。</p></div>
+      <a class="underlined-link tokens-board-link" href="./index.html?view=leaderboard&tab=week&sort=volume">從錢包看排行榜 <span aria-hidden="true">↗</span></a>
     </header>
     <div class="tokens-scope"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>收錄範圍：Solana 近七日樣本交易量前十名。顯示 USD 金額與買賣次數，非全鏈交易或目前持倉。</p></div>
     <div class="tokens-status"><p id="tokens-updated">正在讀取來源時間…</p><button type="button" class="text-button" id="tokens-refresh">重新讀取資料</button></div>
@@ -51,13 +56,13 @@
     <div id="tokens-loading" class="tokens-empty" role="status">正在整理已發布的幣種交易明細…</div>
     <section id="tokens-overview" aria-labelledby="token-list-title" hidden>
       <dl class="tokens-summary" id="tokens-summary"></dl>
-      <div class="tokens-section-heading"><div><h2 id="token-list-title" tabindex="-1">從幣種找交易錢包</h2><p>點選幣種，展開這期已收錄的錢包明細。</p></div><a class="text-button" href="#tokens-method">如何閱讀這些數字？</a></div>
+      <div class="tokens-section-heading"><div><h2 id="token-list-title" tabindex="-1">從幣種找交易錢包</h2><p>點選幣種，展開這期已收錄的錢包明細。</p></div></div>
       <div class="tokens-toolbar">
         <label class="token-search">搜尋幣種或合約<span><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="token-search" placeholder="例如 SOL、FTR 或合約地址" maxlength="200" autocomplete="off" aria-controls="token-rows"></span></label>
         <label>排序<select id="token-sort" aria-controls="token-rows"><option value="wallets">交易錢包最多</option><option value="amount">買賣金額最高</option><option value="buys">買入金額最高</option><option value="sells">賣出金額最高</option><option value="recent">最近交易</option></select></label>
         <label class="tokens-check"><input type="checkbox" id="token-shared" aria-controls="token-rows">只看多錢包交易</label>
       </div>
-      <div class="tokens-result-bar"><div class="tokens-result-actions"><p id="token-count" role="status"></p><button class="text-button" type="button" id="tokens-reset-filters" hidden>清除條件</button></div><span>本批已知合計 · USD</span></div>
+      <div class="tokens-result-bar"><div class="tokens-result-actions"><p id="token-count" role="status"></p><button class="text-button" type="button" id="tokens-reset-filters" hidden>清除條件</button></div><a class="tokens-method-link" href="#tokens-method">已知合計怎麼算？</a></div>
       <div class="tokens-table-wrap"><table class="tokens-table"><caption class="sr-only">已收錄幣種的買賣金額與錢包數；選擇幣種查看錢包明細</caption><thead><tr><th scope="col">幣種 / 合約</th><th scope="col">交易錢包</th><th scope="col">買入金額</th><th scope="col">賣出金額</th><th scope="col">買賣次數</th></tr></thead><tbody id="token-rows"></tbody></table></div>
       <div id="tokens-empty" class="tokens-empty" hidden><h3>這期沒有符合條件的幣種</h3><p>可嘗試合約地址或清除篩選；沒有收錄不代表沒有人交易。</p><button class="button" type="button" id="tokens-clear">清除搜尋與篩選</button></div>
       <nav class="tokens-pagination" aria-label="幣種清單分頁"><button type="button" class="button" id="tokens-prev">← 上一頁</button><span id="tokens-page"></span><button type="button" class="button" id="tokens-next">下一頁 →</button></nav>

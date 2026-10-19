@@ -4,7 +4,20 @@ import {leaderboardCTA} from './learning-bridge.js?v=1';
 export {escapeHtml,safeUrl};
 const STORAGE_KEY = 'research-learning-v1';
 const icon = name => `<svg class="icon" aria-hidden="true"><use href="#i-${escapeHtml(name)}"/></svg>`;
-export const lessonHref = (id,path=null) => `./learn-${id}.html#lesson/${id}${path ? '?path='+path : ''}`;
+export function catalogSearch({query='',category='',path=null}={},from='') {
+  const params=new URLSearchParams();
+  if(query.trim()) params.set('q',query.trim().slice(0,200));
+  if(category) params.set('category',category);
+  if(path) params.set('path',path);
+  if(from) params.set('from',from);
+  return params.size?'?'+params.toString():'';
+}
+export function readCatalogState(search,data) {
+  const params=new URLSearchParams(search),category=params.get('category'),path=params.get('path');
+  return {query:(params.get('q')||'').slice(0,200),category:data.lessons.some(l=>l.category===category)?category:'',path:data.paths.some(p=>p.id===path)?path:null};
+}
+export const catalogHref = (filter,from='') => './learn.html'+catalogSearch(filter,from)+'#catalog';
+export const lessonHref = (id,path=null,filter={}) => `./learn-${id}.html${catalogSearch(filter)}#lesson/${id}${path ? '?path='+path : ''}`;
 export function parseRoute(hash, data) {
   const [part, query = ''] = hash.replace(/^#/, '').split('?');
   const [kind, id] = part.split('/');
@@ -44,16 +57,17 @@ async function init() {
   });
   $('learn-retry').addEventListener('click', () => location.reload());
   let data;
-  try {const response = await fetch('./learn-content.json?v=4');if (!response.ok) throw new Error('Fetch failed');data = validateContent(await response.json());}
+  try {const response = await fetch('./learn-content.json?v=4',{signal:AbortSignal.timeout(12000)});if (!response.ok) throw new Error('Fetch failed');data = validateContent(await response.json());}
   catch { $('learn-loading').hidden = true;$('learn-error').hidden = false;return; }
   let progress, storageAvailable = true;
   try {progress = sanitizeProgress(JSON.parse(localStorage.getItem(STORAGE_KEY)),data);} catch {progress = sanitizeProgress(null,data);storageAvailable = false;}
-  let filter = {query:'',category:'',path:null};
+  let filter = readCatalogState(location.search,data);
   let current = null;
   let homeScroll = 0;
   const save = () => {try {localStorage.setItem(STORAGE_KEY,JSON.stringify(progress));storageAvailable = true;} catch {storageAvailable = false;}};
-  const href = lessonHref;
-  const lessonLink = (item,path) => `<a class="learn-card" href="${href(item.id,path)}"><span class="learn-card-icon">${icon(item.icon)}</span><div><div class="learn-card-meta"><span>${item.chapter ? `CH. ${item.chapter} · ` : ''}${escapeHtml(item.category)}</span>${progress.done.includes(item.id) ? '<span class="learn-done">✓ 已讀</span>' : ''}</div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>${icon('right')}</a>`;
+  const href = (id,path=null) => lessonHref(id,path,filter);
+  const syncCatalog = () => history.replaceState(null,'',catalogHref(filter));
+  const lessonLink = (item,path) => `<a class="learn-card" data-lesson="${item.id}" href="${escapeHtml(href(item.id,path))}"><span class="learn-card-icon">${icon(item.icon)}</span><div><div class="learn-card-meta"><span>${item.chapter ? `CH. ${item.chapter} · ` : ''}${escapeHtml(item.category)}</span>${progress.done.includes(item.id) ? '<span class="learn-done">✓ 已讀</span>' : ''}</div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>${icon('right')}</a>`;
   function renderCatalog() {
     const list = selectLessons(data,filter);
     $('learn-cards').innerHTML = list.map(item => lessonLink(item,filter.path)).join('');
@@ -72,17 +86,17 @@ async function init() {
   $('learn-course-count').textContent = `${data.lessons.filter(l=>l.chapter).length} 章完整課程 · ${data.lessons.filter(l=>!l.chapter).length} 篇本站指南`;
   $('learn-paths').innerHTML = data.paths.map(path => `<a class="learn-path learn-tone-${escapeHtml(path.tone)}" href="#path/${path.id}"><span class="learn-path-icon">${icon(path.icon)}</span><h3>${escapeHtml(path.title)}</h3><p>${escapeHtml(path.description)}</p><span class="learn-path-footer"><span>${path.lessons.length} 篇建議閱讀 · 依序探索</span>${icon('right')}</span></a>`).join('');
   $('learn-filters').innerHTML = ['全部主題',...new Set(data.lessons.map(l => l.category))].map((label,index) => `<button type="button" data-category="${index ? escapeHtml(label) : ''}" aria-pressed="${!index}">${label}</button>`).join('');
-  $('learn-filters').addEventListener('click',event => {const button = event.target.closest('button');if (!button) return;filter.category = button.dataset.category;filter.path = null;history.replaceState(null,'','#catalog');renderCatalog();});
-  $('learn-search').addEventListener('input',event => {filter.query = event.target.value;renderCatalog();});
-  $('learn-clear').addEventListener('click',() => {filter = {query:'',category:'',path:null};$('learn-search').value = '';history.replaceState(null,'','#catalog');renderCatalog();$('learn-search').focus();});
+  $('learn-filters').addEventListener('click',event => {const button = event.target.closest('button');if (!button) return;filter.category = button.dataset.category;filter.path = null;syncCatalog();renderCatalog();});
+  $('learn-search').addEventListener('input',event => {filter.query = event.target.value;syncCatalog();renderCatalog();});
+  $('learn-clear').addEventListener('click',() => {filter = {query:'',category:'',path:null};$('learn-search').value = '';syncCatalog();renderCatalog();$('learn-search').focus();});
   function renderReader(route) {
     const item = data.lessons.find(l => l.id === route.id);
     const path = data.paths.find(p => p.id === route.path);
     const sequence = path ? path.lessons.map(id => data.lessons.find(l => l.id === id)) : data.lessons;
     const index = sequence.findIndex(l => l.id === item.id);
     const prev = sequence[index-1], next = sequence[index+1];
-    const back = path ? '#path/'+path.id : '#catalog';
-    $('learn-reader').innerHTML = `<nav class="learn-breadcrumb" aria-label="閱讀位置"><a href="#catalog">學習中心</a><span aria-hidden="true">/</span><span>${escapeHtml(item.category)}</span></nav><div class="learn-reader-grid"><aside class="learn-sidebar"><h2>${path ? escapeHtml(path.title) : '閱讀目錄'}</h2><nav aria-label="章節目錄">${sequence.map((l,i) => `<a href="${href(l.id,path?.id)}"${l.id === item.id ? ' aria-current="page"' : ''}><span>${progress.done.includes(l.id) ? '✓' : String(i+1).padStart(2,'0')}</span><span>${escapeHtml(l.title)}</span></a>`).join('')}</nav></aside><article class="learn-reader-article"><div class="learn-reader-mobile-nav"><label for="learn-chapter">閱讀目錄</label><select id="learn-chapter">${sequence.map(l => `<option value="${l.id}"${l.id === item.id ? ' selected' : ''}>${escapeHtml(l.title)}</option>`).join('')}</select></div><header class="learn-reader-heading"><p class="learn-eyebrow">${escapeHtml(item.category)} / FIELD NOTES</p><h1 tabindex="-1">${escapeHtml(item.title)}</h1><p>${escapeHtml(item.description)}</p><div class="learn-reader-meta"><span>${escapeHtml(data.editor)} 編輯整理</span><span>校閱 <time datetime="${escapeHtml(data.reviewed_at)}">${escapeHtml(data.reviewed_at)}</time></span></div></header><aside class="learn-takeaway"><strong>先記住這件事</strong><p>${escapeHtml(item.takeaway)}</p></aside><details class="learn-contents"><summary>這篇會讀到</summary><ul>${item.sections.map((s,i) => `<li><a href="${href(item.id,path?.id)}${path ? '&' : '?'}section=${i}">${escapeHtml(s.title)}</a></li>`).join('')}</ul></details>${item.sections.map((section,i) => `<section class="learn-article-section" id="lesson-section-${i}"><h2>${escapeHtml(section.title)}</h2><div class="learn-prose">${section.blocks ? renderBlocks(section.blocks,kind=>renderWidget(kind,data)) : section.paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join('')}</div></section>`).join('')}<aside class="learn-practice"><h2>${icon('note')}讀完，試著做一件事</h2><p>${escapeHtml(item.practice)}</p><a href="${escapeHtml(safeUrl(item.tool.url))}"${external(item.tool.url)}>${escapeHtml(item.tool.label)} ${icon('right')}</a></aside>${item.sources.length ? `<section class="learn-sources"><h2>來源與延伸閱讀</h2>${item.sources.map(source => `<a href="${escapeHtml(safeUrl(source.url))}"${external(source.url)}><span>${escapeHtml(source.title)}<small>${source.url.startsWith('https://') ? escapeHtml(new URL(source.url).hostname) : '落袋研究室 · 本站資料'}</small></span>${icon('external')}</a>`).join('')}</section>` : ''}<div class="learn-completion"><button class="button primary" id="learn-mark" aria-pressed="${progress.done.includes(item.id)}">${progress.done.includes(item.id) ? '✓ 已標記讀完' : '標記為已讀'}</button><p>${storageAvailable ? '只記錄在此瀏覽器，不需要登入。' : '瀏覽器無法儲存進度，目前只在本次閱讀保留。'}<br>再次點擊可取消已讀。</p></div>${leaderboardCTA}<nav class="learn-pagination" aria-label="上一篇與下一篇"><a href="${prev ? href(prev.id,path?.id) : back}"><small>← ${prev ? '上一篇' : '返回'}</small>${prev ? escapeHtml(prev.title) : '學習目錄'}</a><a href="${next ? href(next.id,path?.id) : back}"><small>${next ? '下一篇' : '這條路線已到最後'} →</small>${next ? escapeHtml(next.title) : '回目錄，選下一個主題'}</a></nav></article></div>`;
+    const back = catalogHref(filter,item.id);
+    $('learn-reader').innerHTML = `<nav class="learn-breadcrumb" aria-label="閱讀位置"><a href="${escapeHtml(back)}">返回學習目錄</a><span aria-hidden="true">/</span><span>${escapeHtml(item.category)}</span></nav><div class="learn-reader-grid"><aside class="learn-sidebar"><h2>${path ? escapeHtml(path.title) : '閱讀目錄'}</h2><nav aria-label="章節目錄">${sequence.map((l,i) => `<a href="${href(l.id,path?.id)}"${l.id === item.id ? ' aria-current="page"' : ''}><span>${progress.done.includes(l.id) ? '✓' : String(i+1).padStart(2,'0')}</span><span>${escapeHtml(l.title)}</span></a>`).join('')}</nav></aside><article class="learn-reader-article"><div class="learn-reader-mobile-nav"><label for="learn-chapter">閱讀目錄</label><select id="learn-chapter">${sequence.map(l => `<option value="${l.id}"${l.id === item.id ? ' selected' : ''}>${escapeHtml(l.title)}</option>`).join('')}</select></div><header class="learn-reader-heading"><h1 tabindex="-1">${escapeHtml(item.title)}</h1><p>${escapeHtml(item.description)}</p><div class="learn-reader-meta"><span>${escapeHtml(data.editor)} 編輯整理</span><span>校閱 <time datetime="${escapeHtml(data.reviewed_at)}">${escapeHtml(data.reviewed_at)}</time></span></div></header><div class="learn-takeaway" role="note"><strong>先記住這件事</strong><p>${escapeHtml(item.takeaway)}</p></div><details class="learn-contents"><summary>這篇會讀到</summary><ul>${item.sections.map((s,i) => `<li><a href="${href(item.id,path?.id)}${path ? '&' : '?'}section=${i}">${escapeHtml(s.title)}</a></li>`).join('')}</ul></details>${item.sections.map((section,i) => `<section class="learn-article-section" id="lesson-section-${i}"><h2>${escapeHtml(section.title)}</h2><div class="learn-prose">${section.blocks ? renderBlocks(section.blocks,kind=>renderWidget(kind,data)) : section.paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join('')}</div></section>`).join('')}<div class="learn-practice" role="note"><h2>${icon('note')}讀完，試著做一件事</h2><p>${escapeHtml(item.practice)}</p><a href="${escapeHtml(safeUrl(item.tool.url))}"${external(item.tool.url)}>${escapeHtml(item.tool.label)} ${icon('right')}</a></div>${item.sources.length ? `<section class="learn-sources"><h2>來源與延伸閱讀</h2>${item.sources.map(source => `<a href="${escapeHtml(safeUrl(source.url))}"${external(source.url)}><span>${escapeHtml(source.title)}<small>${source.url.startsWith('https://') ? escapeHtml(new URL(source.url).hostname) : '落袋研究室 · 本站資料'}</small></span>${icon('external')}</a>`).join('')}</section>` : ''}<div class="learn-completion"><button class="button primary" id="learn-mark" aria-pressed="${progress.done.includes(item.id)}">${progress.done.includes(item.id) ? '✓ 已標記讀完' : '標記為已讀'}</button><p>${storageAvailable ? '只記錄在此瀏覽器，不需要登入。' : '瀏覽器無法儲存進度，目前只在本次閱讀保留。'}<br>再次點擊可取消已讀。</p></div>${leaderboardCTA}<nav class="learn-pagination" aria-label="上一篇與下一篇"><a href="${prev ? href(prev.id,path?.id) : back}"><small>← ${prev ? '上一篇' : '返回'}</small>${prev ? escapeHtml(prev.title) : '學習目錄'}</a><a href="${next ? href(next.id,path?.id) : back}"><small>${next ? '下一篇' : '這條路線已到最後'} →</small>${next ? escapeHtml(next.title) : '回目錄，選下一個主題'}</a></nav></article></div>`;
     const diagram = item.illustration;
     if (diagram) {
       const figure = document.createElement('figure');figure.className = 'learn-diagram';
@@ -109,10 +123,11 @@ async function init() {
     const staticSection = /^#lesson-section-(\d+)$/.exec(location.hash);
     const routeHash = staticSection && document.body.dataset.initialLesson ? `#lesson/${document.body.dataset.initialLesson}?section=${staticSection[1]}` : location.hash || (document.body.dataset.initialLesson ? '#lesson/'+document.body.dataset.initialLesson : '');
     const route = parseRoute(routeHash,data);
-    if (route.view === 'home' && document.body.dataset.initialLesson) { location.replace('./learn.html'+location.hash);return; }
+    if (route.view === 'home' && document.body.dataset.initialLesson) { location.replace(catalogHref(route.path?{query:'',category:'',path:route.path}:filter,current?.id));return; }
     if (current?.view === 'home' && route.view !== 'home') homeScroll = window.scrollY;
     $('learn-home').hidden = route.view !== 'home';$('learn-reader').hidden = route.view === 'home';
     if (route.view === 'lesson') {
+      if (initial && route.path && !filter.path) filter.path=route.path;
       const changed = current?.id !== route.id || current?.path !== route.path;
       progress.last = route.id;save();
       if (changed) renderReader(route);
@@ -121,20 +136,24 @@ async function init() {
       if (target) {target.scrollIntoView({block:'start'});target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}
       else if (changed) {window.scrollTo(0,0);if (!initial) $('learn-reader').querySelector('h1').focus({preventScroll:true});}
     } else if (route.view === 'home') {
-      if (route.path && current?.path !== route.path) {filter = {query:'',category:'',path:route.path};$('learn-search').value = '';}
-      else if (!route.path && filter.path) filter.path = null;
+      filter=route.path?{query:'',category:'',path:route.path}:readCatalogState(location.search,data);
+      $('learn-search').value=filter.query;
       renderCatalog();renderProgress();document.title = 'Web3 新手學習中心｜落袋研究室';
       document.querySelector('link[rel="canonical"]').href = 'https://kkweb3345678.github.io/trader-leaderboard/learn.html';
       document.querySelector('link[hreflang="zh-TW"]').href = 'https://kkweb3345678.github.io/trader-leaderboard/learn.html';
       for (const [selector,content] of homeMeta) if (content) document.querySelector(selector).content = content;
       if (location.hash === '#catalog' || route.path) {$('catalog').scrollIntoView({block:'start'});if (!initial && (current?.view === 'lesson' || route.path)) {$('catalog-title').tabIndex = -1;$('catalog-title').focus({preventScroll:true});}}
       else if (current?.view === 'lesson') window.scrollTo(0,homeScroll);
+      const from=new URLSearchParams(location.search).get('from');
+      const returnCard=initial&&from?[...$('learn-cards').querySelectorAll('[data-lesson]')].find(a=>a.dataset.lesson===from):null;
+      if(returnCard){returnCard.focus({preventScroll:true});returnCard.scrollIntoView({block:'center',behavior:'instant'});}
     } else {
       $('learn-reader').innerHTML = '<div class="learn-not-found"><h1 tabindex="-1">這篇文章還不在目錄裡</h1><p>連結可能有誤，回到目錄選一篇繼續閱讀。</p><a class="button primary" href="#catalog">返回學習目錄</a></div>';document.title = '找不到文章｜落袋研究室';window.scrollTo(0,0);if (!initial) $('learn-reader').querySelector('h1').focus();
     }
     current = route;
   }
   window.addEventListener('hashchange',() => navigate());
+  window.addEventListener('popstate',() => navigate());
   $('learn-loading').hidden = true;navigate(true);
 }
 if (typeof document !== 'undefined') init();

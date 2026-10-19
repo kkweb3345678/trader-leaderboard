@@ -87,7 +87,7 @@ export function matchesExchange(item,query) {
 function mount() {
   window.ResearchShell.mount({active:'referral'});
   const byId = id => document.getElementById(id);
-  let current = null;
+  let current = null, busy = false;
   let catalog = null;
   let links = {};
   let visible = [];
@@ -129,12 +129,16 @@ function mount() {
     byId('referral-source-close').focus();
   }
   async function load() {
+    if (busy) return;
+    busy = true;
     byId('referral-error').hidden = true;
     byId('referral-table-scroll').setAttribute('aria-busy','true');
     byId('referral-retry').disabled = true;
+    byId('referral-links-retry').disabled = true;
+    byId('referral-links-retry').textContent = '讀取中…';
     try {
       const [response,sourceCatalog,invitationCatalog] = await Promise.all([
-        fetch('./referral.json',{cache:'no-cache'}),
+        fetch('./referral.json',{cache:'no-cache',signal:AbortSignal.timeout(12000)}),
         fetch('./referral-sources.json',{cache:'no-cache',signal:AbortSignal.timeout(8000)}).then(response => response.ok ? response.json() : null).catch(() => null),
         fetch('./referral-links.json',{cache:'no-cache',signal:AbortSignal.timeout(8000)}).then(response => response.ok ? response.json() : null).then(validateReferralLinks).catch(() => null)
       ]);
@@ -149,10 +153,13 @@ function mount() {
       render();
     } catch (_) {
       byId('referral-error').hidden = false;
-      byId('referral-count').textContent = '資料尚未載入';
+      if (!current) byId('referral-count').textContent = '資料尚未載入';
     } finally {
+      busy = false;
       byId('referral-table-scroll').setAttribute('aria-busy','false');
       byId('referral-retry').disabled = false;
+      byId('referral-links-retry').disabled = false;
+      byId('referral-links-retry').textContent = '重新讀取邀請連結';
     }
   }
   byId('exchange-search').addEventListener('input',render);

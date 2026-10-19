@@ -247,6 +247,13 @@ function setPage(page) {
   const focus = document.activeElement;
   const scroll = window.scrollY;
   PAGE = page; render(true);
+  if (matchMedia('(max-width:700px)').matches) {
+    const heading=$('board-title');
+    heading.tabIndex=-1;
+    heading.focus({preventScroll:true});
+    heading.scrollIntoView({block:'start',behavior:'instant'});
+    return;
+  }
   if (focus?.disabled && ['prev-page','next-page'].includes(focus.id)) $('page-select').focus({preventScroll:true});
   window.scrollTo({top:scroll,behavior:'instant'});
 }

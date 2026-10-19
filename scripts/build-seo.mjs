@@ -54,7 +54,7 @@ function enhance(html,page){
  html=html.replace('</head>',`  ${metadata(page)}\n</head>`);
  if(!html.includes('src="./analytics.js'))html=html.replace('<meta charset="UTF-8">','<meta charset="UTF-8">\n  <script src="./analytics.js?v=1" defer></script>');
  if(!html.includes('href="./site-info.css'))html=html.replace('</head>','  <link rel="stylesheet" href="./site-info.css?v=1">\n</head>');
- if(!html.includes('href="./product-refinement.css'))html=html.replace('</head>','  <link rel="stylesheet" href="./product-refinement.css?v=polish-1">\n</head>');
+ if(!html.includes('href="./product-refinement.css'))html=html.replace('</head>','  <link rel="stylesheet" href="./product-refinement.css?v=flow-2">\n</head>');
  if(!html.includes('class="site-privacy-link"')) html=html.replace(/(<footer\b[\s\S]*?)(<\/footer>)/,(all,body,end)=>body+'<a class="site-privacy-link" href="./privacy.html">隱私說明</a>'+end);
  return html.replace(/[ \t]+$/gm,'');
 }
@@ -64,11 +64,11 @@ function staticReader(item){
  const index=data.lessons.indexOf(item),prev=data.lessons[index-1],next=data.lessons[index+1];
  return `<nav class="learn-breadcrumb" aria-label="閱讀位置"><a href="./learn.html#catalog">學習中心</a><span aria-hidden="true">/</span><span>${e(item.category)}</span></nav>
  <div class="learn-reader-grid"><aside class="learn-sidebar"><h2>閱讀目錄</h2><nav aria-label="章節目錄">${data.lessons.map((l,i)=>`<a href="${link(l)}"${l.id===item.id?' aria-current="page"':''}><span>${String(i+1).padStart(2,'0')}</span><span>${e(l.title)}</span></a>`).join('')}</nav></aside>
- <article class="learn-reader-article"><header class="learn-reader-heading"><p class="learn-eyebrow">${e(item.category)} / FIELD NOTES</p><h1 tabindex="-1">${e(item.title)}</h1><p>${e(item.description)}</p><div class="learn-reader-meta"><span>${e(data.editor)} 編輯整理</span><span>校閱 <time datetime="${data.reviewed_at}">${data.reviewed_at}</time></span></div></header>
- <aside class="learn-takeaway"><strong>先記住這件事</strong><p>${e(item.takeaway)}</p></aside>${figure}
+ <article class="learn-reader-article"><header class="learn-reader-heading"><h1 tabindex="-1">${e(item.title)}</h1><p>${e(item.description)}</p><div class="learn-reader-meta"><span>${e(data.editor)} 編輯整理</span><span>校閱 <time datetime="${data.reviewed_at}">${data.reviewed_at}</time></span></div></header>
+ <div class="learn-takeaway" role="note"><strong>先記住這件事</strong><p>${e(item.takeaway)}</p></div>${figure}
  <details class="learn-contents"><summary>這篇會讀到</summary><ul>${item.sections.map((s,i)=>`<li><a href="#lesson-section-${i}">${e(s.title)}</a></li>`).join('')}</ul></details>
  ${item.sections.map((s,i)=>`<section class="learn-article-section" id="lesson-section-${i}"><h2>${e(s.title)}</h2><div class="learn-prose">${s.blocks?renderBlocks(s.blocks,k=>renderWidget(k,data)):s.paragraphs.map(p=>`<p>${e(p)}</p>`).join('')}</div></section>`).join('')}
- <aside class="learn-practice"><h2>讀完，試著做一件事</h2><p>${e(item.practice)}</p><a href="${e(safeUrl(item.tool.url))}"${external(item.tool.url)}>${e(item.tool.label)} →</a></aside>
+ <div class="learn-practice" role="note"><h2>讀完，試著做一件事</h2><p>${e(item.practice)}</p><a href="${e(safeUrl(item.tool.url))}"${external(item.tool.url)}>${e(item.tool.label)} →</a></div>
  ${item.sources.length?`<section class="learn-sources"><h2>來源與延伸閱讀</h2>${item.sources.map(s=>`<a href="${e(safeUrl(s.url))}"${external(s.url)}><span>${e(s.title)}</span><span aria-hidden="true">↗</span></a>`).join('')}</section>`:''}
  ${leaderboardCTA}<nav class="learn-pagination" aria-label="上一篇與下一篇"><a href="${prev?link(prev):'./learn.html#catalog'}"><small>← ${prev?'上一篇':'學習目錄'}</small>${prev?e(prev.title):'回到學習中心'}</a><a href="${next?link(next):'./learn.html#catalog'}"><small>${next?'下一篇':'學習目錄'} →</small>${next?e(next.title):'回到學習中心'}</a></nav></article></div>`.replace(/href="#lesson\/([a-z0-9-]+)(?:\?section=(\d+))?"/g,(_,id,section)=>`href="./learn-${id}.html${section===undefined?'':'#lesson-section-'+section}"`);
 }
@@ -77,7 +77,7 @@ for(const page of pages){
  html=html.replace('href="./site-info.css?v=1"','href="./site-info.css?v=2"');
  if(page.file==='index.html') html=html.replace(/<!-- glossary:start -->[\s\S]*?<!-- glossary:end -->/,`<!-- glossary:start -->${glossary.map((item,i)=>`<details data-term="${e(item.term)}"${i===0?' open':''}><summary>${e(item.term)}</summary><p>${e(item.meaning)}</p></details>`).join('')}<!-- glossary:end -->`);
  if(page.file==='learn.html'){
-  html=html.replace(/src="\.\/learn\.js\?v=\d+"/, 'src="./learn.js?v=6"');
+  html=html.replace(/src="\.\/learn\.js\?v=[^\"]+"/, 'src="./learn.js?v=flow-2"');
   html=html.replace(/<div id="learn-cards" class="learn-cards">[\s\S]*?<\/div><div id="learn-empty"/,`<div id="learn-cards" class="learn-cards">${data.lessons.map(l=>`<a class="learn-card" href="${link(l)}"><div><h3>${e(l.title)}</h3><p>${e(l.description)}</p></div></a>`).join('')}</div><div id="learn-empty"`);
   html=html.replace('<section id="learn-home" hidden>','<section id="learn-home">');
   html=html.replace(/<noscript>[\s\S]*?<\/noscript>/,`<noscript><style>#learn-loading,.learn-progress-strip,.learn-search,.learn-filter-row{display:none}</style><p>文章內容可直接閱讀；搜尋、測驗與閱讀進度需要 JavaScript。</p></noscript>`);

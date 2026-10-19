@@ -16,6 +16,8 @@ function followButton(address,label='關注這個錢包') {
 const addressLink=address=>`<a class="home-address" href="https://solscan.io/account/${encodeURIComponent(address)}" target="_blank" rel="noopener noreferrer" title="${esc(address)}">${esc(short(address))}${icon('external')}</a>`;
 const emptyCard=(tag,heading,detail,symbol)=>`<article class="home-card"><p class="home-tag">${tag}</p><div class="home-avatar" aria-hidden="true">${symbol}</div><h3>${heading}</h3><p class="home-card-note">${detail}</p><a class="home-card-link" href="#board">看完整榜單 →</a></article>`;
 function renderCards() {
+  const expanded=$('home-cards').querySelector('.home-new-list');
+  const listState={open:expanded?.open,scroll:expanded?.querySelector('div')?.scrollTop||0,rail:$('home-cards').scrollLeft};
   const leader=data && rankToday(data.today).find(w=>finite(w.realized));
   const star=leader?`<article class="home-card home-card-star"><p class="home-tag">最新單日樣本</p><div class="home-avatar" aria-hidden="true">${esc(leader.address.slice(0,2))}</div><h3>本批已實現收益榜首</h3><p class="home-card-value ${tone(leader.realized)}">${money(leader.realized)}</p><p class="home-card-note">本批已實現收益最高${finite(leader.trades)?` · 交易 ${leader.trades.toLocaleString('en-US')} 筆`:''}</p>${addressLink(leader.address)}${followButton(leader.address)}</article>`:emptyCard('最新單日樣本','數據累積中','取得有效的單日樣本後，顯示本批榜首。','—');
   let movement,newcomers;
@@ -31,6 +33,9 @@ function renderCards() {
     newcomers=`<article class="home-card"><p class="home-tag">本次新進樣本</p><div class="home-avatar home-avatar-soft" aria-hidden="true">＋</div><h3>${count?'留意這批新面孔。':'這次，都是熟面孔。'}</h3><p class="home-card-value">${count}<small> 個錢包</small></p><p class="home-card-note">最新 ${pair.current.length} 個樣本中，前次快照未收錄的地址；不代表歷史首次上榜。</p>${count?`<details class="home-new-list"><summary>查看這些地址</summary><div>${pair.newcomers.map(w=>`<div>${addressLink(w.address)}${followButton(w.address,'關注')}</div>`).join('')}</div></details><button class="home-follow${all?' is-on':''}" type="button" data-home-follow-new aria-pressed="${all}">${all?'✓ 已全部關注':'＋ 關注這批新錢包'}</button>`:'<a class="home-card-link" href="#board">看完整榜單 →</a>'}</article>`;
   }
   $('home-cards').innerHTML=star+movement+newcomers;
+  const nextList=$('home-cards').querySelector('.home-new-list');
+  if(nextList&&listState.open){nextList.open=true;nextList.querySelector('div').scrollTop=listState.scroll;}
+  $('home-cards').scrollLeft=listState.rail;
   $('home-snapshot-note').innerHTML=pair?`排名變化與本次新進樣本：<a href="./${pair.previous.path}" target="_blank" rel="noopener">${timeLabel(pair.previous.stamp)}</a> → <a href="./${pair.latest.path}" target="_blank" rel="noopener">${timeLabel(pair.latest.stamp)}</a>。比較兩批樣本；組成與統計窗口可能不同，不代表能力進步或退步。`:'歷史比較就緒後顯示兩份來源時間；不以缺值推算變化。';
   updateScrollButtons();
 }

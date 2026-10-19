@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {validateContent,parseRoute,sanitizeProgress,selectLessons,safeUrl,escapeHtml} from './learn.js';
+import {validateContent,parseRoute,sanitizeProgress,selectLessons,safeUrl,escapeHtml,readCatalogState,catalogHref,lessonHref} from './learn.js';
 import {renderBlocks,calculateSpot,gradeQuiz} from './learn-render.js';
 import {renderWidget} from './learn-widgets.js';
 const data=JSON.parse(await readFile(new URL('./learn-content.json',import.meta.url),'utf8'));
@@ -19,6 +19,24 @@ test('Search includes section content and composes with category and path orderi
   assert.ok(selectLessons(data,{query:'Permit'}).some(l=>l.id==='security'));
   assert.deepEqual(selectLessons(data,{path:'start'}).map(l=>l.id),data.paths[0].lessons);
   assert.deepEqual(selectLessons(data,{query:'doesnotexist'}),[]);
+});
+
+test('Reading links retain a shareable catalog and return to the selected article',()=>{
+  const filter={query:'PnL 已實現',category:'本站指南',path:null};
+  const article=new URL(lessonHref('read-pnl',null,filter),'https://example.test/');
+  const returnURL=new URL(catalogHref(readCatalogState(article.search,data),'read-pnl'),article);
+  assert.deepEqual(readCatalogState(returnURL.search,data),filter);
+  assert.equal(returnURL.searchParams.get('from'),'read-pnl');
+  assert.equal(returnURL.pathname,'/learn.html');assert.equal(returnURL.hash,'#catalog');
+  const path={query:'',category:'',path:'start'};
+  const pathArticle=new URL(lessonHref('crypto-basics','start',path),article);
+  assert.deepEqual(readCatalogState(pathArticle.search,data),path);
+  assert.deepEqual(parseRoute(pathArticle.hash,data),{view:'lesson',id:'crypto-basics',path:'start'});
+  assert.deepEqual(readCatalogState('?q=Permit&category=unknown&path=missing',data),{query:'Permit',category:'',path:null});
+  assert.equal(readCatalogState('?q='+encodeURIComponent('字'.repeat(201)),data).query.length,200);
+  const hostile=new URL(catalogHref({query:'\"<&>#',category:'',path:null}),article);
+  assert.equal(readCatalogState(hostile.search,data).query,'\"<&>#');
+  assert.equal(hostile.hash,'#catalog');
 });
 test('Deep links, missing lessons, paths and section anchors are unambiguous',()=>{
   assert.deepEqual(parseRoute('#lesson/crypto-basics?path=start&section=1',data),{view:'lesson',id:'crypto-basics',path:'start'});

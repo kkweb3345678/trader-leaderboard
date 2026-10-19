@@ -326,4 +326,62 @@ dialog :is(.dialog-header,.referral-dialog-head) h2{min-width:0;overflow-wrap:an
  #column-form .dialog-header{padding-block:6px;margin-bottom:6px}
  #column-form .column-dialog-actions{padding-top:8px}
 }
+
+/* Keep the working controls close to the data; longer guidance stays available. */
+.page-eyebrow{display:none}
+.home-tool h2{font-size:21px;line-height:1.5;margin:0 0 12px;letter-spacing:-.02em}
+.referral-baseline,.referral-baseline>span:last-child,.referral-table-meta,.referral-footer-meta{font-size:12px}
+.wallet-page .table-status{font-size:12px}
+.comparison-help{margin:0 0 12px;color:var(--secondary);font-size:13px}
+.comparison-help>summary{min-height:44px;display:list-item;align-content:center;cursor:pointer;width:fit-content;text-decoration:underline;text-underline-offset:4px}
+.comparison-help .section-lede{max-width:70ch;margin:4px 0 12px}
+.comparison-help .source-legend{margin-bottom:12px}
+.wallet-page .comparison-section .section-heading{margin-bottom:0}
+.wallet-page .hero-actions .underlined-link,.tokens-board-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px}
+.tokens-method-link{display:inline-flex;align-items:center;min-height:44px;color:var(--secondary);font-size:12px;text-underline-offset:4px}
+#board-title,.learn-card{scroll-margin-block:80px 100px}
+.token-share-fallback{margin:0 0 24px;padding:16px;background:var(--surface-subtle);border-radius:var(--control-radius)}
+.token-share-fallback>label{display:block;font-size:13px;margin-bottom:8px}
+.token-share-fallback>div{display:flex;gap:8px}
+.token-share-fallback input{min-width:0;flex:1;font:inherit;font-size:13px;padding:10px;border:1px solid var(--border-hover);border-radius:var(--control-radius);background:var(--surface);color:var(--text)}
+.home-new-list>summary,.home-new-list .home-follow{min-height:44px}
+@media(max-width:700px){
+ .home-hero{padding-top:22px;padding-bottom:18px}
+ .home-tool h2{font-size:20px}
+ .home-snapshot-strip{display:flex;flex-direction:column;align-items:stretch;gap:2px;margin-bottom:20px}
+ .home-snapshot-strip .snapshot-actions{display:flex;justify-content:flex-start;gap:16px}
+ .tokens-hero{gap:0;margin-bottom:10px}
+ .tokens-summary{margin-bottom:16px}
+ .tokens-summary>div{padding:8px}.tokens-summary dd{font-size:22px;line-height:1.4}
+ #tokens-overview>.tokens-section-heading{margin:0;min-height:0}
+ .tokens-result-bar{margin-block:8px}
+ .tokens-toolbar{gap:10px}
+ .wallet-page .wallet-hero{padding-bottom:4px}
+ .wallet-hero-grid{gap:8px}
+ .wallet-page .hero-lede{margin-bottom:4px}
+ .wallet-hero-meta{padding:10px 12px;border-radius:var(--control-radius)}
+ .wallet-page .wallet-hero .wallet-baseline{flex-wrap:wrap;gap:0 6px;margin-bottom:4px;font-size:12px}
+ .wallet-page .wallet-baseline .data-baseline-note{display:inline;font-size:12px;flex-basis:auto;margin:0}
+ .wallet-page .comparison-section .section-heading{display:inline-block}
+ .wallet-page .comparison-help{display:inline-block;margin:0 0 12px 16px;vertical-align:middle}
+ .wallet-page .comparison-help[open]{display:block;margin-left:0}
+ .wallet-page .comparison-section .section-heading h2{font-size:20px}
+ .wallet-page .comparison-section{padding-top:12px}
+ .wallet-page .comparison-topline{margin-bottom:12px}
+ .wallet-page .wallet-toolbar{gap:8px;padding:0;border:0;background:transparent}
+ .wallet-page .table-status{margin-top:10px}
+ .referral-page .referral-intro{gap:10px;padding-bottom:10px}
+ .referral-lede{margin-bottom:4px}
+ .referral-hero-guide{display:inline-flex;align-items:center;min-height:44px}
+ .referral-reading{padding:10px 14px;margin-top:0}
+ .referral-comparison{padding-top:16px}
+ .referral-section-heading{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+ .referral-section-heading h2{font-size:20px}
+ .referral-section-heading>div>p{display:none}
+ .referral-download{font-size:12px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+ .referral-workspace{padding:0;border:0;background:transparent}
+ .learn-hero{padding-top:20px;padding-bottom:20px}
+ .learn-hero h1{margin-top:0}
+ .learn-path-section{padding-top:20px}
+}
 @media(prefers-reduced-motion:reduce){.referral-source-button:hover .icon{transform:none}}

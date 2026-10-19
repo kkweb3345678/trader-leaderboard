@@ -19,14 +19,17 @@
   <link rel="stylesheet" href="./home-tools.css?v=1">
   <script type="module" src="./home-tools.js?v=organization-1"></script>
   <script src="./snapshot-time.js?v=verify-1"></script>
-  <script src="./app.js?v=polish-1" defer></script>
+  <script src="./app.js?v=flow-2" defer></script>
   <link rel="stylesheet" href="./holdings.css?v=1">
   <script src="./holdings.js?v=1" type="module"></script>
   <link rel="stylesheet" href="./wallet-trades.css?v=2">
   <script src="./wallet-trades.js?v=2" type="module"></script>
   <script src="./additional-boards.js?v=verify-1" type="module"></script>
-  <script src="./home.js?v=5" type="module"></script>
+  <script src="./home.js?v=flow-2" type="module"></script>
   <link rel="stylesheet" href="./site-info.css?v=2">
+  <link rel="stylesheet" href="./navigation.css?v=1">
+  <link rel="stylesheet" href="./review-ui.css?v=verify-1">
+  <link rel="stylesheet" href="./product-refinement.css?v=flow-2">
   <!-- site-metadata:start -->
   <title>鏈上觀察與 Web3 工具｜落袋研究室</title>
   <meta name="description" content="落袋研究室：查看鏈上錢包排行榜、比較 Web3 錢包與交易所返佣，從白話課程、試算與詞典理解公開資料。">
@@ -50,9 +53,6 @@
   <meta name="twitter:image:alt" content="落袋研究室 · 公開來源・非託管・逐項標示">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://kkweb3345678.github.io/trader-leaderboard/#organization","name":"落袋研究室","url":"https://kkweb3345678.github.io/trader-leaderboard/","logo":"https://kkweb3345678.github.io/trader-leaderboard/assets/brand.svg","sameAs":["https://x.com/kkweb3345678"]},{"@type":"WebSite","@id":"https://kkweb3345678.github.io/trader-leaderboard/#website","url":"https://kkweb3345678.github.io/trader-leaderboard/","name":"落袋研究室","inLanguage":"zh-TW","publisher":{"@id":"https://kkweb3345678.github.io/trader-leaderboard/#organization"}}]}</script>
   <!-- site-metadata:end -->
-  <link rel="stylesheet" href="./navigation.css?v=1">
-  <link rel="stylesheet" href="./review-ui.css?v=verify-1">
-  <link rel="stylesheet" href="./product-refinement.css?v=polish-1">
 </head>
 <body>
   <a class="skip" href="#main-content">跳至主要內容</a>
@@ -62,7 +62,7 @@
     <div id="home-v3">
       <section class="home-hero" aria-labelledby="home-title">
         <div class="home-intro">
-          <p class="home-eyebrow">鏈上研究，從有依據的數字開始</p>
+
           <h1 id="home-title" tabindex="-1">看懂數據，<br>再做自己的判斷。</h1>
           <p class="home-positioning">追查錢包與幣種、比較工具與費率。<br class="desktop-break">從公開來源開始，把每一步看清楚。</p>
           <div class="home-cta"><a class="button primary" href="?view=leaderboard" data-route="leaderboard">查看排行榜 <span aria-hidden="true">→</span></a><a class="button" href="./learn.html">新手從這裡開始</a></div>
@@ -95,13 +95,13 @@
         <p class="home-guide-storage" id="home-guide-storage" hidden>瀏覽器目前無法記住引導狀態，重整後可能再次顯示。</p>
       </section>
       <section class="home-section home-band" id="swipe" aria-labelledby="home-swipe-title">
-        <div class="home-section-heading"><div><p class="home-eyebrow">鏈上數據 / 本批觀察</p><h2 id="home-swipe-title">這份快照，值得留意的事。</h2><p class="home-lede">先看誰落袋，再看名次變化與本次新進樣本。</p></div><div class="home-rail-controls"><button id="home-card-prev" class="button icon-button" aria-label="上一張觀察卡" aria-controls="home-cards" disabled><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button><button id="home-card-next" class="button icon-button" aria-label="下一張觀察卡" aria-controls="home-cards"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button></div></div>
+        <div class="home-section-heading"><div><h2 id="home-swipe-title">這份快照，值得留意的事。</h2><p class="home-lede">先看誰落袋，再看名次變化與本次新進樣本。</p></div><div class="home-rail-controls"><button id="home-card-prev" class="button icon-button" aria-label="上一張觀察卡" aria-controls="home-cards" disabled><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button><button id="home-card-next" class="button icon-button" aria-label="下一張觀察卡" aria-controls="home-cards"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button></div></div>
         <div id="home-cards" class="home-cards" tabindex="0" role="region" aria-label="可橫向滑動的本批三卡"><p>正在讀取觀察資料…</p></div>
         <div class="home-history"><p id="home-snapshot-note">歷史快照載入中。</p><button type="button" class="text-button" id="home-history-retry">重新讀取歷史</button></div>
       </section>
       <details class="home-disclosure" id="personal-space"><summary><span><strong>我的觀察空間</strong><small>關注錢包、查看快照變化、自訂首頁預覽</small></span><span class="disclosure-action" aria-hidden="true"><span class="when-closed">展開 ＋</span><span class="when-open">收起 −</span></span></summary><div class="disclosure-body">
       <section class="home-section" id="custom" aria-labelledby="home-custom-title">
-        <p class="home-eyebrow">我的空間 / 首頁預覽</p><h2 id="home-custom-title">自訂我的預覽</h2><p class="home-lede">開關即時生效。偏好與關注清單只存於這個瀏覽器，下次回來接著看。</p>
+        <h2 id="home-custom-title">自訂我的預覽</h2><p class="home-lede">開關即時生效。偏好與關注清單只存於這個瀏覽器，下次回來接著看。</p>
         <details class="home-settings"><summary>選擇要顯示的預覽</summary><div class="home-toggles">
           <label class="home-toggle"><span><strong>排行榜</strong><small>單日已實現收益精選</small></span><input type="checkbox" role="switch" data-home-module="board" aria-label="顯示排行榜預覽" aria-controls="home-module-board" checked><span class="home-switch" aria-hidden="true"></span></label>
           <label class="home-toggle"><span><strong>7 日走勢</strong><small>歷史資料累積進度</small></span><input type="checkbox" role="switch" data-home-module="trend" aria-label="顯示七日走勢預覽" aria-controls="home-module-trend" checked><span class="home-switch" aria-hidden="true"></span></label>
@@ -117,14 +117,14 @@
         </div><p class="home-muted" id="home-modules-empty" hidden>目前已收起所有預覽，隨時開啟上方開關就能加回。</p>
       </section>
       <section class="home-section home-band" id="feed" aria-labelledby="home-feed-title">
-        <div class="home-section-heading"><div><p class="home-eyebrow">FOLLOW / 追蹤動態</p><h2 id="home-feed-title" tabindex="-1">關注之後，繼續觀察。</h2><p class="home-lede">讓值得研究的錢包留下來，看看下一份快照有什麼變化。</p></div><span class="home-phase" id="home-follow-count"></span></div>
+        <div class="home-section-heading"><div><h2 id="home-feed-title" tabindex="-1">關注之後，繼續觀察。</h2><p class="home-lede">讓值得研究的錢包留下來，看看下一份快照有什麼變化。</p></div><span class="home-phase" id="home-follow-count"></span></div>
         <div id="home-feed" class="home-feed"></div><p class="home-feed-caveat" id="home-feed-caveat">差額比較兩份「單日」期間統計，可能受統計視窗移動影響；不代表單筆交易或期間內新增獲利。未出現在樣本中，也不代表沒有活動。</p>
       </section>
       </div></details>
       <details class="home-disclosure" id="about-space"><summary><span><strong>關於落袋研究室與資料來源</strong><small>建站初衷、資料口徑與閱讀限制</small></span><span class="disclosure-action" aria-hidden="true"><span class="when-closed">展開 ＋</span><span class="when-open">收起 −</span></span></summary><div class="disclosure-body">
       <section class="home-section home-story" id="home-story" aria-labelledby="home-story-title">
         <div class="home-story-heading">
-          <p class="home-eyebrow">WHY / 建站初衷</p>
+
           <h2 id="home-story-title">這個站是怎麼來的？</h2>
         </div>
         <div class="home-story-body">
@@ -135,14 +135,14 @@
         </div>
       </section>
       <section class="home-section" id="method" aria-labelledby="home-method-title">
-        <p class="home-eyebrow">METHODOLOGY / 方法論</p><h2 id="home-method-title">數字怎麼來，一起攤開看。</h2>
+        <h2 id="home-method-title">數字怎麼來，一起攤開看。</h2>
         <div class="home-method-grid"><article><svg class="icon" aria-hidden="true"><use href="#i-board"/></svg><h3>來源，有跡可循。</h3><p>資料來自 Birdeye，每日完整快照保留原始數值與來源時間。</p><a href="./data.json" target="_blank" rel="noopener">查看原始資料 ↗</a></article><article><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg><h3>落袋與帳面，分開看。</h3><p>依本批已實現收益排序；總損益、交易次數與樣本限制一起閱讀。</p><button class="text-button" type="button" data-method aria-haspopup="dialog">完整資料口徑 →</button></article><article><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><h3>有依據，也有邊界。</h3><p>本批樣本不是全鏈排名，快照可能延遲。本頁僅為公開資料整理與教學，不構成任何投資建議。</p><a href="./learn.html">看不懂？去學習中心 →</a></article></div>
       </section>
       </div></details>
       <p id="home-live" class="sr-only" role="status" aria-live="polite"></p>
     </div>
     <section class="page-heading" id="board" aria-labelledby="home-board-title">
-      <div class="home-board-heading"><p class="home-eyebrow">EXPLORE / 完整榜單</p><h2 id="home-board-title">帳面賺的都不算，落袋的才算。</h2><p class="home-lede">篩選、排序、對比，沿著數字繼續往下看。</p><div class="home-board-links"><a href="?view=compare" data-route="compare">交易員對比 →</a><a href="?view=research" data-route="research">每週研究 →</a><a href="#home-glossary">？ 術語白話詞典</a></div></div>
+      <div class="home-board-heading"><h2 id="home-board-title">帳面賺的都不算，落袋的才算。</h2><p class="home-lede">篩選、排序、對比，沿著數字繼續往下看。</p><div class="home-board-links"><a href="?view=compare" data-route="compare">交易員對比 →</a><a href="?view=research" data-route="research">每週研究 →</a><a href="#home-glossary">？ 術語白話詞典</a></div></div>
       <div id="workspace-heading" hidden><p class="page-eyebrow" id="page-eyebrow"></p><h1 id="page-title" tabindex="-1"></h1><p class="heading-description" id="page-description"></p></div>
       <div class="data-status" role="group" aria-label="資料快照狀態">
         <div><p>最新可用快照 <span aria-hidden="true">·</span> <a href="https://birdeye.so/" target="_blank" rel="noopener noreferrer">Birdeye</a></p><time id="updated">讀取中…</time></div>
@@ -231,9 +231,9 @@
     </section>
     </section>
       <section class="product-view home-section" data-view-panel="tools" id="home-tools" hidden aria-labelledby="home-tools-title">
-        <p class="home-eyebrow">READ & TRY / 看懂，再試算</p><h2 id="home-tools-title">讓每一個數字，都有意思。</h2><p class="home-lede">先釐清損益怎麼算，再用白話讀懂榜單上的詞。</p>
+        <h2 id="home-tools-title">讓每一個數字，都有意思。</h2><p class="home-lede">先釐清損益怎麼算，再用白話讀懂榜單上的詞。</p>
         <div class="home-tools-grid">
-          <article class="home-tool" aria-labelledby="home-calculator-title"><h3 id="home-calculator-title">落袋試算器</h3><p id="home-calc-note">輸入同一筆現貨買賣的成交單價與數量。所有金額使用相同報價單位，結果只在本頁計算。</p>
+          <article class="home-tool" aria-labelledby="home-calculator-title"><h2 id="home-calculator-title">落袋試算器</h2><p id="home-calc-note">輸入同一筆現貨買賣的成交單價與數量。所有金額使用相同報價單位，結果只在本頁計算。</p>
             <form id="home-calculator" novalidate autocomplete="off" aria-describedby="home-calc-note"><fieldset disabled><legend class="sr-only">成交價格、數量與費用</legend><div class="home-calc-fields">
               <label for="home-calc-buy">買入單價<input id="home-calc-buy" name="buy" inputmode="decimal" type="text" required aria-describedby="home-calc-status"></label>
               <label for="home-calc-sell">賣出單價<input id="home-calc-sell" name="sell" inputmode="decimal" type="text" required aria-describedby="home-calc-status"></label>
@@ -244,7 +244,7 @@
             <div class="home-calc-result" id="home-calc-result" hidden><span>估算落袋損益 · <span id="home-calc-outcome"></span></span><strong id="home-calc-net"></strong><span>與輸入相同報價單位</span><dl><div><dt>買入成本（未含費）</dt><dd id="home-calc-cost"></dd></div><div><dt>賣出金額（未扣費）</dt><dd id="home-calc-proceeds"></dd></div><div><dt>費用合計</dt><dd id="home-calc-fees-result"></dd></div></dl></div>
             <details class="home-calc-formula"><summary>怎麼算？有哪些限制？</summary><p>估算落袋損益＝（賣出單價 − 買入單價）× 成交數量 − 費用合計。</p><p>假設輸入數量全數成交。費用請自行加總買賣手續費與其他成本；不同批次成本、槓桿、利息與稅務不在本工具範圍。這是依輸入做的試算，不是錢包實際收益紀錄。</p></details><noscript><p>啟用 JavaScript 後即可試算；計算方式仍可直接閱讀。</p></noscript>
           </article>
-          <article class="home-tool" id="home-glossary" aria-labelledby="home-glossary-title"><h3 id="home-glossary-title" tabindex="-1">術語，換句話說。</h3><p>先弄懂這些詞，再看數字就有方向。</p><label class="home-glossary-search" for="home-glossary-search">搜尋術語<input id="home-glossary-search" type="search" placeholder="例如：落袋、帳面、PnL" disabled autocomplete="off" aria-controls="home-glossary-list"></label><p class="tool-status" id="home-glossary-status" role="status" aria-live="polite"></p><div class="home-glossary-list" id="home-glossary-list"><!-- glossary:start --><details data-term="已實現損益" open><summary>已實現損益</summary><p>已賣出部位對應的損益。賣出收入扣掉該部位成本，才知道實際賺或賠；費用是否已扣，還要看來源口徑。</p></details><details data-term="未實現損益"><summary>未實現損益</summary><p>還持有的部位，按當下估價計算的帳面損益。價格會變，尚未賣出就不代表已經落袋。</p></details><details data-term="總損益"><summary>總損益</summary><p>同一來源、同一統計期間的已實現與未實現損益合計。總損益漂亮，可能主要來自尚未賣出的帳面收益。</p></details><details data-term="快照"><summary>快照</summary><p>把某個時間點取得的資料保留下來，方便之後比較。它是一張定格畫面，不是即時行情；請看來源時間。</p></details><details data-term="樣本"><summary>樣本</summary><p>這一批實際取得、收錄來比較的錢包。樣本內排名不等於全鏈排名，未收錄的錢包也不代表表現不好。</p></details><!-- glossary:end --></div><div class="home-glossary-empty" id="home-glossary-empty" hidden><p>沒有符合的詞條，換個說法試試。</p><button class="text-button" id="home-glossary-clear" type="button">清除搜尋</button></div><a class="home-tools-link" href="./learn-glossary.html">到學習中心看更多術語 →</a></article>
+          <article class="home-tool" id="home-glossary" aria-labelledby="home-glossary-title"><h2 id="home-glossary-title" tabindex="-1">術語，換句話說。</h2><p>先弄懂這些詞，再看數字就有方向。</p><label class="home-glossary-search" for="home-glossary-search">搜尋術語<input id="home-glossary-search" type="search" placeholder="例如：落袋、帳面、PnL" disabled autocomplete="off" aria-controls="home-glossary-list"></label><p class="tool-status" id="home-glossary-status" role="status" aria-live="polite"></p><div class="home-glossary-list" id="home-glossary-list"><!-- glossary:start --><details data-term="已實現損益" open><summary>已實現損益</summary><p>已賣出部位對應的損益。賣出收入扣掉該部位成本，才知道實際賺或賠；費用是否已扣，還要看來源口徑。</p></details><details data-term="未實現損益"><summary>未實現損益</summary><p>還持有的部位，按當下估價計算的帳面損益。價格會變，尚未賣出就不代表已經落袋。</p></details><details data-term="總損益"><summary>總損益</summary><p>同一來源、同一統計期間的已實現與未實現損益合計。總損益漂亮，可能主要來自尚未賣出的帳面收益。</p></details><details data-term="快照"><summary>快照</summary><p>把某個時間點取得的資料保留下來，方便之後比較。它是一張定格畫面，不是即時行情；請看來源時間。</p></details><details data-term="樣本"><summary>樣本</summary><p>這一批實際取得、收錄來比較的錢包。樣本內排名不等於全鏈排名，未收錄的錢包也不代表表現不好。</p></details><!-- glossary:end --></div><div class="home-glossary-empty" id="home-glossary-empty" hidden><p>沒有符合的詞條，換個說法試試。</p><button class="text-button" id="home-glossary-clear" type="button">清除搜尋</button></div><a class="home-tools-link" href="./learn-glossary.html">到學習中心看更多術語 →</a></article>
         </div>
       </section>
     <section class="product-view" id="compare-view" data-view-panel="compare" hidden>

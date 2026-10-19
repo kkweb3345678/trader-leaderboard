@@ -14,6 +14,8 @@
   <script src="./wallets.js?v=business-1" defer></script>
   <script src="./wallet-check-status.js?v=actions-1" defer></script>
   <link rel="stylesheet" href="./site-info.css?v=2">
+  <link rel="stylesheet" href="./navigation.css?v=1">
+  <link rel="stylesheet" href="./product-refinement.css?v=flow-2">
   <!-- site-metadata:start -->
   <title>Web3 錢包比較｜落袋研究室</title>
   <meta name="description" content="Web3 錢包比較：查看內建兌換費率、公鏈與硬體支援，自訂比較欄位，點開官方來源與資料說明。">
@@ -37,8 +39,6 @@
   <meta name="twitter:image:alt" content="落袋研究室 · 公開來源・非託管・逐項標示">
 
   <!-- site-metadata:end -->
-  <link rel="stylesheet" href="./navigation.css?v=1">
-  <link rel="stylesheet" href="./product-refinement.css?v=polish-1">
 </head>
 <body class="wallet-page">
   <a class="skip" href="#main-content">跳至主要內容</a>
@@ -48,10 +48,10 @@
       <section class="wallet-hero" aria-labelledby="page-title">
         <div class="wallet-wrap wallet-hero-grid">
           <div class="wallet-hero-copy">
-          <p class="eyebrow">工具比較</p>
+
           <h1 id="page-title" tabindex="-1">Web3 錢包比較</h1>
           <p class="hero-lede" id="coverage">比較 Web3 錢包的公開功能與費率。公開來源，逐項標示。不做安全排名，只把資料攤開給你看。</p>
-          <div class="hero-actions"><a class="button primary" href="#comparison">開始比較</a><a class="underlined-link" id="quiz-link" href="#quiz">先做需求小測驗 <span aria-hidden="true">→</span></a></div>
+          <div class="hero-actions"><a class="underlined-link" id="quiz-link" href="#quiz">先做需求小測驗 <span aria-hidden="true">→</span></a></div>
           </div>
           <div role="group" class="wallet-hero-meta" aria-label="資料範圍與更新狀態">
           <p class="wallet-baseline data-baseline-badge"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>資料基準日 <time id="baseline">讀取中…</time></span><span class="data-baseline-note">數值經人工審核</span></p>
@@ -66,10 +66,11 @@
         </div>
       </section>
       <section class="comparison-section wallet-wrap" id="comparison" aria-labelledby="comparison-title">
-        <div class="section-heading"><p class="eyebrow" data-section-label="對照表">對照表</p><h2 id="comparison-title">錢包對照表</h2><p class="section-lede">點表頭排序，點格子看完整說明。先看費率、公鏈、密鑰管理與硬體支援，也能自訂欄位或展開全部。</p></div>
+        <div class="section-heading"><h2 id="comparison-title">錢包對照表</h2></div>
+        <details class="comparison-help"><summary>比較表怎麼看？</summary><p class="section-lede">點表頭排序，點格子看完整說明。先看費率、公鏈、密鑰管理與硬體支援，也能自訂欄位或展開全部。</p><div class="source-legend" role="group" aria-label="來源分級"><span><b class="grade grade-a">A</b> 官方一手</span><span><b class="grade grade-b">B</b> 權威第三方</span><span><b class="grade grade-c">C</b> 一般第三方</span></div></details>
         <div class="comparison-topline">
           <div class="tier-control" role="group" aria-label="錢包 Tier 篩選"><button type="button" data-tier="mainstream" aria-pressed="true" disabled>主流錢包</button><button type="button" data-tier="all" aria-pressed="false" disabled>全部錢包</button></div>
-          <div class="source-legend" role="group" aria-label="來源分級"><span><b class="grade grade-a">A</b> 官方一手</span><span><b class="grade grade-b">B</b> 權威第三方</span><span><b class="grade grade-c">C</b> 一般第三方</span></div>
+
         </div>
         <div class="wallet-toolbar"><div class="column-controls"><label class="dimension-picker" for="dimension-group">比較重點<select id="dimension-group" disabled><option value="default" selected>常用欄位</option><option value="all">全部欄位</option><option value="cost">費用與公鏈</option><option value="use">使用與管理</option><option value="security">安全與紀錄</option><option value="custom">自訂欄位</option></select></label><button type="button" class="button quiet" id="customize-columns" aria-haspopup="dialog" aria-controls="column-dialog" disabled><svg class="icon" aria-hidden="true"><use href="#i-note"/></svg>自訂欄位<span class="columns-count" id="columns-count"></span></button></div><div class="table-pan"><span>左右捲動查看更多</span><button type="button" class="button icon-button quiet" id="pan-left" aria-label="表格向左捲動"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button><button type="button" class="button icon-button quiet" id="pan-right" aria-label="表格向右捲動"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button></div></div>
         <div class="table-status"><span id="result-count" role="status">正在讀取資料…</span><span id="sort-status" role="status">依資料順序顯示</span></div>
@@ -83,7 +84,7 @@
       </section>
       <section class="quiz-section" id="quiz" aria-labelledby="quiz-title">
         <div class="wallet-wrap">
-          <div class="section-heading"><p class="eyebrow" data-section-label="需求配對">需求配對</p><h2 id="quiz-title">哪個錢包適合你？</h2><p class="section-lede" id="quiz-description">依使用經驗、常用公鏈與硬體需求，用公開功能做規則式配對。不做安全評分或排名。</p></div>
+          <div class="section-heading"><h2 id="quiz-title">哪個錢包適合你？</h2><p class="section-lede" id="quiz-description">依使用經驗、常用公鏈與硬體需求，用公開功能做規則式配對。不做安全評分或排名。</p></div>
           <form id="quiz-form" novalidate>
             <div class="quiz-progress"><span id="quiz-progress-label" aria-live="polite" aria-atomic="true"></span><progress id="quiz-progress" aria-label="需求測驗進度"></progress></div>
             <fieldset class="quiz-step" aria-describedby="experience-help"><legend tabindex="-1">你是新手還是老手？</legend><p class="question-help" id="experience-help">依你的使用經驗，優先查看登入方式或開源資訊。</p><div class="quiz-options"><label><input type="radio" name="experience" value="new" required><span>剛開始，希望登入容易<small>先看看支援社交登入或 MPC 的錢包</small></span></label><label><input type="radio" name="experience" value="advanced"><span>已有經驗，想看開源與操作彈性<small>優先查看公開的開源範圍</small></span></label></div></fieldset>

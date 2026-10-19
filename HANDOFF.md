@@ -808,3 +808,13 @@ UI `7853141` 已推 main，[Pages 39188812225](https://github.com/kkweb3345678/t
 影片 Reel `1249265464083377` 提到的 Caveman 與 Ultracave 已安裝至使用者 Codex skills；官方來源固定 `bad48a0e1df55e05e3f52249afa35ecc1909ee76`，四個 Markdown 檔案安裝前 Skillguard 掃描 0 active／0 suppressed，安裝後 hash 相符。只安裝回覆風格 skills，下回合可使用，未啟用 proxy、hooks 或修改帳號設定。證據在 `artifacts/caveman-install/`。
 
 發布前 fast-forward 整合遠端 `6cb6697` 自動來源紀錄；本輪沒有人工修改正式 JSON、來源數字、抓取程式、workflow、cron、concurrency、sync.sh 或唯一寫入者，沒有呼叫付費 API。
+
+---
+
+### Codex 接續紀錄（2026-10-19）：全站第二輪優化
+
+依 kk 再次指定的 Caveman、Ultracave、Taste、Impeccable、Emil skills 完成全站閱讀與操作優化。手機頁減少重複標籤與說明堆疊；幣種、錢包、返佣資料分別提前約 122、186、102 CSS px（390px 寬）。保留日期與資料範圍，操作說明可展開。
+
+修正首頁逐個關注時清單收合、手機排行榜換頁停底部、文章返回遺失搜尋與路線；加入返佣／學習 12 秒逾時、重試鎖與手動複製連結 fallback。文章提示與試算標題語意一併修正，SEO 模板和 19 篇文章同步。完整 Before／After／Why 與限制見 [WHOLE-SITE-POLISH-2026-10-19.md](WHOLE-SITE-POLISH-2026-10-19.md)。
+
+71 項 Node 測試、12 項瀏覽器情境、32 個版面狀態通過；後者無整頁水平溢出且 axe 無 violations。獨立程式審查未發現阻擋問題。證據 `artifacts/whole-site-round2/`。此次未改任何正式 JSON、費率、抓取與寫入流程、排程或付費 API。發布前遠端 main 仍為 e16b6e9；發布後另補記 Pages 與正式站驗證結果。

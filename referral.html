@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="./product.css?v=cohesion-2">
   <link rel="stylesheet" href="./design-system.css?v=verify-1">
   <link rel="stylesheet" href="./referral.css?v=verify-1">
-  <script src="./referral.js?v=3" type="module"></script>
+  <script src="./referral.js?v=flow-2" type="module"></script>
   <link rel="stylesheet" href="./site-info.css?v=2">
+  <link rel="stylesheet" href="./navigation.css?v=1">
+  <link rel="stylesheet" href="./product-refinement.css?v=flow-2">
   <!-- site-metadata:start -->
   <title>交易所返佣比較｜落袋研究室</title>
   <meta name="description" content="交易所返佣比較：整理現貨、合約返佣與適用門檻，逐家標示官方來源、基準日與待查證資訊，並揭露個人邀請連結。">
@@ -36,8 +38,6 @@
   <meta name="twitter:image:alt" content="落袋研究室 · 公開來源・非託管・逐項標示">
 
   <!-- site-metadata:end -->
-  <link rel="stylesheet" href="./navigation.css?v=1">
-  <link rel="stylesheet" href="./product-refinement.css?v=polish-1">
 </head>
 <body class="referral-page">
   <a class="skip" href="#main-content">跳至主要內容</a>
@@ -46,13 +46,13 @@
     <main class="shell product-main" id="main-content">
       <section class="referral-hero" aria-labelledby="page-title">
         <div class="referral-intro">
-          <div class="referral-hero-copy"><p class="eyebrow"><span class="referral-kicker-mark" aria-hidden="true"></span>落袋研究室 / 交易所返佣</p><h1 id="page-title" tabindex="-1">交易所返佣對照</h1><p class="referral-lede" id="referral-lede">把推薦返佣、適用門檻與官方文件放在一起，讓每一筆比較都有依據。</p><div class="referral-hero-actions"><a class="button primary" href="#referral-comparison">開始比較 <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a><a class="referral-hero-guide" href="#referral-method">先了解比較口徑 <span aria-hidden="true">↗</span></a></div></div>
+          <div class="referral-hero-copy"><h1 id="page-title" tabindex="-1">交易所返佣對照</h1><p class="referral-lede" id="referral-lede">把推薦返佣、適用門檻與官方文件放在一起，讓每一筆比較都有依據。</p><div class="referral-hero-actions"><a class="referral-hero-guide" href="#referral-method">先了解比較口徑 <span aria-hidden="true">↗</span></a></div></div>
           <details class="referral-reading"><summary><strong>返佣怎麼分配？</strong><span>推薦人佣金與好友折扣的差別</span></summary><div class="referral-reading-body"><div class="referral-reading-top"><span>先了解分配方式</span><svg class="icon" aria-hidden="true"><use href="#i-referral"/></svg></div><h2>先分清，誰拿到返佣。</h2><div class="referral-flow"><div class="referral-flow-origin"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg><span>符合條件的交易手續費</span></div><div class="referral-flow-branches"><div><span class="referral-flow-tag">推薦人</span><strong>佣金收入</strong></div><div><span class="referral-flow-tag">被推薦的好友</span><strong>手續費折扣</strong></div></div></div><p>一般推薦與 Affiliate 合作條件不同；表中比例請連同分配方式一起閱讀。</p></div></details>
         </div>
         <div class="referral-baseline"><span class="referral-coverage"><span id="referral-total">—</span> 家交易所收錄</span><span class="data-baseline-badge"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>資料基準日 <span id="referral-baseline">讀取中…</span></span></span><span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>每日排程檢查來源 · 數值人工確認</span></div>
       </section>
       <section id="referral-comparison" class="referral-comparison" aria-labelledby="comparison-title">
-        <div class="referral-section-heading"><div><p class="eyebrow">交易所條件比較</p><h2 id="comparison-title">把條件攤開，一起比較。</h2><p>現貨、合約、等級門檻，一次看清楚。</p></div><a class="referral-download" href="./referral.json" download><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>下載資料</a></div>
+        <div class="referral-section-heading"><div><h2 id="comparison-title">把條件攤開，一起比較。</h2><p>現貨、合約、等級門檻，一次看清楚。</p></div><a class="referral-download" href="./referral.json" download><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>下載資料</a></div>
         <div class="referral-workspace">
         <div class="referral-toolbar"><div class="referral-view-switch" role="group" aria-label="比較顯示方式"><button type="button" data-view="table" aria-pressed="true"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg>表格對照</button><button type="button" data-view="cards" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg>卡片閱讀</button></div><label class="referral-search" for="exchange-search"><span class="sr-only">快速找交易所</span><span class="referral-search-input"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input id="exchange-search" type="search" placeholder="搜尋交易所名稱" autocomplete="off" disabled></span></label></div>
         <div class="referral-table-meta"><p id="referral-count" role="status">正在讀取返佣資料…</p><p>依收錄順序 · 不作收益排名</p></div>
@@ -69,14 +69,14 @@
         <p class="referral-source-explainer"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>點「查看官方資料」可閱讀來源文章名稱與適用口徑；灰色標示為待查證。</p>
       </section>
       <section class="referral-method" id="referral-method" aria-labelledby="method-title">
-        <div><p class="eyebrow">資料口徑</p><h2 id="method-title">數字有出處，<br>條件也要留下。</h2></div>
+        <div><h2 id="method-title">數字有出處，<br>條件也要留下。</h2></div>
         <div class="referral-method-items"><article><h3>比例不等於實際到手</h3><p>佣金通常以符合條件的手續費為計算基礎，並非交易本金。Affiliate、一般推薦與好友折扣各有規則，請回到列出的官網核對。</p></article><article><h3>查不到，就保留待查證</h3><p>MAX、HOYA BIT 尚無可確認的現行常設比例返佣；HOYA BIT 的限時推薦活動與比例抽成分開看。部分交易所的門檻、一般推薦或結算資訊，也保留原有的待查證標示。</p></article><article><h3>邀請連結與研究資料分開看</h3><p>「用我的連結註冊」為 @kkweb3345678 的個人邀請連結。實際資格與回饋依官方當期方案，表列推薦人比例不代表你使用此連結可獲得同等折扣。資料基準日依各家標示，新增交易所不代表其餘資料已重新審核。</p></article><article><h3>每天檢查，人工決定更新</h3><p>每天台北 09:00 排程比對官方頁面文字。頁面變動會進待審清單，來源受阻會記錄無法檢查；不代表費率已改，也不自動更新表格。</p><div class="referral-method-links"><a href="https://github.com/kkweb3345678/trader-leaderboard/blob/main/referral-review-queue.md" target="_blank" rel="noopener noreferrer">查看檢查與待審紀錄 ↗</a><a href="./referral-sources.json" target="_blank" rel="noopener">官方來源清單 ↗</a></div></article></div>
       </section>
       <noscript><p class="referral-notice">請啟用 JavaScript 查看比較表，或下載 <a href="./referral.json">原始資料</a>。</p></noscript>
     </main>
     <footer class="shell footer referral-footer"><p>基準日 <span id="referral-footer-date">讀取中…</span> · 政策會變動，以各交易所官網為準 · 本頁不構成投資建議</p><a href="https://x.com/kkweb3345678" target="_blank" rel="noopener noreferrer">由 @kkweb3345678 整理</a><a class="site-privacy-link" href="./privacy.html">隱私說明</a></footer>
   </div>
-  <dialog id="referral-source-dialog" class="referral-source-dialog" aria-labelledby="referral-source-title" aria-describedby="referral-source-description"><div class="referral-dialog-head"><div id="referral-dialog-brand"></div><button class="button icon-button" type="button" id="referral-source-close" aria-label="關閉官方資料"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div><p class="eyebrow">官方資料 / SOURCE DOCUMENTS</p><h2 id="referral-source-title">官方資料</h2><p id="referral-source-description">以下文件是這家交易所整列資料的來源。推薦計畫與 Affiliate 合作的適用條件不同，請以原文為準。</p><div id="referral-dialog-links"></div><div class="referral-dialog-context"><h3>比較表收錄口徑</h3><dl id="referral-dialog-values"></dl></div><p class="referral-dialog-baseline">資料基準日 <time id="referral-dialog-date"></time> · 有變動時經人工確認後更新</p></dialog>
+  <dialog id="referral-source-dialog" class="referral-source-dialog" aria-labelledby="referral-source-title" aria-describedby="referral-source-description"><div class="referral-dialog-head"><div id="referral-dialog-brand"></div><button class="button icon-button" type="button" id="referral-source-close" aria-label="關閉官方資料"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div><h2 id="referral-source-title">官方資料</h2><p id="referral-source-description">以下文件是這家交易所整列資料的來源。推薦計畫與 Affiliate 合作的適用條件不同，請以原文為準。</p><div id="referral-dialog-links"></div><div class="referral-dialog-context"><h3>比較表收錄口徑</h3><dl id="referral-dialog-values"></dl></div><p class="referral-dialog-baseline">資料基準日 <time id="referral-dialog-date"></time> · 有變動時經人工確認後更新</p></dialog>
   <nav class="mobile-navigation product-navigation" aria-label="主要功能" id="mobile-navigation"></nav>
 </body>
 </html>
