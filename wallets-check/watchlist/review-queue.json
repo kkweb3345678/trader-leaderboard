@@ -28,5 +28,15 @@
     "old_hash": "bd31f7074c4b0353f27794c89193a3498c892718b7741fbd1142758240f9af3f",
     "new_hash": "d9e3d490834f63c66b5296e3a831dde4ab267645bf314594d6553fbfe16d35f2",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-19T15:34:01+00:00",
+    "wallet_id": "jupiter",
+    "dimension": "rewards",
+    "url": "https://docs.jup.ag/user-docs/earn/rewards-hub/index.md",
+    "summary": " ## What is a campaign?\n-A campaign is a time-limited program where users earn rewards by using a Jupiter product (trading, opening Gacha packs, predicting) or, for ASR, by staking and voting with JUP. Each campaign defines:\n+A campaign is a time-limited program where users earn rewards by using a Jupiter product (trading, opening Gacha packs, predicting) or, for ASR, by staking JUP. Each campaign defines:\n * Which platforms and products are eligible",
+    "old_hash": "208f5ab213a18f9b00614eb2c8ff41ad0acabf1c39c9a3111d0aa37ec940ff62",
+    "new_hash": "7eda7a0006b2460bb7c42d114a268bab353b97c2343653f6510507df2253b9a4",
+    "status": "pending"
   }
 ]
