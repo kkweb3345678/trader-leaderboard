@@ -129,6 +129,12 @@ html[data-view=leaderboard] #board .heading-description{margin-top:6px}
 .tokens-partial,.token-label small,.token-wallet-head small,.token-wallet-foot,.token-wallet-metrics dt{font-size:12px}
 .token-monogram{background:transparent;border:0;border-radius:0;font-size:12px}
 .tokens-table-wrap,.token-wallet{border-radius:var(--panel-radius)}
+@media(min-width:601px){
+ .tokens-table-wrap{overflow-x:auto}
+ .tokens-table{table-layout:auto}
+ .tokens-table td:not(:first-child){white-space:nowrap;overflow-wrap:normal}
+ .tokens-table .tokens-partial{white-space:normal}
+}
 
 /* Referral reading guide is part of the same workspace, not a separate landing page. */
 .referral-hero{padding-top:28px}
