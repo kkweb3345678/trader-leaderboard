@@ -54,6 +54,7 @@ function enhance(html,page){
  html=html.replace('</head>',`  ${metadata(page)}\n</head>`);
  if(!html.includes('src="./analytics.js'))html=html.replace('<meta charset="UTF-8">','<meta charset="UTF-8">\n  <script src="./analytics.js?v=1" defer></script>');
  if(!html.includes('href="./site-info.css'))html=html.replace('</head>','  <link rel="stylesheet" href="./site-info.css?v=1">\n</head>');
+ if(!html.includes('href="./product-refinement.css'))html=html.replace('</head>','  <link rel="stylesheet" href="./product-refinement.css?v=taste-1">\n</head>');
  if(!html.includes('class="site-privacy-link"')) html=html.replace(/(<footer\b[\s\S]*?)(<\/footer>)/,(all,body,end)=>body+'<a class="site-privacy-link" href="./privacy.html">隱私說明</a>'+end);
  return html.replace(/[ \t]+$/gm,'');
 }

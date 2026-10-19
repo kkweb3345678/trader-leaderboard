@@ -1,0 +1,272 @@
+/* Research workspace: one frame, quiet controls, data before decoration.
+   Desktop frame: 1240 - 2 × 28 = 1184px; directory: 240 + 32 + 912 = 1184px.
+   Keep the established brand colours and fonts in both themes. */
+:root{--workspace-width:1240px;--control-radius:6px;--panel-radius:10px}
+.topbar-inner.shell,.product-main.shell,.product-layout>.footer.shell,.section-nav-inner{max-width:var(--workspace-width)}
+.topbar-inner.shell{min-height:64px;padding-block:8px}
+.brand small{font-size:10px;letter-spacing:.1em}
+.topbar{box-shadow:none;backdrop-filter:none}
+.header-navigation{gap:28px}
+.header-navigation>a,.nav-category>summary{font-size:14px}
+.nav-category.is-active>summary{color:var(--text)}
+.section-navigation{background:var(--bg)}
+.section-nav-inner{padding-block:0;gap:28px}
+.section-nav-inner a[aria-current=page]{color:var(--text)}
+.section-nav-inner a[aria-current=page]:after{height:2px}
+.section-nav-label{font-size:12px}
+.nav-category-menu{border-radius:var(--panel-radius)}
+.button,.home-cta .button,.home-follow{border-radius:var(--control-radius)}
+.button.primary{background:var(--ink-surface);border-color:var(--ink-surface);color:var(--ink-on)}
+.button.primary:hover:not(:disabled){background:var(--text);border-color:var(--text);color:var(--ink-on)}
+.button,.text-button,a,summary{touch-action:manipulation}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.button:active:not(:disabled){transform:translateY(1px)}
+.page-heading h1,.tokens-hero h1,.wallet-page .wallet-hero h1,.referral-page .referral-hero h1{font-size:30px;font-weight:750;line-height:1.35;letter-spacing:-.025em}
+.page-eyebrow,.eyebrow,.home-eyebrow,.learn-eyebrow{letter-spacing:0!important;font-size:12px!important;color:var(--muted)}
+.footer{border-top:1px solid var(--border);margin-top:32px}
+
+/* The home is a directory with one real snapshot, not a wall of equal cards. */
+.home-hero{grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:48px;padding:32px 0 28px;align-items:center}
+.home-hero .home-eyebrow{margin-bottom:12px;color:var(--secondary)}
+.home-hero h1{font-size:38px;font-weight:750;line-height:1.35;margin-bottom:16px;text-wrap:initial}
+.home-positioning{font-size:15px;line-height:1.8;margin-bottom:20px}
+.home-cta{gap:12px}.home-cta .button{min-height:44px;padding:10px 16px}
+.home-trust{margin-top:16px}
+.home-today{padding:22px 24px;border-radius:var(--panel-radius);background:var(--surface-subtle);border:0}
+.home-today .home-answer{font-size:13px;margin-bottom:12px}
+.home-answer>span{font-size:12px;border:0;padding:0}
+.home-today .home-number{font-size:36px;font-weight:650;line-height:1.25;letter-spacing:-.025em}
+.home-today-label{margin:8px 0 14px}
+.home-today .home-scope{font-size:12px;margin:8px 0}
+.home-today .home-hero-meta{font-size:12px}
+.home-today-link{min-height:36px;padding-top:8px;margin-top:8px;font-size:13px}
+.home-snapshot-strip{border:0;border-block:1px solid var(--border);border-radius:0;padding:10px 0;margin-bottom:28px;background:transparent}
+.home-directory{padding:0 0 24px}
+.directory-heading{margin-bottom:12px}
+.directory-heading h2{font-size:20px}
+.directory-grid{display:block;border-top:1px solid var(--border)}
+.directory-grid article{display:grid;grid-template-columns:240px minmax(0,1fr);gap:32px;align-items:center;border:0;border-bottom:1px solid var(--border);border-radius:0;padding:20px 0;background:transparent}
+.directory-grid article>div{display:block;margin:0;padding:0;border:0}
+.directory-grid h3{font-size:17px;font-weight:700;margin:0 0 5px}
+.directory-grid p{min-height:0;margin:0;font-size:13px;line-height:1.7}
+.directory-grid .directory-destinations{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.9fr);gap:24px;align-items:center}
+.directory-grid .directory-main{display:grid;grid-template-columns:minmax(0,1fr) 18px;gap:4px 20px;padding:8px 12px;margin:-8px -12px;border-radius:6px;min-height:60px;color:var(--text)}
+.directory-main strong{font-size:14px;font-weight:650}
+.directory-main>span{font-size:12px;line-height:1.7;color:var(--secondary)}
+.directory-main>.icon{grid-column:2;grid-row:1/3;width:18px;height:18px;align-self:center;color:var(--accent)}
+.directory-grid .directory-main:hover{background:var(--surface-subtle);text-decoration:none}
+.directory-related{display:flex;flex-wrap:wrap;column-gap:20px;justify-content:flex-end;align-items:center}
+.directory-grid .directory-related a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--secondary)}
+.home-help-row{border-top:0;padding:0 0 14px;gap:16px}
+.home-section h2{font-size:24px;font-weight:700}
+.home-section .home-eyebrow{margin-bottom:6px}
+.home-section .home-lede{margin:8px 0 20px}
+.home-card{border-radius:var(--panel-radius);padding:22px;box-shadow:none}
+.home-card-value{font-size:30px;font-weight:650}
+.home-tag{font-size:12px;letter-spacing:0;color:var(--secondary)}
+.home-card h3{font-size:17px}
+.home-disclosure{border-radius:var(--panel-radius)}
+.home-disclosure>summary{padding:18px 20px}
+
+/* Consistent page titles and table density. Selection is an edge, not a filled tile. */
+html[data-view=leaderboard] #board.page-heading{padding-block:24px 16px}
+html[data-view=leaderboard] #board h1{font-size:30px;font-weight:750}
+html[data-view=leaderboard] #board .heading-description{margin-top:6px}
+#leaderboard-view .board-heading{margin-top:0;margin-bottom:10px}
+#leaderboard-view .board-heading h2{font-size:18px}
+#leaderboard-view .board-control-row .segment{border:0;border-bottom:1px solid var(--border);border-radius:0;padding:0;background:transparent;gap:8px}
+#leaderboard-view .board-control-row .segment button{position:relative;border:0;border-radius:0;background:transparent;color:var(--secondary);box-shadow:none;font-size:13px;padding:8px 12px}
+#leaderboard-view .board-control-row .segment button[aria-pressed=true]{color:var(--text);background:transparent;font-weight:700}
+#leaderboard-view .board-control-row .segment button[aria-pressed=true]::after{display:block;content:'';position:absolute;bottom:-1px;left:12px;right:12px;height:2px;border-radius:0;background:var(--accent)}
+#leaderboard-view .board-options .board-explainer,#leaderboard-view .board-options details.lab{border-radius:var(--control-radius)}
+.board-control-row{margin-bottom:10px}
+.board-secondary-row{margin-bottom:6px}
+#leaderboard-view .board-context{padding-top:8px;margin-bottom:8px}
+#leaderboard-view .table-wrap{border-radius:var(--panel-radius)}
+#leaderboard-view th{background:var(--surface);font-size:12px;color:var(--secondary)}
+#leaderboard-view td{padding-block:14px}
+#leaderboard-view tbody tr:nth-child(even){background:transparent}
+#leaderboard-view tbody tr:hover{background:var(--surface-subtle)}
+#leaderboard-view .card{border-radius:var(--panel-radius)}
+
+/* Tools share the same top offset, restrained metadata and visible starting rows. */
+.wallet-page .wallet-hero{padding:28px 0 20px}
+.wallet-page .wallet-wrap{max-width:var(--workspace-width);padding-inline:28px}
+.wallet-hero-grid{gap:32px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.wallet-page .wallet-hero h1{margin-bottom:10px}
+.wallet-page .hero-lede{margin-bottom:16px}
+.wallet-hero-meta{padding:16px 20px;border:0;border-radius:var(--panel-radius)}
+.wallet-page .wallet-hero .check-freshness-block{font-size:12px;margin-bottom:8px}
+.wallet-page .wallet-stats{gap:16px}
+.wallet-page .wallet-stat,.wallet-page .wallet-stat+.wallet-stat{padding-top:10px}
+.wallet-page .wallet-stat>span,.wallet-page .wallet-stat p>span{font-size:12px}
+.wallet-page .comparison-section{padding-top:16px}
+.wallet-page .section-heading{margin-bottom:16px}
+.wallet-page .comparison-section .section-heading>.eyebrow{display:none}
+.wallet-page .section-heading h2{font-size:22px}
+.wallet-page .section-kicker{font-size:12px;letter-spacing:0}
+.wallet-page .wallet-table thead th{background:var(--surface);font-size:12px}
+.wallet-page .tier-toggle button{border-radius:var(--control-radius)}
+.wallet-page .tier-control button{border-radius:var(--control-radius)}
+.wallet-page .wallet-table,.wallet-page .wallet-table-wrap{border-radius:var(--panel-radius)}
+.tokens-page .product-main{padding-top:24px}
+.tokens-hero{margin-bottom:16px}
+.tokens-hero h1{margin-bottom:8px}
+.tokens-hero .eyebrow{margin-bottom:6px}
+.tokens-scope{background:var(--surface-subtle);border:0;border-radius:var(--control-radius);padding:10px 14px}
+.tokens-status{margin:4px 0 12px}
+.tokens-summary{gap:0;border-block:1px solid var(--border);margin-bottom:20px}
+.tokens-summary>div{padding:14px 20px;border:0;border-radius:0;background:transparent}
+.tokens-summary>div:first-child{padding-left:0}
+.tokens-summary>div+div{border-left:1px solid var(--border)}
+.tokens-summary dd{font-family:var(--sans);font-size:26px;font-weight:650;line-height:1.5}
+.tokens-section-heading{margin-bottom:12px}
+.tokens-section-heading h2{font-size:20px}
+.tokens-toolbar{padding:0;border:0;border-radius:0;gap:20px;background:transparent}
+.tokens-toolbar input[type=search],.tokens-toolbar select,.token-detail-order select{border-radius:var(--control-radius);border-color:var(--border-hover)}
+.tokens-table th{background:var(--surface);font-size:12px}
+.tokens-table td{padding-block:14px}
+.tokens-partial,.token-label small,.token-wallet-head small,.token-wallet-foot,.token-wallet-metrics dt{font-size:12px}
+.token-monogram{background:transparent;border:0;border-radius:0;font-size:12px}
+.tokens-table-wrap,.token-wallet{border-radius:var(--panel-radius)}
+
+/* Referral reading guide is part of the same workspace, not a separate landing page. */
+.referral-hero{padding-top:28px}
+.referral-page .referral-intro{padding:0 0 20px;gap:40px;background:transparent;color:var(--text);border:0;border-radius:0}
+.referral-intro::before,.referral-kicker-mark{display:none}
+.referral-hero-copy>.eyebrow{color:var(--muted);margin-bottom:8px}
+.referral-lede{color:var(--secondary);margin-bottom:16px;max-width:520px}
+.referral-hero-guide{color:var(--secondary);font-size:13px}
+.referral-hero-guide:hover{color:var(--accent)}
+.referral-page .referral-hero .primary{background:var(--ink-surface);color:var(--ink-on);border-color:var(--ink-surface);border-radius:var(--control-radius)}
+.referral-reading{padding:16px 20px;background:var(--surface-subtle);border:0;box-shadow:none;border-radius:var(--panel-radius)}
+.referral-reading>summary{cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 20px;gap:6px 12px;min-height:44px;list-style:none;color:var(--text)}
+.referral-reading>summary::-webkit-details-marker{display:none}
+.referral-reading>summary strong{font-size:15px;font-weight:650}
+.referral-reading>summary span{font-size:12px;color:var(--secondary);line-height:1.7}
+.referral-reading>summary::after{content:'＋';grid-column:2;grid-row:1/3;align-self:center;color:var(--accent)}
+.referral-reading[open]>summary::after{content:'−'}
+.referral-reading-body{padding-top:20px}
+.referral-reading-body .referral-reading-top{display:none}
+.referral-reading-top{margin-bottom:6px;color:var(--secondary);font-size:12px;letter-spacing:0}
+.referral-reading h2{font-size:17px;color:var(--text);margin-bottom:12px}
+.referral-reading p,.referral-flow-tag{color:var(--secondary);font-size:12px}
+.referral-flow-origin,.referral-flow-branches>div{background:var(--surface);border-color:var(--border);color:var(--text);padding:8px 10px}
+.referral-flow-branches{margin-top:14px;gap:12px}
+.referral-flow-branches strong{color:var(--text);font-size:13px}
+.referral-baseline{padding-block:12px;gap:16px;flex-wrap:wrap}
+.referral-page .data-baseline-badge{background:transparent;color:var(--secondary);border:0;padding:0;font-size:12px}
+.referral-comparison{padding-top:24px}
+.referral-section-heading{margin-bottom:16px}
+.referral-section-heading .eyebrow{display:none}
+.referral-section-heading h2{font-size:22px}
+.referral-workspace{padding:16px;border-radius:var(--panel-radius);background:var(--surface);box-shadow:none}
+.referral-table thead th{background:var(--surface);font-size:12px}
+
+/* The learning centre leads with routes and content. Existing article artwork stays intact. */
+.learn-hero{padding:28px 0 24px;grid-template-columns:minmax(0,1fr) 280px;gap:40px;background:none}
+.learn-hero h1{font-size:32px;font-weight:750;line-height:1.4;margin:8px 0 12px}
+.learn-hero .learn-lede{font-size:15px;margin-bottom:18px}
+.learn-hero-art{height:240px;min-height:0;transform:scale(.65);transform-origin:center;justify-self:center;width:360px;margin:-30px}
+.learn-hero-art .learn-floating,.learn-orbit{display:none}
+.learn-book{box-shadow:none}
+.learn-hero-note{font-size:12px;margin-top:14px}
+.learn-path-section{padding-top:24px}
+.learn-section-heading{margin-bottom:16px}
+.learn-section-heading h2{font-size:22px}
+.learn-path{background:var(--surface-subtle)!important;border:1px solid var(--border);border-radius:var(--panel-radius);padding:20px;min-height:0;color:var(--text)}
+.learn-path-icon{display:none}
+.learn-path h3{font-size:17px;margin-top:0}
+.learn-path p{color:var(--secondary);font-size:13px;margin:8px 0 16px}
+.learn-path-footer{color:var(--accent);font-size:12px}
+.learn-path:hover{transform:none;background:var(--surface-hover)!important}
+.learn-progress-strip{margin:20px 0 32px}
+.learn-card{border-radius:var(--panel-radius);box-shadow:none}
+.learn-reader-article{max-width:760px}
+.learn-reader-heading h1{font-weight:750}
+
+@media(max-width:1000px){
+ .directory-grid article{grid-template-columns:200px minmax(0,1fr);gap:24px}
+ .directory-grid .directory-destinations{grid-template-columns:1fr;gap:4px}
+ .directory-related{justify-content:flex-start}
+ .home-hero{gap:28px}.home-hero h1{font-size:32px}
+ .home-today .home-number{font-size:30px}
+ .learn-hero{grid-template-columns:minmax(0,1fr) 220px}
+ .learn-hero-art{width:300px;transform:scale(.6)}
+}
+@media(max-width:700px){
+ .topbar-inner.shell{min-height:60px;padding-block:6px}
+ .brand small{font-size:10px}.brand{font-size:15px}
+ .section-nav-inner{flex-wrap:nowrap;overflow-x:auto;gap:20px;scrollbar-width:none}
+ .section-nav-inner>a{flex:none;min-height:44px;font-size:12px}
+ .mobile-navigation{box-shadow:none;backdrop-filter:none}
+ .product-navigation.mobile-navigation a{font-size:12px;min-height:52px}
+ .home-hero{display:block;padding:26px 0 22px}
+ .home-hero h1{font-size:30px;line-height:1.35;margin-bottom:12px}
+ .home-hero .home-eyebrow{font-size:12px;margin-bottom:8px}
+ .home-positioning{font-size:14px;line-height:1.8;margin-bottom:16px}
+ .home-cta{gap:10px}.home-cta .button{font-size:13px;padding-inline:12px;min-height:44px}
+ .home-trust{margin-top:12px}.home-today{display:none}
+ .home-snapshot-strip{margin-bottom:24px;gap:4px;padding:10px 0}
+ .snapshot-source,.snapshot-wait{font-size:12px}
+ .directory-heading{align-items:flex-start;gap:8px}
+ .directory-heading h2{font-size:19px}.directory-heading>span{display:none}
+ .directory-grid article{grid-template-columns:1fr;gap:12px;padding:18px 0}
+ .directory-grid article>div,.directory-grid p{grid-column:auto}
+ .directory-grid h3{font-size:16px;margin-bottom:4px}
+ .directory-grid p{font-size:13px}
+ .directory-grid .directory-destinations{gap:4px}
+ .directory-grid .directory-main{margin:0;padding:10px 12px;background:var(--surface-subtle);min-height:64px}
+ .directory-related{gap:0 20px}.directory-grid .directory-related a{font-size:13px}
+ .home-help-row{gap:4px 14px;font-size:12px}.home-help-row>a{margin-left:0}
+ .home-section h2{font-size:22px}.home-card{min-width:280px;padding:20px}
+ .home-cards{gap:12px}.home-disclosure>summary{padding:16px}
+ html[data-view=leaderboard] #board.page-heading{padding-block:16px 10px;gap:0}
+ html[data-view=leaderboard] #board h1{font-size:24px}
+ html[data-view=leaderboard] #board .data-status{margin-top:6px}
+ html[data-view=leaderboard] #board .board-shortcuts{min-height:28px;gap:16px}
+ html[data-view=leaderboard] #board .board-shortcuts a{min-height:36px}
+ #leaderboard-view .board-heading{margin-top:0;margin-bottom:6px}
+ #leaderboard-view .board-control-row .segment{gap:0}
+ #leaderboard-view .board-control-row .segment button{font-size:12px;padding-inline:10px;min-height:44px}
+ .board-control-row{gap:4px 10px;margin-bottom:8px}
+ #leaderboard-view .board-options .board-explainer>summary,#leaderboard-view .board-options details.lab>summary{padding-inline:8px;font-size:12px}
+ #leaderboard-view .board-context{margin-bottom:6px;padding-top:6px}
+ .wallet-page .wallet-hero{padding-top:20px;padding-bottom:12px}
+ .wallet-page .wallet-wrap{padding-inline:20px}
+ .wallet-hero-grid{grid-template-columns:1fr;gap:16px}.wallet-page .wallet-hero h1{font-size:26px}
+ .wallet-hero-meta{padding:12px 16px}.wallet-page .wallet-stat strong{font-size:22px}
+ .wallet-page .wallet-stats{display:none}
+ .wallet-page .wallet-hero .wallet-baseline{flex-direction:row;align-items:center;gap:6px;line-height:1.7}
+ .wallet-page .wallet-hero .check-freshness-block{margin-bottom:0}
+ .wallet-page .wallet-stat>span,.wallet-page .wallet-stat p>span{font-size:12px}
+ .wallet-page .comparison-section{padding-top:16px}
+ .tokens-page .product-main{padding-top:20px}.tokens-hero{gap:8px}
+ .tokens-hero h1{font-size:26px}.tokens-hero>.button{min-height:44px}
+ .tokens-summary{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:18px}
+ .tokens-summary>div{padding:12px 8px}.tokens-summary dd{font-size:24px}
+ .tokens-summary small{font-size:12px}
+ .tokens-toolbar{gap:12px}.tokens-toolbar .tokens-check{font-size:12px}
+ #tokens-overview>.tokens-section-heading h2{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ #tokens-overview>.tokens-section-heading p{display:none}
+ #tokens-overview>.tokens-section-heading{align-items:flex-end;margin-bottom:8px}
+ #tokens-overview>.tokens-section-heading>a{min-height:36px;display:flex;align-items:center}
+ .tokens-toolbar .token-search{flex-basis:calc(100% - 160px)}
+ .tokens-toolbar select{min-width:140px;max-width:150px}
+ .tokens-toolbar .tokens-check{min-height:36px;flex-basis:100%}
+ .tokens-table td{padding-block:0}.tokens-table td[data-label]::before{font-size:12px}
+ .referral-hero{padding-top:20px}
+ .referral-page .referral-intro{grid-template-columns:1fr;gap:20px;padding:0 0 16px}
+ .referral-page .referral-hero h1{font-size:26px;margin-bottom:10px}
+ .referral-reading{padding:14px 16px}.referral-reading h2{font-size:16px}
+ .referral-baseline{align-items:flex-start;gap:8px;padding-block:12px}
+ .referral-comparison{padding-top:20px}.referral-section-heading h2{font-size:21px}
+ .referral-workspace{padding:12px}
+ .learn-hero{display:block;padding:24px 0;background:none}
+ .learn-hero h1{font-size:28px;margin:8px 0 10px}.learn-hero-art{display:none}
+ .learn-hero .learn-lede{font-size:14px;margin-bottom:16px}
+ .learn-path-section{padding-top:20px}.learn-path{padding:18px;min-height:0}
+ .learn-section-heading h2{font-size:21px}.learn-progress-strip{margin:20px 0 28px}
+}
+@media(max-width:360px){.wallet-page .wallet-wrap{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){.button:active:not(:disabled){transform:none}}

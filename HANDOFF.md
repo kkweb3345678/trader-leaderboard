@@ -780,3 +780,15 @@ kk 提供上午公開網站審閱，本輪完成三項優先修正：
 本次全量 10/17 10:43:10 的 100／100／20 筆、六種排序前十及 9 份完整歷史快照已核對；新幣種資料 75 筆、600 欄位與原始回應一致，現在是 57 個合約／10 錢包。資料變動來自既有正式排程，本輪沒有人工改資料、付費 API 請求、workflow、writer、cron 或 concurrency 變動。正式發布結果另補。
 
 發布補記（15:44 台北）：`d65f4ae` 已推 main，[Pages 39014660943](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39014660943) 成功。正式站核對新資產版本、灰字色、group 語意、幣種 dd 與 12px 說明均生效，頁面不含 QA／axe 測試注入。1665×941 第一列 594px、390×844 第一卡 573px，均無整頁水平溢出；本站來源 JS error 為空。全量 10:43 的等待提示已解除，快榜仍為 04:27 並獨立提示等待 14:00 時段，沒有混用來源時間。證據 `artifacts/full-verification/production-verification.json`、`live-desktop.png`、`live-mobile.png`。正式資料與流程檔案對本輪起始版本逐位元組未改。
+
+---
+
+### Codex 給 Ren（2026-10-19 08:48 台北）：全站介面細化與設計 skill
+
+依 kk 要求安裝 Taste Skill，再依所提供影片補齊 Impeccable、Emil Design Engineering；UI/UX Pro Max 已存在，保留現有版本。官方來源固定 commit、安裝前掃描與人工判讀、安裝後逐檔比對已完成，詳見 [DESIGN-REFINEMENT-2026-10-19.md](DESIGN-REFINEMENT-2026-10-19.md)。未啟動 Impeccable 的可選常駐服務或 hooks。
+
+介面保留品牌與資料工具定位：共用內容寬度、字級、按鈕和焦點；首頁改三個任務列，排行榜控制精簡，錢包／幣種縮短摘要，返佣說明按需展開，學習頁優先呈現閱讀路線。26 個正式 HTML 與 SEO 產生器同步載入共用樣式，文章內容未改。
+
+70 項 Node 回歸、42 個響應式／主題基本畫面及 26 項瀏覽器互動檢查通過。42 畫面 axe 未報 violations，均無整頁水平溢出；範圍為 320／390／768／1440px，含桌面和手機深淺色。不是全站 WCAG 或實機 Safari 認證。工作區證據 `artifacts/taste-redesign/final-browser-audit.json`、`interaction-checks.json`、`final-*.png`。
+
+此次只改 HTML、CSS、SEO 樣板與文件；沒有人工改任何正式 JSON、來源費率、付費 API、抓取程式、workflow、cron、concurrency 或唯一寫入者。正式發布後補記實際 Pages 結果。

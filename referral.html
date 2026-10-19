@@ -37,6 +37,7 @@
 
   <!-- site-metadata:end -->
   <link rel="stylesheet" href="./navigation.css?v=1">
+  <link rel="stylesheet" href="./product-refinement.css?v=taste-1">
 </head>
 <body class="referral-page">
   <a class="skip" href="#main-content">跳至主要內容</a>
@@ -46,12 +47,12 @@
       <section class="referral-hero" aria-labelledby="page-title">
         <div class="referral-intro">
           <div class="referral-hero-copy"><p class="eyebrow"><span class="referral-kicker-mark" aria-hidden="true"></span>落袋研究室 / 交易所返佣</p><h1 id="page-title" tabindex="-1">交易所返佣對照</h1><p class="referral-lede" id="referral-lede">把推薦返佣、適用門檻與官方文件放在一起，讓每一筆比較都有依據。</p><div class="referral-hero-actions"><a class="button primary" href="#referral-comparison">開始比較 <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a><a class="referral-hero-guide" href="#referral-method">先了解比較口徑 <span aria-hidden="true">↗</span></a></div></div>
-          <div role="group" class="referral-reading" aria-label="返佣閱讀指南"><div class="referral-reading-top"><span>READING GUIDE</span><svg class="icon" aria-hidden="true"><use href="#i-referral"/></svg></div><h2>先分清，誰拿到返佣。</h2><div class="referral-flow"><div class="referral-flow-origin"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg><span>符合條件的交易手續費</span></div><div class="referral-flow-branches"><div><span class="referral-flow-tag">推薦人</span><strong>佣金收入</strong></div><div><span class="referral-flow-tag">被推薦的好友</span><strong>手續費折扣</strong></div></div></div><p>一般推薦與 Affiliate 合作條件不同；表中比例請連同分配方式一起閱讀。</p></div>
+          <details class="referral-reading"><summary><strong>返佣怎麼分配？</strong><span>推薦人佣金與好友折扣的差別</span></summary><div class="referral-reading-body"><div class="referral-reading-top"><span>先了解分配方式</span><svg class="icon" aria-hidden="true"><use href="#i-referral"/></svg></div><h2>先分清，誰拿到返佣。</h2><div class="referral-flow"><div class="referral-flow-origin"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg><span>符合條件的交易手續費</span></div><div class="referral-flow-branches"><div><span class="referral-flow-tag">推薦人</span><strong>佣金收入</strong></div><div><span class="referral-flow-tag">被推薦的好友</span><strong>手續費折扣</strong></div></div></div><p>一般推薦與 Affiliate 合作條件不同；表中比例請連同分配方式一起閱讀。</p></div></details>
         </div>
         <div class="referral-baseline"><span class="referral-coverage"><span id="referral-total">—</span> 家交易所收錄</span><span class="data-baseline-badge"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>資料基準日 <span id="referral-baseline">讀取中…</span></span></span><span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>每日排程檢查來源 · 數值人工確認</span></div>
       </section>
       <section id="referral-comparison" class="referral-comparison" aria-labelledby="comparison-title">
-        <div class="referral-section-heading"><div><p class="eyebrow">EXCHANGE COMPARISON</p><h2 id="comparison-title">把條件攤開，一起比較。</h2><p>現貨、合約、等級門檻，一次看清楚。</p></div><a class="referral-download" href="./referral.json" download><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>下載資料</a></div>
+        <div class="referral-section-heading"><div><p class="eyebrow">交易所條件比較</p><h2 id="comparison-title">把條件攤開，一起比較。</h2><p>現貨、合約、等級門檻，一次看清楚。</p></div><a class="referral-download" href="./referral.json" download><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>下載資料</a></div>
         <div class="referral-workspace">
         <div class="referral-toolbar"><div class="referral-view-switch" role="group" aria-label="比較顯示方式"><button type="button" data-view="table" aria-pressed="true"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg>表格對照</button><button type="button" data-view="cards" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg>卡片閱讀</button></div><label class="referral-search" for="exchange-search"><span class="sr-only">快速找交易所</span><span class="referral-search-input"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input id="exchange-search" type="search" placeholder="搜尋交易所名稱" autocomplete="off" disabled></span></label></div>
         <div class="referral-table-meta"><p id="referral-count" role="status">正在讀取返佣資料…</p><p>依收錄順序 · 不作收益排名</p></div>
