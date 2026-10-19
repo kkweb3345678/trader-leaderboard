@@ -794,3 +794,17 @@ kk 提供上午公開網站審閱，本輪完成三項優先修正：
 此次只改 HTML、CSS、SEO 樣板與文件；沒有人工改任何正式 JSON、來源費率、付費 API、抓取程式、workflow、cron、concurrency 或唯一寫入者。正式發布後補記實際 Pages 結果。
 
 發布補記：介面 `f5e4380` 與平板長金額補正 `2db3c80` 已推 main，[Pages 39182407395](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39182407395) 成功。正式站八個頁面／尺寸狀態核對新 CSS `taste-2`、首頁三個任務入口、排行榜與手機版、錢包／返佣／學習頁及平板金額完整一行均通過，無整頁水平溢出；公開 CSS 與提交 blob 完全相同。正式站沒有 QA 注入，本站來源 JS error 為空。公開主榜來源仍為 10/18 10:44:52 並保留等待 10/19 08:00 更新的提示，未把介面部署時間冒充資料更新時間。證據 `artifacts/taste-redesign/production-verification.json`、`published-asset.json`、`live-home-desktop.png`、`live-board-mobile.png`。
+
+---
+
+### Codex 接續紀錄（2026-10-19）：操作細節優化與 Caveman 安裝完成
+
+接續對話 `01a1391d-057c-7970-af64-260da0f713a4` 中斷的修改，完成 Impeccable／Emil／Taste 的操作細化：手機欄位視窗固定關閉與套用區、來源視窗固定標題與背景捲動鎖、幣種清除條件保留排序及焦點、重讀 busy／錯誤恢復、高頻排序移除淡入，以及導覽鍵盤收合。詳見 [SKILL-POLISH-2026-10-19.md](SKILL-POLISH-2026-10-19.md)。
+
+70 項既有 Node 測試、18 項瀏覽器互動、21 組頁面／尺寸／主題檢查通過，後者無整頁水平溢出、axe 未報 violations。修正一項寫死舊快取版本的測試斷言；未降低版本更新檢查。獨立只讀審查無阻擋問題。Impeccable 兩項靜態提示的人工判讀與測試限制已記在驗收文件。
+
+UI `7853141` 已推 main，[Pages 39188812225](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39188812225) 成功。正式站四項檢查通過：390px 欄位視窗、幣種清除入口／焦點、桌面首頁；無 QA 注入及本站 JS error。四個公開資產 `product-refinement.css`、`shell.js`、`tokens.js`、`app.js` 與該提交逐位元組相同。證據在工作區 `artifacts/skill-polish/production-verification.json`、`published-assets.json`、`live-wallet-columns.png`、`live-tokens-filter.png`。
+
+影片 Reel `1249265464083377` 提到的 Caveman 與 Ultracave 已安裝至使用者 Codex skills；官方來源固定 `bad48a0e1df55e05e3f52249afa35ecc1909ee76`，四個 Markdown 檔案安裝前 Skillguard 掃描 0 active／0 suppressed，安裝後 hash 相符。只安裝回覆風格 skills，下回合可使用，未啟用 proxy、hooks 或修改帳號設定。證據在 `artifacts/caveman-install/`。
+
+發布前 fast-forward 整合遠端 `6cb6697` 自動來源紀錄；本輪沒有人工修改正式 JSON、來源數字、抓取程式、workflow、cron、concurrency、sync.sh 或唯一寫入者，沒有呼叫付費 API。
