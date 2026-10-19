@@ -792,3 +792,5 @@ kk 提供上午公開網站審閱，本輪完成三項優先修正：
 70 項 Node 回歸、42 個響應式／主題基本畫面及 26 項瀏覽器互動檢查通過。42 畫面 axe 未報 violations，均無整頁水平溢出；範圍為 320／390／768／1440px，含桌面和手機深淺色。不是全站 WCAG 或實機 Safari 認證。工作區證據 `artifacts/taste-redesign/final-browser-audit.json`、`interaction-checks.json`、`final-*.png`。
 
 此次只改 HTML、CSS、SEO 樣板與文件；沒有人工改任何正式 JSON、來源費率、付費 API、抓取程式、workflow、cron、concurrency 或唯一寫入者。正式發布後補記實際 Pages 結果。
+
+發布補記：介面 `f5e4380` 與平板長金額補正 `2db3c80` 已推 main，[Pages 39182407395](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39182407395) 成功。正式站八個頁面／尺寸狀態核對新 CSS `taste-2`、首頁三個任務入口、排行榜與手機版、錢包／返佣／學習頁及平板金額完整一行均通過，無整頁水平溢出；公開 CSS 與提交 blob 完全相同。正式站沒有 QA 注入，本站來源 JS error 為空。公開主榜來源仍為 10/18 10:44:52 並保留等待 10/19 08:00 更新的提示，未把介面部署時間冒充資料更新時間。證據 `artifacts/taste-redesign/production-verification.json`、`published-asset.json`、`live-home-desktop.png`、`live-board-mobile.png`。
