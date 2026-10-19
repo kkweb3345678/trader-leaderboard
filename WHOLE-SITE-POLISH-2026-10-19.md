@@ -20,7 +20,7 @@
 |---|---:|---:|---:|
 | 首頁任務列表 | 582.73 | 537.94 | 44.79 |
 | 幣種資料 | 792.31 | 669.92 | 122.39 |
-| 錢包比較表 | 894.42 | 708.25 | 186.17 |
+| 錢包比較表 | 894.42 | 709.84 | 184.58 |
 | 返佣資料 | 826.34 | 724.63 | 101.71 |
 | 學習路線 | 516.23 | 451.45 | 64.78 |
 
@@ -34,4 +34,8 @@
 
 證據保存在工作區 `artifacts/whole-site-round2/`：`preflight.txt`、`interaction-checks.json`、`viewport-audits.json`、`before-metrics.json`、`final-*.png`、`impeccable-detect.json`。錯誤情境只在本機測試伺服器注入；正式網站不包含 QA 程式。
 
-本輪沒有修改正式 JSON、費率、抓取程式、workflow、cron、concurrency、sync.sh 或唯一寫入者，也沒有呼叫付費資料 API。發布結果見 HANDOFF.md 後續補記。
+本輪沒有修改正式 JSON、費率、抓取程式、workflow、cron、concurrency、sync.sh 或唯一寫入者，也沒有呼叫付費資料 API。
+
+## 正式發布
+
+UI 提交 `c6f2b72` 已發布，[Pages 39192497233](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39192497233) 成功。六個 JS／CSS 與首頁、學習頁共八個公開檔案和提交 blob 完全相同，沒有 QA 注入。正式站手機換頁、文章返回搜尋與焦點、錢包說明展開、幣種資料位置與桌面首頁均核對成功，本站 JS error 為空。證據為 `published-assets.json`、`production-verification.json`、`live-home-desktop.png`、`live-tokens-mobile.png`、`live-learning-return.png`。

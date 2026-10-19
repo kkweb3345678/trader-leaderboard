@@ -813,8 +813,10 @@ UI `7853141` 已推 main，[Pages 39188812225](https://github.com/kkweb3345678/t
 
 ### Codex 接續紀錄（2026-10-19）：全站第二輪優化
 
-依 kk 再次指定的 Caveman、Ultracave、Taste、Impeccable、Emil skills 完成全站閱讀與操作優化。手機頁減少重複標籤與說明堆疊；幣種、錢包、返佣資料分別提前約 122、186、102 CSS px（390px 寬）。保留日期與資料範圍，操作說明可展開。
+依 kk 再次指定的 Caveman、Ultracave、Taste、Impeccable、Emil skills 完成全站閱讀與操作優化。手機頁減少重複標籤與說明堆疊；幣種、錢包、返佣資料分別提前約 122、185、102 CSS px（390px 寬）。保留日期與資料範圍，操作說明可展開。
 
 修正首頁逐個關注時清單收合、手機排行榜換頁停底部、文章返回遺失搜尋與路線；加入返佣／學習 12 秒逾時、重試鎖與手動複製連結 fallback。文章提示與試算標題語意一併修正，SEO 模板和 19 篇文章同步。完整 Before／After／Why 與限制見 [WHOLE-SITE-POLISH-2026-10-19.md](WHOLE-SITE-POLISH-2026-10-19.md)。
 
 71 項 Node 測試、12 項瀏覽器情境、32 個版面狀態通過；後者無整頁水平溢出且 axe 無 violations。獨立程式審查未發現阻擋問題。證據 `artifacts/whole-site-round2/`。此次未改任何正式 JSON、費率、抓取與寫入流程、排程或付費 API。發布前遠端 main 仍為 e16b6e9；發布後另補記 Pages 與正式站驗證結果。
+
+發布補記：`c6f2b72` 已推 main，[Pages 39192497233](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39192497233) 成功。8 個正式站檔案與提交完全相符，手機換頁與閱讀返回、錢包說明、幣種資料位置及桌面首頁通過線上核對，沒有 QA 注入或本站 JS error。最終錢包比較表位置為 709.84 CSS px，較原版提前約 185px。正式 JSON 與流程檔案對 e16b6e9 逐位元組未改。
