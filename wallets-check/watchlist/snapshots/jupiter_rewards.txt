@@ -1,15 +1,27 @@
 # Jupiter Rewards Hub Overview
-> The Jupiter Rewards Hub lists reward campaigns across Jupiter: Trading Card Game seasons, Active Staking Rewards, Gacha drops and Predict challenges.
-The Jupiter Rewards Hub lists the reward campaigns run across Jupiter: Trading Card Game seasons and other trading campaigns, Active Staking Rewards for JUP stakers, Gacha pack drops, and Predict challenges. Each campaign card shows its status (Live or Ended), its reward pool, and **View details**; the **All**, **Live** and **Ended** filters sort them, and the page shows the total disbursed and, with a wallet connected, what you can claim.
+> The Jupiter Rewards Hub lists Jupiter and partner reward campaigns: ASR, trading, Lend, Predict and Gacha, with campaign statuses and who can claim.
+The Jupiter Rewards Hub, opened from **Rewards** in the jup.ag top bar, lists the reward campaigns run on Jupiter, by Jupiter and by ecosystem projects: Active Staking Rewards for JUP stakers, trading campaigns such as the Trading Card Game, Jupiter Lend deposit campaigns, Predict challenges and Gacha pack drops. At the top, the page shows the total disbursed and, with a wallet connected, what you have earned and what you can claim. The **All**, **Live** and **Ended** filters sort the campaign cards; each card shows the campaign's status, its reward pool and **View details**, which opens the campaign page. A Gacha campaign card opens Jupiter Gacha instead (its packs or its leaderboard).
 Each campaign runs for a fixed period, with its own rules, eligible activity, reward currency, and distribution method. Campaigns are independent from one another: eligibility, points, and rewards do not carry over between campaigns.
 ## What is a campaign?
-A campaign is a time-limited program where users earn rewards by using a Jupiter product (trading, opening Gacha packs, predicting) or, for ASR, by staking JUP. Each campaign defines:
+A campaign is a time-limited program where users earn rewards by using a Jupiter product (trading, depositing on Jupiter Lend, opening Gacha packs, predicting) or, for ASR, by staking JUP. Each campaign defines:
 * Which platforms and products are eligible
-* Which activity earns rewards (token pairs, packs, markets), and at what rate
-* How rewards are earned (trading points, cards, lootboxes)
+* Which activity earns rewards (token pairs, deposits, packs, markets), and at what rate
+* How rewards are earned: trading points, mystery cards revealed for a random reward, a leaderboard rank, raffle entries, or a fixed allocation such as ASR
 * The reward currency and total pool
 * How rewards are delivered: a claim window after the campaign ends, or an automatic airdrop for some campaigns
+## Campaign statuses
+Each campaign card shows one of these statuses:
+| Status | Meaning |
+| - | - |
+| Upcoming | The campaign has not started yet. |
+| Live | The campaign is running. In its last 7 days, the badge counts down instead, for example "Ending in 3d". |
+| Pending Claim | The campaign has ended and its claim window has not opened yet. |
+| Claim Only | The campaign has ended and its rewards can still be claimed. The badge shows the time left, for example "2mo left to claim". |
+| Ended | The claim window is over, or the reward pool has run out (first come, first served campaigns). |
+## Which wallets can claim
+Many campaigns can be claimed only with Jupiter Wallet (the browser extension) or the Jupiter Mobile app. When you are connected with another wallet, the claim card of such a campaign reads **Claims only available via Jupiter Wallet** (on jup.ag in a phone browser, **Claims only available via Jupiter Mobile**), and **Claim** opens a **Claim with Jupiter Wallet** window with **Switch to Jupiter Wallet** or **Get Jupiter Wallet**. If you took part with another wallet, import it into Jupiter Wallet or Jupiter Mobile to claim.
+ASR is claimed with the wallet you staked with; a Squads vault claims through Squads.
 ## Trading Card Game
-The **Trading Card Game (TCG)** is a recurring trading campaign with multiple seasons.
+The Trading Card Game (TCG) is Jupiter's trading campaign format, run in seasons.
 Core mechanics: points, cards, referrals, eligibility, and season details.
 Common questions about the Rewards Hub, the TCG, and how rewards work.

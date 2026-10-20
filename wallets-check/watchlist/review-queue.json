@@ -38,5 +38,25 @@
     "old_hash": "208f5ab213a18f9b00614eb2c8ff41ad0acabf1c39c9a3111d0aa37ec940ff62",
     "new_hash": "7eda7a0006b2460bb7c42d114a268bab353b97c2343653f6510507df2253b9a4",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-20T16:55:50+00:00",
+    "wallet_id": "zerion",
+    "dimension": "swap_fee",
+    "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+    "summary": " What is Zerion Premium?\n+Zerion Premium: FAQs\n Bridge Crypto with Zerion\n Understanding Portfolio Tracking in Zerion\n-Unsupported Wallets in Zerion",
+    "old_hash": "d9e3d490834f63c66b5296e3a831dde4ab267645bf314594d6553fbfe16d35f2",
+    "new_hash": "bd31f7074c4b0353f27794c89193a3498c892718b7741fbd1142758240f9af3f",
+    "status": "pending"
+  },
+  {
+    "time": "2026-10-20T16:55:50+00:00",
+    "wallet_id": "jupiter",
+    "dimension": "rewards",
+    "url": "https://docs.jup.ag/user-docs/earn/rewards-hub/index.md",
+    "summary": " # Jupiter Rewards Hub Overview\n-> The Jupiter Rewards Hub lists reward campaigns across Jupiter: Trading Card Game seasons, Active Staking Rewards, Gacha drops and Predict challenges.\n-The Jupiter Rewards Hub lists the reward campaigns run across Jupiter: Trading Card Game seasons and other trading campaigns, Active Staking Rewards for JUP stakers, Gacha pack drops, and Predict challenges. Each campaign card shows its status (Live or Ended), its reward pool, and **View details**; the **All**, *",
+    "old_hash": "7eda7a0006b2460bb7c42d114a268bab353b97c2343653f6510507df2253b9a4",
+    "new_hash": "2dad84b910d28874a456498a501cd1a0c622e89c2119224f29c81bde87abd68e",
+    "status": "pending"
   }
 ]
