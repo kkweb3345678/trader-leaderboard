@@ -58,5 +58,25 @@
     "old_hash": "7eda7a0006b2460bb7c42d114a268bab353b97c2343653f6510507df2253b9a4",
     "new_hash": "2dad84b910d28874a456498a501cd1a0c622e89c2119224f29c81bde87abd68e",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-20T20:33:26+00:00",
+    "wallet_id": "jupiter",
+    "dimension": "rewards",
+    "url": "https://docs.jup.ag/user-docs/earn/rewards-hub/index.md",
+    "summary": " The Trading Card Game (TCG) is Jupiter's trading campaign format, run in seasons.\n-Core mechanics: points, cards, referrals, eligibility, and season details.\n-Common questions about the Rewards Hub, the TCG, and how rewards work.\n+> **How the TCG works**\n+>\n+> Core mechanics: points, cards, referrals, eligibility, and season details.\n+> **FAQ**\n+>\n+> Common questions about the Rewards Hub, the TCG, and how rewards work.",
+    "old_hash": "2dad84b910d28874a456498a501cd1a0c622e89c2119224f29c81bde87abd68e",
+    "new_hash": "3247190d7842d81cb26a750815a3d2c6954e29203dd35b7345c0034b477fabf9",
+    "status": "pending"
+  },
+  {
+    "time": "2026-10-20T20:33:26+00:00",
+    "wallet_id": "jupiter",
+    "dimension": "swap_fee",
+    "url": "https://docs.jup.ag/user-docs/global/mobile/fees.md",
+    "summary": " Categories follow Jupiter Ultra's classification: stablecoins (USDC, USDT, and similar), LSTs (jupSOL, jitoSOL, and similar), and bluechips (large-market-cap tokens). Jupiter maintains this classification and can change it.\n-This schedule applies only to swaps placed natively in Jupiter Mobile. Swaps made through the in-app dApp browser, or on jup.ag on the web, follow the standard fee schedules of those products. See Spot fees.\n+> [!NOTE]\n+>\n+> This schedule applies only to swaps placed native",
+    "old_hash": "19c82437a1142d6de4449837cce0db4af90b65e9407d850c6571162497aa17ad",
+    "new_hash": "b7358c82f36e00a092a0dd9549d6afb182528d1f33b27afab4d1ea3eeec8b525",
+    "status": "pending"
   }
 ]

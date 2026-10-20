@@ -18,4 +18,6 @@ Jupiter Mobile applies its own fee schedule to swaps placed natively in the app.
 | Newly launched tokens (within 24h of token age) | 0.5% (50 bps) |
 LST stands for Liquid Staking Token (e.g. JupSOL, jitoSOL): tokens that represent staked SOL while remaining tradable.
 Categories follow Jupiter Ultra's classification: stablecoins (USDC, USDT, and similar), LSTs (jupSOL, jitoSOL, and similar), and bluechips (large-market-cap tokens). Jupiter maintains this classification and can change it.
-This schedule applies only to swaps placed natively in Jupiter Mobile. Swaps made through the in-app dApp browser, or on jup.ag on the web, follow the standard fee schedules of those products. See Spot fees.
+> [!NOTE]
+>
+> This schedule applies only to swaps placed natively in Jupiter Mobile. Swaps made through the in-app dApp browser, or on jup.ag on the web, follow the standard fee schedules of those products. See Spot fees.
