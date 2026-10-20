@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "cohort": "comparison",
-  "started_at": "2026-10-20T20:32:10+00:00",
-  "last_check": "2026-10-20T20:33:26+00:00",
+  "started_at": "2026-10-20T23:49:21+00:00",
+  "last_check": "2026-10-20T23:50:33+00:00",
   "last_success": "2026-10-20T20:33:26+00:00",
   "expected": 18,
   "configured": 17,
-  "checked": 17,
-  "failed": 0,
+  "checked": 16,
+  "failed": 1,
   "skipped": 1,
   "changed": 0,
   "baselined": 0,
@@ -16,7 +16,7 @@
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39492776850"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39517455743"
   },
   "results": [
     {
@@ -51,8 +51,8 @@
       "wallet_id": "okx",
       "dimension": "rewards",
       "url": "https://web3.okx.com/help/what-is-okx-boost",
-      "status": "unchanged",
-      "final_url": "https://web3.okx.com/help/what-is-okx-boost"
+      "status": "failed",
+      "error": "missing_article_or_csr"
     },
     {
       "wallet_id": "okx",

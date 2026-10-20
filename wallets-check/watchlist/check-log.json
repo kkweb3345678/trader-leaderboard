@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "cohort": "watchlist",
-  "started_at": "2026-10-20T20:33:26+00:00",
-  "last_check": "2026-10-20T20:34:12+00:00",
-  "last_success": "2026-10-20T20:34:12+00:00",
+  "started_at": "2026-10-20T23:50:33+00:00",
+  "last_check": "2026-10-20T23:51:17+00:00",
+  "last_success": "2026-10-20T23:51:17+00:00",
   "expected": 14,
   "configured": 11,
   "checked": 11,
   "failed": 0,
   "skipped": 3,
-  "changed": 2,
+  "changed": 0,
   "baselined": 0,
   "schedule": {
     "enabled": true,
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39492776850"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39517455743"
   },
   "results": [
     {
@@ -89,14 +89,14 @@
       "wallet_id": "jupiter",
       "dimension": "rewards",
       "url": "https://docs.jup.ag/user-docs/earn/rewards-hub/index.md",
-      "status": "changed",
+      "status": "unchanged",
       "final_url": "https://docs.jup.ag/user-docs/earn/rewards-hub/index.md"
     },
     {
       "wallet_id": "jupiter",
       "dimension": "swap_fee",
       "url": "https://docs.jup.ag/user-docs/global/mobile/fees.md",
-      "status": "changed",
+      "status": "unchanged",
       "final_url": "https://docs.jup.ag/user-docs/global/mobile/fees.md"
     },
     {
