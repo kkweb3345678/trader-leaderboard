@@ -868,3 +868,23 @@ kk 再次詢問 `39536264719` 的含義並要求避免類似異常。查閱時�
 **完成補記（12:17 台北）**：防護 `3b53d1f`、日期斷言相容性修正 `809b44f` 均已推 main。首輪離線 CI 發現 Linux ICU 以窄空白分隔日期與時間，原測試硬比普通空白而誤報；僅修正兩個測試接受空白差異，日期、時間及狀態判斷未放寬。隨後 [39543071798 attempt 1](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39543071798/attempts/1) 的 42 項 Python、17 項 Node 及 artifact-transfer 全部成功；再僅重跑接收 job，[attempt 2](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39543071798/attempts/2) 成功，日誌確認 `CANDIDATE_NAME=leaderboard-candidates-39543071798-1`，保留原產出 attempt，未重建候選。
 
 12:15 公開檔核對仍是 11:51:48、Base16／Solana100／100，SHA-256 與前節一致。12:17 查閱最新 production 仍為原 run attempt 3 success，本輪沒有額外 Birdeye 請求。新 production artifact 命名留待既有下一輪排程採用，無另加正式試跑。工作區證據：`artifacts/actions-39536264719/prevention-ci.json`、`offline-check-success-attempt1/`、`offline-check-success/`、`PREVENTION.md`。
+
+---
+### Ren 給 Codex（2026-10-21 16:28 台北）：MaliLion 風格系統全站套用（kk 已批准，打樣為視覺目標）
+
+kk 對標 malilion.com（碼力獅）後批准：把打樣 `malilion-style-demo.html`（已隨本節 commit 進 repo 根目錄）的整套視覺系統套用到全站。**只動前端視覺層；不碰 data.json／today-flash.json 寫入、任何 workflow、排程、API 呼叫與數字。**
+
+設計 tokens（以打樣為準）：
+- 底色深藍黑 `#0B0E13`、surface `#131824`、線 `#232B3D`；強調色只准兩個：金 `#F0AD2F`＋薄荷綠 `#3EEED0`。
+- 字體分工：中文 Noto Sans TC 管標題與內文；**JetBrains Mono 管資訊**——金額、錢包地址、日期時間、標籤、章節編號一律 mono。
+
+要套用的 7 個元素：
+1. **Mono 系統化**：全站（index／learn／referral／wallets）數字與標籤換 mono，含表格、卡片、徽章。
+2. **編號章節系統**：每頁比照打樣——金色編號（00／01／02…）＋細線＋英文小字標籤（如 `01 ——— LEADERBOARD`）。index 現有 02／03／04 編號補齊統一，子頁比照辦理。
+3. **快照進度格**：index 的 7 日走勢區加 7 格進度圖，格子日期與有無快照**必須讀真實快照封存**（哪天有、哪天缺照實畫）；缺格用虛線空心＋標「缺」，旁邊白話說明原因（如來源回傳不完整未發布）。不准為了好看補滿。
+4. **Ghost 空心大數字**：各章節標題背景放描邊空心編號（CSS `-webkit-text-stroke`，低透明度），純裝飾、`pointer-events:none`。
+5. **切角按鈕**：主 CTA 全站改切角（clip-path，比照打樣 `--cut`），含 referral 頁「用我的連結註冊」；次按鈕同形狀描邊版。
+6. **頁首狀態列**：sticky 頂欄——左品牌、右 `● LIVE`＋台北即時時鐘（JS 每秒）＋最後更新時間（讀該頁資料的 updated_at／基準日換算台北時間顯示）。
+7. **情境游標**：`data-cursor` 模式（打樣內有完整範例 JS 約 40 行可直接參考）：金圈以 lerp 平滑追隨，hover 到帶屬性元素膨脹成文字徽章。狀態對應：榜單列＝「查看」、主 CTA＝「開啟」、學習中心／文章連結＝「閱讀」、快照格＝「快照」（缺格＝「缺失」）。**紅線：原生游標必須保留（不准 `cursor:none`）、觸控裝置與 `prefers-reduced-motion` 自動停用、不得影響點擊與效能。**
+
+驗收：375px 無橫向溢出、深淺色皆可讀（淺色版金色需加深保對比）、游標在手機完全不出現。做完回報線上 URL＋哪幾頁已套用。

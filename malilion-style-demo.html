@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>落袋研究室 — MaliLion 風格打樣</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E13; --bg2:#0E1219; --surface:#131824; --surface2:#171D2C;
+    --line:#232B3D; --line-soft:#1A2130;
+    --gold:#F0AD2F; --gold-dim:rgba(240,173,47,.14);
+    --mint:#3EEED0; --red:#E5402D;
+    --tx:#EDF0F5; --tx2:#9AA5B8; --tx3:#5D687C;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --sans:'Noto Sans TC',sans-serif;
+    --cut:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--tx);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;
+    background:
+      linear-gradient(rgba(120,140,180,.045) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(120,140,180,.045) 1px,transparent 1px);
+    background-size:56px 56px;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;position:relative}
+
+  /* ── 狀態列（借：HUD 狀態列）── */
+  .statusbar{border-bottom:1px solid var(--line);background:rgba(11,14,19,.85);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  .statusbar .wrap{display:flex;align-items:center;gap:22px;height:52px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;letter-spacing:.06em}
+  .brand .mark{width:26px;height:26px;background:var(--gold);color:#0B0E13;display:grid;place-items:center;font-family:var(--mono);font-weight:800;font-size:14px;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+  .brand small{font-family:var(--mono);font-weight:400;font-size:10px;color:var(--tx3);letter-spacing:.28em}
+  .status{margin-left:auto;display:flex;gap:22px;align-items:center;font-family:var(--mono);font-size:11px;color:var(--tx2);letter-spacing:.08em}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);display:inline-block;margin-right:7px;box-shadow:0 0 8px var(--mint);animation:pulse 2s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  .status b{color:var(--tx);font-weight:600}
+  @media(max-width:640px){.status .hideS{display:none}}
+
+  /* ── Hero ── */
+  .hero{padding:84px 0 64px;position:relative;overflow:hidden}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.34em;color:var(--mint);margin-bottom:22px}
+  .kicker .no{color:var(--gold)}
+  h1{font-size:clamp(40px,6.4vw,72px);font-weight:900;line-height:1.12;letter-spacing:.01em}
+  h1 .hl{color:var(--gold)}
+  .hero-sub{margin-top:18px;color:var(--tx2);font-size:16px;max-width:560px;line-height:1.7}
+  .bignum{margin-top:52px;display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap}
+  .bignum .amount{font-family:var(--mono);font-weight:800;font-size:clamp(52px,8.5vw,96px);color:var(--gold);line-height:.95;letter-spacing:-.01em}
+  .bignum .meta{font-family:var(--mono);font-size:12px;color:var(--tx2);line-height:2;letter-spacing:.06em}
+  .bignum .meta b{color:var(--tx);font-size:13px}
+  .chip{display:inline-block;border:1px solid var(--line);background:var(--surface);padding:3px 10px;font-family:var(--mono);font-size:12px;color:var(--mint)}
+  .cta-row{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
+  .btn-gold{background:var(--gold);color:#131313;font-weight:900;font-size:15px;padding:14px 30px;border:none;cursor:pointer;clip-path:var(--cut);letter-spacing:.05em}
+  .btn-ghost{background:transparent;color:var(--tx);font-weight:700;font-size:15px;padding:14px 26px;border:1px solid var(--line);cursor:pointer;clip-path:var(--cut)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+  /* ── 章節系統（借：編號章節）── */
+  section{padding:60px 0 8px;position:relative}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
+  .sec-no{font-family:var(--mono);font-weight:800;font-size:30px;color:var(--gold)}
+  .sec-line{flex:1;height:1px;background:var(--line);align-self:center}
+  .sec-en{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--tx3)}
+  .sec-title{font-size:30px;font-weight:900;margin:6px 0 4px}
+  .sec-desc{color:var(--tx2);font-size:14px;margin-bottom:26px}
+  .ghost{position:absolute;right:-10px;top:6px;font-family:var(--mono);font-weight:800;font-size:190px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(150,165,200,.09);pointer-events:none;user-select:none}
+
+  /* ── 表格（借：細分隔線＋整列 hover 高光；數字/地址全 mono）── */
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--tx3);text-align:right;padding:12px 14px;border-bottom:1px solid var(--line);font-weight:400}
+  th:first-child,th:nth-child(2){text-align:left}
+  td{padding:17px 14px;border-bottom:1px solid var(--line-soft);text-align:right;font-family:var(--mono);font-size:14px}
+  td:first-child{color:var(--tx3);font-size:12px}
+  td.addr{text-align:left;color:var(--tx)}
+  td.addr .tag{color:var(--mint);font-size:10px;border:1px solid rgba(62,238,208,.35);padding:1px 6px;margin-left:8px;letter-spacing:.1em}
+  td.real{color:var(--gold);font-weight:800;font-size:16px}
+  td.neg{color:var(--tx2)}
+  tbody tr{transition:background .15s}
+  tbody tr:hover{background:linear-gradient(90deg,var(--gold-dim),transparent 75%)}
+  .tbl-note{font-family:var(--mono);font-size:11px;color:var(--tx3);margin-top:14px;letter-spacing:.05em;line-height:1.9}
+
+  /* ── 快照進度格（借：鐵人賽 30 格進度圖）── */
+  .snap-panel{background:var(--surface);border:1px solid var(--line);clip-path:var(--cut);padding:28px 30px}
+  .snap-top{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
+  .snap-big{font-family:var(--mono);font-weight:800;font-size:56px;color:var(--gold);line-height:1}
+  .snap-big small{font-size:22px;color:var(--tx3)}
+  .snap-txt{color:var(--tx2);font-size:14px;line-height:1.8}
+  .grid7{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .cell{width:74px;text-align:center}
+  .cell .sq{height:52px;background:var(--gold);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:grid;place-items:center;font-family:var(--mono);font-weight:800;color:#131313;font-size:15px}
+  .cell.miss .sq{background:transparent;border:1px dashed var(--tx3);clip-path:none;color:var(--red)}
+  .cell .dt{font-family:var(--mono);font-size:11px;color:var(--tx2);margin-top:8px;letter-spacing:.05em}
+  .cell.miss .dt{color:var(--tx3)}
+
+  footer{margin-top:80px;border-top:1px solid var(--line);padding:26px 0 40px;font-family:var(--mono);font-size:11px;color:var(--tx3);letter-spacing:.08em;line-height:2}
+  footer b{color:var(--tx2)}
+
+  /* ── 情境游標（借：MaliLion data-cursor 系統）── */
+  #cursor{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;
+    width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;
+    border:1.5px solid var(--gold);display:grid;place-items:center;
+    transition:width .25s,height .25s,margin .25s,background .25s,border-radius .25s}
+  #cursor::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold)}
+  #cursor.is-active::after{display:none}
+  #cursor .cur-label{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.22em;color:#131313;opacity:0;transition:opacity .15s;white-space:nowrap}
+  #cursor.is-active{width:76px;height:76px;margin:-38px 0 0 -38px;background:var(--gold);border-color:var(--gold)}
+  #cursor.is-active .cur-label{opacity:1}
+  #cursor.is-press{transform-origin:center}
+  @media(hover:none){ #cursor{display:none} }
+</style>
+</head>
+<body>
+<div id="cursor"><span class="cur-label"></span></div>
+
+<!-- 狀態列 -->
+<div class="statusbar"><div class="wrap">
+  <div class="brand"><span class="mark">落</span>落袋研究室 <small>REALIZED LAB</small></div>
+  <div class="status">
+    <span><span class="dot"></span>SNAPSHOT <b>LIVE</b></span>
+    <span class="hideS">TAIPEI <b id="clock">--:--:--</b></span>
+    <span>UPDATED <b>2026/10/21 11:51</b></span>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="kicker"><span class="no">00</span> // TODAY'S HARVEST</div>
+    <h1>今天，誰真正<span class="hl">賺到錢</span>？</h1>
+    <p class="hero-sub">帳面賺的都不算，落袋的才算。這裡只排已實現收益——賣掉了、錢進口袋了，才上榜。</p>
+    <div class="bignum">
+      <div class="amount">+$74,761<span style="font-size:.45em">.05</span></div>
+      <div class="meta">
+        今日落袋冠軍 · 已實現收益<br>
+        <span class="chip">6Qq8RhAH…MxKxCk</span> <b>124</b> 筆交易 · 交易量 <b>$263,012</b>
+      </div>
+    </div>
+    <div class="cta-row">
+      <button class="btn-gold" data-cursor="開啟">看完整榜單 →</button>
+      <button class="btn-ghost" data-cursor="閱讀">這數字怎麼算的？</button>
+    </div>
+  </div>
+
+  <!-- 01 排行榜 -->
+  <section>
+    <div class="ghost">01</div>
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-line"></span><span class="sec-en">LEADERBOARD</span></div>
+    <div class="sec-title">今日已實現收益榜</div>
+    <p class="sec-desc">點任一錢包可看它交易了什麼幣、現在持有什麼。</p>
+    <table>
+      <thead><tr><th>#</th><th>WALLET</th><th>已實現收益</th><th>總損益</th><th>交易量</th><th>筆數</th></tr></thead>
+      <tbody>
+        <tr data-cursor="查看"><td>01</td><td class="addr">6Qq8RhAH…MxKxCk<span class="tag">冠軍</span></td><td class="real">+74,761.05</td><td>+74,200.83</td><td>263,011.69</td><td>124</td></tr>
+        <tr data-cursor="查看"><td>02</td><td class="addr">6NQuLk7u…irB7TJ</td><td class="real">+68,544.11</td><td>+79,418.85</td><td>158,751.86</td><td>186</td></tr>
+        <tr data-cursor="查看"><td>03</td><td class="addr">6L3fPsEZ…yG4TfS</td><td class="real">+65,434.65</td><td>+47,417.95</td><td>339,139.76</td><td>15</td></tr>
+        <tr data-cursor="查看"><td>04</td><td class="addr">GxhREMk4…r6B7iy</td><td class="real">+63,064.52</td><td>+143,479.05</td><td>152,268.25</td><td>6</td></tr>
+        <tr data-cursor="查看"><td>05</td><td class="addr">J9VdnUUy…pNM6Zh</td><td class="real">+46,844.59</td><td>+46,805.93</td><td>195,642.27</td><td>294</td></tr>
+      </tbody>
+    </table>
+    <p class="tbl-note">金額單位 USD · 本表為 Birdeye 本批 Solana 樣本排序，非全鏈排名 · 快照時間 2026/10/21 11:51（台北）</p>
+  </section>
+
+  <!-- 02 快照累積 -->
+  <section>
+    <div class="ghost">02</div>
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-line"></span><span class="sec-en">SNAPSHOT ARCHIVE</span></div>
+    <div class="sec-title">7 日走勢，快照累積中</div>
+    <p class="sec-desc">每天 08:00 存一份榜單快照，累積滿 7 天才能畫出走勢。缺的那天不補假數據——缺就是缺。</p>
+    <div class="snap-panel">
+      <div class="snap-top">
+        <div class="snap-big">6<small> / 7 天</small></div>
+        <div class="snap-txt">最近 7 天已累積 6 份完整快照。<br>10/19 當日來源回傳不完整，依本站規矩未發布，該格留空。</div>
+      </div>
+      <div class="grid7">
+        <div class="cell" data-cursor="快照"><div class="sq">✓</div><div class="dt">10/15</div></div>
+        <div class="cell" data-cursor="快照"><div class="sq">✓</div><div class="dt">10/16</div></div>
+        <div class="cell" data-cursor="快照"><div class="sq">✓</div><div class="dt">10/17</div></div>
+        <div class="cell" data-cursor="快照"><div class="sq">✓</div><div class="dt">10/18</div></div>
+        <div class="cell miss" data-cursor="缺失"><div class="sq">✕</div><div class="dt">10/19 缺</div></div>
+        <div class="cell" data-cursor="快照"><div class="sq">✓</div><div class="dt">10/20</div></div>
+        <div class="cell" data-cursor="快照"><div class="sq">✓</div><div class="dt">10/21</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <b>落袋研究室 REALIZED LAB</b> · 資料來源 BIRDEYE API<br>
+    本站僅呈現鏈上公開數據，不構成投資或跟單建議 · © 2026
+  </footer>
+
+</div>
+<script>
+  function tick(){
+    const t = new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Taipei',hour12:false});
+    document.getElementById('clock').textContent = t;
+  }
+  tick(); setInterval(tick,1000);
+
+  // 情境游標：pointermove 記錄目標，rAF 以 lerp 平滑追隨；讀 data-cursor 變形
+  const cur = document.getElementById('cursor');
+  const label = cur.querySelector('.cur-label');
+  let mx = innerWidth/2, my = innerHeight/2, cx = mx, cy = my;
+  addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; });
+  (function loop(){
+    cx += (mx - cx) * 0.32; cy += (my - cy) * 0.32;
+    cur.style.transform = `translate(${cx}px,${cy}px)`;
+    requestAnimationFrame(loop);
+  })();
+  document.addEventListener('mouseover', e => {
+    const t = e.target.closest('[data-cursor]');
+    if (t) { label.textContent = t.dataset.cursor; cur.classList.add('is-active'); }
+    else cur.classList.remove('is-active');
+  });
+</script>
+</body>
+</html>
