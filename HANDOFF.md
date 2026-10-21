@@ -900,3 +900,9 @@ kk 對標 malilion.com（碼力獅）後批准：把打樣 `malilion-style-demo.
 77 項離線測試、42 組頁面／尺寸／深淺色檢查、22 項互動情境通過。375px 無整頁橫向溢出；受測畫面 axe 無 violations，但不宣稱完整 WCAG 認證。Taste 發現的 skip-link 金底白字已修正，資訊小字提高；核准的 mono／編號／英文小標與收合區掃描提示已人工判讀。完整 Before／After／Why、工具限制與證據位置見 [MALILION-SYSTEM-2026-10-21.md](MALILION-SYSTEM-2026-10-21.md)。
 
 發布前遠端仍為 `03e0c0d`。此次正式 JSON、workflow、sync.sh、fetch.py、排程與唯一寫入者逐項確認未改，也未觸發付費 API。發布與公開頁面驗證稍後在本節補記。
+
+**發布驗收補記**：前端 `4a6f60d` 已推 main，[Pages 39572810741](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39572810741) 成功，既有 [離線 CI 39572810563](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39572810563) 成功。17 個公開 HTML／JS／CSS／字體／JSON 與提交逐位元組相同；正式主榜來源仍為 `2026-10-21T11:51:48+08:00`，快榜為 `2026-10-21T05:11:38+08:00`，沒有改成部署時間。
+
+正式站七個代表畫面 × 375／1440px × 深淺色共 28 組檢查通過，無整頁溢出、本站 JS error 或 axe violations；另 19 項線上互動情境通過，包括輔助頁、手機欄位視窗、原生游標及減少動態效果。快照實際呈現六天已存、10/19 缺。完整證據 `artifacts/malilion-system/published-assets.json`、`live-audit.json`、`live-interactions.json` 與 `live-*.png`。正式站沒有測試資料或 QA 程式注入。
+
+線上入口：[首頁](https://kkweb3345678.github.io/trader-leaderboard/)、[排行榜](https://kkweb3345678.github.io/trader-leaderboard/index.html?view=leaderboard)、[錢包](https://kkweb3345678.github.io/trader-leaderboard/wallets.html)、[返佣](https://kkweb3345678.github.io/trader-leaderboard/referral.html)、[學習](https://kkweb3345678.github.io/trader-leaderboard/learn.html)、[幣種](https://kkweb3345678.github.io/trader-leaderboard/tokens.html)。

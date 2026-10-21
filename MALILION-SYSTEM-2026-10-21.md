@@ -38,4 +38,6 @@
 
 ## 發布
 
-發布後在 HANDOFF.md 補記提交、Pages 結果、公開資產核對與抽查。此次未修改任何正式 JSON、workflow、排程、付費 API 抓取或唯一寫入者。
+`4a6f60d` 已推 main，[Pages 39572810741](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39572810741) 成功。17 個公開檔案與提交完全相符；公開主榜／快榜時間仍分別為 10/21 11:51:48／05:11:38 台北。正式站另通過 28 組深淺色與尺寸檢查、19 項互動檢查。證據在同目錄的 `published-assets.json`、`live-audit.json`、`live-interactions.json` 與 `live-*.png`。
+
+此次未修改任何正式 JSON、workflow、排程、付費 API 抓取或唯一寫入者。完整線上入口與交接已回寫 HANDOFF.md。
