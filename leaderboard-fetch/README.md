@@ -35,7 +35,17 @@ full 保留原 source/chain/updated_at/insight/today/week 結構並新增 `base_
 
 full 發布後明確 dispatch `leaderboard-snapshots.yml`；兩種發布皆要求 Pages rebuild。這是因 [GITHUB_TOKEN 推送不會觸發另一個 push workflow](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)。發布證據另存 `leaderboard-publication-<run_id>`。快照 archive 目前只封存 data.json；today-flash.json 的版本保留在 Git 歷史，不宣稱已進 snapshots/。
 
-## 本地測試
+## 筆數不足的處理（2026-10-21）
+
+`39536264719` 與 `39192383496` 均因 `Incomplete leaderboard response` 停在候選驗證；原有報告未保存鏈／期間／筆數，無法事後確定哪個榜單不足，亦無證據可斷言 Birdeye 內部原因。Secret 可用，正式資料 hash 未改；不能把這類失敗說成已更新。
+
+- 每次請求保存鏈、期間、預期／收到筆數、開始／完成時間和固定狀態至 `validation.json`；失敗也保留，Actions summary 同時列出。只存診斷，不記 key、headers 或上游錯誤內容。
+- 只有「每筆資料有效，但總筆數不足」可等待 30 秒後重抓同一榜單一次。每個 batch 共用一次額度；成功榜單不重抓，重抓結果整份取代短回應，不拼接不同時間資料。
+- 重試前再查 CU，須留足既有 3,000 CU 與重試及尚未抓取榜單的預估費用（依已實測每次 30 CU）。本修正最多新增一次榜單請求及一次額度查詢；不額外增加排程。HTTP 層原有有限次重試規則未改，估算不是帳單保證。
+- 仍不足、資料格式不合法、重複地址、數值缺失或額度不夠，皆繼續判定失敗，停止發布並保留正式舊檔。完整門檻仍為全量 20／100／100、快榜 20，不混入舊榜湊數。
+- 人工恢復用同一 workflow 的失敗工作重跑，不另開寫入者。checkout 與 fetch 均同步最新 main；排程事件上下文保留，成功後原本的封存及每日幣種摘要流程照常判斷是否跟隨。
+
+## 本地回歸
 
 `python -m unittest discover -s leaderboard-fetch -p 'test_*.py'`
 

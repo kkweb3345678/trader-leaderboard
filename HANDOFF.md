@@ -820,3 +820,13 @@ UI `7853141` 已推 main，[Pages 39188812225](https://github.com/kkweb3345678/t
 71 項 Node 測試、12 項瀏覽器情境、32 個版面狀態通過；後者無整頁水平溢出且 axe 無 violations。獨立程式審查未發現阻擋問題。證據 `artifacts/whole-site-round2/`。此次未改任何正式 JSON、費率、抓取與寫入流程、排程或付費 API。發布前遠端 main 仍為 e16b6e9；發布後另補記 Pages 與正式站驗證結果。
 
 發布補記：`c6f2b72` 已推 main，[Pages 39192497233](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39192497233) 成功。8 個正式站檔案與提交完全相符，手機換頁與閱讀返回、錢包說明、幣種資料位置及桌面首頁通過線上核對，沒有 QA 注入或本站 JS error。最終錢包比較表位置為 709.84 CSS px，較原版提前約 185px。正式 JSON 與流程檔案對 e16b6e9 逐位元組未改。
+
+---
+
+### Codex 給 Ren（2026-10-21 11:22 台北）：修復榜單短回應中斷
+
+kk 直接提供 [失敗工作 39536264719](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39536264719)，要求診斷與解決，本節記錄本次已授權的抓取修復。該次 Secret 可用，候選因 `Incomplete leaderboard response` 失敗，publish 未執行，兩份正式檔 hash 檢查通過。10/19 的 `39192383496` 同樣原因；兩次舊報告皆未留鏈／期間／筆數，不能倒推是哪一榜，也不能斷言 Birdeye 內部原因。10/20 全量與最近快榜均成功，因此並非整個 writer 停擺。
+
+修正 `leaderboard-fetch/validate.py`：每次請求記錄安全診斷；格式正常但短頁時等待 30 秒，只重抓該榜一次，整批共用一次重試預算；重試前檢查 3,000 CU 保留額度與剩餘請求預估費用。仍不足／無效／額度不夠即停止，保持原 20／100／100 完整門檻及舊資料，絕不拼接或補造。正常批次無額外 API；短頁最多多一次榜單請求及一次餘額查詢。
+
+7 項新增回歸先在舊碼重現失敗，修正後合計 34 項榜單測試通過，含暫存 Git 真實發布與競爭測試。沒有修改 workflow YAML、cron、concurrency、sync.sh、fetch.py 或任何正式 JSON；唯一寫入者仍為原 Actions。推送後重跑原失敗工作，正式來源時間、筆數、hash 及 Pages 驗收另補實測結果。證據存工作區 `artifacts/actions-39536264719/`。

@@ -17,6 +17,10 @@ ADDRESS = re.compile(r"[1-9A-HJ-NP-Za-km-z]{32,44}\Z")
 EVM_ADDRESS = re.compile(r"0x[0-9a-fA-F]{40}\Z")
 TAIPEI = timezone(timedelta(hours=8))
 TARGETS = {"full": "data.json", "flash": "today-flash.json"}
+# One extra leaderboard request per batch, only for otherwise valid short pages.
+# 30 CU per request was measured in run 38986579644; this is a budget estimate.
+SHORT_RESPONSE_WAIT_SECONDS = 30
+LEADERBOARD_REQUEST_CU = 30
 BATCHES = {
     # Check the newly requested chain first, so unsupported Base does not spend 200 Solana rows.
     "full": (("today", "base_today", "base", 20), ("today", "today", "solana", 100),
@@ -74,23 +78,58 @@ def validate_raw(rows, expected, chain="solana"):
             raise ValidationError("Trade count exceeds frontend precision")
 
 
-def collect(collector, key, baseline_time, now=lambda: datetime.now(timezone.utc), batch="full"):
+def collect(collector, key, baseline_time, now=lambda: datetime.now(timezone.utc), batch="full", evidence=None):
+    facts = evidence if evidence is not None else {}
+    facts["attempts"] = []
     if not key or not key.strip():
         raise ValidationError("BIRDEYE_API_KEY Secret is not available")
     started = now()
+    facts.update(secret_available=True, fetch_started_at=started.isoformat())
     left = collector.credits_left(key)
+    facts["credits_before"] = left if numeric(left) else None
     if not numeric(left) or left < collector.MIN_CREDITS:
         raise ValidationError("Insufficient or invalid Birdeye credits; no candidate generated")
     periods = {}
-    for api_period, output_period, chain, count in BATCHES[batch]:
-        try:
-            rows = collector.fetch_top(api_period, key, chain, count)
-        except Exception as error:
-            # Fixed chain/period diagnostics, never request headers or response bodies.
-            status = getattr(getattr(error, "response", None), "status_code", None)
-            suffix = f" (HTTP {status})" if isinstance(status, int) else ""
-            raise ValidationError(f"{chain} {api_period} fetch failed: {type(error).__name__}{suffix}") from None
-        validate_raw(rows, count, chain)
+    retry_available = True
+    for board_index, (api_period, output_period, chain, count) in enumerate(BATCHES[batch]):
+        for attempt in (1, 2):
+            observation = {"chain": chain, "period": api_period, "output": output_period,
+                           "attempt": attempt, "expected_rows": count, "received_rows": None,
+                           "started_at": now().isoformat(), "status": "fetch_failed"}
+            facts["attempts"].append(observation)
+            try:
+                rows = collector.fetch_top(api_period, key, chain, count)
+            except Exception as error:
+                # Fixed context only; never exception messages, headers or response bodies.
+                status = getattr(getattr(error, "response", None), "status_code", None)
+                if isinstance(status, int):
+                    observation["http_status"] = status
+                suffix = f" (HTTP {status})" if isinstance(status, int) else ""
+                raise ValidationError(f"{chain} {api_period} fetch failed: {type(error).__name__}{suffix}") from None
+            finally:
+                observation["completed_at"] = now().isoformat()
+            received = len(rows) if isinstance(rows, list) else None
+            observation.update(received_rows=received, status="invalid_response")
+            try:
+                # A short page is retryable only if every returned row is valid.
+                validate_raw(rows, received if received is not None and received < count else count, chain)
+            except ValidationError as error:
+                raise ValidationError(f"{chain} {api_period}: {error}") from None
+            if received == count:
+                observation["status"] = "passed"
+                break
+            observation["status"] = "short_response"
+            diagnostic = f"{chain} {api_period}: expected {count} rows, received {received}"
+            if not retry_available:
+                raise ValidationError(diagnostic + "; short-response retry budget exhausted")
+            retry_available = False
+            collector.time.sleep(SHORT_RESPONSE_WAIT_SECONDS)
+            remaining = collector.credits_left(key)
+            observation["credits_before_retry"] = remaining if numeric(remaining) else None
+            # Include the retry and any uncollected boards when checking the reserve.
+            required = collector.MIN_CREDITS + LEADERBOARD_REQUEST_CU * (len(BATCHES[batch]) - board_index)
+            if not numeric(remaining) or remaining < required:
+                raise ValidationError(diagnostic + "; insufficient or invalid retry credit reserve")
         periods[output_period] = [collector.norm(row) for row in rows]
         collector.time.sleep(2)
     completed = now()
@@ -108,8 +147,8 @@ def collect(collector, key, baseline_time, now=lambda: datetime.now(timezone.utc
                                 "week": collector.insight(periods["week"], "近7日")}
     # Reject overflow after normalization too; JSON must be valid in the existing frontend.
     json.dumps(candidate, allow_nan=False)
-    return candidate, {"secret_available": True, "credits_before": left,
-                       "fetch_started_at": started.isoformat(), "fetch_completed_at": completed.isoformat()}
+    facts["fetch_completed_at"] = completed.isoformat()
+    return candidate, facts
 
 
 def safe_destination(repo, destination):
@@ -148,8 +187,8 @@ def run(repo, destination, collector, key, now=lambda: datetime.now(timezone.utc
         "secret_available": bool(key and key.strip()),
     }
     try:
-        candidate, facts = collect(collector, key, baseline_time, now, batch)
-        report.update(facts)
+        # Pass the report as evidence so failed attempts survive an exception too.
+        candidate, _ = collect(collector, key, baseline_time, now, batch, evidence=report)
         candidate_raw = (json.dumps(candidate, ensure_ascii=False, indent=1, allow_nan=False) + "\n").encode("utf-8")
         if any((repo / name).read_bytes() != raw for name, raw in protected.items()):
             raise ValidationError("Repository data changed during validation")
@@ -183,6 +222,14 @@ def run(repo, destination, collector, key, now=lambda: datetime.now(timezone.utc
              "updated_at 延續原 fetch.py 定義，是完成本批抓取的時間，不宣稱是鏈上事件時間。", "",
              "validate 模式永遠不發布；publish 模式另須明確開啟 production 開關。",
              "請 Ren 驗收 artifact 的時間與內容，再依 HANDOFF.md 協調唯一寫入者交接。", ""]
+    if report.get("attempts"):
+        lines += ["## 各榜單抓取紀錄", "", "| 鏈／期間 | 嘗試 | 應有／收到筆數 | 結果 |",
+                  "|---|---:|---:|---|"]
+        for item in report["attempts"]:
+            received = item["received_rows"] if item["received_rows"] is not None else "無有效清單"
+            lines.append(f"| {item['chain']} / {item['period']} | {item['attempt']} | "
+                         f"{item['expected_rows']} / {received} | {item['status']} |")
+        lines.append("")
     (destination / "README.md").write_text("\n".join(lines), encoding="utf-8")
     return report
 

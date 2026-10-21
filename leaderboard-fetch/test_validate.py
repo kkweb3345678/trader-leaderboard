@@ -73,6 +73,87 @@ class ValidationTests(unittest.TestCase):
         source.fetch_top.assert_not_called()
         self.assertFalse((self.output / "data.json").exists())
 
+    def test_short_valid_response_retries_only_that_board_and_uses_complete_replacement(self):
+        source = collector()
+        short = api_rows(9, "base")
+        short[0]["pnl"] = 999999
+        source.fetch_top.side_effect = [short, api_rows(20, "base"), api_rows(100), api_rows(100)]
+        report = self.run_validation(source)
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual([call.args[2:] for call in source.fetch_top.call_args_list],
+                         [("base", 20), ("base", 20), ("solana", 100), ("solana", 100)])
+        self.assertEqual([a["received_rows"] for a in report["attempts"]], [9, 20, 100, 100])
+        self.assertEqual(report["attempts"][0]["status"], "short_response")
+        candidate = json.loads((self.output / "data.json").read_text(encoding="utf-8"))
+        self.assertEqual(candidate["base_today"][0]["pnl"], 100.12)
+        self.assertEqual(source.credits_left.call_count, 2)
+        source.time.sleep.assert_any_call(30)
+        self.assertEqual(self.source.read_bytes(), self.original)
+
+    def test_persistent_short_response_keeps_diagnostics_and_does_not_publish(self):
+        source = collector()
+        source.fetch_top.side_effect = [api_rows(9, "base"), api_rows(11, "base")]
+        report = self.run_validation(source)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(source.fetch_top.call_count, 2)
+        self.assertIn("base today: expected 20 rows, received 11", report["failure"])
+        self.assertEqual(report["credits_before"], 10000)
+        self.assertEqual([a["received_rows"] for a in report["attempts"]], [9, 11])
+        self.assertTrue(all(a["completed_at"] for a in report["attempts"]))
+        self.assertFalse((self.output / "data.json").exists())
+        self.assertEqual(self.source.read_bytes(), self.original)
+
+    def test_short_response_retry_budget_is_shared_by_the_whole_batch(self):
+        source = collector()
+        source.fetch_top.side_effect = [api_rows(9, "base"), api_rows(20, "base"), api_rows(34)]
+        report = self.run_validation(source)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(source.fetch_top.call_count, 3)
+        self.assertIn("solana today: expected 100 rows, received 34", report["failure"])
+        self.assertFalse((self.output / "data.json").exists())
+
+    def test_short_response_retry_preserves_credit_reserve(self):
+        for left in (3029, None, float("nan")):
+            with self.subTest(left=left):
+                source = collector()
+                source.credits_left.side_effect = [10000, left]
+                source.fetch_top.return_value = api_rows(9, "base")
+                source.fetch_top.side_effect = None
+                with self.assertRaisesRegex(validate.ValidationError, "retry credit reserve"):
+                    validate.collect(source, FAKE_KEY, BASELINE, lambda: NOW)
+                self.assertEqual(source.fetch_top.call_count, 1)
+
+    def test_malformed_short_response_is_not_retried(self):
+        source = collector()
+        rows = api_rows(9, "base")
+        rows[0]["pnl"] = None
+        source.fetch_top.side_effect = [rows]
+        report = self.run_validation(source)
+        self.assertEqual(report["status"], "failed")
+        self.assertIn("base today", report["failure"])
+        self.assertIn("Missing or non-finite", report["failure"])
+        self.assertEqual(source.fetch_top.call_count, 1)
+        self.assertFalse((self.output / "data.json").exists())
+
+    def test_flash_short_response_recovers_without_fetching_full_boards(self):
+        source = collector()
+        source.fetch_top.side_effect = [[], api_rows(20)]
+        report = self.run_validation(source, batch="flash")
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual([call.args[2:] for call in source.fetch_top.call_args_list],
+                         [("solana", 20), ("solana", 20)])
+        self.assertEqual(self.source.read_bytes(), self.original)
+
+    def test_fetch_failure_preserves_context_without_exposing_secret(self):
+        source = collector()
+        source.fetch_top.side_effect = RuntimeError(FAKE_KEY)
+        report = self.run_validation(source)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["attempts"][0]["status"], "fetch_failed")
+        self.assertEqual(report["attempts"][0]["chain"], "base")
+        self.assertNotIn(FAKE_KEY, json.dumps(report))
+        self.assertEqual(source.fetch_top.call_count, 1)
+
     def test_partial_or_failed_second_period_never_leaves_a_candidate(self):
         source = collector()
         source.fetch_top.side_effect = [api_rows(20, "base"), RuntimeError("private header " + FAKE_KEY)]
