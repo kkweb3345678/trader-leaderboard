@@ -1,9 +1,11 @@
 import {DEFAULT_MODULES,isAddress,finite,escapeHTML as esc,shortAddress as short,signedMoney as money,timeLabel,dayKey,rankToday,readModules,readFollow,snapshotFiles,readArchive,compareSnapshots,followChange} from './home-data.js?v=5';
+import {archiveCalendar} from './archive-calendar.js?v=1';
 
 const $=id=>document.getElementById(id);
 const getStored=key=>{try{return localStorage.getItem(key);}catch{return null;}};
 let modules=readModules(getStored('lab_home_modules')),follow=readFollow(getStored('lab_follow'));
 let data=null,pair=null,archiveDays=null,archiveStatus='loading',generation=0;
+let calendarFiles=null,calendarLoaded=[];
 const icon=name=>`<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const tone=value=>value>0?'positive':value<0?'negative':'zero';
 function save(key,value) {
@@ -50,10 +52,17 @@ function renderCurrent() {
   $('home-top').innerHTML=rows.length?`<table><caption class="sr-only">單日已實現收益前 ${Math.min(rows.length,10)} 名</caption><thead><tr><th>錢包</th><th>已實現收益</th><th><span class="sr-only">關注</span></th></tr></thead><tbody>${rows.slice(0,10).map((w,i)=>`<tr><td><span class="home-mini-rank">${i+1}</span>${addressLink(w.address)}</td><td class="${tone(w.realized)}">${money(w.realized)}</td><td>${followButton(w.address,'關注')}</td></tr>`).join('')}</tbody></table>`:'<p class="home-muted">數據累積中，取得單日榜單後顯示。</p>';
 }
 function renderTrend() {
-  $('home-trend-state').textContent=archiveDays===null?'數據累積中':archiveDays<7?`累積中，還需 ${7-archiveDays} 天`:'資料已累積，走勢功能準備中';
-  $('home-trend-note').textContent=(archiveDays===null?'歷史資料就緒後，顯示已累積的資料日。':`已收錄 ${archiveDays} 個不同資料日。`)+ '每天 08:00 快照後自動累積，排程可能延遲。走勢圖將於後續版本開放。';
-  $('home-trend-progress').hidden=archiveDays===null;
-  $('home-trend-progress').value=Math.min(archiveDays??0,7);
+  const days=archiveCalendar(calendarFiles,calendarLoaded),count=days.filter(d=>d.status==='available').length;
+  $('home-trend-state').innerHTML=`${calendarFiles?count:'—'}<small> / 7 天</small>`;
+  $('home-trend-grid').innerHTML=days.map(d=>{
+    const labels={available:'已存',missing:'缺',incomplete:'缺',unknown:'待核'};
+    const reason={available:'完整快照，開啟原始封存',missing:'未找到這個資料日的封存，原因未確認',incomplete:'封存樣本未達完整快照條件',unknown:archiveStatus==='loading'?'正在讀取封存':'封存尚未讀取成功，不能判定缺失'}[d.status];
+    const attrs=`class="archive-day is-${d.status}" data-cursor="${d.status==='available'?'快照':d.status==='unknown'?'待核':'缺失'}" title="${d.date} · ${reason}"`;
+    return `<li>${d.path?`<a ${attrs} href="./${esc(d.path)}" target="_blank" rel="noopener" aria-label="${d.date} · ${reason}">${labels[d.status]}</a>`:`<span ${attrs} aria-label="${d.date} · ${reason}">${labels[d.status]}</span>`}<time datetime="${d.date}">${d.date.slice(5).replace('-','/')}</time></li>`;
+  }).join('');
+  const missing=days.filter(d=>['missing','incomplete'].includes(d.status)).map(d=>d.date.slice(5).replace('-','/'));
+  const unknown=days.filter(d=>d.status==='unknown').length;
+  $('home-trend-note').textContent=calendarFiles?`最近 7 個台北資料日，已核對 ${count} 天的完整封存。${missing.length?` ${missing.join('、')} 未找到完整快照；原因未確認，不補造。`:''}${unknown?' 部分封存尚未讀取成功，標「待核」，可重新讀取歷史。':''}`:archiveStatus==='error'?'暫時無法讀取封存清單，標「待核」，不判定缺失。請重新讀取歷史。':'正在核對真實封存；讀取前不判定有無快照。';
 }
 function renderFeed() {
   $('home-follow-count').textContent=follow.length?`${follow.length} 個已關注`:'';
@@ -86,19 +95,22 @@ async function loadArchives() {
     let paths;
     try {paths=(await getJSON('./snapshot-index.json')).files;if(!Array.isArray(paths)) throw new Error('Index unavailable');}
     catch {const directory=await getJSON('https://api.github.com/repos/kkweb3345678/trader-leaderboard/contents/snapshots?ref=main');if(!Array.isArray(directory)) throw new Error('Index unavailable');paths=directory.filter(f=>f.type==='file').map(f=>f.path);}
-    const files=snapshotFiles(paths,cutoff),byDay=new Map();
+    const allFiles=snapshotFiles(paths),files=allFiles.filter(f=>Date.parse(f.stamp)<=cutoff),byDay=new Map();
     for (const entry of files) {const day=dayKey(entry.stamp);if(!byDay.has(day)) byDay.set(day,entry);}
-    const wanted=[...new Map([...files.slice(0,2),...[...byDay.values()].slice(0,7)].map(e=>[e.path,e])).values()];
-    const loaded=await Promise.all(wanted.map(async entry=>readArchive(await getJSON('./'+entry.path),entry)));
+    const recentDays=new Set(archiveCalendar([],[]).map(d=>d.date));
+    const wanted=[...new Map([...files.slice(0,2),...[...byDay.values()].slice(0,7),...allFiles.filter(e=>recentDays.has(dayKey(e.stamp)))].map(e=>[e.path,e])).values()];
+    const results=await Promise.allSettled(wanted.map(async entry=>readArchive(await getJSON('./'+entry.path),entry)));
+    const loaded=results.filter(r=>r.status==='fulfilled').map(r=>r.value);
     if(token!==generation) return;
-    const full=loaded.filter(s=>s.full).sort((a,b)=>Date.parse(b.stamp)-Date.parse(a.stamp));
+    calendarFiles=allFiles;calendarLoaded=loaded;
+    const full=loaded.filter(s=>s.full&&Date.parse(s.stamp)<=cutoff).sort((a,b)=>Date.parse(b.stamp)-Date.parse(a.stamp));
     pair=compareSnapshots(full[0],full[1]);
     archiveDays=new Set(full.map(s=>dayKey(s.stamp))).size;
-    archiveStatus='ready';
-  } catch {if(token!==generation)return;pair=null;archiveDays=null;archiveStatus='error';}
+    archiveStatus=results.some(r=>r.status==='rejected')?'error':'ready';
+  } catch {if(token!==generation)return;pair=null;archiveDays=null;calendarFiles=null;calendarLoaded=[];archiveStatus='error';}
   finally {if(token===generation){$('home-history-retry').disabled=false;renderCards();renderFeed();renderTrend();}}
 }
-function acceptData(next) {if(!next)return;data=next;pair=null;archiveDays=null;archiveStatus='loading';renderAll();loadArchives();}
+function acceptData(next) {if(!next)return;data=next;pair=null;archiveDays=null;calendarFiles=null;calendarLoaded=[];archiveStatus='loading';renderAll();loadArchives();}
 function updateScrollButtons() {
   const rail=$('home-cards');
   $('home-card-prev').disabled=rail.scrollLeft<2;

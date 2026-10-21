@@ -6,7 +6,7 @@
   <script src="./analytics.js?v=1" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <script src="./shell.js?v=polish-1"></script>
+  <script src="./shell.js?v=lab-1"></script>
   <link rel="icon" href="./assets/brand.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css?v=product-1">
   <link rel="stylesheet" href="./product.css?v=cohesion-2">
@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="./wallet-trades.css?v=2">
   <script src="./wallet-trades.js?v=2" type="module"></script>
   <script src="./additional-boards.js?v=base-sample-1" type="module"></script>
-  <script src="./home.js?v=flow-2" type="module"></script>
+  <script src="./home.js?v=lab-1" type="module"></script>
   <link rel="stylesheet" href="./site-info.css?v=2">
   <link rel="stylesheet" href="./navigation.css?v=1">
   <link rel="stylesheet" href="./review-ui.css?v=verify-1">
@@ -53,6 +53,8 @@
   <meta name="twitter:image:alt" content="落袋研究室 · 公開來源・非託管・逐項標示">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://kkweb3345678.github.io/trader-leaderboard/#organization","name":"落袋研究室","url":"https://kkweb3345678.github.io/trader-leaderboard/","logo":"https://kkweb3345678.github.io/trader-leaderboard/assets/brand.svg","sameAs":["https://x.com/kkweb3345678"]},{"@type":"WebSite","@id":"https://kkweb3345678.github.io/trader-leaderboard/#website","url":"https://kkweb3345678.github.io/trader-leaderboard/","name":"落袋研究室","inLanguage":"zh-TW","publisher":{"@id":"https://kkweb3345678.github.io/trader-leaderboard/#organization"}}]}</script>
   <!-- site-metadata:end -->
+  <link rel="stylesheet" href="./lab-system.css?v=1">
+  <script src="./lab-system.js?v=1" defer></script>
 </head>
 <body>
   <a class="skip" href="#main-content">跳至主要內容</a>
@@ -99,6 +101,13 @@
         <div id="home-cards" class="home-cards" tabindex="0" role="region" aria-label="可橫向滑動的本批三卡"><p>正在讀取觀察資料…</p></div>
         <div class="home-history"><p id="home-snapshot-note">歷史快照載入中。</p><button type="button" class="text-button" id="home-history-retry">重新讀取歷史</button></div>
       </section>
+      <section class="home-section" id="home-module-trend" aria-labelledby="archive-title">
+        <h2 id="archive-title">7 日走勢，從真實快照開始。</h2>
+        <p class="home-lede">先看資料是否齊全，再談變化。每個格子對應一個台北資料日。</p>
+        <div class="archive-panel"><div class="archive-top"><div id="home-trend-state" class="archive-count">—<small> / 7 天</small></div><p>每日全量依既有排程更新，實際時間以來源為準。<br>走勢圖準備中；已存格可開啟原始快照。</p></div>
+        <ol id="home-trend-grid" class="archive-grid" aria-label="最近七個資料日的封存狀態"></ol>
+        <p id="home-trend-note" class="archive-note">正在核對真實封存。</p><a class="text-button" href="#swipe">回到歷史比較與重新讀取 ↑</a></div>
+      </section>
       <details class="home-disclosure" id="personal-space"><summary><span><strong>我的觀察空間</strong><small>關注錢包、查看快照變化、自訂首頁預覽</small></span><span class="disclosure-action" aria-hidden="true"><span class="when-closed">展開 ＋</span><span class="when-open">收起 −</span></span></summary><div class="disclosure-body">
       <section class="home-section" id="custom" aria-labelledby="home-custom-title">
         <h2 id="home-custom-title">自訂我的預覽</h2><p class="home-lede">開關即時生效。偏好與關注清單只存於這個瀏覽器，下次回來接著看。</p>
@@ -111,7 +120,7 @@
         </details><p id="home-storage-note" class="notice" role="status" hidden>瀏覽器目前無法儲存偏好；本次操作仍有效，重整後可能重設。</p>
         <div class="home-modules">
           <article class="home-module" id="home-module-board"><div class="home-module-heading"><h3>最新單日排行榜</h3><svg class="icon" aria-hidden="true"><use href="#i-board"/></svg></div><div id="home-top">正在讀取單日榜單…</div><a class="home-module-link" href="#board">看完整榜單 →</a></article>
-          <article class="home-module" id="home-module-trend"><div class="home-module-heading"><h3>7 日走勢</h3><span class="home-phase">準備中</span></div><div class="home-trend-empty"><svg class="home-trend-icon" viewBox="0 0 80 60" fill="none" aria-hidden="true"><rect x="1" y="1" width="78" height="58" rx="10" stroke="currentColor"/><path d="M15 17h50M15 30h50M15 43h50" stroke="currentColor" stroke-dasharray="3 5"/></svg><h4 id="home-trend-state">數據累積中</h4><p id="home-trend-note">歷史資料就緒後顯示進度。</p><progress id="home-trend-progress" max="7" value="0" aria-label="七日歷史資料累積進度" hidden></progress></div><a class="home-module-link" href="#method">了解資料口徑 →</a></article>
+
           <article class="home-module home-tool-module" id="home-module-wallet" hidden><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg><h3>讓錢包配合你的習慣。</h3><p>費率、公鏈支援、管理方式，依需求逐項比較；每項資料都有來源。</p><a class="home-module-link" href="./wallets.html">打開錢包比較 →</a></article>
           <article class="home-module home-tool-module" id="home-module-rebate" hidden><svg class="icon" aria-hidden="true"><use href="#i-referral"/></svg><h3>條件攤開，才有得比。</h3><p>把返佣級距、適用門檻與官方說明一起看，避免只看最高比例。</p><a class="home-module-link" href="./referral.html">打開返佣對照 →</a></article>
         </div><p class="home-muted" id="home-modules-empty" hidden>目前已收起所有預覽，隨時開啟上方開關就能加回。</p>

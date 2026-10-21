@@ -269,6 +269,7 @@
       const response = await fetch('./wallets.json', {cache:'no-cache', signal:AbortSignal.timeout(12000)});
       if (!response.ok) throw Error('HTTP '+response.status);
       data = validate(await response.json());
+      window.ResearchShell.setSourceDate(data.updated_at,'資料基準');
       $('baseline').textContent = data.updated_at;$('baseline').dateTime = data.updated_at;
       $('footer-baseline').textContent = data.updated_at;$('footer-baseline').dateTime = data.updated_at;
       $('wallet-total').textContent = data.wallets.length;$('dimension-total').textContent = data.dimensions.length;

@@ -59,6 +59,7 @@ async function init() {
   let data;
   try {const response = await fetch('./learn-content.json?v=4',{signal:AbortSignal.timeout(12000)});if (!response.ok) throw new Error('Fetch failed');data = validateContent(await response.json());}
   catch { $('learn-loading').hidden = true;$('learn-error').hidden = false;return; }
+  window.ResearchShell.setSourceDate(data.reviewed_at,'內容校閱');
   let progress, storageAvailable = true;
   try {progress = sanitizeProgress(JSON.parse(localStorage.getItem(STORAGE_KEY)),data);} catch {progress = sanitizeProgress(null,data);storageAvailable = false;}
   let filter = readCatalogState(location.search,data);

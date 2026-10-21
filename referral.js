@@ -144,6 +144,7 @@ function mount() {
       ]);
       if (!response.ok) throw new Error('Load failed');
       current = validateReferral(await response.json());
+      window.ResearchShell.setSourceDate(current.exchanges.map(item=>item.baseline_date||current.baseline_date),'資料基準');
       catalog = sourceCatalog && Array.isArray(sourceCatalog.sources) ? sourceCatalog : null;
       links = invitationCatalog || {};
       byId('referral-links-notice').hidden = invitationCatalog !== null;

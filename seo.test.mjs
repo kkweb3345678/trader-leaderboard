@@ -50,7 +50,7 @@ test('All published HTML uses the shared tag, while demo and 404 are noindex',as
   const html=await read(file);
   if(/^google[a-f0-9]+\.html$/.test(file)){assert.equal(html.trim(),'google-site-verification: '+file);continue;}
   assert.match(html,/analytics\.js\?v=1/);
-  if(['v3-demo.html','404.html'].includes(file))assert.match(html,/name="robots" content="noindex"/);
+  if(['v3-demo.html','malilion-style-demo.html','404.html'].includes(file))assert.match(html,/name="robots" content="noindex"/);
  }
 });
 test('GA initializes once, omits query and referrer details, and skips local previews',async()=>{

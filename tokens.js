@@ -49,6 +49,7 @@ if(typeof document!=='undefined'){
     if(focus){const target=$(state.token?'token-detail-title':'token-list-title');target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'instant'});}
   }
   function overview(){
+    window.ResearchShell.setSourceDate(snapshot.updated_at,'明細整理');
     const limited=snapshot.wallets.filter(w=>w.coverage==='limited').length,discrepancy=snapshot.wallets.filter(w=>w.coverage==='count_mismatch').length;
     $('tokens-summary').innerHTML=`<div><dt>收錄幣種</dt><dd>${index.tokens.length}<small>依合約計算</small></dd></div><div><dt>交易錢包</dt><dd>${index.walletCount}<small>本批追蹤樣本</small></dd></div><div><dt>多錢包交易</dt><dd>${index.tokens.filter(t=>t.wallet_count>1).length}<small>至少兩個錢包</small></dd></div>`;
     const times=snapshot.wallets.map(w=>w.snapshot_date).sort((a,b)=>Date.parse(a)-Date.parse(b));

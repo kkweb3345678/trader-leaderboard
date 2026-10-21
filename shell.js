@@ -4,6 +4,10 @@
 window.ResearchShell = (() => {
   const themeKey = 'trader-leaderboard-theme';
   let choice = null;
+  let source = null;
+  function setSourceDate(value,label='資料更新') {
+    source={value,label};document.dispatchEvent(new CustomEvent('research:source',{detail:source}));
+  }
   try {const stored = localStorage.getItem(themeKey);if (['light','dark'].includes(stored)) choice = stored;} catch (_) {}
   const routes = [
     {key:'home',label:'首頁',icon:'home'},
@@ -18,9 +22,9 @@ window.ResearchShell = (() => {
     {key:'tools',label:'試算與詞典',icon:'book'}
   ];
   function applyTheme() {
-    const theme = choice || 'light';
+    const theme = choice || 'dark';
     document.documentElement.dataset.theme = theme;
-    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0d1522' : '#ffffff';
+    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0b0e13' : '#f7f8fa';
     const button = document.getElementById('theme-toggle');
     if (button) {
       button.setAttribute('aria-pressed',String(theme === 'dark'));
@@ -114,5 +118,5 @@ window.ResearchShell = (() => {
     });
     applyTheme();
   }
-  return {mount,setActive};
+  return {mount,setActive,setSourceDate,get source(){return source;}};
 })();

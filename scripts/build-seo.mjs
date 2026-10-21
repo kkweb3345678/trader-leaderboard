@@ -55,6 +55,7 @@ function enhance(html,page){
  if(!html.includes('src="./analytics.js'))html=html.replace('<meta charset="UTF-8">','<meta charset="UTF-8">\n  <script src="./analytics.js?v=1" defer></script>');
  if(!html.includes('href="./site-info.css'))html=html.replace('</head>','  <link rel="stylesheet" href="./site-info.css?v=1">\n</head>');
  if(!html.includes('href="./product-refinement.css'))html=html.replace('</head>','  <link rel="stylesheet" href="./product-refinement.css?v=flow-2">\n</head>');
+ if(!html.includes('href="./lab-system.css'))html=html.replace('</head>','  <link rel="stylesheet" href="./lab-system.css?v=1">\n  <script src="./lab-system.js?v=1" defer></script>\n</head>');
  if(!html.includes('class="site-privacy-link"')) html=html.replace(/(<footer\b[\s\S]*?)(<\/footer>)/,(all,body,end)=>body+'<a class="site-privacy-link" href="./privacy.html">隱私說明</a>'+end);
  return html.replace(/[ \t]+$/gm,'');
 }
@@ -77,7 +78,7 @@ for(const page of pages){
  html=html.replace('href="./site-info.css?v=1"','href="./site-info.css?v=2"');
  if(page.file==='index.html') html=html.replace(/<!-- glossary:start -->[\s\S]*?<!-- glossary:end -->/,`<!-- glossary:start -->${glossary.map((item,i)=>`<details data-term="${e(item.term)}"${i===0?' open':''}><summary>${e(item.term)}</summary><p>${e(item.meaning)}</p></details>`).join('')}<!-- glossary:end -->`);
  if(page.file==='learn.html'){
-  html=html.replace(/src="\.\/learn\.js\?v=[^\"]+"/, 'src="./learn.js?v=flow-2"');
+  html=html.replace(/src="\.\/learn\.js\?v=[^\"]+"/, 'src="./learn.js?v=lab-1"');
   html=html.replace(/<div id="learn-cards" class="learn-cards">[\s\S]*?<\/div><div id="learn-empty"/,`<div id="learn-cards" class="learn-cards">${data.lessons.map(l=>`<a class="learn-card" href="${link(l)}"><div><h3>${e(l.title)}</h3><p>${e(l.description)}</p></div></a>`).join('')}</div><div id="learn-empty"`);
   html=html.replace('<section id="learn-home" hidden>','<section id="learn-home">');
   html=html.replace(/<noscript>[\s\S]*?<\/noscript>/,`<noscript><style>#learn-loading,.learn-progress-strip,.learn-search,.learn-filter-row{display:none}</style><p>文章內容可直接閱讀；搜尋、測驗與閱讀進度需要 JavaScript。</p></noscript>`);
