@@ -846,3 +846,9 @@ kk 已明確回覆「採用：顯示實收筆數與不足提示」，批准 Base
 38 項 Python 與 83 項 Node／快照回歸通過。13 筆真實暫存 Git 發布、發布前再驗空／超額 Base 與 Solana 99 筆均已覆蓋；本機六項瀏覽器檢查通過，含 13 筆展開／排序、390px 無整頁溢出、20 筆與空資料提示。工作區證據 `artifacts/actions-39536264719/browser-checks.json`、`qa-base-mobile.png`（測試資料畫面）。
 
 唯一寫入者、workflow YAML、cron、concurrency、sync.sh、fetch.py 維持。推送後重跑原工作一次，以正式 `updated_at`、筆數及公開 hash 驗收，結果另補；目前尚不宣稱正式榜單已恢復。
+
+**恢復完成補記（11:55 台北）**：規格與 UI 修正 `e4e11af` 已推 main；[原工作 39536264719 attempt 3](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39536264719/attempts/3) collect／publish 均成功。真實當批 Base 回傳 **16 筆**（不是先前失敗時的 13 筆），Solana today／week 各 **100 筆**，`updated_at=2026-10-21T11:51:48+08:00`。三榜各抓一次，Base 標 `partial_sample` 後正常發布，未啟用補抓或拼接。
+
+正式資料提交 `208cf12`；候選、Git、公開 Pages 逐位元組相同，SHA-256 `c685b65a985579513630ce54d5a0f99d640b3663fef443f415f564050dd0eb9e`。前端 index.html／additional-boards.js 也與修正提交相同。[封存 39540910382](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39540910382) 成功，新快照完整保留 16／100／100；[每日幣種摘要 39540921097](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39540921097) 接續成功；最終 [Pages 39540993911](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39540993911) 成功。中間 Pages 被後續資料提交取代取消，最終公開驗證已通過。
+
+正式站桌面與 390px 手機顯示來源時間、最多 20 筆／實收 16 筆及不足提示，展開恰好 16 列；手機無整頁橫向溢出。證據 `artifacts/actions-39536264719/production-verification.json`、`live-browser-checks.json`、`live-base-desktop.png`、`live-base-mobile.png`。本次已恢復榜單更新；未來來源錯誤、空 Base 或 Solana 不足門檻仍會保留舊檔並報失敗，不保證上游永遠足量。
