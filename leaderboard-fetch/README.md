@@ -45,6 +45,14 @@ full 發布後明確 dispatch `leaderboard-snapshots.yml`；兩種發布皆要�
 - 仍不足、資料格式不合法、重複地址、數值缺失或額度不夠，皆繼續判定失敗，停止發布並保留正式舊檔。完整門檻仍為全量 20／100／100、快榜 20，不混入舊榜湊數。
 - 人工恢復用同一 workflow 的失敗工作重跑，不另開寫入者。checkout 與 fetch 均同步最新 main；排程事件上下文保留，成功後原本的封存及每日幣種摘要流程照常判斷是否跟隨。
 
+### 同日重跑結果與規格缺口
+
+`39536264719` attempt 2 使用修正 `e8f4f51`，Base `today` 於台北 11:23:24、11:24:02 各請求一次，兩次實收皆為 **13／20**，所以仍正確停止發布；Solana 未抓，正式 data.json 仍截至 10/20 11:07:48。新診斷與有限重試已在 Actions 實測，但資料更新尚未恢復。
+
+[Birdeye 官方規格](https://data.birdeye.so/docs/data-api/wallet-networth-pnl/get-trader-gainers-losers) 記載 `limit` 最大 100、`sort_by=PnL` 預設 `min_pnl=1000`，且最低門檻必須至少 1000。這是具來源篩選條件的樣本上限，不能保證永遠回滿。文件沒有解釋該次 13 筆的內部生成過程，不能宣稱已證實是某個索引故障或快取原因。
+
+既有交接禁止降低完整門檻，因此尚未逕改為部分樣本發布。已向 kk 提出具體選項：Base 改為「最多 20 筆、顯示實收與不足提示」，讓有效的短榜不再阻擋全量更新，或維持現行完整門檻／舊檔保留。等待規格決定期間不再重複呼叫付費 API。
+
 ## 本地回歸
 
 `python -m unittest discover -s leaderboard-fetch -p 'test_*.py'`
