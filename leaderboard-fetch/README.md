@@ -6,7 +6,7 @@
 
 | 模式 | 台北時間 | UTC cron（已啟用） | 輸出 | 筆數 |
 |---|---|---|---|---|
-| full | 每日 08:00 | `0 0 * * *` | `data.json` | Solana today100、week100，Base today20 |
+| full | 每日 08:00 | `0 0 * * *` | `data.json` | Solana today100、week100，Base today 最多20 |
 | flash | 每日 02:00、14:00、20:00 | `0 6,12,18 * * *` | `today-flash.json` | Solana today20 |
 
 不另跑 08:00 flash，不補跑錯過的排程，不使用舊半小時制。模式依 `github.event.schedule` 決定，延遲開跑也不會誤選。Ren 估計 full 約 660 CU、flash 約 60 CU，合計約 840 CU/天；此為估算，不是帳單保證。沿用 VM 少於 3,000 CU 不抓榜單的門檻，失敗不寫舊資料冒充成功。
@@ -51,7 +51,15 @@ full 發布後明確 dispatch `leaderboard-snapshots.yml`；兩種發布皆要�
 
 [Birdeye 官方規格](https://data.birdeye.so/docs/data-api/wallet-networth-pnl/get-trader-gainers-losers) 記載 `limit` 最大 100、`sort_by=PnL` 預設 `min_pnl=1000`，且最低門檻必須至少 1000。這是具來源篩選條件的樣本上限，不能保證永遠回滿。文件沒有解釋該次 13 筆的內部生成過程，不能宣稱已證實是某個索引故障或快取原因。
 
-既有交接禁止降低完整門檻，因此尚未逕改為部分樣本發布。已向 kk 提出具體選項：Base 改為「最多 20 筆、顯示實收與不足提示」，讓有效的短榜不再阻擋全量更新，或維持現行完整門檻／舊檔保留。等待規格決定期間不再重複呼叫付費 API。
+當時既有交接禁止降低完整門檻，因此先向 kk 提出具體選項，等待決定期間未繼續重抓付費 API。後續批准與目前規格如下。
+
+### 已批准：Base 最多 20 筆（2026-10-21）
+
+kk 回覆「採用：顯示實收筆數與不足提示」。目前 collect 與 publish 共用筆數規則：Base `base_today` 接受 **1–20** 筆且每筆有效、地址不重複的當批資料，實收不足 20 標為 `partial_sample`，不為湊滿而再扣一次 API。空 Base 或不合法資料仍拒絕發布。Solana today100／week100／flash20 的完整門檻與有限重試不變。
+
+正式 JSON 結構不增欄位；`base_today.length` 就是實收數。Base 畫面改標「最多 20 筆」，1–19 筆顯示實收與不足提示，20 筆隱藏提示，排序與展開都只使用來源實收列。來源時間仍為同批抓取完成時間，不以介面部署時間取代。
+
+38 項 Python 回歸通過，包括 13 筆候選的真實暫存 Git 發布、空／超額 Base 拒絕與 Solana 99 筆拒絕。83 項 Node／快照測試通過；本機另核對 13 筆提示、展開與排序、手機無整頁溢出、20 筆及空資料狀態。正式執行與公開檔核對結果見 HANDOFF 最新補記。
 
 ## 本地回歸
 

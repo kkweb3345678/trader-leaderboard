@@ -8,7 +8,7 @@ import subprocess
 import sys
 import time
 
-from validate import BATCHES, TARGETS, ValidationError, numeric, parse_time, sha256, validate_raw
+from validate import BATCHES, TARGETS, ValidationError, numeric, parse_time, sha256, validate_board
 
 IDENTITY = ["-c", "user.name=github-actions[bot]", "-c",
             "user.email=41898282+github-actions[bot]@users.noreply.github.com"]
@@ -47,9 +47,9 @@ def check_candidate(directory, batch, now):
         rows = data.get(field)
         if not isinstance(rows, list) or any(not isinstance(row, dict) for row in rows):
             raise ValidationError("Missing candidate leaderboard")
-        validate_raw([{"address": row.get("address"), "pnl": row.get("pnl"),
+        validate_board([{"address": row.get("address"), "pnl": row.get("pnl"),
                        "realized_pnl": row.get("realized"), "volume": row.get("volume"),
-                       "trade_count": row.get("trades")} for row in rows], count, chain)
+                       "trade_count": row.get("trades")} for row in rows], field, count, chain)
         for row in rows:
             if not numeric(row.get("unrealized")) or abs(row["pnl"] - row["realized"] - row["unrealized"]) > 0.021:
                 raise ValidationError("Candidate normalized metrics are inconsistent")

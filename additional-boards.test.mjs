@@ -27,6 +27,18 @@ test('Base address case duplicates, invalid metrics and missing flash period are
   for(const field of ['pnl','realized','volume','trades']) assert.throws(()=>readBoardSnapshot({...baseline,base_today:[{...baseRow,[field]:'<script>'}]},'base'));
   assert.throws(()=>readBoardSnapshot({...flash,today:null},'flash'));
 });
+test('Base short samples show actual count without padding or claiming twenty rows',()=>{
+  for(const count of [1,13,20]) {
+    const rows=Array.from({length:count},(_,i)=>({...baseRow,address:'0x'+i.toString(16).padStart(40,'0')}));
+    const snapshot=readBoardSnapshot({...baseline,base_today:rows},'base');
+    assert.equal(snapshot.rows.length,count);
+    assert.equal(snapshot.status,'ready');
+    if(count<20) assert.ok(snapshot.sampleNotice.includes(`來源回傳 ${count} 筆`));
+    else assert.equal(snapshot.sampleNotice,'');
+    assert.equal(snapshot.updatedAt,baseline.updated_at);
+  }
+  assert.equal(readBoardSnapshot({...baseline,base_today:[]},'base').sampleNotice,'');
+});
 test('empty arrays are distinct from pending; missing values are never converted to zero',()=>{
   assert.equal(readBoardSnapshot({...baseline,base_today:[]},'base').status,'empty');
   const row={...baseRow,realized:null};

@@ -56,6 +56,19 @@ def numeric(value):
     return not isinstance(value, bool) and isinstance(value, (int, float)) and math.isfinite(value)
 
 
+def minimum_rows(field, chain, limit):
+    # User approved Base as an available sample of up to 20 on 2026-10-21.
+    # All other boards retain their existing exact-count contract.
+    return 1 if field == "base_today" and chain == "base" else limit
+
+
+def validate_board(rows, field, limit, chain):
+    minimum = minimum_rows(field, chain, limit)
+    if not isinstance(rows, list) or not minimum <= len(rows) <= limit:
+        raise ValidationError(f"{field}: expected {minimum}..{limit} valid rows")
+    validate_raw(rows, len(rows), chain)
+
+
 def validate_raw(rows, expected, chain="solana"):
     if not isinstance(rows, list) or len(rows) != expected:
         raise ValidationError("Incomplete leaderboard response")
@@ -92,9 +105,11 @@ def collect(collector, key, baseline_time, now=lambda: datetime.now(timezone.utc
     periods = {}
     retry_available = True
     for board_index, (api_period, output_period, chain, count) in enumerate(BATCHES[batch]):
+        minimum = minimum_rows(output_period, chain, count)
         for attempt in (1, 2):
             observation = {"chain": chain, "period": api_period, "output": output_period,
                            "attempt": attempt, "expected_rows": count, "received_rows": None,
+                           "minimum_rows": minimum,
                            "started_at": now().isoformat(), "status": "fetch_failed"}
             facts["attempts"].append(observation)
             try:
@@ -115,9 +130,11 @@ def collect(collector, key, baseline_time, now=lambda: datetime.now(timezone.utc
                 validate_raw(rows, received if received is not None and received < count else count, chain)
             except ValidationError as error:
                 raise ValidationError(f"{chain} {api_period}: {error}") from None
-            if received == count:
-                observation["status"] = "passed"
+            if received >= minimum:
+                observation["status"] = "passed" if received == count else "partial_sample"
                 break
+            if minimum < count:
+                raise ValidationError(f"{chain} {api_period}: empty leaderboard response")
             observation["status"] = "short_response"
             diagnostic = f"{chain} {api_period}: expected {count} rows, received {received}"
             if not retry_available:
@@ -223,12 +240,12 @@ def run(repo, destination, collector, key, now=lambda: datetime.now(timezone.utc
              "validate 模式永遠不發布；publish 模式另須明確開啟 production 開關。",
              "請 Ren 驗收 artifact 的時間與內容，再依 HANDOFF.md 協調唯一寫入者交接。", ""]
     if report.get("attempts"):
-        lines += ["## 各榜單抓取紀錄", "", "| 鏈／期間 | 嘗試 | 應有／收到筆數 | 結果 |",
+        lines += ["## 各榜單抓取紀錄", "", "| 鏈／期間 | 嘗試 | 有效筆數範圍／實收 | 結果 |",
                   "|---|---:|---:|---|"]
         for item in report["attempts"]:
             received = item["received_rows"] if item["received_rows"] is not None else "無有效清單"
             lines.append(f"| {item['chain']} / {item['period']} | {item['attempt']} | "
-                         f"{item['expected_rows']} / {received} | {item['status']} |")
+                         f"{item['minimum_rows']}–{item['expected_rows']} / {received} | {item['status']} |")
         lines.append("")
     (destination / "README.md").write_text("\n".join(lines), encoding="utf-8")
     return report

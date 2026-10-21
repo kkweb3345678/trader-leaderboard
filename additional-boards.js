@@ -38,7 +38,9 @@ export function readBoardSnapshot(data,kind) {
     if (value(row,'trades') !== null && (!Number.isSafeInteger(row.trades) || row.trades < 0)) throw new Error('Invalid trades');
     if (value(row,'volume') !== null && row.volume < 0) throw new Error('Invalid volume');
   }
-  return {status:rows.length ? 'ready' : 'empty',rows,updatedAt:data.updated_at};
+  return {status:rows.length ? 'ready' : 'empty',rows,updatedAt:data.updated_at,
+    sampleNotice:kind === 'base' && rows.length > 0 && rows.length < 20
+      ? `本批來源回傳 ${rows.length} 筆，未達 20 筆上限；依實收樣本呈現，名次僅供本批比較。` : ''};
 }
 
 export function rankRows(rows,key='realized') {
@@ -70,7 +72,8 @@ function mountBoard(kind) {
     <p class="snapshot-wait extra-wait" hidden></p>
     <p class="extra-feedback" role="status" aria-live="polite" aria-atomic="true">正在讀取${config.title}…</p>
     <div class="extra-content" hidden>
-      <div class="extra-context"><p>總損益前 20 名樣本 · <span class="extra-count"></span> · 金額為美元</p><p>點表頭切換排序 <span aria-hidden="true">↕</span></p></div>
+      <div class="extra-context"><p>按總損益取樣 · 最多 20 筆 · <span class="extra-count"></span> · 金額為美元</p><p>點表頭切換排序 <span aria-hidden="true">↕</span></p></div>
+      <p class="extra-description extra-sample-note" role="status" hidden></p>
       <p class="extra-scroll-hint">左右滑動查看完整欄位 <span aria-hidden="true">↔</span></p>
       <div class="extra-table-wrap" role="region" tabindex="0" aria-label="${config.title}，可左右捲動的表格">
         <table><caption class="sr-only"></caption><colgroup><col class="extra-col-rank"><col class="extra-col-wallet"><col class="extra-col-profit"><col class="extra-col-profit"><col class="extra-col-trades"><col class="extra-col-volume"></colgroup><thead><tr><th scope="col">排名</th><th scope="col">錢包</th><th scope="col" aria-sort="descending"><button type="button" data-extra-sort="realized">已實現收益${icon('down')}</button></th><th scope="col"><button type="button" data-extra-sort="pnl">總損益${icon('down')}</button></th><th scope="col">交易次數</th><th scope="col">成交量</th></tr></thead><tbody></tbody></table>
@@ -90,6 +93,8 @@ function mountBoard(kind) {
     updateTimeState();
     const ready = snapshot?.status === 'ready';
     $('.extra-content').hidden = !ready;
+    $('.extra-sample-note').textContent = snapshot?.sampleNotice || '';
+    $('.extra-sample-note').hidden = !snapshot?.sampleNotice;
     const time = $('time');
     if (snapshot?.updatedAt) {time.dateTime=snapshot.updatedAt;time.textContent=formatStamp(snapshot.updatedAt);}
     else {time.removeAttribute('datetime');time.textContent='尚未發布';}

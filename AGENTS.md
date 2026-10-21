@@ -5,7 +5,8 @@
 ## 唯一寫入者
 
 - 目前 `data.json` 與 `today-flash.json` 的唯一寫入者是 **GitHub Actions `leaderboard-fetch.yml`**。Ren 已於 2026-10-15 15:05 台北在 HANDOFF.md 確認 VM 退役、timer 不復存在且不會再寫入；Codex 已完成手動正式 flash 發布與 Pages hash 驗證，再開啟新制排程。
-- 依 2026-10-15 HANDOFF 新規格，台北 08:00 每日全量（Solana today100/week100、Base today20）寫 `data.json`；02:00／14:00／20:00 抓 Solana today20 寫 `today-flash.json`。舊半小時全量制已停用，不可重新啟用。
+- 依 2026-10-15 HANDOFF 新規格，台北 08:00 每日全量（Solana today100/week100、Base today 最多 20 筆）寫 `data.json`；02:00／14:00／20:00 抓 Solana today20 寫 `today-flash.json`。舊半小時全量制已停用，不可重新啟用。
+- 2026-10-21 kk 明確批准 Base 改為「最多 20 筆，照實顯示實收筆數與不足提示」。Base 1–20 筆有效樣本可發布，不補造、不混入舊資料；空資料、無效數值、重複地址仍停止發布。此項取代舊 Base 必須 20 筆的門檻，Solana today100/week100／flash20 門檻不變。
 - 現有 `leaderboard-snapshots.yml` 只封存已推送的資料；不得把它視為榜單抓取／寫入流程，也不得順便啟用第二個寫入者。
 - `BIRDEYE_API_KEY` GitHub Secret 配妥、Actions 抓取流程上線且驗證成功後，才可協調將唯一寫入者切換為 Actions。切換完成前不得讓兩端同時寫入。
 

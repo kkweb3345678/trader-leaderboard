@@ -75,41 +75,41 @@ class ValidationTests(unittest.TestCase):
 
     def test_short_valid_response_retries_only_that_board_and_uses_complete_replacement(self):
         source = collector()
-        short = api_rows(9, "base")
+        short = api_rows(34)
         short[0]["pnl"] = 999999
-        source.fetch_top.side_effect = [short, api_rows(20, "base"), api_rows(100), api_rows(100)]
+        source.fetch_top.side_effect = [api_rows(20, "base"), short, api_rows(100), api_rows(100)]
         report = self.run_validation(source)
         self.assertEqual(report["status"], "passed")
         self.assertEqual([call.args[2:] for call in source.fetch_top.call_args_list],
-                         [("base", 20), ("base", 20), ("solana", 100), ("solana", 100)])
-        self.assertEqual([a["received_rows"] for a in report["attempts"]], [9, 20, 100, 100])
-        self.assertEqual(report["attempts"][0]["status"], "short_response")
+                         [("base", 20), ("solana", 100), ("solana", 100), ("solana", 100)])
+        self.assertEqual([a["received_rows"] for a in report["attempts"]], [20, 34, 100, 100])
+        self.assertEqual(report["attempts"][1]["status"], "short_response")
         candidate = json.loads((self.output / "data.json").read_text(encoding="utf-8"))
-        self.assertEqual(candidate["base_today"][0]["pnl"], 100.12)
+        self.assertEqual(candidate["today"][0]["pnl"], 100.12)
         self.assertEqual(source.credits_left.call_count, 2)
         source.time.sleep.assert_any_call(30)
         self.assertEqual(self.source.read_bytes(), self.original)
 
     def test_persistent_short_response_keeps_diagnostics_and_does_not_publish(self):
         source = collector()
-        source.fetch_top.side_effect = [api_rows(9, "base"), api_rows(11, "base")]
+        source.fetch_top.side_effect = [api_rows(20, "base"), api_rows(34), api_rows(35)]
         report = self.run_validation(source)
         self.assertEqual(report["status"], "failed")
-        self.assertEqual(source.fetch_top.call_count, 2)
-        self.assertIn("base today: expected 20 rows, received 11", report["failure"])
+        self.assertEqual(source.fetch_top.call_count, 3)
+        self.assertIn("solana today: expected 100 rows, received 35", report["failure"])
         self.assertEqual(report["credits_before"], 10000)
-        self.assertEqual([a["received_rows"] for a in report["attempts"]], [9, 11])
+        self.assertEqual([a["received_rows"] for a in report["attempts"]], [20, 34, 35])
         self.assertTrue(all(a["completed_at"] for a in report["attempts"]))
         self.assertFalse((self.output / "data.json").exists())
         self.assertEqual(self.source.read_bytes(), self.original)
 
     def test_short_response_retry_budget_is_shared_by_the_whole_batch(self):
         source = collector()
-        source.fetch_top.side_effect = [api_rows(9, "base"), api_rows(20, "base"), api_rows(34)]
+        source.fetch_top.side_effect = [api_rows(13, "base"), api_rows(34), api_rows(100), api_rows(50)]
         report = self.run_validation(source)
         self.assertEqual(report["status"], "failed")
-        self.assertEqual(source.fetch_top.call_count, 3)
-        self.assertIn("solana today: expected 100 rows, received 34", report["failure"])
+        self.assertEqual(source.fetch_top.call_count, 4)
+        self.assertIn("solana 1W: expected 100 rows, received 50", report["failure"])
         self.assertFalse((self.output / "data.json").exists())
 
     def test_short_response_retry_preserves_credit_reserve(self):
@@ -117,9 +117,33 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(left=left):
                 source = collector()
                 source.credits_left.side_effect = [10000, left]
-                source.fetch_top.return_value = api_rows(9, "base")
+                source.fetch_top.return_value = api_rows(9)
                 source.fetch_top.side_effect = None
                 with self.assertRaisesRegex(validate.ValidationError, "retry credit reserve"):
+                    validate.collect(source, FAKE_KEY, BASELINE, lambda: NOW, batch="flash")
+                self.assertEqual(source.fetch_top.call_count, 1)
+
+    def test_base_thirteen_rows_is_a_valid_sample_without_retry_or_padding(self):
+        source = collector()
+        rows = api_rows(13, "base")
+        source.fetch_top.side_effect = [rows, api_rows(100), api_rows(100)]
+        report = self.run_validation(source)
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["row_counts"], {"base_today": 13, "today": 100, "week": 100})
+        self.assertEqual(report["attempts"][0]["status"], "partial_sample")
+        self.assertEqual(report["attempts"][0]["minimum_rows"], 1)
+        self.assertEqual(source.fetch_top.call_count, 3)
+        source.credits_left.assert_called_once_with(FAKE_KEY)
+        candidate = json.loads((self.output / "data.json").read_text(encoding="utf-8"))
+        self.assertEqual(candidate["base_today"], [source.norm(row) for row in rows])
+        self.assertEqual(self.source.read_bytes(), self.original)
+
+    def test_base_empty_or_over_limit_still_stops_before_other_boards(self):
+        for rows in ([], api_rows(21, "base")):
+            with self.subTest(count=len(rows)):
+                source = collector()
+                source.fetch_top.side_effect = [rows]
+                with self.assertRaises(validate.ValidationError):
                     validate.collect(source, FAKE_KEY, BASELINE, lambda: NOW)
                 self.assertEqual(source.fetch_top.call_count, 1)
 

@@ -9,7 +9,7 @@ from unittest.mock import patch
 import plan
 import publish
 import validate
-from test_validate import BASELINE, NOW, FAKE_KEY, collector
+from test_validate import BASELINE, NOW, FAKE_KEY, collector, api_rows
 
 
 class PlanTests(unittest.TestCase):
@@ -53,8 +53,8 @@ class PublicationTests(unittest.TestCase):
         publish.git(self.root, "clone", str(self.remote), str(self.other))
         self.directory = self.root / "artifact"
 
-    def candidate(self, batch="full", publication=True):
-        report = validate.run(self.repo, self.directory, collector(), FAKE_KEY, lambda: NOW, batch, publication)
+    def candidate(self, batch="full", publication=True, source=None):
+        report = validate.run(self.repo, self.directory, source or collector(), FAKE_KEY, lambda: NOW, batch, publication)
         self.assertEqual(report["status"], "passed")
         return report
 
@@ -82,6 +82,31 @@ class PublicationTests(unittest.TestCase):
         publish.publish(self.repo, self.directory, "flash", NOW)
         self.assertEqual((self.repo / "data.json").read_bytes(), full)
         self.assertEqual(publish.git(self.repo, "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"), "today-flash.json")
+
+    def test_partial_base_sample_publishes_with_complete_solana_boards(self):
+        source = collector()
+        source.fetch_top.side_effect = [api_rows(13, "base"), api_rows(100), api_rows(100)]
+        self.candidate(source=source)
+        flash = (self.repo / "today-flash.json").read_bytes()
+        result = publish.publish(self.repo, self.directory, "full", NOW)
+        self.assertEqual(result["status"], "published")
+        data = json.loads(publish.git(self.remote, "show", "main:data.json"))
+        self.assertEqual([len(data[k]) for k in ("base_today", "today", "week")], [13, 100, 100])
+        self.assertEqual((self.repo / "today-flash.json").read_bytes(), flash)
+
+    def test_publication_rechecks_sample_bounds_and_does_not_relax_solana(self):
+        self.candidate()
+        original = json.loads((self.directory / "data.json").read_text(encoding="utf-8"))
+        report = json.loads((self.directory / "validation.json").read_text(encoding="utf-8"))
+        for field, rows in (("base_today", []), ("base_today", original["base_today"] + [original["base_today"][0]]),
+                            ("today", original["today"][:99]), ("week", original["week"][:99])):
+            with self.subTest(field=field, count=len(rows)):
+                raw = json.dumps({**original, field: rows}).encode()
+                (self.directory / "data.json").write_bytes(raw)
+                report["candidate_sha256"] = validate.sha256(raw)
+                (self.directory / "validation.json").write_text(json.dumps(report), encoding="utf-8")
+                with self.assertRaises(validate.ValidationError):
+                    publish.check_candidate(self.directory, "full", NOW)
 
     def test_changed_remote_target_is_never_overwritten(self):
         self.candidate()
