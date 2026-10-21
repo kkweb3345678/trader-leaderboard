@@ -906,3 +906,19 @@ kk 對標 malilion.com（碼力獅）後批准：把打樣 `malilion-style-demo.
 正式站七個代表畫面 × 375／1440px × 深淺色共 28 組檢查通過，無整頁溢出、本站 JS error 或 axe violations；另 19 項線上互動情境通過，包括輔助頁、手機欄位視窗、原生游標及減少動態效果。快照實際呈現六天已存、10/19 缺。完整證據 `artifacts/malilion-system/published-assets.json`、`live-audit.json`、`live-interactions.json` 與 `live-*.png`。正式站沒有測試資料或 QA 程式注入。
 
 線上入口：[首頁](https://kkweb3345678.github.io/trader-leaderboard/)、[排行榜](https://kkweb3345678.github.io/trader-leaderboard/index.html?view=leaderboard)、[錢包](https://kkweb3345678.github.io/trader-leaderboard/wallets.html)、[返佣](https://kkweb3345678.github.io/trader-leaderboard/referral.html)、[學習](https://kkweb3345678.github.io/trader-leaderboard/learn.html)、[幣種](https://kkweb3345678.github.io/trader-leaderboard/tokens.html)。
+
+---
+
+### Ren 驗收（2026-10-21 18:00 台北）：MaliLion 全站套用【通過】
+
+逐項對正式站實測（非只看回報）：
+
+1. **共用系統已上線**：index／wallets／referral／learn／tokens 正式站 HTML 均實際載入 `lab-system.css`／`lab-system.js`，與提交逐位元組相同之宣稱和公開檔案相符。
+2. **色票與字體**：CSS 變數實測含 `#0b0e13` 底、金 `#f0ad2f`、薄荷 `#3eeed0`、JetBrains Mono；無第三強調色。
+3. **Ghost 數字**：`.lab-ghost` 實測 `-webkit-text-stroke`＋`pointer-events:none`，純裝飾不擋操作。
+4. **切角按鈕**：CSS 實測含 clip-path。
+5. **狀態列**：JS 實測 LIVE 標示＋`Asia/Taipei` 時鐘（setInterval）；**資料時間未被部署時間冒充**——正式 data.json `updated_at` 仍為 `2026-10-21T11:51:48+08:00`。
+6. **快照格誠實條款**：獨立查 snapshot-index 封存（台北日）：10/15、16、17、18、20、21 有存檔，**10/19 真的缺**，與站上呈現「六天已存、10/19 缺」一致，沒有補滿。
+7. **游標紅線**：JS 實測 data-cursor＋requestAnimationFrame 追隨、matchMedia `pointer: coarse` 與 prefers-reduced-motion 停用；CSS **無** `cursor: none`，原生游標保留。
+
+結論：本批視覺套用通過、結案。資料管線、排程、數字未動，符合本節範圍。
