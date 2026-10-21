@@ -10,7 +10,7 @@ on:
         options: [validate, publish]
         default: validate
       batch:
-        description: full = Solana 100+100 and Base 20; flash = Solana 20; all = validation only
+        description: full = Solana 100+100 and Base up to 20; flash = Solana 20; all = validation only
         type: choice
         options: [flash, full, all]
         default: flash
@@ -38,6 +38,7 @@ jobs:
     outputs:
       batch: ${{ steps.plan.outputs.batch }}
       publish: ${{ steps.plan.outputs.publish }}
+      candidate_name: ${{ steps.plan.outputs.candidate_name }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -81,7 +82,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
-          name: leaderboard-candidates-${{ github.run_id }}
+          name: ${{ steps.plan.outputs.candidate_name }}
           retention-days: 14
           if-no-files-found: warn
           path: ${{ runner.temp }}/leaderboard-candidates/
@@ -103,10 +104,14 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.12'
-      - name: Download this run's validated candidate
+      - name: Download the collecting attempt's validated candidate
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "leaderboard-candidates-$GITHUB_RUN_ID" --dir "$RUNNER_TEMP/leaderboard-candidates"
+          # A publish-only retry must retain collect's attempt, not its own new attempt.
+          CANDIDATE_NAME: ${{ needs.collect.outputs.candidate_name }}
+        run: |
+          test -n "$CANDIDATE_NAME"
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "$CANDIDATE_NAME" --dir "$RUNNER_TEMP/leaderboard-candidates"
       - name: Synchronize, publish one file and verify remote timestamp and hash
         env:
           BATCH: ${{ needs.collect.outputs.batch }}
@@ -129,7 +134,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
-          name: leaderboard-publication-${{ github.run_id }}
+          name: leaderboard-publication-${{ github.run_id }}-${{ github.run_attempt }}
           retention-days: 14
           if-no-files-found: ignore
           path: ${{ runner.temp }}/leaderboard-candidates/publication.json

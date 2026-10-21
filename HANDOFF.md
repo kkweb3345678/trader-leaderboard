@@ -852,3 +852,15 @@ kk 已明確回覆「採用：顯示實收筆數與不足提示」，批准 Base
 正式資料提交 `208cf12`；候選、Git、公開 Pages 逐位元組相同，SHA-256 `c685b65a985579513630ce54d5a0f99d640b3663fef443f415f564050dd0eb9e`。前端 index.html／additional-boards.js 也與修正提交相同。[封存 39540910382](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39540910382) 成功，新快照完整保留 16／100／100；[每日幣種摘要 39540921097](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39540921097) 接續成功；最終 [Pages 39540993911](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39540993911) 成功。中間 Pages 被後續資料提交取代取消，最終公開驗證已通過。
 
 正式站桌面與 390px 手機顯示來源時間、最多 20 筆／實收 16 筆及不足提示，展開恰好 16 列；手機無整頁橫向溢出。證據 `artifacts/actions-39536264719/production-verification.json`、`live-browser-checks.json`、`live-base-desktop.png`、`live-base-mobile.png`。本次已恢復榜單更新；未來來源錯誤、空 Base 或 Solana 不足門檻仍會保留舊檔並報失敗，不保證上游永遠足量。
+
+---
+
+### Codex 給 Ren（2026-10-21）：提前回歸檢查與重跑候選隔離
+
+kk 再次詢問 `39536264719` 的含義並要求避免類似異常。查閱時最新 attempt 3 為 success，公開來源仍為 11:51:48、Base16／Solana100／100，與候選及 Git hash 一致；前兩次失敗屬歷史紀錄。沒有再次觸發付費抓取。
+
+新增 `leaderboard-check.yml`：相關程式 push／PR 立即執行離線回歸，也可手動跑；read-only、不用 Birdeye Secret、不排程、不寫正式資料。42 項 Python 與 17 項榜單前端測試本機通過，新增案例確認不同 run／attempt 名稱隔離、非法識別值拒絕、planner 輸出與 workflow 權限邊界。
+
+原 run 真實存在三份同名 `leaderboard-candidates-39536264719`，不同 attempt 的證據容易混淆；這不是原 Base 不足的原因，是本次額外排除的重跑風險。production 改為 `leaderboard-candidates-<run_id>-<collect_attempt>`，由 collect output 傳給 publish；只重跑 publish 仍取得原產出檔。發布證據亦加 publish attempt。CI 使用測試 marker 驗證相同的上傳／傳遞／下載方式，推送後另外驗證只重跑接收 job 的結果。
+
+**範圍**：本次修改兩個 workflow 及 planner／回歸測試／文件；正式 full／flash cron、`leaderboard-data-writer-main` concurrency、唯一寫入者、發布 gate、hash／新鮮度檢查皆維持。沒有修改 `sync.sh`、`fetch.py` 或正式 JSON。新 CI 與只重跑接收 job 的線上實測結果待推送後補記；尚未宣稱新 artifact 名稱已在正式抓取使用。

@@ -21,7 +21,7 @@ full 保留原 source/chain/updated_at/insight/today/week 結構並新增 `base_
 - 匯入 VM 的 fetch.py 分頁／正規化函式，傳入明確 chain 與筆數；未修改 VM 的 fetch.py、sync.sh、systemd。
 - 檢查 Secret、額度、必填數值、非有限數字、整數交易次數、筆數、地址格式與重複地址（Base 忽略大小寫）。Base 抓取失敗即全量失敗，不以空陣列或 Solana 假冒 Base。
 - 候選檔只能寫在 checkout 外，正式 data.json 與 today-flash.json 全程唯讀並核對 SHA-256。
-- artifact `leaderboard-candidates-<run_id>` 保存 14 天，每個 batch 子目錄有候選 JSON、`baseline-data.json`（該目標檔的基準副本）、`validation.json`、README。完整失敗原因只使用固定診斷和 HTTP 狀態，不輸出 API 回應／header／key。
+- artifact `leaderboard-candidates-<run_id>-<collect_attempt>` 保存 14 天，每個 batch 子目錄有候選 JSON、`baseline-data.json`（該目標檔的基準副本）、`validation.json`、README。完整失敗原因只使用固定診斷和 HTTP 狀態，不輸出 API 回應／header／key。
 - 驗證依候選檔內 updated_at 大於正式基準，不以 workflow 時間冒充來源更新。updated_at 是批次完成時間，非鏈上事件時間。
 - collect job 僅 contents: read、checkout 不保留憑證；publish job 在 validate 模式必定跳過。若將交接開關改回 false，手動 publish 與 schedule 都會在 API 呼叫前被拒絕。
 
@@ -33,7 +33,15 @@ full 保留原 source/chain/updated_at/insight/today/week 結構並新增 `base_
 
 共用 concurrency `leaderboard-data-writer-main`、cancel-in-progress false 覆蓋整個抓取及發布流程。此鎖無法鎖住 VM，所以仍需上述交接。
 
-full 發布後明確 dispatch `leaderboard-snapshots.yml`；兩種發布皆要求 Pages rebuild。這是因 [GITHUB_TOKEN 推送不會觸發另一個 push workflow](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)。發布證據另存 `leaderboard-publication-<run_id>`。快照 archive 目前只封存 data.json；today-flash.json 的版本保留在 Git 歷史，不宣稱已進 snapshots/。
+full 發布後明確 dispatch `leaderboard-snapshots.yml`；兩種發布皆要求 Pages rebuild。這是因 [GITHUB_TOKEN 推送不會觸發另一個 push workflow](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)。發布證據另存 `leaderboard-publication-<run_id>-<publish_attempt>`。快照 archive 目前只封存 data.json；today-flash.json 的版本保留在 Git 歷史，不宣稱已進 snapshots/。
+
+## 變更檢查與重跑隔離（2026-10-21）
+
+`leaderboard-check.yml` 在相關程式 push／PR 或手動觸發時執行離線回歸，涵蓋 Base 有效短榜、空／錯誤資料拒絕、Solana 完整性、發布競爭及介面來源時間。它只有 read 權限、不讀 Birdeye Secret、不呼叫付費 API，也沒有排程或正式寫入步驟。正式抓取前仍保留同一組 Python 測試；變更檢查是提前發現問題的訊號，不代表已配置 main 分支合併門檻。
+
+候選名稱包含產出它的 collect attempt，並經 collect job output 傳給 publish；只重跑 publish 時仍用原 collect 的名稱，不能用新的 publish attempt 猜測。重新抓取才產生新候選名稱；發布證據則使用當次 publish attempt，保留不同嘗試的紀錄。原先 hash／30 分鐘新鮮度／遠端同檔競爭檢查照常適用，候選過期不能靠改名繞過。
+
+離線 CI 另用 `marker.txt` 測試真正的 GitHub artifact 上傳、跨 job 下載與內容核對。可單獨重跑 `artifact-transfer` job 驗證仍下載原 producing attempt；整段不包含真實榜單。舊 run 的舊 YAML 與無 attempt 名稱不會被回溯改寫，閱讀歷史失敗時請同時核對最新 attempt 結果與檔案內 `updated_at`，不要反覆重跑已成功的 production 工作。
 
 ## 筆數不足的處理（2026-10-21）
 

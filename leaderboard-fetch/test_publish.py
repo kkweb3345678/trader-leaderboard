@@ -1,6 +1,8 @@
 from datetime import timedelta
 import json
+import os
 from pathlib import Path
+import runpy
 import subprocess
 import tempfile
 import unittest
@@ -13,6 +15,34 @@ from test_validate import BASELINE, NOW, FAKE_KEY, collector, api_rows
 
 
 class PlanTests(unittest.TestCase):
+    def test_candidate_names_distinguish_run_attempts(self):
+        self.assertEqual(plan.candidate_name("39536264719", "3"), "leaderboard-candidates-39536264719-3")
+        self.assertNotEqual(plan.candidate_name("39536264719", "2"), plan.candidate_name("39536264719", "3"))
+        self.assertNotEqual(plan.candidate_name("39536264719", "3"), plan.candidate_name("39536264720", "3"))
+
+    def test_candidate_name_rejects_missing_or_unsafe_identifiers(self):
+        for value in (None, "", "0", "-1", "1\nother=value", "../1", "１"):
+            with self.subTest(value=value):
+                with self.assertRaises(ValueError):
+                    plan.candidate_name(value, "1")
+                with self.assertRaises(ValueError):
+                    plan.candidate_name("123", value)
+
+    def test_plan_exports_collect_attempt_name_for_downstream_jobs(self):
+        with tempfile.TemporaryDirectory() as root:
+            event = Path(root) / "event.json"
+            event.write_text(json.dumps({"schedule": "0 0 * * *"}))
+            output = Path(root) / "output"
+            with patch.dict(os.environ, {
+                "GITHUB_EVENT_NAME": "schedule", "GITHUB_EVENT_PATH": str(event),
+                "GITHUB_RUN_ID": "39536264719", "GITHUB_RUN_ATTEMPT": "3",
+                "GITHUB_OUTPUT": str(output), "LEADERBOARD_PUBLICATION_ENABLED": "true",
+            }), patch("builtins.print"):
+                runpy.run_path(str(Path(plan.__file__)), run_name="__main__")
+            values = dict(line.split("=", 1) for line in output.read_text().splitlines())
+            self.assertEqual(values, {"batch": "full", "publish": "true",
+                                     "candidate_name": "leaderboard-candidates-39536264719-3"})
+
     def test_handoff_blocks_both_manual_publish_and_schedules(self):
         for event, body in [("schedule", {"schedule": cron}) for cron in plan.SCHEDULES] + [
                 ("workflow_dispatch", {"inputs": {"mode": "publish", "batch": "full"}})]:

@@ -254,6 +254,27 @@ class ValidationTests(unittest.TestCase):
         self.assertLess(workflow.index("git fetch"), workflow.index("git merge --ff-only"))
         self.assertLess(workflow.index("git merge --ff-only"), workflow.index("python leaderboard-fetch/validate.py"))
 
+    def test_workflows_keep_candidate_attempt_and_ci_cannot_publish(self):
+        workflow = (validate.REPO / ".github/workflows/leaderboard-fetch.yml").read_text()
+        collect, publish = workflow.split("\n  publish:\n", 1)
+        self.assertIn("candidate_name: ${{ steps.plan.outputs.candidate_name }}", collect)
+        self.assertIn("name: ${{ steps.plan.outputs.candidate_name }}", collect)
+        self.assertIn("CANDIDATE_NAME: ${{ needs.collect.outputs.candidate_name }}", publish)
+        self.assertIn('--name "$CANDIDATE_NAME"', publish)
+        self.assertNotIn('--name "leaderboard-candidates-$GITHUB_RUN_ID"', publish)
+        self.assertIn("name: leaderboard-publication-${{ github.run_id }}-${{ github.run_attempt }}", publish)
+        checks = (validate.REPO / ".github/workflows/leaderboard-check.yml").read_text()
+        for trigger in ("push", "pull_request", "workflow_dispatch"):
+            self.assertRegex(checks, rf"(?m)^  {trigger}:")
+        self.assertNotRegex(checks, r"(?m)^\s+(schedule|pull_request_target):")
+        self.assertNotIn("secrets.", checks)
+        self.assertNotRegex(checks, r"(?m)^\s+(contents|actions|pages): write")
+        self.assertNotIn("python leaderboard-fetch/validate.py", checks)
+        self.assertNotIn("python leaderboard-fetch/publish.py", checks)
+        self.assertIn("persist-credentials: false", checks)
+        self.assertIn("CANDIDATE_NAME: ${{ needs.checks.outputs.candidate_name }}", checks)
+        self.assertIn('--name "$CANDIDATE_NAME"', checks)
+
     def test_flash_uses_only_twenty_solana_rows_and_preserves_full_data(self):
         source = collector()
         report = self.run_validation(source, batch="flash")
