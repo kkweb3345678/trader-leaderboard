@@ -8,7 +8,8 @@ test('daily source waits for 08:00 Taipei without pretending that workflow faile
   assert.equal(state(source,'2026-10-17T07:59:59+08:00').pending,false);
   const pending=state(source,'2026-10-17T08:00:00+08:00');
   assert.equal(pending.pending,true);assert.equal(pending.expected,'2026-10-17T00:00:00.000Z');
-  assert.match(pending.message,/2026\/10\/17 08:00/);assert.match(pending.message,/排程可能延遲/);assert.ok(!pending.message.includes('失敗'));
+  // ICU versions may format the date/time separator as a thin space.
+  assert.match(pending.message,/2026\/10\/17\s+08:00/);assert.match(pending.message,/排程可能延遲/);assert.ok(!pending.message.includes('失敗'));
   assert.equal(state('2026-10-17T10:52:49+08:00','2026-10-17T11:00:00+08:00').pending,false);
 });
 test('flash slots use 02, 14 and 20 Taipei including midnight and year rollover',()=>{
@@ -22,7 +23,7 @@ test('flash slots use 02, 14 and 20 Taipei including midnight and year rollover'
 test('timestamps are source based, timezone stable and missing times are never healthy',()=>{
   const a=state('2026-10-16T20:27:26Z','2026-10-17T05:00:00+08:00','flash');
   const b=state('2026-10-17T04:27:26+08:00','2026-10-16T21:00:00Z','flash');
-  assert.deepEqual(a,b);assert.equal(a.asOf,'2026/10/17 04:27');
+  assert.deepEqual(a,b);assert.match(a.asOf,/^2026\/10\/17\s+04:27$/);
   assert.equal(state(undefined,'2026-10-17T05:00:00Z').valid,false);
 });
 
