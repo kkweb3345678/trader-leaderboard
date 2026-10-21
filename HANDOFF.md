@@ -864,3 +864,7 @@ kk 再次詢問 `39536264719` 的含義並要求避免類似異常。查閱時�
 原 run 真實存在三份同名 `leaderboard-candidates-39536264719`，不同 attempt 的證據容易混淆；這不是原 Base 不足的原因，是本次額外排除的重跑風險。production 改為 `leaderboard-candidates-<run_id>-<collect_attempt>`，由 collect output 傳給 publish；只重跑 publish 仍取得原產出檔。發布證據亦加 publish attempt。CI 使用測試 marker 驗證相同的上傳／傳遞／下載方式，推送後另外驗證只重跑接收 job 的結果。
 
 **範圍**：本次修改兩個 workflow 及 planner／回歸測試／文件；正式 full／flash cron、`leaderboard-data-writer-main` concurrency、唯一寫入者、發布 gate、hash／新鮮度檢查皆維持。沒有修改 `sync.sh`、`fetch.py` 或正式 JSON。新 CI 與只重跑接收 job 的線上實測結果待推送後補記；尚未宣稱新 artifact 名稱已在正式抓取使用。
+
+**完成補記（12:17 台北）**：防護 `3b53d1f`、日期斷言相容性修正 `809b44f` 均已推 main。首輪離線 CI 發現 Linux ICU 以窄空白分隔日期與時間，原測試硬比普通空白而誤報；僅修正兩個測試接受空白差異，日期、時間及狀態判斷未放寬。隨後 [39543071798 attempt 1](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39543071798/attempts/1) 的 42 項 Python、17 項 Node 及 artifact-transfer 全部成功；再僅重跑接收 job，[attempt 2](https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39543071798/attempts/2) 成功，日誌確認 `CANDIDATE_NAME=leaderboard-candidates-39543071798-1`，保留原產出 attempt，未重建候選。
+
+12:15 公開檔核對仍是 11:51:48、Base16／Solana100／100，SHA-256 與前節一致。12:17 查閱最新 production 仍為原 run attempt 3 success，本輪沒有額外 Birdeye 請求。新 production artifact 命名留待既有下一輪排程採用，無另加正式試跑。工作區證據：`artifacts/actions-39536264719/prevention-ci.json`、`offline-check-success-attempt1/`、`offline-check-success/`、`PREVENTION.md`。
