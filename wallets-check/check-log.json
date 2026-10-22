@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "cohort": "comparison",
-  "started_at": "2026-10-22T15:13:56+00:00",
-  "last_check": "2026-10-22T15:15:07+00:00",
-  "last_success": "2026-10-22T10:06:23+00:00",
+  "started_at": "2026-10-22T20:01:11+00:00",
+  "last_check": "2026-10-22T20:02:26+00:00",
+  "last_success": "2026-10-22T20:02:26+00:00",
   "expected": 18,
   "configured": 17,
-  "checked": 16,
-  "failed": 1,
+  "checked": 17,
+  "failed": 0,
   "skipped": 1,
-  "changed": 0,
+  "changed": 1,
   "baselined": 0,
   "schedule": {
     "enabled": true,
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39802830034"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/39845140011"
   },
   "results": [
     {
@@ -58,8 +58,8 @@
       "wallet_id": "okx",
       "dimension": "swap_fee",
       "url": "https://web3.okx.com/dex-fees",
-      "status": "failed",
-      "error": "empty_or_incomplete_article"
+      "status": "unchanged",
+      "final_url": "https://web3.okx.com/dex-fees"
     },
     {
       "wallet_id": "binance",
@@ -79,7 +79,7 @@
       "wallet_id": "phantom",
       "dimension": "rewards",
       "url": "https://help.phantom.com/articles/phantom-referral-program-guide-55653835150099",
-      "status": "unchanged",
+      "status": "changed",
       "final_url": "https://help.phantom.com/articles/phantom-referral-program-guide-55653835150099"
     },
     {
@@ -146,5 +146,5 @@
   ],
   "status": "partial",
   "dataset_unchanged": true,
-  "pending_reviews": 3
+  "pending_reviews": 4
 }

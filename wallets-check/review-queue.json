@@ -54,5 +54,15 @@
     "old_hash": "724c43c3dee586fb8ee34142327a09ad1deee31ee9771ea38973e050bb0561d0",
     "new_hash": "7f47a97bbee0d528cafd6a6e0ca1d9777ace3c8b7a124fa0c4f8561b0f4469db",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-22T20:01:11+00:00",
+    "wallet_id": "phantom",
+    "dimension": "rewards",
+    "url": "https://help.phantom.com/articles/phantom-referral-program-guide-55653835150099",
+    "summary": " Refer friends and earn with Phantom\n-The Phantom Referral Program lets you invite friends to Phantom and earn 25% of the net trading fees Phantom receives from their eligible trades for three months. Your friend gets 10% of their own eligible trading fees back for three months. Your earnings go to your Cash balance, and your friend’s rebates go to theirs. Both are paid in CASH.\n-Referral codes can only be applied during signup in the Phantom mobile app. They can’t be applied during onboarding o",
+    "old_hash": "7f47a97bbee0d528cafd6a6e0ca1d9777ace3c8b7a124fa0c4f8561b0f4469db",
+    "new_hash": "52f203e06e726c58399696a75ae3828b7c9a2857740fc70a01d6feb02349f5a4",
+    "status": "pending"
   }
 ]

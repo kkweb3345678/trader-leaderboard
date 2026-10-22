@@ -1,6 +1,7 @@
 Refer friends and earn with Phantom
-The Phantom Referral Program lets you invite friends to Phantom and earn 25% of the net trading fees Phantom receives from their eligible trades for three months. Your friend gets 10% of their own eligible trading fees back for three months. Your earnings go to your Cash balance, and your friend’s rebates go to theirs. Both are paid in CASH.
-Referral codes can only be applied during signup in the Phantom mobile app. They can’t be applied during onboarding on the browser extension or in Phantom Terminal. Once you’ve joined through a referral on mobile, eligible swaps on the browser extension also count toward referral benefits.
+The Phantom Referral Program lets you invite friends and earn 25% of the net trading fees Phantom receives from their eligible trades for three months. Your friends get 10% of their own eligible trading fees back for three months.
+Earnings and rebates are paid in CASH to each person’s Cash balance.
+Referral codes can only be applied during signup in the Phantom mobile app. They can’t be applied when signing up through the browser extension or Phantom Terminal. Once a friend signs up through a referral on mobile, their eligible swaps on the browser extension also count toward referral benefits.
 Share your referral link or code
 #
 If your account is eligible to refer others, follow these steps:
@@ -8,52 +9,54 @@ Tap your profile avatar in the upper left.
 Tap
 Refer & Earn
 .
-Copy your referral link, show the QR for a referee to or use the available sharing options.
+Copy your referral link, show your QR code for a friend to scan, or choose an available sharing option.
 Find your referral sharing options on the Refer & Earn page
 Your referral link is
 phantom.com/r/username
 and the referral code is your
 username
 .
-If you change your username, your existing referrals stay linked to you. New referrals must use your new username. Update any links or codes you’ve shared, because your old code no longer links new referrals to you, and someone else may claim that username.
-How to get started
+If you change your username, existing referrals stay linked to you, but new referrals must use your new username. Update any links or codes you’ve shared. Your old code will no longer link new referrals to you, and someone else may claim that username.
+Sign up with a referral code
 #
-To receive referral benefits as a new user, sign up through a valid, active referral link or by scanning a referral QR code, or enter a referral code during signup.
+To receive referral benefits as a new user, sign up in the Phantom mobile app using a valid, active referral link or QR code, or enter a referral code during signup.
 Enter a referral code when creating your Phantom wallet
-During signup, check that the referral code is included. If it isn’t added automatically, enter it manually on the referral screen.
+Check that the code appears during signup. If it hasn’t been added automatically, enter it manually on the referral screen.
 Referral codes can’t be added after signup.
 What referred users receive
 #
-Referred users can receive a percentage of the fees paid on their own eligible trades back as a rebate. This is credited to the Cash account rather than deducted from the fee upfront.
-Eligible trades show your referral information in the fee breakdown, at transaction confirmation
-The rebate percentage is shown in Phantom at transaction confirmation. Your three-month rebate period starts when the referral code is applied to your new account during mobile signup. Phantom doesn’t currently show your expiry date or remaining rebate period in the app.
-When the rebate ends, the “10% discount on fees” message stops appearing during checkout. The rebate period may end earlier if the program or your eligibility ends.
+As a referred user, you can receive 10% of the fees paid on your own eligible trades back as a rebate. The rebate goes to your Cash balance. It isn’t deducted from the trading fee upfront.
+Your referral information appears in the fee breakdown when you confirm an eligible trade
+Phantom shows the rebate percentage at transaction confirmation. Your three-month rebate period starts when the referral code is applied to your new account during mobile signup. The app doesn’t currently show the expiry date or how much time remains.
+When your rebate period ends, the “10% discount on fees” message stops appearing during checkout. The period may end earlier if the program or your eligibility ends.
 Rates and earning windows may change.
-What referrers earn and how payments work
+What referrers earn
 #
-You earn 25% of the net trading fees Phantom receives from each referred user's eligible trades. You begin earning once your friend funds their wallet and completes their first eligible trade.
-For each referral, the three-month earning period starts when your referral code is applied to the user's new account during mobile signup. Only eligible trades within that period count toward your earnings. You won’t earn a fee share where Phantom receives no net trading fee.
-Your referral earnings go to your Cash balance, and your referral's rebates go to theirs. Both are paid in CASH, at most once per day, after the recipient meets the $1 minimum payout threshold.
-You may also need to complete identity verification, provide requested information, or maintain an eligible Cash account before receiving payment.
+You earn 25% of the net trading fees Phantom receives from each referred user’s eligible trades. You begin earning once your friend funds their wallet and completes their first eligible trade.
+Each referral’s three-month earning period starts when your code is applied to your friend’s new account during mobile signup. Only eligible trades within that period count. You won’t earn a fee share on trades where Phantom receives no net trading fee.
+How payments work
+#
+Referral earnings and rebates are paid in CASH to each recipient’s Cash balance. Payments are made at most once per day, after the recipient meets the $1 minimum payout threshold.
+Before receiving payment, you may also need to complete identity verification, provide requested information, or maintain an eligible Cash account.
 Eligible trades
 #
-Spot trades, perps, and predictions qualify as eligible trades. The trade must take place during the applicable rebate or earning window.
+Spot trades, perps, and predictions qualify for referral benefits. Each trade must take place within the applicable rebate or earning window.
 Track your referrals and rebates
 #
-You can view your referral performance, earnings, and list of referred users on the
+Go to
 Cash > Refer & Earn
-page.
+to view your referral performance, earnings, and list of referred users.
 Track your referral performance on the Refer & Earn page
-Phantom sends notifications when referral earnings or rebates are credited to your Cash balance.
-A referral counts as successful when your referred friend completes their first eligible trade.
+A referral counts as successful when your friend completes their first eligible trade.
+Phantom sends a notification when referral earnings or rebates are credited to your Cash balance.
 If you haven’t received a payout
 #
 Check the following:
-The referred user signed up through a valid, active referral link, or entered the code at signup.
-The trade took place during the applicable earning window and qualified for the program.
-If you’re the referrer, the referred user funded their wallet and completed their first eligible trade.
-You’ve met any applicable payout threshold and completed any requested verification.
-Referrers won’t earn a fee share where Phantom receives no net trading fee.
+The referred user signed up through a valid, active referral link or entered the code during signup.
+The trade qualified for the program and took place within the applicable rebate or earning window.
+If you’re the referrer, your friend funded their wallet and completed their first eligible trade.
+You’ve met the applicable payout threshold and completed any requested verification.
+Referrers won’t earn a fee share on trades where Phantom receives no net trading fee.
 Participation is subject to the
 Phantom Referral Program Terms and Conditions
 .
