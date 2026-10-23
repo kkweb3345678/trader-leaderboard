@@ -64,5 +64,15 @@
     "old_hash": "7f47a97bbee0d528cafd6a6e0ca1d9777ace3c8b7a124fa0c4f8561b0f4469db",
     "new_hash": "52f203e06e726c58399696a75ae3828b7c9a2857740fc70a01d6feb02349f5a4",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-23T09:58:54+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " #\n-If Phantom opens but you can’t use your wallet, your sign-in session may have expired after the app transferred from a backup.\n-Before resetting Phantom, make sure you have the original credentials for the wallet. You’ll need them to restore access. If you previously imported additional recovery phrases or private keys, have those in hand, too.\n+If your wallet appears as watch-only after Phantom was restored from a backup, your sign-in session may have expired.\n+Before resetting Phantom, mak",
+    "old_hash": "62985c8862b44dffade5ce8e860ea52e789579b7cc0c71cc316b6a180d05aeb8",
+    "new_hash": "17cb715debd5d8ed1fad8b78c07e70dbb5bba949eeb9a868d79fba561e03942b",
+    "status": "pending"
   }
 ]

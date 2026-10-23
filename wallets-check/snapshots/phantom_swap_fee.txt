@@ -221,13 +221,13 @@ Report a token or collectible as spam
 Changing swap settings cannot remove a token’s contract restrictions.
 Watch-only address
 #
-If Phantom opens but you can’t use your wallet, your sign-in session may have expired after the app transferred from a backup.
-Before resetting Phantom, make sure you have the original credentials for the wallet. You’ll need them to restore access. If you previously imported additional recovery phrases or private keys, have those in hand, too.
+If your wallet appears as watch-only after Phantom was restored from a backup, your sign-in session may have expired.
+Before resetting Phantom, make sure you can access the Apple or Google account, recovery phrase, or private key you originally used. You’ll also need the recovery phrases or private keys for any additional wallets you imported.
 Go to
 Settings > Security & Privacy > Reset App
 . If you can’t access this option, uninstall Phantom and download it again.
-Open Phantom and restore your wallets using the same Apple or Google account, recovery phrases, or private keys.
-Resetting Phantom clears its local data. It doesn’t erase your wallets or funds.
+1. Open Phantom and restore your wallets using the same Apple or Google account, recovery phrases, or private keys.
+Resetting Phantom clears the app’s local data. It doesn’t delete your wallets or funds.
 “This account might be malicious”
 #
 Stop depositing funds into the account. This warning may indicate malicious account ownership or a wallet controlled by someone else.

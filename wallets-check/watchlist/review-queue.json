@@ -88,5 +88,15 @@
     "old_hash": "3247190d7842d81cb26a750815a3d2c6954e29203dd35b7345c0034b477fabf9",
     "new_hash": "d5e5198401870c1180be16249e926c0c65215d2b883317a5c5105781394e54e6",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-23T10:00:06+00:00",
+    "wallet_id": "zerion",
+    "dimension": "swap_fee",
+    "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+    "summary": " Bridge Crypto with Zerion\n-Understanding Portfolio Tracking in Zerion\n+Unsupported Wallets in Zerion",
+    "old_hash": "bd31f7074c4b0353f27794c89193a3498c892718b7741fbd1142758240f9af3f",
+    "new_hash": "5a8202d9d9bbd740a308a6933b42a00679881a9abdfea8dc3801bfb9d10935f1",
+    "status": "pending"
   }
 ]
