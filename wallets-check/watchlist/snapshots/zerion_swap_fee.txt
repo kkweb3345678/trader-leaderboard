@@ -38,4 +38,4 @@ What is Zerion?
 What is Zerion Premium?
 Zerion Premium: FAQs
 Bridge Crypto with Zerion
-Unsupported Wallets in Zerion
+Understanding Portfolio Tracking in Zerion
