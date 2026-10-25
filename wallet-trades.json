@@ -2,10 +2,10 @@
   "schema_version": 1,
   "source": "Birdeye",
   "chain": "solana",
-  "updated_at": "2026-10-24T11:02:29+08:00",
-  "source_updated_at": "2026-10-24T11:01:05+08:00",
-  "source_sha256": "bd99376bfbf5b0b1aa6d03ce04c0bae5a0257246148e7cabd0a4bda118557de1",
-  "source_commit": "ff96e4fd45883cbe02670b98026a0bd1a7fa46c2",
+  "updated_at": "2026-10-25T10:55:49+08:00",
+  "source_updated_at": "2026-10-25T10:54:31+08:00",
+  "source_sha256": "ad47467c93d288f3686d0bd3fcc8cd94975ce81eeebecdd0ea6cd095f76c7a19",
+  "source_commit": "d3e20636f66378af78b77937b5982bd7fb212554",
   "selection": "week_sample_volume_top10",
   "parameters": {
     "duration": "7d",
@@ -19,7 +19,7 @@
   "wallets": [
     {
       "address": "2gkoQ7jUnba6gMA4s3t1eno9R9TfyYa4ZUfWE74idFJU",
-      "snapshot_date": "2026-10-24T11:01:51+08:00",
+      "snapshot_date": "2026-10-25T10:55:13+08:00",
       "reported_unique_tokens": 31,
       "coverage": "count_mismatch",
       "tokens": [
@@ -31,7 +31,7 @@
           "sell_count": 60,
           "buy_usd": 370.2983674736821,
           "sell_usd": 370.4741297020232,
-          "realized_usd": -7.891521889906531,
+          "realized_usd": -7.891521889906532,
           "unrealized_usd": -2.878217066971918
         },
         {
@@ -46,17 +46,6 @@
           "unrealized_usd": -31336.797241347198
         },
         {
-          "address": "CGn6yYGTUkctq9PqDdK6ALgfxTS1vTBr9NWBPuoNYmad",
-          "symbol": "$ONE",
-          "last_trade_unix_time": 1792724481,
-          "buy_count": 134,
-          "sell_count": 127,
-          "buy_usd": 148315637.4187498,
-          "sell_usd": 195883039.6853943,
-          "realized_usd": 0.0,
-          "unrealized_usd": -97034148.9352996
-        },
-        {
           "address": "45fwvzyjUSnvd7NeEgSK5oL1wycMzuS5CTtWRFhCHU6u",
           "symbol": "¥FIVE",
           "last_trade_unix_time": 1792724481,
@@ -66,6 +55,17 @@
           "sell_usd": 15295236.821125181,
           "realized_usd": -22656.642423089055,
           "unrealized_usd": -1231.2744065516194
+        },
+        {
+          "address": "CGn6yYGTUkctq9PqDdK6ALgfxTS1vTBr9NWBPuoNYmad",
+          "symbol": "$ONE",
+          "last_trade_unix_time": 1792724481,
+          "buy_count": 117,
+          "sell_count": 114,
+          "buy_usd": 140422495.79649636,
+          "sell_usd": 194793381.86684674,
+          "realized_usd": 0.0,
+          "unrealized_usd": -97034148.9352996
         },
         {
           "address": "uM1kuvsLYauDQZh8g6RrNw3oLAfSAvgEojvJT5hCLNV",
@@ -93,33 +93,33 @@
           "address": "E3JyYE8JKTYVYC8Sm558yCDLQBbwv28JJZMm89Gr7MHi",
           "symbol": "$DIDI",
           "last_trade_unix_time": 1792724074,
-          "buy_count": 15,
-          "sell_count": 13,
-          "buy_usd": 18016956.95125946,
-          "sell_usd": 18020659.98916187,
-          "realized_usd": 7596.325434060332,
+          "buy_count": 10,
+          "sell_count": 8,
+          "buy_usd": 18016954.938899457,
+          "sell_usd": 18020657.976801872,
+          "realized_usd": 7596.325676572066,
           "unrealized_usd": -3893.2882105059953
         },
         {
           "address": "AsAU7v3W8F6Z93TdHS96TM2KmqykV61u2nKxJChgvetS",
           "symbol": "EURI",
           "last_trade_unix_time": 1792724036,
-          "buy_count": 46,
-          "sell_count": 43,
-          "buy_usd": 148.9766395916914,
-          "sell_usd": 148.90836104161912,
-          "realized_usd": -246878.0765030264,
+          "buy_count": 41,
+          "sell_count": 38,
+          "buy_usd": 124.55416229459668,
+          "sell_usd": 124.48979029919475,
+          "realized_usd": -210411.049153959,
           "unrealized_usd": -8.408433332515203
         },
         {
           "address": "2y48YY37oS7n94BSGKUrYhGCbxVTgGRZDqCfAjJ5yzG4",
           "symbol": "EURC",
           "last_trade_unix_time": 1792724036,
-          "buy_count": 57,
-          "sell_count": 45,
-          "buy_usd": 47545706.47232634,
-          "sell_usd": 41110738.84320064,
-          "realized_usd": 28332817.54502933,
+          "buy_count": 53,
+          "sell_count": 42,
+          "buy_usd": 47545704.52378911,
+          "sell_usd": 41110736.981775135,
+          "realized_usd": 28332815.76630471,
           "unrealized_usd": -34767786.72672904
         },
         {
@@ -130,7 +130,7 @@
           "sell_count": 10,
           "buy_usd": 18461621.058263164,
           "sell_usd": 18459881.815909136,
-          "realized_usd": -310.87856059636675,
+          "realized_usd": -310.8785605963667,
           "unrealized_usd": -5174.965322152402
         },
         {
@@ -145,17 +145,6 @@
           "unrealized_usd": 0.0
         },
         {
-          "address": "H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d",
-          "symbol": "€TWO",
-          "last_trade_unix_time": 1792723902,
-          "buy_count": 49,
-          "sell_count": 43,
-          "buy_usd": 58917713.26138646,
-          "sell_usd": 1059950549.8518313,
-          "realized_usd": 0.0,
-          "unrealized_usd": -82463.78564252611
-        },
-        {
           "address": "HCyCN4fg9FsRjmEjeQW7bP7AXhh78AUZrCKggKcM32Cg",
           "symbol": "€SHIELD",
           "last_trade_unix_time": 1792723902,
@@ -167,14 +156,25 @@
           "unrealized_usd": -21814716.45820998
         },
         {
+          "address": "H5kjSzmxW98iZ2Xvx7e45hxxyDjMYTk6z8aJfeFsj46d",
+          "symbol": "€TWO",
+          "last_trade_unix_time": 1792723902,
+          "buy_count": 49,
+          "sell_count": 43,
+          "buy_usd": 58917713.26138646,
+          "sell_usd": 1059950549.8518313,
+          "realized_usd": 0.0,
+          "unrealized_usd": -82463.78564252611
+        },
+        {
           "address": "BkpD4t5sbVyMqFoQ3qNY2kJAKW4pcSTfCpZN6VnsBNnD",
           "symbol": "¥365",
           "last_trade_unix_time": 1792723678,
-          "buy_count": 24,
-          "sell_count": 19,
-          "buy_usd": 947648.257892214,
-          "sell_usd": 10517942.968040965,
-          "realized_usd": 9579890.255621657,
+          "buy_count": 23,
+          "sell_count": 18,
+          "buy_usd": 947647.6950892344,
+          "sell_usd": 10318103.075563118,
+          "realized_usd": 9382625.699149486,
           "unrealized_usd": -12201.929633429112
         },
         {
@@ -186,40 +186,40 @@
           "buy_usd": 0.05663266127237383,
           "sell_usd": 0.05623046322072509,
           "realized_usd": -0.00011932066201408113,
-          "unrealized_usd": 0.06640871963953668
+          "unrealized_usd": 2.821316275337627e-07
         },
         {
           "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "symbol": "USDC",
           "last_trade_unix_time": 1792723583,
-          "buy_count": 78,
-          "sell_count": 133,
-          "buy_usd": 0.7731099099438151,
-          "sell_usd": 0.7455294202060814,
-          "realized_usd": -1.0129289726173185e-05,
-          "unrealized_usd": 4.700154435740853e-06
+          "buy_count": 75,
+          "sell_count": 126,
+          "buy_usd": 0.7586708460795853,
+          "sell_usd": 0.6211365401568605,
+          "realized_usd": -1.0288880582466207e-05,
+          "unrealized_usd": -6.265506894269222e-06
         },
         {
           "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
           "symbol": "USDT",
           "last_trade_unix_time": 1792723520,
-          "buy_count": 49,
-          "sell_count": 52,
-          "buy_usd": 0.23093548551447993,
-          "sell_usd": 0.23589909309170531,
-          "realized_usd": -1.6249569179543896e-05,
-          "unrealized_usd": 2.3708564747859876e-06
+          "buy_count": 47,
+          "sell_count": 49,
+          "buy_usd": 0.22124015018372714,
+          "sell_usd": 0.22123106538105275,
+          "realized_usd": -1.4186547665262068e-05,
+          "unrealized_usd": 2.0135641113965364e-06
         },
         {
           "address": "So11111111111111111111111111111111111111112",
           "symbol": "SOL",
           "last_trade_unix_time": 1792723512,
-          "buy_count": 68,
-          "sell_count": 70,
-          "buy_usd": 0.33524951832513955,
-          "sell_usd": 0.7607793225272201,
-          "realized_usd": -9.362506506446944e-05,
-          "unrealized_usd": -8.849144647470235e-09
+          "buy_count": 55,
+          "sell_count": 57,
+          "buy_usd": 0.2720343850331721,
+          "sell_usd": 0.6975742484564936,
+          "realized_usd": -8.366963098495259e-05,
+          "unrealized_usd": -1.0409690578052998e-08
         },
         {
           "address": "4apVfRL5m7kUzgsTDrg9h3SxVKm7m7Qi8K6ewFRyTbL6",
@@ -252,7 +252,7 @@
           "buy_usd": 0.041225834739907034,
           "sell_usd": 0.041017852088729975,
           "realized_usd": -0.00010487900772654763,
-          "unrealized_usd": 0.1375527663293416
+          "unrealized_usd": -1.4948442633102053e-07
         },
         {
           "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
@@ -263,7 +263,7 @@
           "buy_usd": 0.05195256038074066,
           "sell_usd": 0.0519270484962512,
           "realized_usd": -2.7779281700658188e-05,
-          "unrealized_usd": -6.459689131603776e-05
+          "unrealized_usd": -0.00010097440539394766
         },
         {
           "address": "DEivmNyf9p9wNSPqMNRuxZsN9VTpZL1fRBypjEt8PmLs",
@@ -313,11 +313,11 @@
           "address": "4EqVmfTc2ftfdcXCbR95UEsoMdab3WstSj5MEPVW2kqb",
           "symbol": "€AUDT",
           "last_trade_unix_time": 1792723111,
-          "buy_count": 30,
-          "sell_count": 30,
-          "buy_usd": 0.14990830098777141,
-          "sell_usd": 0.14966955632762877,
-          "realized_usd": -0.00023874466014264833,
+          "buy_count": 18,
+          "sell_count": 18,
+          "buy_usd": 0.09081171636101563,
+          "sell_usd": 0.09049423727669445,
+          "realized_usd": -0.00031747908432118053,
           "unrealized_usd": 0.0
         },
         {
@@ -335,11 +335,11 @@
           "address": "3YBgdJkNi41H4AtqNtywFdTx11H5CmDvt8qB3QHxninS",
           "symbol": "$TAXI",
           "last_trade_unix_time": 1792659240,
-          "buy_count": 8,
-          "sell_count": 8,
-          "buy_usd": 19546.58438067454,
-          "sell_usd": 99706.80433526103,
-          "realized_usd": 80160.2199545865,
+          "buy_count": 4,
+          "sell_count": 4,
+          "buy_usd": 8519.888795439118,
+          "sell_usd": 70937.47740898738,
+          "realized_usd": 62417.58861354827,
           "unrealized_usd": 0.0
         },
         {
@@ -406,7 +406,7 @@
           "buy_usd": 0.007504450313843289,
           "sell_usd": 0.007576768700627765,
           "realized_usd": 7.409567325905413e-05,
-          "unrealized_usd": -3.821557167097635e-08
+          "unrealized_usd": -4.441597637159216e-08
         },
         {
           "address": "7qWzqK88raSCKAA74mA1x2Y2UZiAh8FBtqntMASjdSXF",
@@ -443,14 +443,69 @@
         }
       ],
       "sample_volume_rank": 1,
-      "sample_volume_usd": 787890652.93
+      "sample_volume_usd": 767712812.61
     },
     {
       "address": "EAAaneq3hk966HX1RYxRyQJbNWSoMumqcZrJ1N5EedW2",
-      "snapshot_date": "2026-10-24T11:01:55+08:00",
-      "reported_unique_tokens": 6,
+      "snapshot_date": "2026-10-25T10:55:16+08:00",
+      "reported_unique_tokens": 10,
       "coverage": "count_mismatch",
       "tokens": [
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "last_trade_unix_time": 1792862872,
+          "buy_count": 7,
+          "sell_count": 2,
+          "buy_usd": 8.480261072789816,
+          "sell_usd": 10.903314325361011,
+          "realized_usd": 0.07541756930972249,
+          "unrealized_usd": -0.022256447026421898
+        },
+        {
+          "address": "5qQt7ubMSW7PtQUjqRWhqp5nhBuQVgktyEKhNAnyJ78R",
+          "symbol": "USD𖼊",
+          "last_trade_unix_time": 1792862872,
+          "buy_count": 0,
+          "sell_count": 2,
+          "buy_usd": 0.0,
+          "sell_usd": 2.2276250605813344,
+          "realized_usd": 0.1572276341482928,
+          "unrealized_usd": -17.07167541813552
+        },
+        {
+          "address": "DvuYmbb5no6XV93eyJvu5x3cXogMMk5yh7hwucXa4zXe",
+          "symbol": "USDT",
+          "last_trade_unix_time": 1792862872,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 1.189163510179058,
+          "sell_usd": 0.00645913373069447,
+          "realized_usd": -1.1827043764483638,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "6NcANu1PdNf7KMzdNzXKUJMHVcgvTAYfrifUEEbv832e",
+          "symbol": "USD𖼊",
+          "last_trade_unix_time": 1792822453,
+          "buy_count": 0,
+          "sell_count": 1,
+          "buy_usd": 0.0,
+          "sell_usd": 18.411114,
+          "realized_usd": -31953.975330818077,
+          "unrealized_usd": -31972.386444935142
+        },
+        {
+          "address": "HsYXLufsZDXETeWG1vpJg6jkDqXvza6huH34MVMn95Yj",
+          "symbol": "B𖼊C",
+          "last_trade_unix_time": 1792822453,
+          "buy_count": 1,
+          "sell_count": 0,
+          "buy_usd": 18.411114,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": -18.411115586133167
+        },
         {
           "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "symbol": "USDC",
@@ -460,7 +515,7 @@
           "buy_usd": 14.537450691066098,
           "sell_usd": 14.537450691066098,
           "realized_usd": 3.5837545280875116e-08,
-          "unrealized_usd": -1.0378016301775557e-07
+          "unrealized_usd": -3.380868330179538e-07
         },
         {
           "address": "3tUhqazmvfoNsbbeCJuBc4qbpBizk5qdpmRMrtuSUSjm",
@@ -472,17 +527,6 @@
           "sell_usd": 3173.6279700756577,
           "realized_usd": 3171.8886313058874,
           "unrealized_usd": -65.0049169963525
-        },
-        {
-          "address": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "last_trade_unix_time": 1792797590,
-          "buy_count": 10,
-          "sell_count": 3,
-          "buy_usd": 18.80967847896838,
-          "sell_usd": 11.924781649797103,
-          "realized_usd": 0.06461237054155156,
-          "unrealized_usd": -0.02043310566383177
         },
         {
           "address": "CFr2k2oXeBWUpex8VNGUaCtMbuS23eernjVHN58Vs5Wn",
@@ -511,11 +555,11 @@
           "symbol": "UЅⅮT",
           "last_trade_unix_time": 1792691102,
           "buy_count": 0,
-          "sell_count": 7,
+          "sell_count": 3,
           "buy_usd": 0.0,
-          "sell_usd": 13.65965826971389,
-          "realized_usd": 10.441124166941822,
-          "unrealized_usd": 4.091468021223715
+          "sell_usd": 3.2853746415185325,
+          "realized_usd": 1.94217550771679,
+          "unrealized_usd": 358.64726627672206
         },
         {
           "address": "8GNJ1N11oij2kND5Eyxet1D2BZ2Qk2tzPv4HPmbuyxg1",
@@ -548,50 +592,1204 @@
           "buy_usd": 10.371185344799999,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": -0.0015156547999988518
-        },
-        {
-          "address": "SoJh2C73YT4WPcpG7Uy8HLPe5q67wJ9pEE1kxf4GhTC",
-          "symbol": "SОL",
-          "last_trade_unix_time": 1792350890,
-          "buy_count": 1,
-          "sell_count": 1,
-          "buy_usd": 0.04056029877515876,
-          "sell_usd": 4627921.558357238,
-          "realized_usd": 4627921.517796939,
-          "unrealized_usd": 0.0
+          "unrealized_usd": -0.0015983448459656105
         },
         {
           "address": "E5XZcKnDhu9jG2dhU1W9kpFzdtgTcjWXTiN36HybE5MY",
           "symbol": "ЅՕL",
           "last_trade_unix_time": 1792350890,
-          "buy_count": 2,
-          "sell_count": 2,
-          "buy_usd": 1.6442760109533547,
-          "sell_usd": 4721926.476969737,
-          "realized_usd": 4721924.832693726,
+          "buy_count": 0,
+          "sell_count": 0,
+          "buy_usd": 0.0,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "SoJh2C73YT4WPcpG7Uy8HLPe5q67wJ9pEE1kxf4GhTC",
+          "symbol": "SОL",
+          "last_trade_unix_time": 1792350890,
+          "buy_count": 0,
+          "sell_count": 0,
+          "buy_usd": 0.0,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
           "unrealized_usd": 0.0
         }
       ],
       "sample_volume_rank": 2,
-      "sample_volume_usd": 9353051.7
+      "sample_volume_usd": 9353091.95
+    },
+    {
+      "address": "GxhREMk4k2AKF8fEPGbeh1WDAsv3jTEUHt6uEdr6B7iy",
+      "snapshot_date": "2026-10-25T10:55:20+08:00",
+      "reported_unique_tokens": 151,
+      "coverage": "limited",
+      "tokens": [
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "last_trade_unix_time": 1792894769,
+          "buy_count": 329,
+          "sell_count": 157,
+          "buy_usd": 3986067.1595563693,
+          "sell_usd": 2677952.3687023977,
+          "realized_usd": -19065.30111321285,
+          "unrealized_usd": -10015.771189926169
+        },
+        {
+          "address": "FHnbnQaAKnG6pcQBfXse9giURUwAkBAugtFnKC2rpump",
+          "symbol": "",
+          "last_trade_unix_time": 1792894769,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17196.688586395052,
+          "sell_usd": 46171.53445027451,
+          "realized_usd": 28974.845863879455,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "3CiKPew3QM987KfFjTHctajrCpvK3pt2egRXThhVpump",
+          "symbol": "",
+          "last_trade_unix_time": 1792888410,
+          "buy_count": 4,
+          "sell_count": 2,
+          "buy_usd": 18695.2152210849,
+          "sell_usd": 29316.12751804149,
+          "realized_usd": 10620.912296956585,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "CoSdbrsNTFcDGAajf1LAcCxPtwLCMehrFcaKTaqtpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792883850,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17051.35141357523,
+          "sell_usd": 18947.823535274318,
+          "realized_usd": 1896.4721216990877,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "4YJE63vwTZFWS7WKjEfjfzVxSbRi3Qd571j72ScRpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792867426,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 16914.454425133714,
+          "sell_usd": 23938.729630073478,
+          "realized_usd": 7024.275204939766,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "94mf8fFVqdud3ToynqNmkBSt1di8GBUo8iYrdgSepump",
+          "symbol": "YouTube",
+          "last_trade_unix_time": 1792865436,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 16849.991384504076,
+          "sell_usd": 23755.584469076348,
+          "realized_usd": 6905.593084572272,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "7BHGgYrUbfQvEK1esQJFqWcD4JmoGxiHG5Tp1FLTpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792862829,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 16837.950223663094,
+          "sell_usd": 22594.155719945044,
+          "realized_usd": 5756.205496281949,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "AmhZ5gkHoqz8a9GhkJ3M6JBQbbC9yhGeU3Cvg4Fmpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792860488,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 16780.921702903677,
+          "sell_usd": 18120.14097978681,
+          "realized_usd": 1339.2192768831321,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "DmBmyapz8ThmPdKNSnQ7Ym5sxarJrSf2o9BRBAozpump",
+          "symbol": "LEGO",
+          "last_trade_unix_time": 1792858252,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 16738.549181921793,
+          "sell_usd": 18350.584459048867,
+          "realized_usd": 1612.0352771270723,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "8wLRSzAmHdZvYVfVembEpskVeLRBxC2EPkHq3XPXpump",
+          "symbol": "Fomo",
+          "last_trade_unix_time": 1792851632,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 16944.476075953786,
+          "sell_usd": 19108.369794381597,
+          "realized_usd": 2163.893718427814,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "AU7usKfEZT8BDGv6n8EVC7jkNqCXYY2XAnfR5YqBpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792849987,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17004.566446458895,
+          "sell_usd": 24696.349344508097,
+          "realized_usd": 7691.782898049198,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "3y7V7nQqmxUGzCvAk3gUCkQ1KEu5o88qBwhLCV4Qpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792847910,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17046.309794421384,
+          "sell_usd": 26661.24863935966,
+          "realized_usd": 9614.938844938277,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "DtPzi7JM5Nb5a6hHkdWpUi6o4ihCd7jJbby5Qhb4pump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792843716,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17027.304858863583,
+          "sell_usd": 20255.851910342724,
+          "realized_usd": 3228.5470514791396,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "7VVtX7cLN4n5DXUYuAcunJ14Gp4UacTHQeLdLDk1pump",
+          "symbol": "YouTube",
+          "last_trade_unix_time": 1792842057,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17028.716618270395,
+          "sell_usd": 23373.490454661427,
+          "realized_usd": 6344.773836391034,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "CuphMFb4zt6CeTYxNoiVUmzREjA16ErL7St8frzSpump",
+          "symbol": "X",
+          "last_trade_unix_time": 1792836005,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 16995.301493262097,
+          "sell_usd": 25625.397614676287,
+          "realized_usd": 8630.09612141419,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "3rdnHCfBLVCReCXP7KqKECyuJq9g6hGDyHbDvuFfpump",
+          "symbol": "Fomo",
+          "last_trade_unix_time": 1792832739,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17101.453269737205,
+          "sell_usd": 45490.79492289719,
+          "realized_usd": 28389.341653159987,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "8ZJhpqUWvos7Bzd8NaMVR16Koo9g3p7dL3rWnVF1pump",
+          "symbol": "LEGO",
+          "last_trade_unix_time": 1792826083,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17172.37995405933,
+          "sell_usd": 21779.755133623057,
+          "realized_usd": 4607.375179563728,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "A8hCzn2YzWytYdRoNwjAe2CMuKFwU9tG282eCkkGpump",
+          "symbol": "Grok",
+          "last_trade_unix_time": 1792821602,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17167.75272945437,
+          "sell_usd": 25999.647354865127,
+          "realized_usd": 8831.894625410756,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "4ztvqQak5wvUj19UipuzQQDakwTyXyMveYazZkvMpump",
+          "symbol": "Haaland",
+          "last_trade_unix_time": 1792819090,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17207.38406159136,
+          "sell_usd": 22393.893634218326,
+          "realized_usd": 5186.509572626965,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "6WaAD5hv4tZbHVVbEAc5L36jrnxXCNGWfovhFhwqpump",
+          "symbol": "SpaceX AI",
+          "last_trade_unix_time": 1792817489,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 20487.47108910994,
+          "sell_usd": 34230.22021336228,
+          "realized_usd": 13742.74912425234,
+          "unrealized_usd": -2.1149651234146125e-12
+        },
+        {
+          "address": "7euxacsyVW5Y1V6zpHtjyxty2MecXsFyGoEpijbvpump",
+          "symbol": "Mr Beast",
+          "last_trade_unix_time": 1792815408,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 20493.067204575716,
+          "sell_usd": 32079.460851866097,
+          "realized_usd": 11586.39364729038,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "FW5Q9NwpnkDcQEqbRFNg1LSmjiR28MQt6NA53wq5pump",
+          "symbol": "fomo",
+          "last_trade_unix_time": 1792813413,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 20486.397323618377,
+          "sell_usd": 53710.15998436546,
+          "realized_usd": 33223.76266074708,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "CU83eHvFcuKjfPmbABezM5uMakoNqvEGoBec7Etepump",
+          "symbol": "fomo",
+          "last_trade_unix_time": 1792809326,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 20496.48603231225,
+          "sell_usd": 23008.167549501963,
+          "realized_usd": 2511.681517189712,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "DFULWMkjQapHjRKugPjbAmjQaMe7SJrYxTiZFYoopump",
+          "symbol": "BARRON",
+          "last_trade_unix_time": 1792808407,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 18903.507460536057,
+          "sell_usd": 34827.98140419758,
+          "realized_usd": 15924.473943661524,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "CtLGBCYqkNGU5vkY4c1oDGefBAe2JbUBPnVv2RQYpump",
+          "symbol": "Google",
+          "last_trade_unix_time": 1792805329,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 18188.145580885557,
+          "sell_usd": 46466.44623556381,
+          "realized_usd": 28278.300654678253,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "5oHDu6dfq5cxnC34VkKQ9kyS7bF4DRXbTLWbVRgppump",
+          "symbol": "Google",
+          "last_trade_unix_time": 1792801157,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 18226.505118667956,
+          "sell_usd": 18382.148497813243,
+          "realized_usd": 155.64337914528895,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "29eV7PciBzmhWS9hZfcqdm6d87Y43scokUQLWiVrpump",
+          "symbol": "Mr Beast",
+          "last_trade_unix_time": 1792800271,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17280.52252083228,
+          "sell_usd": 21896.48713106939,
+          "realized_usd": 4615.964610237108,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "AZxJBxAPoi3jyJQUJAT7b1czKw7ZTcvQgQf2R5g4pump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792795888,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17396.558533900883,
+          "sell_usd": 26021.680331108393,
+          "realized_usd": 8625.12179720751,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "6wpbEc9BNrCxEdy6jGpJq99EjJA9SmoChqvuahVfpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792793326,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17435.44023597399,
+          "sell_usd": 30510.427545571412,
+          "realized_usd": 13074.987309597424,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "mY72KSvVp9bVa9d53AyiBV7bybiiyhaNqhMPUKgpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792790313,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17446.23663505143,
+          "sell_usd": 22370.06447093974,
+          "realized_usd": 4923.827835888306,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "7FTTUbLrUCPgKTxK4x1gDFChSQUmhbRrjNzkz52npump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792788476,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17390.654117371178,
+          "sell_usd": 24617.852121034397,
+          "realized_usd": 7227.198003663216,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "CzZ3VKZj5WpL9VF4ASkCe3DP2XfgXjWwLJPu8HLopump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792785826,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17405.644577930972,
+          "sell_usd": 26051.952310677472,
+          "realized_usd": 8646.307732746498,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "EFawmWvc7NkWYbmokMGMrpEN2Pqk4AHDJqXMstTrpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792783708,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17451.650193658887,
+          "sell_usd": 22330.067046350076,
+          "realized_usd": 4878.416852691185,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "GDDutTzRZmYpMYfuuPv68KgUCDjdDzi55ToMJazQpump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792782087,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17485.273474422047,
+          "sell_usd": 22655.448070981696,
+          "realized_usd": 5170.174596559649,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "3958k6PFyzLKJtZuxw4rNVVLALdin4bzCY99eztppump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792780258,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17514.424330429756,
+          "sell_usd": 21658.917123529693,
+          "realized_usd": 4144.492793099935,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "4pjXh3PEBf7bvvvZheTN8JRjuWW2bBXxb6ivWtA9pump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792778755,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17525.575102498035,
+          "sell_usd": 19622.218297404652,
+          "realized_usd": 2096.6431949066173,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "2JqpBGL2Fi2Th5RWLuzs1hXXXKLqkP8de2fpu1Xtpump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792777689,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17522.00712500251,
+          "sell_usd": 20612.74282528324,
+          "realized_usd": 3090.7357002807285,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "DQ42McReXAAP92VH7uytPqehxWhFnWGHvruq3r4Mpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792773562,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17577.812736567008,
+          "sell_usd": 20120.67800972184,
+          "realized_usd": 2542.8652731548327,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "9CRZQnFCuZ3vNBWbuGhDQWWg8CsHjdYzhNqewnoLpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792770232,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17533.82017376102,
+          "sell_usd": 29120.98165289463,
+          "realized_usd": 11587.161479133607,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "4GkJZYCQuiEyccQkwn8vrvUzWzbpYDuX1UwMjzJPpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792766847,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17561.73881292096,
+          "sell_usd": 19894.70254541657,
+          "realized_usd": 2332.963732495608,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "4KNBNuJYP3fgMbmu1hhJzzVEP5wvJcFj5KgqsDp6pump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792763711,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17541.3240100473,
+          "sell_usd": 21826.18511556206,
+          "realized_usd": 4284.86110551476,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "AZxNdm4GCxuYskg3WVKwWSUYoecpbPxuYMM4JdVApump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792761219,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17515.539933511456,
+          "sell_usd": 24815.872156958056,
+          "realized_usd": 7300.332223446598,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "2tZchbzVXXqgWYaW6prX3GbZ4PCqJQRNrE1SNHMGpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792759265,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17556.36892616927,
+          "sell_usd": 21686.116264836135,
+          "realized_usd": 4129.747338666863,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "GzcBbrfrHMYLSXT7wmRN4SZNTWFBnDDPmZoYwH2Npump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792757968,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17514.616790015985,
+          "sell_usd": 21462.492205971426,
+          "realized_usd": 3947.8754159554446,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "7JqjNpTfhitauEfE3eRS6PyzH1LnEZnmWeucRTJMpump",
+          "symbol": "Fomo Cats",
+          "last_trade_unix_time": 1792756612,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17443.25366023517,
+          "sell_usd": 32204.677778681104,
+          "realized_usd": 14761.424118445939,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "Ex5xRvX1HSrJtZYYMGige2Tzoiqe1FSdYgHfcGLUpump",
+          "symbol": "Fomo Coin",
+          "last_trade_unix_time": 1792753283,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17488.57997256551,
+          "sell_usd": 28016.464931281953,
+          "realized_usd": 10527.884958716446,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "Hy9xdKeen2wzbqEdm7nZCAhiJiyiN8w5NGkuCi4Kpump",
+          "symbol": "FOMO",
+          "last_trade_unix_time": 1792750816,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17499.19628011293,
+          "sell_usd": 21064.039536649238,
+          "realized_usd": 3564.843256536307,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "Dt7akmmwV3o27TBbWCeFbFg3JBWUiQ2UNt1KMx6ipump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792745514,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17561.11147210466,
+          "sell_usd": 79028.52099780296,
+          "realized_usd": 61467.40952569829,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "Dh4qrwkWxUKEJKJWpd5E5EDjUc9F1K7mycVnRb9upump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792737774,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17550.313881305687,
+          "sell_usd": 23401.103494736868,
+          "realized_usd": 5850.7896134311795,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "ATHfrNmPAYp4JvKEsDQvUCYwZcokWB4QTa4NsxFcpump",
+          "symbol": "Gemini",
+          "last_trade_unix_time": 1792736060,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17529.800399889536,
+          "sell_usd": 20229.496823385274,
+          "realized_usd": 2699.6964234957386,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "BJLjmiVEar28r57mH4J6w1T3vaHeiwUg2Ly9Rgtdpump",
+          "symbol": "Gemini",
+          "last_trade_unix_time": 1792734937,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17526.686944825055,
+          "sell_usd": 17657.69347314991,
+          "realized_usd": 131.0065283248543,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "CT3gk524wuBXBaCRLcQTEoC3UGZXjQsJjF2dHV4Fpump",
+          "symbol": "BARRON",
+          "last_trade_unix_time": 1792734066,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17488.968482061668,
+          "sell_usd": 24377.770549086435,
+          "realized_usd": 6888.802067024771,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "A4P24Y2HQsbRbJVmU6mcCsTwffVS4hwJUXCRPbN6pump",
+          "symbol": "Muse AI",
+          "last_trade_unix_time": 1792732685,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17482.33748561591,
+          "sell_usd": 22248.7029533724,
+          "realized_usd": 4766.365467756492,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "Gik2odq8EbG3gr42MyknRDWeRmgfzXsRDdcUYQjpump",
+          "symbol": "Haaland",
+          "last_trade_unix_time": 1792731325,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17446.851778482986,
+          "sell_usd": 19922.60276680577,
+          "realized_usd": 2475.7509883227835,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "HtxRepHTXqXCbwVNcsAYAAwxdXNmYZxuWoAF5sA1pump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792730385,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17456.444034733828,
+          "sell_usd": 26371.628730896147,
+          "realized_usd": 8915.184696162321,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "DgMTxU24xeH6YrdorDQ5UH4aKQSs4PJDfHVmb2Mjpump",
+          "symbol": "X",
+          "last_trade_unix_time": 1792728009,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17493.620325209544,
+          "sell_usd": 23333.086387996675,
+          "realized_usd": 5839.466062787131,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "5kXsEdCR9rUQMSRCzctp9Cixuris1EFVakpkqGQipump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792726055,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17465.310650919542,
+          "sell_usd": 17013.150422703715,
+          "realized_usd": -452.16022821582567,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "EmqsgQhQiinsRtk59X6zCpphXs7xXv1mpc6UdZEtpump",
+          "symbol": "Google",
+          "last_trade_unix_time": 1792725167,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17543.723835947345,
+          "sell_usd": 29603.212216712425,
+          "realized_usd": 12059.488380765079,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "8AmDxNcf8qvwmYuxNWbpZe39GfABKcRtLpsQSHXJpump",
+          "symbol": "TESLA SI",
+          "last_trade_unix_time": 1792722759,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17492.001133469963,
+          "sell_usd": 35013.49851171254,
+          "realized_usd": 17521.497378242573,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "AgE2FVaN1kxBL1vpM8A4sszaPmfYTsPinTAfBeyXpump",
+          "symbol": "MUSK",
+          "last_trade_unix_time": 1792719400,
+          "buy_count": 4,
+          "sell_count": 2,
+          "buy_usd": 18777.933611085184,
+          "sell_usd": 53976.68180405161,
+          "realized_usd": 35198.74819296643,
+          "unrealized_usd": -5.28547079926729e-13
+        },
+        {
+          "address": "HdeYFPJzYGPsdCNM49Xmb2G8NgFAyt9ZG97oRBdypump",
+          "symbol": "YouTube",
+          "last_trade_unix_time": 1792711364,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17341.851128003735,
+          "sell_usd": 28182.07911983593,
+          "realized_usd": 10840.227991832195,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "t4mj8UChK9uEiFXyVd2rqzRg5K1NXa6XVDupvixpump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792708618,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17395.468376320652,
+          "sell_usd": 25055.5820168871,
+          "realized_usd": 7660.113640566448,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "DumffxkrkMs6Jq8gCsvUyXPaJAqxcVnhx3driF8Mpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792705835,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17455.92118738136,
+          "sell_usd": 21648.232358425128,
+          "realized_usd": 4192.311171043769,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "BC3iAqsaCztLW9F7MiXfof2if8zz4xTiAWt2ML6Dpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792703320,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17325.677785593285,
+          "sell_usd": 21888.216465123212,
+          "realized_usd": 4562.538679529927,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "9JLUSnkqxNi6Nt8ES21a4z8JcAU8CYnugxBBgvjWpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792701144,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17357.50982082528,
+          "sell_usd": 19539.71987631802,
+          "realized_usd": 2182.210055492743,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "84rtMnxCHyVyuNqXZ3mGRsVtQRh2CcmLp2gmRRL4pump",
+          "symbol": "Robinhood",
+          "last_trade_unix_time": 1792698676,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17425.454807085684,
+          "sell_usd": 19697.55500403452,
+          "realized_usd": 2272.100196948835,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "CZUZUGtea7ByynBmuZn9RvpkUKZLpeCsyvv3jEwHpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792696566,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17405.1896945901,
+          "sell_usd": 32876.47174899013,
+          "realized_usd": 15471.28205440003,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "EPgXFkn3zgdQqqAbMzyd4B7p2SLF6EbU9n2msihdpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792693487,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17376.423525321974,
+          "sell_usd": 22382.2534272901,
+          "realized_usd": 5005.829901968124,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "3VJ8qXa73vpPQ71U7Rk9unQxoUErq5cB17C7HXuEpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792691924,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17400.443007326736,
+          "sell_usd": 21231.78442897996,
+          "realized_usd": 3831.3414216532265,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "5cyVZP81MkhH9Bqszu5DeTf7TuZuWTUq3kqCrE74pump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792688307,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17367.845562278017,
+          "sell_usd": 296.53403446563505,
+          "realized_usd": -17071.311527812384,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "7F1REEqzHaBjjZMfS3mR88Dp3mbsQcBYRVQgsA8Ypump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792687252,
+          "buy_count": 1,
+          "sell_count": 30,
+          "buy_usd": 17489.72852614398,
+          "sell_usd": 17971.964165451478,
+          "realized_usd": 482.23563930750015,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "DRHzoFnfWHALmGp6EWiWFaJT7iLaYqUyHcZ1qGetpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792684996,
+          "buy_count": 1,
+          "sell_count": 31,
+          "buy_usd": 17575.24522037795,
+          "sell_usd": 17894.759394822944,
+          "realized_usd": 319.5141744449911,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "8TigmvMM5rBbAo8BNskXCCmBuiqwfqEvjwh8rHoMpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792683925,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17554.72253692368,
+          "sell_usd": 32776.866172671376,
+          "realized_usd": 15222.143635747694,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "7L1oeyY33oMwZqyyeghqR4tAjEE5WGgvjLapPPw7pump",
+          "symbol": "YouTube",
+          "last_trade_unix_time": 1792679681,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17656.658221537782,
+          "sell_usd": 30053.035168407914,
+          "realized_usd": 12396.376946870134,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "E78SJQsNqwmzyBQUvCMfMSiov7U8NrfqLdHYbwo6pump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792677169,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17612.934717899487,
+          "sell_usd": 21732.80700011848,
+          "realized_usd": 4119.872282218991,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "47i2EW8DcCLrcqFb5742p9NE8KK6fiZhe1RJHvPrpump",
+          "symbol": "FOMO",
+          "last_trade_unix_time": 1792675251,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17525.075955373173,
+          "sell_usd": 31886.459038584428,
+          "realized_usd": 14361.383083211254,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "DAbApVtUxjjSadE4jYVtFv2ET8FBePqzKnJXDej8pump",
+          "symbol": "Robinhood",
+          "last_trade_unix_time": 1792672215,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17523.17951168087,
+          "sell_usd": 24497.996565572957,
+          "realized_usd": 6974.817053892085,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "GsCMrBMckFZasYKxpCLzdMeyFonFLihjdtdfUPxUpump",
+          "symbol": "Robinhood",
+          "last_trade_unix_time": 1792670696,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17532.564659776825,
+          "sell_usd": 20437.35241539039,
+          "realized_usd": 2904.7877556135672,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "5m7KKoQuNLzzXtE2L921bqTpy22bD2YPhyiB7cippump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792669723,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17563.87239983562,
+          "sell_usd": 21808.125788856545,
+          "realized_usd": 4244.253389020923,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "5MJEwEX95muri7cDYEUxPbvCstAb6HgAaPxfqq2spump",
+          "symbol": "YouTube",
+          "last_trade_unix_time": 1792668340,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17559.249576563125,
+          "sell_usd": 19959.494948647527,
+          "realized_usd": 2400.2453720844005,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "8rQWzTQzfwcLUDNqzUVckMQKeg9EVXfe4FonjfHKpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792667401,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17539.240521526848,
+          "sell_usd": 21905.22063081123,
+          "realized_usd": 4365.980109284383,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "9GgfXa8enRoGH1DJECLrWr53DGJXEKAtcbpWhzYXpump",
+          "symbol": "DeepSeek",
+          "last_trade_unix_time": 1792663307,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17455.48875975815,
+          "sell_usd": 43072.50017594353,
+          "realized_usd": 25617.011416185378,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "dUJXGCu2KdzPzDSEgJ443aCZYmzSUP6vWmriCFrpump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792660017,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17427.30204610839,
+          "sell_usd": 24247.321959392506,
+          "realized_usd": 6820.019913284116,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "FCGSGwK3BehARoJpQVP7ZoDsWr8utGHoTcSJtoXipump",
+          "symbol": "YouTube",
+          "last_trade_unix_time": 1792658492,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17444.97964890678,
+          "sell_usd": 23524.860864343747,
+          "realized_usd": 6079.881215436964,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "3NgHy9x2RKKzyWiHUyBms4vDdGVVn9tkj1XoX221pump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792656987,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17525.31855626278,
+          "sell_usd": 50311.37528747738,
+          "realized_usd": 32786.056731214594,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "GAKeQCxWapK681ZCj5tAWt1zMsYNYi984P7i4k1pump",
+          "symbol": "X",
+          "last_trade_unix_time": 1792652705,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17567.62427755657,
+          "sell_usd": 28837.530712299038,
+          "realized_usd": 11269.906434742468,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "FrRAW11KbSpG1tQL31oehwnEX4rsgZX2HCTRTor7pump",
+          "symbol": "YouTube",
+          "last_trade_unix_time": 1792650386,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17605.147025112652,
+          "sell_usd": 27684.590240200665,
+          "realized_usd": 10079.443215088013,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "2qNrw4d9zVS58hQRHydsFNkz41PUgwDLcv6ZwVUxpump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792647965,
+          "buy_count": 1,
+          "sell_count": 1,
+          "buy_usd": 17652.16818217607,
+          "sell_usd": 22448.632888080636,
+          "realized_usd": 4796.464705904565,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "4P36gtdiLK6Cn4sVWVAdJ7GcBtUJBBbzZLXNqN3Ypump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792644694,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17673.497797306696,
+          "sell_usd": 22783.78756141447,
+          "realized_usd": 5110.289764107774,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "3CqWfnQEt5AGQiUamf7CBpzSz6tAN4UZs8f6cG1Cpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792643402,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17709.712723485325,
+          "sell_usd": 20060.181996619332,
+          "realized_usd": 2350.4692731340065,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "9CAZQ3TqdpYQ5HwVR9MNfN8hhoZWak1nXWyw9QqMpump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792642505,
+          "buy_count": 1,
+          "sell_count": 27,
+          "buy_usd": 17713.751287656884,
+          "sell_usd": 17887.42302849085,
+          "realized_usd": 173.67174083396435,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "54eSNNsKTtNgSyHVHwzSXHG4EyMPkMBcnB7XZr63pump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792641567,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17677.664732564488,
+          "sell_usd": 20765.04997259509,
+          "realized_usd": 3087.3852400306027,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "5rZoXM3GpKGyqSG27kSfnJ5nSM2YqvxuJqhrn8Lppump",
+          "symbol": "NVIDIA",
+          "last_trade_unix_time": 1792640692,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17664.227101424578,
+          "sell_usd": 21435.907275122085,
+          "realized_usd": 3771.6801736975044,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "AnBYniQRd17o31V1ZN1Agz8UWrYDAWV4tM9SnVtMpump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792639637,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17717.05395919383,
+          "sell_usd": 19508.643385433934,
+          "realized_usd": 1791.5894262401064,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "E9nVx27B8B6RhGEe2ZZZahAWVpz2LaEsypAv8mN8pump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792638746,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17724.47227331348,
+          "sell_usd": 29494.097807063987,
+          "realized_usd": 11769.625533750508,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "J6Su4w1ZRwKDKac85jjHg5ic6B9BoDYTJt13LKMepump",
+          "symbol": "X",
+          "last_trade_unix_time": 1792636722,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 17870.592887264494,
+          "sell_usd": 38192.5400921758,
+          "realized_usd": 20321.9472049113,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "2JtxAW5CMFDRhFZiqUwX7kNZ1PRdmFGAh3cxFeVXpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792633100,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 18004.85164083394,
+          "sell_usd": 28184.80571240231,
+          "realized_usd": 10179.954071568374,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "9S2yWDq9nuMDoa6sxd2eGw4kA7xoVzoDzXwS5WZmpump",
+          "symbol": "Speed",
+          "last_trade_unix_time": 1792630874,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 18018.008654637055,
+          "sell_usd": 21360.269693904775,
+          "realized_usd": 3342.261039267718,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "41F7hSLCV7Vv6Pwf9HNh1j621ks4o1e7vP3h5eFVpump",
+          "symbol": "Rockstar",
+          "last_trade_unix_time": 1792629556,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 18004.38264073076,
+          "sell_usd": 21374.942354315503,
+          "realized_usd": 3370.559713584744,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "AtKfN73uhxwthDhgrRtdfdid51UdoCRd4RBomuBfpump",
+          "symbol": "MrBeast",
+          "last_trade_unix_time": 1792628315,
+          "buy_count": 1,
+          "sell_count": 2,
+          "buy_usd": 18015.033557062237,
+          "sell_usd": 23422.75633940776,
+          "realized_usd": 5407.722782345523,
+          "unrealized_usd": 0.0
+        }
+      ],
+      "sample_volume_rank": 3,
+      "sample_volume_usd": 6664019.53
     },
     {
       "address": "4Eo2kHo36SpcJYC2FNhecYKVV8b8uGDRdPiDAhNYwoPF",
-      "snapshot_date": "2026-10-24T11:01:58+08:00",
-      "reported_unique_tokens": 9,
+      "snapshot_date": "2026-10-25T10:55:23+08:00",
+      "reported_unique_tokens": 13,
       "coverage": "count_mismatch",
       "tokens": [
         {
           "address": "So11111111111111111111111111111111111111112",
           "symbol": "SOL",
-          "last_trade_unix_time": 1792767201,
+          "last_trade_unix_time": 1792851844,
           "buy_count": 6,
-          "sell_count": 16,
+          "sell_count": 24,
           "buy_usd": 30060.453033672155,
-          "sell_usd": 4293959.4125617,
+          "sell_usd": 5323611.384337513,
           "realized_usd": -40.087265259668804,
           "unrealized_usd": 0.0
+        },
+        {
+          "address": "GbRnMa22J2XWStSTRENQNsRfpHALQuydDx6CmcTYpump",
+          "symbol": "UDR",
+          "last_trade_unix_time": 1792851844,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 300586.976323888,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": 17342442.463541023
+        },
+        {
+          "address": "HzV9xj7yAJHrGfUcnmWWQLLvLSuepHQPg2y2Vvbpump",
+          "symbol": "XRC",
+          "last_trade_unix_time": 1792850570,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 303220.82089164614,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": -302845.0960304853
+        },
+        {
+          "address": "Gv45ZVkRfcWVW4aaUhvUB2VjGBquGWgkS1jmfKT4pump",
+          "symbol": "PEPINA",
+          "last_trade_unix_time": 1792835965,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 303114.67931318114,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": -302755.2789215281
+        },
+        {
+          "address": "5MDdoXuyft8A9tgsWQS4yttis4rEaPWA7T4vhyjqpump",
+          "symbol": "IOF",
+          "last_trade_unix_time": 1792823112,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 122729.49524709731,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": -122376.0167871441
         },
         {
           "address": "4DgiTDxC1hdpuyY6yZQDRoUz3Pd2zrWRAp6Dxw4dpump",
@@ -602,7 +1800,7 @@
           "buy_usd": 314489.9364192115,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": 17521064.95295871
+          "unrealized_usd": -314114.342705258
         },
         {
           "address": "H3YabH8iZ1bNS6oD2mXBR3PccDTH7TTXeAjKp4Jtpump",
@@ -624,7 +1822,7 @@
           "buy_usd": 312662.0066288578,
           "sell_usd": 4030.4600355634548,
           "realized_usd": 3092.4740156789053,
-          "unrealized_usd": -311338.2999869352
+          "unrealized_usd": -311354.37347306305
         },
         {
           "address": "A9D7FgAqMihznm1PiW4BZCquoNYEPCPHjtFSSncUpump",
@@ -635,7 +1833,7 @@
           "buy_usd": 515118.9924154801,
           "sell_usd": 1562.9536155138474,
           "realized_usd": 17.596638281394753,
-          "unrealized_usd": -513055.4491292294
+          "unrealized_usd": -513047.9891375496
         },
         {
           "address": "BRmCbg3WWFToZTaySZth88FMmZ9oKUgYk8T8A5fspump",
@@ -646,7 +1844,7 @@
           "buy_usd": 725093.4995395379,
           "sell_usd": 1309.8393707374091,
           "realized_usd": 222.19912143827693,
-          "unrealized_usd": -723627.1278058318
+          "unrealized_usd": -723642.1216825196
         },
         {
           "address": "F2x6dvTZ1SCcgbfCfCcRVL9rDgkw9rJAfmXYiTu7pump",
@@ -657,7 +1855,7 @@
           "buy_usd": 312213.23861780437,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": -311835.5587575843
+          "unrealized_usd": -311654.6104164248
         },
         {
           "address": "8ZP2QC1CVouJk8pghcyrs9VWvtXN892N1PNZSGbepump",
@@ -668,7 +1866,7 @@
           "buy_usd": 1277931.539654554,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": -1277356.270704425
+          "unrealized_usd": -1277318.9331478344
         },
         {
           "address": "DuMHfwgHYpJnp9X6HAGQuZts5x6Lwug6iAWWRuFhpump",
@@ -693,15 +1891,37 @@
           "unrealized_usd": -515347.97902043985
         }
       ],
-      "sample_volume_rank": 3,
-      "sample_volume_usd": 4848356.8
+      "sample_volume_rank": 4,
+      "sample_volume_usd": 5353671.84
     },
     {
       "address": "8oucTscC8UJbfJzu2tQsQh2mAMu1EUSJzns93cGkS8B5",
-      "snapshot_date": "2026-10-24T11:02:02+08:00",
+      "snapshot_date": "2026-10-25T10:55:27+08:00",
       "reported_unique_tokens": 5,
       "coverage": "count_mismatch",
       "tokens": [
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "last_trade_unix_time": 1792813685,
+          "buy_count": 0,
+          "sell_count": 10,
+          "buy_usd": 0.0,
+          "sell_usd": 2173419.1957974746,
+          "realized_usd": 0.0,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "8XoMcVhtc1XH7x24neAwfakojvWNxaXoBsfixEYxpump",
+          "symbol": "USDF",
+          "last_trade_unix_time": 1792813685,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 512783.48984045454,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": 37153800.938686766
+        },
         {
           "address": "DJNYhRaP1MuJ3podQSiDcRpVEihaXjrPkztyD9whpump",
           "symbol": "USDF",
@@ -711,18 +1931,7 @@
           "buy_usd": 532298.867270226,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": 57417425.21962311
-        },
-        {
-          "address": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "last_trade_unix_time": 1792532758,
-          "buy_count": 0,
-          "sell_count": 10,
-          "buy_usd": 0.0,
-          "sell_usd": 2175525.9671875993,
-          "realized_usd": 0.0,
-          "unrealized_usd": 0.0
+          "unrealized_usd": -531806.4209449162
         },
         {
           "address": "2BFm3hSAKN5tfou7mK2VxqftqMGkSYNrJ1dXYrQdpump",
@@ -744,7 +1953,7 @@
           "buy_usd": 521746.7086886371,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": -521186.8967177216
+          "unrealized_usd": -521234.65487922303
         },
         {
           "address": "4oXizXjGytdQH9ut6WL8vFmvkuQ3MUNzcEsmKnUzpump",
@@ -756,147 +1965,125 @@
           "sell_usd": 0.0,
           "realized_usd": 0.0,
           "unrealized_usd": -83388.02309755233
-        },
-        {
-          "address": "8dPiVgnbMSJyZG2fCmpaFr7sq8dAP3qFjhGknZCQpump",
-          "symbol": "USDR",
-          "last_trade_unix_time": 1792284174,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 514890.2612305788,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -514486.4579975205
-        }
-      ],
-      "sample_volume_rank": 4,
-      "sample_volume_usd": 2175525.97
-    },
-    {
-      "address": "7TaVFEGEfJDsD5qe67kVUtq6GMC9esDBSW3Xw2YnCSi2",
-      "snapshot_date": "2026-10-24T11:02:05+08:00",
-      "reported_unique_tokens": 7,
-      "coverage": "count_mismatch",
-      "tokens": [
-        {
-          "address": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "last_trade_unix_time": 1792697084,
-          "buy_count": 0,
-          "sell_count": 12,
-          "buy_usd": 0.0,
-          "sell_usd": 1839541.8747024362,
-          "realized_usd": 0.0,
-          "unrealized_usd": 0.0
-        },
-        {
-          "address": "FuX4Pwc66aBnM4bX3zyvXGsXHE5wsjHgXuAeqQBnpump",
-          "symbol": "GOIF",
-          "last_trade_unix_time": 1792697084,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 300603.3135539096,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": 15606425.13891163
-        },
-        {
-          "address": "eEomAEbGqwfzckzYjN6x1rc7tmqbdKJoHZdR25Upump",
-          "symbol": "Moonoween",
-          "last_trade_unix_time": 1792606243,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 314859.79393807525,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -314451.52892200847
-        },
-        {
-          "address": "4pvnbgFEj4iSn1QZ3rm94B13JqV4QMgP8PCz9T8Cpump",
-          "symbol": "XTO",
-          "last_trade_unix_time": 1792501858,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 302659.8409326267,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -301845.3707532881
-        },
-        {
-          "address": "4n5kqpwkzwqhs7Vk9ekTDJwDwfB5EfDuzswQt5Nspump",
-          "symbol": "AOP",
-          "last_trade_unix_time": 1792474714,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 303210.1808181423,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -302800.1664012907
-        },
-        {
-          "address": "6M1NFqtyBkkz4DR4MAYVVauLrJMPzSHbtGEnheXMpump",
-          "symbol": "NODF",
-          "last_trade_unix_time": 1792387899,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 431386.20966923656,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -430892.19313520595
-        },
-        {
-          "address": "G8gpNtqrYybe7VLXFtV3RAyEopDhdUighLJ8SGJEpump",
-          "symbol": "XRC",
-          "last_trade_unix_time": 1792300563,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 186822.53579044587,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -186365.35455426565
-        },
-        {
-          "address": "FkLVnbHSZQtFHtqoJEArQJaFm9tBP38REAoXFYUapump",
-          "symbol": "UER",
-          "last_trade_unix_time": 1792214957,
-          "buy_count": 0,
-          "sell_count": 0,
-          "buy_usd": 0.0,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -311670.4941780639
         }
       ],
       "sample_volume_rank": 5,
-      "sample_volume_usd": 2151598.4
+      "sample_volume_usd": 2688309.46
     },
     {
-      "address": "253G6y4diog8tpPb2C26iXj1J9nBTbfAjrDF1seVHxfm",
-      "snapshot_date": "2026-10-24T11:02:09+08:00",
-      "reported_unique_tokens": 4,
+      "address": "3pFsatbyyQMcQKP6VYpmqCRQnHrccnSLqrKnMdLYwGqf",
+      "snapshot_date": "2026-10-25T10:55:30+08:00",
+      "reported_unique_tokens": 5,
       "coverage": "count_mismatch",
       "tokens": [
         {
           "address": "So11111111111111111111111111111111111111112",
           "symbol": "SOL",
-          "last_trade_unix_time": 1792716489,
-          "buy_count": 1,
-          "sell_count": 8,
-          "buy_usd": 869.9451639657012,
-          "sell_usd": 1730312.0641943868,
-          "realized_usd": 2.3708095167474506,
+          "last_trade_unix_time": 1792677970,
+          "buy_count": 3,
+          "sell_count": 10,
+          "buy_usd": 143727.38736686925,
+          "sell_usd": 1992550.0644551923,
+          "realized_usd": 177.33325900181782,
           "unrealized_usd": 0.0
+        },
+        {
+          "address": "FLQdUSx5zoR8npbyWCu49iFxBaemdgUNX4hcCBWupump",
+          "symbol": "AODF",
+          "last_trade_unix_time": 1792677970,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 313856.6532203046,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": 32461238.60227542
+        },
+        {
+          "address": "A8xxiQ2QdTeBKwHYp3GsFSpMP6D8U4ZRB8k6nAGApump",
+          "symbol": "XMR",
+          "last_trade_unix_time": 1792677383,
+          "buy_count": 2,
+          "sell_count": 1,
+          "buy_usd": 312432.1038496824,
+          "sell_usd": 488.1933729015652,
+          "realized_usd": 19.545217127363305,
+          "unrealized_usd": -311605.473347854
+        },
+        {
+          "address": "EifbAUVsBUxqAFeGphrMXbh3UFRw6CnByh1TFFXupump",
+          "symbol": "Kimchi",
+          "last_trade_unix_time": 1792571543,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 318824.9783922276,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": -318446.71416613646
+        },
+        {
+          "address": "GdXeF5bdJkHSJESkyGHnet6YVXc2s9qNfwr4LYAxpump",
+          "symbol": "XTO",
+          "last_trade_unix_time": 1792570694,
+          "buy_count": 2,
+          "sell_count": 1,
+          "buy_usd": 520814.19783678,
+          "sell_usd": 137020.8214138719,
+          "realized_usd": -383793.376422908,
+          "unrealized_usd": -7.614014410942615e-11
+        },
+        {
+          "address": "EMe6Up97aVZamVsTD3SfUFgsj8eBE24N3sdP4RGopump",
+          "symbol": "Moonoween",
+          "last_trade_unix_time": 1792485397,
+          "buy_count": 2,
+          "sell_count": 1,
+          "buy_usd": 526622.1311561977,
+          "sell_usd": 6218.372580095806,
+          "realized_usd": -2207.5815212236425,
+          "unrealized_usd": -517715.0504601649
+        }
+      ],
+      "sample_volume_rank": 6,
+      "sample_volume_usd": 2136277.45
+    },
+    {
+      "address": "253G6y4diog8tpPb2C26iXj1J9nBTbfAjrDF1seVHxfm",
+      "snapshot_date": "2026-10-25T10:55:33+08:00",
+      "reported_unique_tokens": 5,
+      "coverage": "count_mismatch",
+      "tokens": [
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "last_trade_unix_time": 1792817322,
+          "buy_count": 2,
+          "sell_count": 10,
+          "buy_usd": 5951.800732749601,
+          "sell_usd": 2037149.0692680413,
+          "realized_usd": 2.5474661335558983,
+          "unrealized_usd": 0.0
+        },
+        {
+          "address": "FBcrTWLEVTxKuc67eBqk1QhyhsCiALsELGz96xNspump",
+          "symbol": "NOTF",
+          "last_trade_unix_time": 1792817322,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 306837.0050736545,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": 16623581.643607602
         },
         {
           "address": "FeGEZN9KWA7stty8mzFXVmNqnTAgKmcs2phPdqjcpump",
           "symbol": "AOP",
-          "last_trade_unix_time": 1792716489,
+          "last_trade_unix_time": 1792816343,
           "buy_count": 2,
-          "sell_count": 0,
+          "sell_count": 1,
           "buy_usd": 310844.3376457674,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": 15344490.588053871
+          "sell_usd": 5081.8555687839,
+          "realized_usd": 3216.789542917243,
+          "unrealized_usd": -308537.0409293785
         },
         {
           "address": "DWbsAe8brNfiSzP1wXYAH6tWdMBJpx6cfkMWv9K1pump",
@@ -907,7 +2094,7 @@
           "buy_usd": 531297.7236771185,
           "sell_usd": 869.9451639657012,
           "realized_usd": 72.99857845007041,
-          "unrealized_usd": -530022.903343078
+          "unrealized_usd": -530029.1115258631
         },
         {
           "address": "4AA1vYficsjaxaawvxpycnHzQPc8p8BkakxbvJufpump",
@@ -932,167 +2119,102 @@
           "unrealized_usd": -363988.8979737477
         }
       ],
-      "sample_volume_rank": 6,
-      "sample_volume_usd": 2146346.96
-    },
-    {
-      "address": "3pFsatbyyQMcQKP6VYpmqCRQnHrccnSLqrKnMdLYwGqf",
-      "snapshot_date": "2026-10-24T11:02:12+08:00",
-      "reported_unique_tokens": 5,
-      "coverage": "count_mismatch",
-      "tokens": [
-        {
-          "address": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "last_trade_unix_time": 1792677970,
-          "buy_count": 3,
-          "sell_count": 10,
-          "buy_usd": 143727.38736686925,
-          "sell_usd": 1992550.0644551923,
-          "realized_usd": 177.33325900181782,
-          "unrealized_usd": 0.0
-        },
-        {
-          "address": "FLQdUSx5zoR8npbyWCu49iFxBaemdgUNX4hcCBWupump",
-          "symbol": "AODF",
-          "last_trade_unix_time": 1792677970,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 313856.6532203046,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": 22558241.514322124
-        },
-        {
-          "address": "A8xxiQ2QdTeBKwHYp3GsFSpMP6D8U4ZRB8k6nAGApump",
-          "symbol": "XMR",
-          "last_trade_unix_time": 1792677383,
-          "buy_count": 2,
-          "sell_count": 1,
-          "buy_usd": 312432.1038496824,
-          "sell_usd": 488.1933729015652,
-          "realized_usd": 19.545217127363305,
-          "unrealized_usd": -311591.9061377952
-        },
-        {
-          "address": "EifbAUVsBUxqAFeGphrMXbh3UFRw6CnByh1TFFXupump",
-          "symbol": "Kimchi",
-          "last_trade_unix_time": 1792571543,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 318824.9783922276,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -318446.71416613646
-        },
-        {
-          "address": "GdXeF5bdJkHSJESkyGHnet6YVXc2s9qNfwr4LYAxpump",
-          "symbol": "XTO",
-          "last_trade_unix_time": 1792570694,
-          "buy_count": 2,
-          "sell_count": 1,
-          "buy_usd": 520814.19783678,
-          "sell_usd": 137020.8214138719,
-          "realized_usd": -383793.376422908,
-          "unrealized_usd": -7.612822289308944e-11
-        },
-        {
-          "address": "EMe6Up97aVZamVsTD3SfUFgsj8eBE24N3sdP4RGopump",
-          "symbol": "Moonoween",
-          "last_trade_unix_time": 1792485397,
-          "buy_count": 2,
-          "sell_count": 1,
-          "buy_usd": 526622.1311561977,
-          "sell_usd": 6218.372580095806,
-          "realized_usd": -2207.5815212236425,
-          "unrealized_usd": -517782.4824361285
-        }
-      ],
       "sample_volume_rank": 7,
-      "sample_volume_usd": 2136277.45
+      "sample_volume_usd": 2043100.87
     },
     {
-      "address": "6NFXPh7z8byXPj9rEHAgfX8C4RWM1Pdmuan9vtucNQvT",
-      "snapshot_date": "2026-10-24T11:02:15+08:00",
-      "reported_unique_tokens": 4,
+      "address": "7TaVFEGEfJDsD5qe67kVUtq6GMC9esDBSW3Xw2YnCSi2",
+      "snapshot_date": "2026-10-25T10:55:36+08:00",
+      "reported_unique_tokens": 6,
       "coverage": "count_mismatch",
       "tokens": [
         {
           "address": "So11111111111111111111111111111111111111112",
           "symbol": "SOL",
-          "last_trade_unix_time": 1792567564,
+          "last_trade_unix_time": 1792697084,
           "buy_count": 0,
-          "sell_count": 4,
+          "sell_count": 10,
           "buy_usd": 0.0,
-          "sell_usd": 1061932.1408044652,
+          "sell_usd": 1652719.3389119904,
           "realized_usd": 0.0,
           "unrealized_usd": 0.0
         },
         {
-          "address": "H4hcwe8fLmE9g7iwFidhap9LgdBHXM8T5exVRcVupump",
-          "symbol": "FOTF",
-          "last_trade_unix_time": 1792567564,
+          "address": "FuX4Pwc66aBnM4bX3zyvXGsXHE5wsjHgXuAeqQBnpump",
+          "symbol": "GOIF",
+          "last_trade_unix_time": 1792697084,
           "buy_count": 2,
           "sell_count": 0,
-          "buy_usd": 530795.942505743,
+          "buy_usd": 300603.3135539096,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": 58100729.24297449
+          "unrealized_usd": 19454771.55868853
         },
         {
-          "address": "4HHt1SJnJi6MouxqB3gbkpPXZHP7hwodxnVmTo6Jpump",
-          "symbol": "ADTF",
-          "last_trade_unix_time": 1792551286,
+          "address": "eEomAEbGqwfzckzYjN6x1rc7tmqbdKJoHZdR25Upump",
+          "symbol": "Moonoween",
+          "last_trade_unix_time": 1792606243,
           "buy_count": 2,
           "sell_count": 0,
-          "buy_usd": 531136.1982987222,
+          "buy_usd": 314859.79393807525,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": -530751.5526024791
+          "unrealized_usd": -314474.1479502988
         },
         {
-          "address": "AwpzNpDnUuMqgZVB9Q2trhWpx6ZragdWgS95UNW2pump",
-          "symbol": "UDTF",
-          "last_trade_unix_time": 1792280623,
+          "address": "4pvnbgFEj4iSn1QZ3rm94B13JqV4QMgP8PCz9T8Cpump",
+          "symbol": "XTO",
+          "last_trade_unix_time": 1792501858,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 302659.8409326267,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": -301911.93704061554
+        },
+        {
+          "address": "4n5kqpwkzwqhs7Vk9ekTDJwDwfB5EfDuzswQt5Nspump",
+          "symbol": "AOP",
+          "last_trade_unix_time": 1792474714,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 303210.1808181423,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": -302837.0621238827
+        },
+        {
+          "address": "6M1NFqtyBkkz4DR4MAYVVauLrJMPzSHbtGEnheXMpump",
+          "symbol": "NODF",
+          "last_trade_unix_time": 1792387899,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 431386.20966923656,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": -430892.19313520595
+        },
+        {
+          "address": "G8gpNtqrYybe7VLXFtV3RAyEopDhdUighLJ8SGJEpump",
+          "symbol": "XRC",
+          "last_trade_unix_time": 1792300563,
           "buy_count": 0,
           "sell_count": 0,
           "buy_usd": 0.0,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": -514719.28204455075
-        },
-        {
-          "address": "6zxrymdprDZ1TCWozKsejGWRKRrqsgmPm64fffhzpump",
-          "symbol": "RST",
-          "last_trade_unix_time": 1792223895,
-          "buy_count": 0,
-          "sell_count": 0,
-          "buy_usd": 0.0,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -524290.9346012064
+          "unrealized_usd": -186385.16271394916
         }
       ],
       "sample_volume_rank": 8,
-      "sample_volume_usd": 2102143.97
+      "sample_volume_usd": 1839541.87
     },
     {
       "address": "52BaskN1ESY2UK24PWN2aRhCsgTYKeFGL9xQZ141BGuP",
-      "snapshot_date": "2026-10-24T11:02:19+08:00",
+      "snapshot_date": "2026-10-25T10:55:40+08:00",
       "reported_unique_tokens": 4,
       "coverage": "count_mismatch",
       "tokens": [
-        {
-          "address": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "last_trade_unix_time": 1792725248,
-          "buy_count": 1,
-          "sell_count": 8,
-          "buy_usd": 4171.472103510267,
-          "sell_usd": 1721447.251516886,
-          "realized_usd": -7.373770356265613,
-          "unrealized_usd": 0.0
-        },
         {
           "address": "64h2WdfyUwpkhQvLbiu6ZY4KzMQAUQxkh3LC4Rhqpump",
           "symbol": "ADP",
@@ -1102,7 +2224,18 @@
           "buy_usd": 521201.5508254762,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": 37698926.278546095
+          "unrealized_usd": 46520037.67441696
+        },
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "last_trade_unix_time": 1792725248,
+          "buy_count": 1,
+          "sell_count": 6,
+          "buy_usd": 4171.472103510267,
+          "sell_usd": 1204443.9382408638,
+          "realized_usd": -7.373770356265613,
+          "unrealized_usd": 0.0
         },
         {
           "address": "7RZUBzQ19jRFdkxV3UsX7doku3BV7WJBP6qmH1AKpump",
@@ -1124,18 +2257,18 @@
           "buy_usd": 156407.04464787443,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": -155356.13076918205
+          "unrealized_usd": -155733.28770112313
         },
         {
           "address": "3bcJAAUbEUWizgmCn5eaTC1yEkjEMGUquavuyzbSpump",
           "symbol": "WOSE",
           "last_trade_unix_time": 1792299749,
-          "buy_count": 2,
+          "buy_count": 0,
           "sell_count": 0,
-          "buy_usd": 517003.3132760224,
+          "buy_usd": 0.0,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
-          "unrealized_usd": -516489.59775001503
+          "unrealized_usd": -516460.4268026876
         }
       ],
       "sample_volume_rank": 9,
@@ -1143,31 +2276,42 @@
     },
     {
       "address": "FMomKd5pu5k9JtW8X3UWyF3vXvpmwnykV6v6MQHSvb8F",
-      "snapshot_date": "2026-10-24T11:02:22+08:00",
-      "reported_unique_tokens": 6,
+      "snapshot_date": "2026-10-25T10:55:43+08:00",
+      "reported_unique_tokens": 5,
       "coverage": "count_mismatch",
       "tokens": [
         {
-          "address": "GE1ngUQ8WCU4qCBPRaHun3hCgqAwwzDLc7QpCtv2pump",
-          "symbol": "ADP",
-          "last_trade_unix_time": 1792772999,
-          "buy_count": 2,
-          "sell_count": 0,
-          "buy_usd": 520249.7538383159,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": 31619767.70946756
-        },
-        {
           "address": "So11111111111111111111111111111111111111112",
           "symbol": "SOL",
-          "last_trade_unix_time": 1792772999,
-          "buy_count": 1,
+          "last_trade_unix_time": 1792877125,
+          "buy_count": 2,
           "sell_count": 8,
-          "buy_usd": 529.7256354860095,
-          "sell_usd": 927775.5058715694,
-          "realized_usd": -1.9292820451852868,
+          "buy_usd": 15985.837495499338,
+          "sell_usd": 1077885.4967672396,
+          "realized_usd": 97.0596050499234,
           "unrealized_usd": 0.0
+        },
+        {
+          "address": "14ZoaoxD21w6r5Cw3f7gky5WxzkFDjT27UAATPr5pump",
+          "symbol": "USOE",
+          "last_trade_unix_time": 1792877125,
+          "buy_count": 2,
+          "sell_count": 0,
+          "buy_usd": 302849.47646140767,
+          "sell_usd": 0.0,
+          "realized_usd": 0.0,
+          "unrealized_usd": 11250183.64132013
+        },
+        {
+          "address": "GE1ngUQ8WCU4qCBPRaHun3hCgqAwwzDLc7QpCtv2pump",
+          "symbol": "ADP",
+          "last_trade_unix_time": 1792865687,
+          "buy_count": 2,
+          "sell_count": 1,
+          "buy_usd": 520249.7538383159,
+          "sell_usd": 15456.111860013329,
+          "realized_usd": -3193.617926559571,
+          "unrealized_usd": -501201.3884309751
         },
         {
           "address": "6TWjgjFiLNvVGxRAbeQ6dnqTWtZyYkFpzGdt6gx2pump",
@@ -1195,38 +2339,16 @@
           "address": "9zvMmVxDsdA9q4uQ64gdGeTqcUD9gQ1xQi7kTH6ppump",
           "symbol": "MUCRON",
           "last_trade_unix_time": 1792347954,
-          "buy_count": 2,
+          "buy_count": 0,
           "sell_count": 0,
-          "buy_usd": 152739.4855657374,
+          "buy_usd": 0.0,
           "sell_usd": 0.0,
           "realized_usd": 0.0,
           "unrealized_usd": -152372.06003593994
-        },
-        {
-          "address": "72xNDka3KZQdJw2QLC2NMnkxoTPZFunhWXvxVp6Spump",
-          "symbol": "FTR🔥",
-          "last_trade_unix_time": 1792213179,
-          "buy_count": 0,
-          "sell_count": 0,
-          "buy_usd": 0.0,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": -313067.5366246741
-        },
-        {
-          "address": "6SPwGThCxae3SRQa1jsYtYKP6d8yiXMDui9CzENdpump",
-          "symbol": "FTR",
-          "last_trade_unix_time": 1792211138,
-          "buy_count": 0,
-          "sell_count": 0,
-          "buy_usd": 0.0,
-          "sell_usd": 0.0,
-          "realized_usd": 0.0,
-          "unrealized_usd": 0.0
         }
       ],
       "sample_volume_rank": 10,
-      "sample_volume_usd": 1388339.26
+      "sample_volume_usd": 1246610.82
     }
   ]
 }
