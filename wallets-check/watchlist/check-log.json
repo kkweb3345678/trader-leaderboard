@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "cohort": "watchlist",
-  "started_at": "2026-10-25T11:18:16+00:00",
-  "last_check": "2026-10-25T11:19:02+00:00",
-  "last_success": "2026-10-25T11:19:02+00:00",
+  "started_at": "2026-10-25T16:07:03+00:00",
+  "last_check": "2026-10-25T16:07:42+00:00",
+  "last_success": "2026-10-25T16:07:42+00:00",
   "expected": 14,
   "configured": 11,
   "checked": 11,
@@ -16,7 +16,7 @@
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/40188203811"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/40210038986"
   },
   "results": [
     {
