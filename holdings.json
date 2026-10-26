@@ -1,152 +1,183 @@
 {
-  "updated_at": "2026-10-16T13:49:53+00:00",
+  "updated_at": "2026-10-26T02:54:14+00:00",
   "wallets": [
     {
-      "address": "8q2ycywXyk4P7CTxXSbwVWF4em57jcxEtbCKrhoGW963",
-      "snapshot_date": "2026-10-16T21:46:30+08:00",
+      "address": "57oPJuCY8ZjayBdb9R7eeQGyqbouhFdiYB9nwcR6iAHN",
+      "snapshot_date": "2026-10-26T10:53:50+08:00",
       "tokens": [
         {
+          "symbol": "USDT",
+          "value_usd": 3.4396537183399998,
+          "pct": 61.120930049187244
+        },
+        {
           "symbol": "SOL",
-          "value_usd": 4.809418273024183,
-          "pct": 100.08234055104765
+          "value_usd": 2.1875984789565805,
+          "pct": 38.8725332713265
         }
       ]
     },
     {
-      "address": "2w3nD9VdShyo1zTuoajtgQKKSRMQNPSHxHPwDwfB5Q3c",
-      "snapshot_date": "2026-10-16T21:46:32+08:00",
-      "tokens": []
-    },
-    {
-      "address": "66aH28ofuwz6NGyYsmfiSL4PcWVBE3zYGp9zFQdWx8jU",
-      "snapshot_date": "2026-10-16T21:49:33+08:00",
+      "address": "2gkoQ7jUnba6gMA4s3t1eno9R9TfyYa4ZUfWE74idFJU",
+      "snapshot_date": "2026-10-26T10:53:52+08:00",
       "tokens": [
         {
-          "symbol": "DNA",
-          "value_usd": 286330.7327667578,
-          "pct": 99.99007444579144
-        },
-        {
-          "symbol": "RTP",
-          "value_usd": 0.44631934083575303,
-          "pct": 0.00015585998640640727
-        },
-        {
           "symbol": "SOL",
-          "value_usd": 0.3095299242265713,
-          "pct": 0.00010809150616684428
+          "value_usd": 3.0691946133269625,
+          "pct": 80.11860231271518
         },
         {
-          "symbol": "IOF",
-          "value_usd": 3.698882733291025e-06,
-          "pct": 1.2916935471586263e-09
+          "symbol": "JupUSD",
+          "value_usd": 0.4103900850825852,
+          "pct": 10.712869062470977
         },
         {
-          "symbol": "MarsX",
-          "value_usd": 1.9001607112802357e-06,
-          "pct": 6.635585678979442e-10
+          "symbol": "USDC",
+          "value_usd": 0.33456494078800003,
+          "pct": 8.73352094467375
+        },
+        {
+          "symbol": "USDT",
+          "value_usd": 0.01864523402,
+          "pct": 0.48671729156223087
         }
       ]
     },
     {
-      "address": "DEeiZ2VRWVnXqoJm5BXN2ZZdBVdzHqjSiMNqj9KU4AdC",
-      "snapshot_date": "2026-10-16T21:49:35+08:00",
+      "address": "GxhREMk4k2AKF8fEPGbeh1WDAsv3jTEUHt6uEdr6B7iy",
+      "snapshot_date": "2026-10-26T10:53:54+08:00",
+      "tokens": [
+        {
+          "symbol": "Tesla",
+          "value_usd": 162402.49072864195,
+          "pct": 97.97946582428267
+        },
+        {
+          "symbol": "SOL",
+          "value_usd": 1.8547034728615812,
+          "pct": 0.0011189659389957269
+        }
+      ]
+    },
+    {
+      "address": "HCieixnrnLQpfksGvZhL8iWf16K5mw9SA4HyfkKABKKA",
+      "snapshot_date": "2026-10-26T10:53:57+08:00",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "value_usd": 12427.229699868405,
+          "pct": 53.35181102254642
+        },
+        {
+          "symbol": "USDP",
+          "value_usd": 10438.398798440694,
+          "pct": 44.81348566996237
+        },
+        {
+          "symbol": "SOL",
+          "value_usd": 427.49681721399264,
+          "pct": 1.8353027951983958
+        }
+      ]
+    },
+    {
+      "address": "FuQXpEikwFSfNgyfqXj1pzXGcWqmUs3KpDrd9hfPyasa",
+      "snapshot_date": "2026-10-26T10:53:59+08:00",
+      "tokens": [
+        {
+          "symbol": "USOE",
+          "value_usd": 4.283159227724124,
+          "pct": 100.0
+        }
+      ]
+    },
+    {
+      "address": "4Eo2kHo36SpcJYC2FNhecYKVV8b8uGDRdPiDAhNYwoPF",
+      "snapshot_date": "2026-10-26T10:54:01+08:00",
+      "tokens": [
+        {
+          "symbol": "AOP",
+          "value_usd": 1459.950021450039,
+          "pct": 74.61585036738043
+        },
+        {
+          "symbol": "SOL",
+          "value_usd": 496.37560220765454,
+          "pct": 25.369010662131195
+        }
+      ]
+    },
+    {
+      "address": "FMomKd5pu5k9JtW8X3UWyF3vXvpmwnykV6v6MQHSvb8F",
+      "snapshot_date": "2026-10-26T10:54:03+08:00",
       "tokens": [
         {
           "symbol": "ADP",
-          "value_usd": 638507.655058996,
-          "pct": 100.08173357536789
+          "value_usd": 69657.23238619608,
+          "pct": 99.29390707955487
         },
         {
           "symbol": "SOL",
-          "value_usd": 0.30793072135497235,
-          "pct": 4.8266046883136725e-05
+          "value_usd": 495.38300839954934,
+          "pct": 0.7061508578477897
         }
       ]
     },
     {
-      "address": "EUnLbKRZnrgi4AtuoPog95QEprMFvYmocyNAge61kanh",
-      "snapshot_date": "2026-10-16T21:49:37+08:00",
+      "address": "ryfbhbcha1wntaPZdsVJeB8gNsZYoDpTwR89hZTyu5A",
+      "snapshot_date": "2026-10-26T10:54:05+08:00",
       "tokens": [
         {
-          "symbol": "SOL",
-          "value_usd": 4655.140426437598,
-          "pct": 83.79145194934705
+          "symbol": "T1K0",
+          "value_usd": 102079.59359460173,
+          "pct": 100.44231412629256
         },
         {
-          "symbol": "ADP",
-          "value_usd": 896.1025007439472,
-          "pct": 16.129637938814327
-        }
-      ]
-    },
-    {
-      "address": "8jqiUsbkm9tAqakg3oHDK7UWLSR4HsRFptyKVxC3LC5Z",
-      "snapshot_date": "2026-10-16T21:49:40+08:00",
-      "tokens": [
-        {
           "symbol": "SOL",
-          "value_usd": 1851.4013053062401,
-          "pct": 99.99637159694589
+          "value_usd": 266.3262583711718,
+          "pct": 0.262054586635933
         }
       ]
     },
     {
       "address": "52BaskN1ESY2UK24PWN2aRhCsgTYKeFGL9xQZ141BGuP",
-      "snapshot_date": "2026-10-16T21:49:42+08:00",
+      "snapshot_date": "2026-10-26T10:54:07+08:00",
       "tokens": [
         {
           "symbol": "SOL",
-          "value_usd": 942.1602865557313,
-          "pct": 99.9963715969459
+          "value_usd": 697.9412522507183,
+          "pct": 100.02009810565613
         }
       ]
     },
     {
-      "address": "DRkN5WrNUa86w2KbVX2uuwnLsu7wGvMsiX4ByaMRt7sf",
-      "snapshot_date": "2026-10-16T21:49:44+08:00",
-      "tokens": [
-        {
-          "symbol": "ConConAI",
-          "value_usd": 34330.902005098804,
-          "pct": 99.9693562743175
-        },
-        {
-          "symbol": "SOL",
-          "value_usd": 10.523110390141786,
-          "pct": 0.030642613804607168
-        }
-      ]
-    },
-    {
-      "address": "FPvW9eyJQDfdvRpDVYJrFLuGhpZavRYgJEgtFFPfz7CA",
-      "snapshot_date": "2026-10-16T21:49:46+08:00",
+      "address": "EFSr396A6Jh7bNCSujGRLMkyXspbWitEvjNVatGD56oF",
+      "snapshot_date": "2026-10-26T10:54:10+08:00",
       "tokens": [
         {
           "symbol": "SOL",
-          "value_usd": 14794.685180174933,
-          "pct": 54.036204985302824
+          "value_usd": 27.04269145407554,
+          "pct": 68.83170355936338
         },
         {
-          "symbol": "RK",
-          "value_usd": 12584.512957405701,
-          "pct": 45.963757492981905
+          "symbol": "ᵈᵒᵍ",
+          "value_usd": 6.727793140248584,
+          "pct": 17.12423720193422
         },
         {
-          "symbol": "GL1TTR",
-          "value_usd": 0.010273148623936891,
-          "pct": 3.752171527322568e-05
-        }
-      ]
-    },
-    {
-      "address": "2e6gZwb8qHxE1Fzfs4GrcSuq6AMrAmQvPuZR3S3DAzZV",
-      "snapshot_date": "2026-10-16T21:49:49+08:00",
-      "tokens": [
+          "symbol": "crime",
+          "value_usd": 5.47705108816525,
+          "pct": 13.940726185494496
+        },
         {
-          "symbol": "SOL",
-          "value_usd": 425.3771080720297,
-          "pct": 100.00703094608068
+          "symbol": "KIMCHI",
+          "value_usd": 0.024636794594532826,
+          "pct": 0.0627079795316838
+        },
+        {
+          "symbol": "USDC",
+          "value_usd": 0.010525764402562976,
+          "pct": 0.026791205169917575
         }
       ]
     }
