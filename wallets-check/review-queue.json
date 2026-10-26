@@ -74,5 +74,15 @@
     "old_hash": "62985c8862b44dffade5ce8e860ea52e789579b7cc0c71cc316b6a180d05aeb8",
     "new_hash": "17cb715debd5d8ed1fad8b78c07e70dbb5bba949eeb9a868d79fba561e03942b",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-26T12:52:44+00:00",
+    "wallet_id": "bitget",
+    "dimension": "rewards",
+    "url": "https://web3.bitget.com/en/blog/articles/pioneer-launch-campaign",
+    "summary": " 2026-10-02\n+Bitget Wallet Card: Up to $800 in Monthly Rewards for Advertisers in Pakistan\n Become a Bitget Wallet Pioneer: Bring Crypto Payments to Your City",
+    "old_hash": "9629cbf18161cf97db17737623d45897a459bb35f94fa9a855f166b45c1942b9",
+    "new_hash": "a7a7dff95d3ac9ed598fc91df89d0ae9da73ddca981d7255660a374c0a138536",
+    "status": "pending"
   }
 ]
