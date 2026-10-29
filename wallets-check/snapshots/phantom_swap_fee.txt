@@ -226,7 +226,7 @@ Before resetting Phantom, make sure you can access the Apple or Google account, 
 Go to
 Settings > Security & Privacy > Reset App
 . If you can’t access this option, uninstall Phantom and download it again.
-1. Open Phantom and restore your wallets using the same Apple or Google account, recovery phrases, or private keys.
+Open Phantom and restore your wallets using the same Apple or Google account, recovery phrases, or private keys.
 Resetting Phantom clears the app’s local data. It doesn’t delete your wallets or funds.
 “This account might be malicious”
 #

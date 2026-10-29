@@ -84,5 +84,15 @@
     "old_hash": "9629cbf18161cf97db17737623d45897a459bb35f94fa9a855f166b45c1942b9",
     "new_hash": "a7a7dff95d3ac9ed598fc91df89d0ae9da73ddca981d7255660a374c0a138536",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-29T14:11:18+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " . If you can’t access this option, uninstall Phantom and download it again.\n-1. Open Phantom and restore your wallets using the same Apple or Google account, recovery phrases, or private keys.\n+Open Phantom and restore your wallets using the same Apple or Google account, recovery phrases, or private keys.\n Resetting Phantom clears the app’s local data. It doesn’t delete your wallets or funds.",
+    "old_hash": "17cb715debd5d8ed1fad8b78c07e70dbb5bba949eeb9a868d79fba561e03942b",
+    "new_hash": "1e90e2278a752368027dcb014e5ac89af053236fd3655bd5fe5f4697a4c199da",
+    "status": "pending"
   }
 ]

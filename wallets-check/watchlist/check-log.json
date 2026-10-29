@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "cohort": "watchlist",
-  "started_at": "2026-10-29T07:00:29+00:00",
-  "last_check": "2026-10-29T07:01:13+00:00",
-  "last_success": "2026-10-29T07:01:13+00:00",
+  "started_at": "2026-10-29T14:12:27+00:00",
+  "last_check": "2026-10-29T14:13:09+00:00",
+  "last_success": "2026-10-29T14:13:09+00:00",
   "expected": 14,
   "configured": 11,
   "checked": 11,
   "failed": 0,
   "skipped": 3,
-  "changed": 0,
+  "changed": 1,
   "baselined": 0,
   "schedule": {
     "enabled": true,
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/40832532421"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/40888961171"
   },
   "results": [
     {
@@ -58,7 +58,7 @@
       "wallet_id": "zerion",
       "dimension": "swap_fee",
       "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
-      "status": "unchanged",
+      "status": "changed",
       "final_url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion"
     },
     {
@@ -114,5 +114,5 @@
   ],
   "status": "partial",
   "dataset_unchanged": true,
-  "pending_reviews": 13
+  "pending_reviews": 14
 }
