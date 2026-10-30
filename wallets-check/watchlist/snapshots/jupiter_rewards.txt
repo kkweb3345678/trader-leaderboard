@@ -23,9 +23,9 @@ Many campaigns can be claimed only with Jupiter Wallet (the browser extension) o
 ASR is claimed with the wallet you staked with; a Squads vault claims through Squads.
 ## Trading Card Game
 The Trading Card Game (TCG) is Jupiter's trading campaign format, run in seasons.
-> **How the TCG works**
+> [card] How the TCG works
 >
 > Core mechanics: points, cards, eligibility, and season details.
-> **FAQ**
+> [card] FAQ
 >
 > Common questions about the Rewards Hub, the TCG, and how rewards work.

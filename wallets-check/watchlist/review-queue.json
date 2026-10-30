@@ -138,5 +138,15 @@
     "old_hash": "bd31f7074c4b0353f27794c89193a3498c892718b7741fbd1142758240f9af3f",
     "new_hash": "d9e3d490834f63c66b5296e3a831dde4ab267645bf314594d6553fbfe16d35f2",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-30T19:18:58+00:00",
+    "wallet_id": "jupiter",
+    "dimension": "rewards",
+    "url": "https://docs.jup.ag/user-docs/earn/rewards-hub/index.md",
+    "summary": " The Trading Card Game (TCG) is Jupiter's trading campaign format, run in seasons.\n-> **How the TCG works**\n+> [card] How the TCG works\n >\n > Core mechanics: points, cards, eligibility, and season details.\n-> **FAQ**\n+> [card] FAQ\n >",
+    "old_hash": "d5e5198401870c1180be16249e926c0c65215d2b883317a5c5105781394e54e6",
+    "new_hash": "fc6bea7d2150b09d6a50bb1dadc7678461a165f3c9ea39a484e263023192d61a",
+    "status": "pending"
   }
 ]
