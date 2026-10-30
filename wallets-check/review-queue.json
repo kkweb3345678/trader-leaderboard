@@ -94,5 +94,15 @@
     "old_hash": "17cb715debd5d8ed1fad8b78c07e70dbb5bba949eeb9a868d79fba561e03942b",
     "new_hash": "1e90e2278a752368027dcb014e5ac89af053236fd3655bd5fe5f4697a4c199da",
     "status": "pending"
+  },
+  {
+    "time": "2026-10-30T14:03:32+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": "-Swap crypto in Phantom\n+Swap tokens in Phantom\n Swapping lets you trade one token for another across supported networks in Phantom. Phantom automatically performs a same-network swap or a\n To buy one token with another, follow these steps:\n-Open a token in Phantom.\n+Open a token.\n Tap\n Resetting Phantom clears the app’s local data. It doesn’t delete your wallets or funds.\n-“This account might be malicious”\n-#\n-Stop depositing funds into the account. This warning may indicate malicious account o",
+    "old_hash": "1e90e2278a752368027dcb014e5ac89af053236fd3655bd5fe5f4697a4c199da",
+    "new_hash": "6e3d42ba7ce820324bc2bdc2a187d2a77595e47871b844819bd6bb178401a4cf",
+    "status": "pending"
   }
 ]

@@ -1,4 +1,4 @@
-Swap crypto in Phantom
+Swap tokens in Phantom
 Swapping lets you trade one token for another across supported networks in Phantom. Phantom automatically performs a same-network swap or a
 cross-chain swap
 , depending on the tokens you choose.
@@ -13,7 +13,7 @@ For cross-chain swaps and swaps on Robinhood Chain, an amount of at least $2 (US
 Mobile app
 #
 To buy one token with another, follow these steps:
-Open a token in Phantom.
+Open a token.
 Tap
 Buy
 ,
@@ -228,12 +228,6 @@ Settings > Security & Privacy > Reset App
 . If you can’t access this option, uninstall Phantom and download it again.
 Open Phantom and restore your wallets using the same Apple or Google account, recovery phrases, or private keys.
 Resetting Phantom clears the app’s local data. It doesn’t delete your wallets or funds.
-“This account might be malicious”
-#
-Stop depositing funds into the account. This warning may indicate malicious account ownership or a wallet controlled by someone else.
-Recovery options depend on what happened. Follow
-the malicious-account guidance
-to check the account and secure your wallet.
 See also
 #
 Understanding gasless transactions on Solana
