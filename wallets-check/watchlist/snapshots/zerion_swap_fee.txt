@@ -36,6 +36,6 @@ These vary depending on the protocol used
 Related Articles
 What is Zerion?
 What is Zerion Premium?
+Zerion Premium: FAQs
 Bridge Crypto with Zerion
 Understanding Portfolio Tracking in Zerion
-Unsupported Wallets in Zerion
