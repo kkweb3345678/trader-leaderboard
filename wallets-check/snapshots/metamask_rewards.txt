@@ -1,9 +1,73 @@
 Campaigns
-MetaMask Rewards currently has one ongoing campaign: the Money Sweepstakes. To learn more about ongoing or recently ended campaigns, keep reading.
+MetaMask Rewards currently has one ongoing campaign: the Perps Trading Competition. To learn more about ongoing or recently ended campaigns, keep reading.
 To participate in campaigns, you need to be opted into the MetaMask Rewards program. To opt into the program, open MetaMask Mobile, navigate to the 'Rewards' tab, and tap 'Opt in'. You'll be taken through the details of the program, and then tap 'Opt in' to agree to the terms and conditions.
 Once you've opted into MetaMask Rewards, you will need to opt into the specific campaign you want to participate in. To opt into a campaign, open MetaMask Mobile, navigate to the 'Rewards' tab, and tap the campaign you want to participate in. You'll be taken through the details of the campaign, and then tap 'Opt in' to agree to the terms and conditions.
+Perps Trading Competition
+​
+The Perps Trading Competition (powered by Hyperliquid) offers a prize pool of up to $100,000 mUSD by trading perpetual futures via MetaMask.
+What are perps?
+Perps, shorthand for perpetual futures, are a type of trading that allow you to speculate on the future price of an asset without owning it. You can open a long position to speculate on the asset price going up, or a short position to speculate on the asset price going down. For more information, check out our
+perps guides
+.
+Make sure you have MetaMask Mobile version 8.15 or later installed to get started.
+How to participate
+​
+The campaign runs October 29th–November 12th, 2026. To get started, you'll need to opt into the campaign by visiting the campaign details page on the 'Rewards' tab. Eligible trades made during the campaign period count towards the competition, even if you made them before opting in.
+To opt into the Perps Trading Competition, visit the 'Rewards' tab on MetaMask Mobile (version 8.15 or later). Then, click on the 'Perps Trading Competition' card.
+The following screens will share the campaign details. Click 'Opt in' to agree to the campaign terms and conditions and get started.
+Eligible trades
+​
+Once you've opted into the campaign, any perps trades you make via MetaMask Perps during the campaign period will be included in your campaign portfolio. This includes trades you made during the campaign period before you opted in. You can trade perps on MetaMask Mobile or MetaMask Extension.
+MetaMask Extension
+You cannot monitor your Rewards progress on MetaMask Extension. Make sure any trades made on Extension are associated with an address linked to your Rewards profile on Mobile.
+You need to trade at least $10,000 in notional volume during the campaign. Notional volume is the total value of your position. It represents the full trade size you're controlling, not just the margin you put up. Example: $1,000 margin at 10× leverage = $10,000 notional value.
+Trades opened before the campaign begins are not eligible for your campaign progress, and trades must be closed before the campaign ends to contribute to the realized PnL. Only closed trades at the end of the competition count towards PnL. Any open positions will not be included, so close all positions you want included before the end time.
+Any accounts opted in to your MetaMask Rewards profile can make eligible trades.
+Terms apply.
+Geographical eligibility
+​
+The Perps Trading Competition has the same geographical eligibility as MetaMask Perps through Hyperliquid. For an up to date list of eligibility, see the
+FAQs here
+.
+Campaign winners and prize pool
+​
+Winners are decided by the total realized profit and loss (PnL) of their campaign portfolio at the time the campaign ends. Realized PnL comes from closed positions. Unrealized PnL from open trades will not count toward the leaderboard.
+The prize pool scales with total trading volume reached during the campaign, for a total reward pool of up to $100,000. The top 30 traders will divide the prize pool, with the first place winner receiving the largest percentage, second place receiving the next largest percentage, and so on. At any time, you can see where you rank on the leaderboard by opening the campaign page.
+Winners will be notified via MetaMask Mobile after the campaign ends. Winners will need to complete required tax information before receiving rewards. MetaMask will withhold taxes from rewards where required by law.
+For more information and eligibility, see the
+campaign terms and conditions
+.
+FAQs
+​
+What is the timeline for this campaign?
+The campaign starts at 9am EDT on October 29th, and ends at 9am EST on November 12th.
+Can I sign up before the campaign starts?
+No. You can only opt in once the competition starts.
+Can I enter this campaign more than once?
+No. You can only enter the campaign once, via one MetaMask Rewards profile. Likewise, each MetaMask Rewards profile is only eligible to win once for this campaign.
+How many winners are there, and how are rewards divided up?
+The top 30 traders will win rewards. If the full $100,000 mUSD prize pool is reached, the rewards will be divided based on the following breakdown:
+1st place: $20,000
+2nd: $12,500
+3rd: $7,500
+4th–10th: $5,000 each
+11th–20th: $1,500 each
+21st–30th: $1,000 each
+If the total campaign volume doesn't unlock the full $100,000 mUSD, prize amounts scale proportionally, subject to eligibility. Read the
+terms and conditions
+for more information.
+How will I know if I've won?
+Check the campaign details page in the MetaMask Mobile app to see your rank. At the end of the competition, you can view your final ranking. You will also receive a notification from MetaMask (make sure you have notifications turned on!). If you finished in the top 30, follow the instructions in MetaMask Mobile to claim your reward.
+What happens in a tie?
+In a tie, the participant with the higher qualifying notional trading volume will rank higher.
+Do my trades need to meet any technical requirements to count?
+Yes. Eligible trades must be made through MetaMask Perps (powered by Hyperliquid) on Mobile or Extension. All trades must be tagged with MetaMask builder code, which happens automatically when you trade through MetaMask. If you trade directly on Hyperliquid or through another interface, those trades won't count.
+Previous campaigns
+​
 Money Sweepstakes
 ​
+The Money Sweepstakes has officially ended
+The details below are here for reference purposes only. Winners will be notified in MetaMask Mobile.
 Money Account Sweepstakes offers a weekly prize pool of up to $5k in mUSD, for a grand total of up to $20k across four weeks, (availability varies by region, terms apply). Only qualifying deposits into Money Account made via MetaMask during the campaign period will qualify for entries into the weekly draws. You must be opted into the Money Sweepstakes campaign to qualify.
 The campaign runs for four weeks from September 17th, 2026 to October 15, 2026, during which time there will be four independent weekly draw periods, each lasting seven days. Each weekly draw will have two winners who will be randomly selected and split that week's prize pool.
 How to enter
@@ -60,8 +124,6 @@ Where can I learn more about the sweepstakes?
 See the official
 terms and conditions
 .
-Previous campaigns
-​
 Predict the Pitch
 ​
 Predict the Pitch has officially ended

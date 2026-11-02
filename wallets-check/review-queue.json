@@ -114,5 +114,15 @@
     "old_hash": "6e3d42ba7ce820324bc2bdc2a187d2a77595e47871b844819bd6bb178401a4cf",
     "new_hash": "c883df514c703e5b7e257d1a3b7b0bb6277d67ca89124c4814b189a5809bffed",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-02T23:27:29+00:00",
+    "wallet_id": "metamask",
+    "dimension": "rewards",
+    "url": "https://support.metamask.io/trade/metamask-rewards/how-to-participate-in-rewards/",
+    "summary": " Campaigns\n-MetaMask Rewards currently has one ongoing campaign: the Money Sweepstakes. To learn more about ongoing or recently ended campaigns, keep reading.\n+MetaMask Rewards currently has one ongoing campaign: the Perps Trading Competition. To learn more about ongoing or recently ended campaigns, keep reading.\n To participate in campaigns, you need to be opted into the MetaMask Rewards program. To opt into the program, open MetaMask Mobile, navigate to the 'Rewards' tab, and tap 'Opt in'. You",
+    "old_hash": "5cbe2349eedc414e0f0778ca8d93e387bc7a4f689ec02f944f358b453de08532",
+    "new_hash": "f2b11df9accd88ac36d41a7a4376e6a0bd10e9fdd6691a6b1b85d462507def12",
+    "status": "pending"
   }
 ]
