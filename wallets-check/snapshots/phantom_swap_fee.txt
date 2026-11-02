@@ -189,18 +189,17 @@ Source transaction completed; bridge is stalled or failed
 Contact Phantom Support.
 If you cannot determine the swap’s status, contact Support before retrying. Phantom Support cannot reverse a bridge transaction or force completion, but can investigate and escalate to the relevant provider.
 Resetting your wallet will not recover a missing destination transaction.
-Bitcoin swap completed, but BTC is missing
-#
-Phantom supports separate two types of Bitcoin addresses: Native SegWit and Taproot. After a swap, your BTC can land in your Taproot address even when that address is not turned on in the app.
-To troubleshoot, follow these steps:
 Go to
 Settings > Preferences > Preferred Bitcoin Address
 .
-Enable
+Enable both
+Native SegWit
+and
 Taproot
 .
 Close and reopen Phantom.
-Check the balance in both Native SegWit and Taproot addresses.
+Check your combined Bitcoin balance.
+Balance displays may take a moment to update after a swap completes.
 A token ended up in your Cash account
 #
 An unsupported Solana token sent to your Cash address may not appear in your Cash balance.

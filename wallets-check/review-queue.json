@@ -104,5 +104,15 @@
     "old_hash": "1e90e2278a752368027dcb014e5ac89af053236fd3655bd5fe5f4697a4c199da",
     "new_hash": "6e3d42ba7ce820324bc2bdc2a187d2a77595e47871b844819bd6bb178401a4cf",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-02T15:38:51+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " Resetting your wallet will not recover a missing destination transaction.\n-Bitcoin swap completed, but BTC is missing\n-#\n-Phantom supports separate two types of Bitcoin addresses: Native SegWit and Taproot. After a swap, your BTC can land in your Taproot address even when that address is not turned on in the app.\n-To troubleshoot, follow these steps:\n Go to\n .\n-Enable\n+Enable both\n+Native SegWit\n+and\n Taproot\n Close and reopen Phantom.\n-Check the balance in both Native SegWit and Taproot addres",
+    "old_hash": "6e3d42ba7ce820324bc2bdc2a187d2a77595e47871b844819bd6bb178401a4cf",
+    "new_hash": "c883df514c703e5b7e257d1a3b7b0bb6277d67ca89124c4814b189a5809bffed",
+    "status": "pending"
   }
 ]
