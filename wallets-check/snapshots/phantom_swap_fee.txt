@@ -13,17 +13,17 @@ For cross-chain swaps and swaps on Robinhood Chain, an amount of at least $2 (US
 Mobile app
 #
 To buy one token with another, follow these steps:
-Open a token.
+Open the token you want to buy.
 Tap
 Buy
 ,
-Buy > More
+Buy More
 , or
 Trade
 >
 Buy
 .
-Choose the token you want to spend.
+Choose the token you want to pay with.
 Enter the amount.
 Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive.
 Review the fees and price impact. Price impact is how much your own trade affects the price. To change slippage, open
@@ -44,27 +44,25 @@ Review the fees and price impact. Price impact is how much your own trade affect
 swap settings
 .
 Confirm the swap.
-Or use the
-Trade
-screen for a classic layout:
-Tap the
-+
-button in the lower right, then tap
-Trade
+After the transaction confirms, tokens appear in your portfolio.
+Swap from your Cash account
+#
+You can buy tokens across supported networks using your Cash balance. Direct swaps from Cash to native Bitcoin aren’t supported.
+Open the token you want to buy.
+Tap
+Buy
+,
+Buy More
+, or
+Trade > Buy
 .
-In
-You Pay
-, choose the token you want to pay with.
-In
-You Receive
-, choose the token you want to receive.
+Choose **Cash** as the payment source. It’s usually selected by default.
 Enter the amount.
-Check the token you're paying with, the amount you're paying, and the amount you're quoted to receive.
+Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive.
 Review the fees and price impact. Price impact is how much your own trade affects the price. To change slippage, open
 swap settings
 .
 Confirm the swap.
-After the transaction confirms, tokens appear in your portfolio.
 Browser extension
 #
 On the

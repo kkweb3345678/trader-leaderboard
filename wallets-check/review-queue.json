@@ -124,5 +124,15 @@
     "old_hash": "5cbe2349eedc414e0f0778ca8d93e387bc7a4f689ec02f944f358b453de08532",
     "new_hash": "f2b11df9accd88ac36d41a7a4376e6a0bd10e9fdd6691a6b1b85d462507def12",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-03T15:02:06+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " To buy one token with another, follow these steps:\n-Open a token.\n+Open the token you want to buy.\n Tap\n ,\n-Buy > More\n+Buy More\n , or\n .\n-Choose the token you want to spend.\n+Choose the token you want to pay with.\n Enter the amount.\n Confirm the swap.\n-Or use the\n-Trade\n-screen for a classic layout:\n-Tap the\n-+\n-button in the lower right, then tap\n-Trade\n-.\n-In\n-You Pay\n-, choose the token you want to pay with.\n-In\n-You Receive\n-, choose the token you want to receive.\n-Enter the amount.\n-Check",
+    "old_hash": "c883df514c703e5b7e257d1a3b7b0bb6277d67ca89124c4814b189a5809bffed",
+    "new_hash": "37ed20be40a2b8860e5eabc0103b6f21b3ebeedb9593452444281fb5eea7af9e",
+    "status": "pending"
   }
 ]
