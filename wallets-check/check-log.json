@@ -1,29 +1,29 @@
 {
   "schema_version": 1,
   "cohort": "comparison",
-  "started_at": "2026-11-02T23:27:29+00:00",
-  "last_check": "2026-11-02T23:28:40+00:00",
-  "last_success": "2026-11-02T23:28:40+00:00",
+  "started_at": "2026-11-03T06:38:35+00:00",
+  "last_check": "2026-11-03T06:39:46+00:00",
+  "last_success": "2026-11-03T06:39:46+00:00",
   "expected": 18,
   "configured": 17,
   "checked": 17,
   "failed": 0,
   "skipped": 1,
-  "changed": 1,
+  "changed": 0,
   "baselined": 0,
   "schedule": {
     "enabled": true,
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/41545554228"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/41591152211"
   },
   "results": [
     {
       "wallet_id": "metamask",
       "dimension": "rewards",
       "url": "https://support.metamask.io/trade/metamask-rewards/how-to-participate-in-rewards/",
-      "status": "changed",
+      "status": "unchanged",
       "final_url": "https://support.metamask.io/trade/metamask-rewards/how-to-participate-in-rewards/"
     },
     {
