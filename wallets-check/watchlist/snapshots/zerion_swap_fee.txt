@@ -35,7 +35,7 @@ Zerion doesn’t control or collect these fees
 These vary depending on the protocol used
 Related Articles
 What is Zerion?
-Swap Crypto with Zerion
 What is Zerion Premium?
+Zerion Premium: FAQs
 Bridge Crypto with Zerion
 Understanding Portfolio Tracking in Zerion
