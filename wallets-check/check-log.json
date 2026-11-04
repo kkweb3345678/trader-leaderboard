@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "cohort": "comparison",
-  "started_at": "2026-11-03T20:56:50+00:00",
-  "last_check": "2026-11-03T20:58:01+00:00",
-  "last_success": "2026-11-03T20:58:01+00:00",
+  "started_at": "2026-11-04T01:17:20+00:00",
+  "last_check": "2026-11-04T01:18:32+00:00",
+  "last_success": "2026-11-04T01:18:32+00:00",
   "expected": 18,
   "configured": 17,
   "checked": 17,
@@ -16,7 +16,7 @@
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/41717175690"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/41752982277"
   },
   "results": [
     {
