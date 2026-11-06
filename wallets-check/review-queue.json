@@ -134,5 +134,15 @@
     "old_hash": "c883df514c703e5b7e257d1a3b7b0bb6277d67ca89124c4814b189a5809bffed",
     "new_hash": "37ed20be40a2b8860e5eabc0103b6f21b3ebeedb9593452444281fb5eea7af9e",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-06T17:55:00+00:00",
+    "wallet_id": "metamask",
+    "dimension": "rewards",
+    "url": "https://support.metamask.io/trade/metamask-rewards/how-to-participate-in-rewards/",
+    "summary": " What regions are eligible to enter?\n-The Sweepstakes is not open to residents of the United Kingdom or the U.S. states of New York or Florida. In addition, the Sweepstakes is not available to residents of any other U.S. state or jurisdiction where the Sweepstakes, the MetaMask Money account, or mUSD is not offered, restricted, sanctioned, or otherwise prohibited, where promotions of this type are prohibited by law, or that Consensys designates as ineligible on the competition page.\n+The Sweepst",
+    "old_hash": "f2b11df9accd88ac36d41a7a4376e6a0bd10e9fdd6691a6b1b85d462507def12",
+    "new_hash": "70e302bce08f7e52f4e76734105f0f5d2527f909b916d2621868ce8734b59764",
+    "status": "pending"
   }
 ]

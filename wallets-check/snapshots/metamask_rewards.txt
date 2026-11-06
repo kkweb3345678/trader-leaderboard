@@ -93,7 +93,7 @@ If you are selected as a winner, you will be notified via MetaMask Mobile.
 FAQs
 ​
 What regions are eligible to enter?
-The Sweepstakes is not open to residents of the United Kingdom or the U.S. states of New York or Florida. In addition, the Sweepstakes is not available to residents of any other U.S. state or jurisdiction where the Sweepstakes, the MetaMask Money account, or mUSD is not offered, restricted, sanctioned, or otherwise prohibited, where promotions of this type are prohibited by law, or that Consensys designates as ineligible on the competition page.
+The Sweepstakes is not open to residents of the United Kingdom or the U.S. states of New York or Florida. In addition, the Sweepstakes is not available to residents of any other U.S. state or jurisdiction where the Sweepstakes, the MetaMask Money account, or mUSD is not offered, restricted, sanctioned, or otherwise prohibited, where promotions of this type are prohibited by law, or that MetaMask designates as ineligible on the competition page.
 I already have funds in my Money Account. Do I need to make another deposit to be entered into the sweepstakes?
 Yes. During the campaign timeframe, you must make a new deposit of $100+ mUSD to qualify for entries. Past deposits will not count for entries.
 Can I have more entries by making a bigger deposit or holding more than $100 mUSD?
@@ -157,7 +157,7 @@ The prize pool will be divided up amongst the winners proportionally to the tota
 4th–10th: $3,000 each (4% each)
 11th–20th: $900 each (1.2% each)
 If the full prize pool is not unlocked, the prize amounts will scale proportionally.
-Each user can only win once. If you win, follow the instructions in MetaMask Mobile to claim your prize. Winners will need to complete required tax information as set out in the campaign terms before receiving rewards. Consensys will withhold taxes from rewards where required by law.
+Each user can only win once. If you win, follow the instructions in MetaMask Mobile to claim your prize. Winners will need to complete required tax information as set out in the campaign terms before receiving rewards. MetaMask will withhold taxes from rewards where required by law.
 FAQs
 ​
 What is the timeline for this campaign?
