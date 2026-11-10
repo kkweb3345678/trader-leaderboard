@@ -1,167 +1,167 @@
 {
- "updated_at": "2026-11-10T22:14:42+08:00",
+ "updated_at": "2026-11-11T06:46:03+08:00",
  "source": "Birdeye",
  "chain": "solana",
  "today": [
   {
-   "address": "HaMgysauZDyQjESvZVrFpNaRbTTDu7Am4mdmVkuYa9g",
-   "pnl": 96349183.64,
-   "realized": 0,
-   "unrealized": 96349183.64,
-   "volume": 7187.95,
-   "trades": 1
-  },
-  {
-   "address": "5DRK5ahFVE812eAcg6xNU6yrbmspBit3HpNYkSb7Nfag",
-   "pnl": 85719275.91,
-   "realized": -10.03,
-   "unrealized": 85719285.93,
-   "volume": 423.88,
-   "trades": 22
-  },
-  {
    "address": "AtNfHtX6DsKzSMjuJeAT5H7jBUmT4Mo5jA1rD8PoKDff",
-   "pnl": 84982710.68,
+   "pnl": 98368867.92,
    "realized": 0,
-   "unrealized": 84982710.68,
+   "unrealized": 98368867.92,
    "volume": 7308.07,
    "trades": 1
   },
   {
-   "address": "EZChXpeHmXPEPybxvKgTUGznJq8EVq4xj3JTZ1S7AxNv",
-   "pnl": 61758402.27,
+   "address": "CqPQpHFLCpbSHtChuMT8e6pzvikKcr78Cxu2NPvqsA1i",
+   "pnl": 66313513.91,
    "realized": 0,
-   "unrealized": 61758402.27,
-   "volume": 7194.26,
+   "unrealized": 66313513.91,
+   "volume": 7031.16,
    "trades": 1
   },
   {
-   "address": "DJXnS1CJXYoxjTmFEYtt8GgWRTckY5nAXZ41RWcW9Thc",
-   "pnl": 60642694.28,
-   "realized": -0.25,
-   "unrealized": 60642694.53,
-   "volume": 112.99,
-   "trades": 19
-  },
-  {
-   "address": "9puBwPYbZbXCjNxkqHCSWgyXLx9xVQTbEfDRhRGh8Gsc",
-   "pnl": 48990070.5,
-   "realized": -1.26,
-   "unrealized": 48990071.76,
-   "volume": 91.82,
-   "trades": 13
-  },
-  {
    "address": "2fVfq98LuTjEb1xakkRFYCeYERBikv2CDbrtMZCJAJZq",
-   "pnl": 26835636.98,
+   "pnl": 28178437.75,
    "realized": 0,
-   "unrealized": 26835636.98,
+   "unrealized": 28178437.75,
    "volume": 12158.09,
    "trades": 1
   },
   {
-   "address": "Guscqrc5AxC4RZEysYnfNeXukkZttdaws38yhNZh5mf6",
-   "pnl": 21917841.29,
-   "realized": 8447.78,
-   "unrealized": 21909393.51,
-   "volume": 58917.29,
-   "trades": 8
+   "address": "7hx64fDDpVk9oTV3SjcGtPe5NBA4YBebMoDciw63keEn",
+   "pnl": 25237031.85,
+   "realized": 0,
+   "unrealized": 25237031.85,
+   "volume": 12158.29,
+   "trades": 1
   },
   {
-   "address": "D1enKUiHTGnp51aNDQcFUq27t5mRcKUDz34M4ABeU23T",
-   "pnl": 19805288.58,
+   "address": "BcCP4hGzFPH5tVXPebfNPF3eyf9ryKqNAFXPsyKdsJ2X",
+   "pnl": 23422668.79,
    "realized": 0,
-   "unrealized": 19805288.58,
-   "volume": 12157.79,
+   "unrealized": 23422668.79,
+   "volume": 12158.51,
    "trades": 1
   },
   {
    "address": "2Vh92FH7awJvyBNBm1qQ8hF5QQYAY2GC3z6CEj4XNWph",
-   "pnl": 19476079.72,
-   "realized": 34867.16,
-   "unrealized": 19441212.55,
-   "volume": 129056.25,
-   "trades": 23
+   "pnl": 22555697.02,
+   "realized": 34847.56,
+   "unrealized": 22520849.46,
+   "volume": 137875.88,
+   "trades": 25
   },
   {
-   "address": "HZpFdMH6GHUb5k9W6Fp8mcxcZjCU3zLQrUyorPXQD6Tr",
-   "pnl": 16728711.36,
-   "realized": 4.84,
-   "unrealized": 16728706.52,
-   "volume": 108.1,
-   "trades": 7
+   "address": "D1enKUiHTGnp51aNDQcFUq27t5mRcKUDz34M4ABeU23T",
+   "pnl": 22229488.51,
+   "realized": 0,
+   "unrealized": 22229488.51,
+   "volume": 12157.79,
+   "trades": 1
   },
   {
-   "address": "Bi9CGAhQRUM6a4BygfujeAY3JvuDLuBgvxcbc1EeYiHt",
-   "pnl": 15932330.09,
-   "realized": 0.0,
-   "unrealized": 15932330.09,
-   "volume": 2.79,
-   "trades": 16
+   "address": "G36CyVytoPiJRpbNwtSYq1YpBxE86cbok48Vis4pj3Bp",
+   "pnl": 21681888.76,
+   "realized": 0,
+   "unrealized": 21681888.76,
+   "volume": 12158.49,
+   "trades": 1
+  },
+  {
+   "address": "5jh63vq3rgukiinKp6Bw9uAtdNWLBDYkc7jrL3UkaJjY",
+   "pnl": 21660509.99,
+   "realized": 0,
+   "unrealized": 21660509.99,
+   "volume": 12158.46,
+   "trades": 1
+  },
+  {
+   "address": "2hcnt4fQXnvaa5V2D4gdiktJFpVA1QuFp4dNrk52AeMo",
+   "pnl": 21198750.02,
+   "realized": 0,
+   "unrealized": 21198750.02,
+   "volume": 12157.98,
+   "trades": 1
+  },
+  {
+   "address": "As7SSdxJhC7tzPL9j8964U6dzzQMrhWYaZD63ddCsax2",
+   "pnl": 19628382.91,
+   "realized": 0,
+   "unrealized": 19628382.91,
+   "volume": 12158.6,
+   "trades": 1
   },
   {
    "address": "H7w8m8Ng4fP9PTUNs5MbedgJAAera5sBi7KbBenUn5yG",
-   "pnl": 14760715.61,
+   "pnl": 18488139.63,
    "realized": 0,
-   "unrealized": 14760715.61,
+   "unrealized": 18488139.63,
    "volume": 12157.73,
    "trades": 1
   },
   {
    "address": "7qiarNSYHHW4G3Ucf8W4hsNkqiwwgygpm3bcfaQEfZXe",
-   "pnl": 14153997.84,
-   "realized": 250145.37,
-   "unrealized": 13903852.47,
-   "volume": 1176719.27,
-   "trades": 49
+   "pnl": 15017208.83,
+   "realized": 438727.42,
+   "unrealized": 14578481.41,
+   "volume": 1674332.47,
+   "trades": 92
   },
   {
    "address": "HedXrF4oofJByjdmajH2Eyj8D9UbxE1WR51ar4LU7RtD",
-   "pnl": 13416462.28,
+   "pnl": 14256739.14,
    "realized": 0,
-   "unrealized": 13416462.28,
+   "unrealized": 14256739.14,
    "volume": 12157.46,
    "trades": 1
   },
   {
-   "address": "Aez8pKvnB7VaQu45btpHUeZ8JVfbeLrnqAhSJ8XDLZED",
-   "pnl": 11327413.42,
+   "address": "519zaSvYLVUumFuyN8opQRYmLbuzo19L2VF9RNQe4abC",
+   "pnl": 8880743.88,
    "realized": 0,
-   "unrealized": 11327413.42,
-   "volume": 3.42,
-   "trades": 15
-  },
-  {
-   "address": "9baPoeJkCFe22SquUqSmuetka86jwa3CuHYNxHXJibdP",
-   "pnl": 7217395.89,
-   "realized": 0,
-   "unrealized": 7217395.89,
-   "volume": 2.47,
-   "trades": 17
-  },
-  {
-   "address": "32bLyaY17TBypzRG7sFFWcMYzdbBuhErSkzQeBa2GR9G",
-   "pnl": 4602018.8,
-   "realized": 0,
-   "unrealized": 4602018.8,
-   "volume": 7133.02,
+   "unrealized": 8880743.88,
+   "volume": 12158.6,
    "trades": 1
   },
   {
-   "address": "9BDJpAq1mNuy8YKgMMukQNEW6BipxUoUDCqqZ8vZ7deB",
-   "pnl": 3099862.27,
-   "realized": 0.03,
-   "unrealized": 3099862.24,
-   "volume": 186205.45,
-   "trades": 3
+   "address": "Eikzqyq7gJT5JbmVYhhHNMSa6WmV5PEixnUBebcPBtf4",
+   "pnl": 7288549.11,
+   "realized": 0,
+   "unrealized": 7288549.11,
+   "volume": 7090.97,
+   "trades": 1
   },
   {
-   "address": "CwtvTQ2jppmbDZ75TZE7y6MBrrpdR7goxtke66oEgEd9",
-   "pnl": 1834081.74,
+   "address": "362A83WEQ4dLPhmyg6eNxtLqkQRTd2TdGtr3uk5Su2EY",
+   "pnl": 6199429.38,
    "realized": 0,
-   "unrealized": 1834081.74,
-   "volume": 12157.63,
-   "trades": 1
+   "unrealized": 6199429.38,
+   "volume": 362641.08,
+   "trades": 6
+  },
+  {
+   "address": "x6cuKZ55WfVtVCCn4zPXJThxvABMEZcD2HscE9aThDG",
+   "pnl": 6001823.36,
+   "realized": 0,
+   "unrealized": 6001823.36,
+   "volume": 196018.92,
+   "trades": 2
+  },
+  {
+   "address": "2NBywqmFmL2avSE7Pip2MSVNDjmWpaiML8fzdDRGRaiT",
+   "pnl": 5554518.4,
+   "realized": 0,
+   "unrealized": 5554518.4,
+   "volume": 196022.6,
+   "trades": 2
+  },
+  {
+   "address": "8hHFcAM71RTSc1rQXPEFM853AbBbWt5jYfHqnszSNF1Z",
+   "pnl": 5143800.42,
+   "realized": 0,
+   "unrealized": 5143800.42,
+   "volume": 245027.57,
+   "trades": 2
   }
  ]
 }
