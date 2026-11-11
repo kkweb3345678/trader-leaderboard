@@ -188,5 +188,15 @@
     "old_hash": "bd31f7074c4b0353f27794c89193a3498c892718b7741fbd1142758240f9af3f",
     "new_hash": "5a8202d9d9bbd740a308a6933b42a00679881a9abdfea8dc3801bfb9d10935f1",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-11T14:08:57+00:00",
+    "wallet_id": "jupiter",
+    "dimension": "rewards",
+    "url": "https://docs.jup.ag/user-docs/earn/rewards-hub/index.md",
+    "summary": " > The Jupiter Rewards Hub lists Jupiter and partner reward campaigns: ASR, trading, Lend, Predict and Gacha, with campaign statuses and who can claim.\n-The Jupiter Rewards Hub, opened from **Rewards** in the jup.ag top bar, lists the reward campaigns run on Jupiter, by Jupiter and by ecosystem projects: Active Staking Rewards for JUP stakers, trading campaigns such as the Trading Card Game, Jupiter Lend deposit campaigns, Predict challenges and Gacha pack drops. At the top, the page shows the t",
+    "old_hash": "fc6bea7d2150b09d6a50bb1dadc7678461a165f3c9ea39a484e263023192d61a",
+    "new_hash": "f4332fc6aee69780699d2f06fef175156bbb6d05117541f082d62866ae60e13c",
+    "status": "pending"
   }
 ]

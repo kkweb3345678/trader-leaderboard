@@ -1,6 +1,6 @@
 # Jupiter Rewards Hub Overview
 > The Jupiter Rewards Hub lists Jupiter and partner reward campaigns: ASR, trading, Lend, Predict and Gacha, with campaign statuses and who can claim.
-The Jupiter Rewards Hub, opened from **Rewards** in the jup.ag top bar, lists the reward campaigns run on Jupiter, by Jupiter and by ecosystem projects: Active Staking Rewards for JUP stakers, trading campaigns such as the Trading Card Game, Jupiter Lend deposit campaigns, Predict challenges and Gacha pack drops. At the top, the page shows the total disbursed and, with a wallet connected, what you have earned and what you can claim. The **All**, **Live** and **Ended** filters sort the campaign cards; each card shows the campaign's status, its reward pool and **View details**, which opens the campaign page. A Gacha campaign card opens Jupiter Gacha instead (its packs or its leaderboard).
+The Jupiter Rewards Hub, opened from the gift icon in the jup.ag top bar, lists the reward campaigns run on Jupiter, by Jupiter and by ecosystem projects: Active Staking Rewards for JUP stakers, trading campaigns such as the Trading Card Game, Jupiter Lend deposit campaigns, Predict challenges and Gacha pack drops. A dot on the gift icon means your connected wallet has rewards to claim. At the top, the page shows the total disbursed and, with a wallet connected, what you have earned and what you can claim. The **All**, **Live** and **Ended** filters sort the campaign cards; each card shows the campaign's status, its reward pool and **View details**, which opens the campaign page. A Gacha campaign card opens Jupiter Gacha instead (its packs or its leaderboard).
 Each campaign runs for a fixed period, with its own rules, eligible activity, reward currency, and distribution method. Campaigns are independent from one another: eligibility, points, and rewards do not carry over between campaigns.
 ## What is a campaign?
 A campaign is a time-limited program where users earn rewards by using a Jupiter product (trading, depositing on Jupiter Lend, opening Gacha packs, predicting) or, for ASR, by staking JUP. Each campaign defines:
@@ -20,7 +20,7 @@ Each campaign card shows one of these statuses:
 | Ended | The claim window is over, or the reward pool has run out (first come, first served campaigns). |
 ## Which wallets can claim
 Many campaigns can be claimed only with Jupiter Wallet (the browser extension) or the Jupiter Mobile app. When you are connected with another wallet, the claim card of such a campaign reads **Claims only available via Jupiter Wallet** (on jup.ag in a phone browser, **Claims only available via Jupiter Mobile**), and **Claim** opens a **Claim with Jupiter Wallet** window with **Switch to Jupiter Wallet** or **Get Jupiter Wallet**. If you took part with another wallet, import it into Jupiter Wallet or Jupiter Mobile to claim.
-ASR is claimed with the wallet you staked with; a Squads vault claims through Squads.
+ASR is claimed with the wallet you staked with, in the Rewards Hub or from **JUP Staked** in Jupiter Portfolio; a Squads vault claims through Squads.
 ## Trading Card Game
 The Trading Card Game (TCG) is Jupiter's trading campaign format, run in seasons.
 > [card] How the TCG works
