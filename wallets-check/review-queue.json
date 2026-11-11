@@ -144,5 +144,15 @@
     "old_hash": "f2b11df9accd88ac36d41a7a4376e6a0bd10e9fdd6691a6b1b85d462507def12",
     "new_hash": "70e302bce08f7e52f4e76734105f0f5d2527f909b916d2621868ce8734b59764",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-11T21:52:25+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " #\n-A small amount of the network's native token to pay network fees. Some\n-Solana\n-and\n-EVM\n-swaps may be gasless.\n-For cross-chain swaps and swaps on Robinhood Chain, an amount of at least $2 (USD value).\n+A small amount of the network's native token to pay network fees. See\n+Understand network fees\n+for more information.\n Mobile app\n .\n-Choose **Cash** as the payment source. It’s usually selected by default.\n+Choose\n+Cash\n+as the payment source. It’s usually selected by default.\n Enter the am",
+    "old_hash": "37ed20be40a2b8860e5eabc0103b6f21b3ebeedb9593452444281fb5eea7af9e",
+    "new_hash": "4ab31e04428f5e4882f00b8883996565c2f81f55328045c1e1def5d5be851db7",
+    "status": "pending"
   }
 ]

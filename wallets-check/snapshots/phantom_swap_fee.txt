@@ -4,12 +4,9 @@ cross-chain swap
 , depending on the tokens you choose.
 What you need
 #
-A small amount of the network's native token to pay network fees. Some
-Solana
-and
-EVM
-swaps may be gasless.
-For cross-chain swaps and swaps on Robinhood Chain, an amount of at least $2 (USD value).
+A small amount of the network's native token to pay network fees. See
+Understand network fees
+for more information.
 Mobile app
 #
 To buy one token with another, follow these steps:
@@ -56,7 +53,9 @@ Buy More
 , or
 Trade > Buy
 .
-Choose **Cash** as the payment source. It’s usually selected by default.
+Choose
+Cash
+as the payment source. It’s usually selected by default.
 Enter the amount.
 Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive.
 Review the fees and price impact. Price impact is how much your own trade affects the price. To change slippage, open
