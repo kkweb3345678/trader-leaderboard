@@ -198,5 +198,15 @@
     "old_hash": "fc6bea7d2150b09d6a50bb1dadc7678461a165f3c9ea39a484e263023192d61a",
     "new_hash": "f4332fc6aee69780699d2f06fef175156bbb6d05117541f082d62866ae60e13c",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-12T18:52:45+00:00",
+    "wallet_id": "jupiter",
+    "dimension": "swap_fee",
+    "url": "https://docs.jup.ag/user-docs/global/mobile/fees.md",
+    "summary": " >\n-> This schedule applies only to swaps placed natively in Jupiter Mobile. Swaps made through the in-app dApp browser, or on jup.ag on the web, follow the standard fee schedules of those products. See Spot fees.\n+> This schedule applies only to swaps placed natively in Jupiter Mobile. Swaps made through the in-app dApp browser, or on jup.ag on the web, follow the standard fee schedules of those products. See Swap fees.",
+    "old_hash": "b7358c82f36e00a092a0dd9549d6afb182528d1f33b27afab4d1ea3eeec8b525",
+    "new_hash": "6fac11e35b58e5b4b26ae984dbb17b89e83bb2ec4bcd7dc2f5564db9e81baec9",
+    "status": "pending"
   }
 ]
