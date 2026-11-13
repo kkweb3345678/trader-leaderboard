@@ -1,6 +1,11 @@
 Swap fee
 0.64%
+Same-chain swaps
 0.43%
+Same-chain swaps
 0.21%
+Same-chain swaps
 0%
+Same-chain swaps
 0%
+Same-chain swaps

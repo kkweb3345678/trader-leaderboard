@@ -1,29 +1,29 @@
 {
   "schema_version": 1,
   "cohort": "watchlist",
-  "started_at": "2026-11-13T07:52:31+00:00",
-  "last_check": "2026-11-13T07:53:17+00:00",
-  "last_success": "2026-11-13T07:53:17+00:00",
+  "started_at": "2026-11-13T16:15:17+00:00",
+  "last_check": "2026-11-13T16:16:02+00:00",
+  "last_success": "2026-11-13T16:16:02+00:00",
   "expected": 14,
   "configured": 11,
   "checked": 11,
   "failed": 0,
   "skipped": 3,
-  "changed": 0,
+  "changed": 1,
   "baselined": 0,
   "schedule": {
     "enabled": true,
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/43388706372"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/43460566262"
   },
   "results": [
     {
       "wallet_id": "backpack",
       "dimension": "rewards",
       "url": "https://wallet.backpack.exchange/vip",
-      "status": "unchanged",
+      "status": "changed",
       "final_url": "https://wallet.backpack.exchange/vip"
     },
     {
@@ -114,5 +114,5 @@
   ],
   "status": "partial",
   "dataset_unchanged": true,
-  "pending_reviews": 21
+  "pending_reviews": 22
 }
