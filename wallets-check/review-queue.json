@@ -154,5 +154,15 @@
     "old_hash": "37ed20be40a2b8860e5eabc0103b6f21b3ebeedb9593452444281fb5eea7af9e",
     "new_hash": "4ab31e04428f5e4882f00b8883996565c2f81f55328045c1e1def5d5be851db7",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-18T13:52:22+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " #\n-You can buy tokens across supported networks using your Cash balance. Direct swaps from Cash to native Bitcoin aren’t supported.\n+You can buy tokens across supported networks using your Cash balance.\n Open the token you want to buy.\n line.\n-Minimum swap amount\n-#\n-Cross-chain swaps and swaps on Robinhood Chain may have a minimum of $2 (USD value). Fixed costs like gas and bridge fees take up a large share of very small swaps. They can make a quote unavailable or leave you with much less than",
+    "old_hash": "4ab31e04428f5e4882f00b8883996565c2f81f55328045c1e1def5d5be851db7",
+    "new_hash": "ba9aa4c2755c24f38e7cfdbd9b2c1e4e9b942c0abdfd5735b41400665dfe04ea",
+    "status": "pending"
   }
 ]

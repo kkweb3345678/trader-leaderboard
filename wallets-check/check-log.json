@@ -1,37 +1,37 @@
 {
   "schema_version": 1,
   "cohort": "comparison",
-  "started_at": "2026-11-18T04:12:19+00:00",
-  "last_check": "2026-11-18T04:13:27+00:00",
+  "started_at": "2026-11-18T13:52:22+00:00",
+  "last_check": "2026-11-18T13:53:30+00:00",
   "last_success": "2026-11-18T04:13:27+00:00",
   "expected": 18,
   "configured": 17,
-  "checked": 17,
-  "failed": 0,
+  "checked": 15,
+  "failed": 2,
   "skipped": 1,
-  "changed": 0,
+  "changed": 1,
   "baselined": 0,
   "schedule": {
     "enabled": true,
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/44235673713"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/44318089835"
   },
   "results": [
     {
       "wallet_id": "metamask",
       "dimension": "rewards",
       "url": "https://support.metamask.io/trade/metamask-rewards/how-to-participate-in-rewards/",
-      "status": "unchanged",
-      "final_url": "https://support.metamask.io/trade/metamask-rewards/how-to-participate-in-rewards/"
+      "status": "failed",
+      "error": "non_official_redirect_or_source"
     },
     {
       "wallet_id": "metamask",
       "dimension": "swap_fee",
       "url": "https://support.metamask.io/trade/swap/user-guide-swaps/",
-      "status": "unchanged",
-      "final_url": "https://support.metamask.io/trade/swap/user-guide-swaps/"
+      "status": "failed",
+      "error": "non_official_redirect_or_source"
     },
     {
       "wallet_id": "bitget",
@@ -86,7 +86,7 @@
       "wallet_id": "phantom",
       "dimension": "swap_fee",
       "url": "https://help.phantom.com/articles/5985106844435",
-      "status": "unchanged",
+      "status": "changed",
       "final_url": "https://help.phantom.com/articles/5985106844435"
     },
     {
@@ -146,5 +146,5 @@
   ],
   "status": "partial",
   "dataset_unchanged": true,
-  "pending_reviews": 13
+  "pending_reviews": 14
 }

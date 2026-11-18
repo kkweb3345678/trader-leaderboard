@@ -44,7 +44,7 @@ Confirm the swap.
 After the transaction confirms, tokens appear in your portfolio.
 Swap from your Cash account
 #
-You can buy tokens across supported networks using your Cash balance. Direct swaps from Cash to native Bitcoin aren’t supported.
+You can buy tokens across supported networks using your Cash balance.
 Open the token you want to buy.
 Tap
 Buy
@@ -107,9 +107,6 @@ Trade
 screen, the bridge provider's fee is shown as a separate
 Cross Chain Swap Fee
 line.
-Minimum swap amount
-#
-Cross-chain swaps and swaps on Robinhood Chain may have a minimum of $2 (USD value). Fixed costs like gas and bridge fees take up a large share of very small swaps. They can make a quote unavailable or leave you with much less than you sent. If your amount is below the minimum, increase it to continue.
 Troubleshooting
 #
 Choose the section that matches what you see. Before trying another swap, check whether the original transaction was submitted.
@@ -123,21 +120,23 @@ Completed, but tokens are missing: Check the destination account and network. Fo
 Bitcoin swap completed, but BTC is missing
 .
 Failed or no transaction was submitted: Follow the section matching your error. If the explorer still shows the transaction as pending, don’t treat it as a completed failure.
-Quotes or swaps keep failing
+Why less BTC is available to sell
 #
-Install any available Phantom update, then fully close and reopen the app. An outdated app can cause problems loading swap quotes.
-If the error continues, note whether it affects one token or several. A problem with one token may involve its liquidity or trading restrictions. Errors across several tokens need further investigation.
-Follow the section matching your error. If you’ve already tried its steps, contact Phantom Support.
+When you sell or swap Bitcoin, Phantom sets aside part of your BTC balance to cover the estimated Bitcoin network fee. This reduces the amount available to sell compared with your total BTC balance.
+The amount set aside varies with the estimated network fee. You pay the network fee in BTC in addition to the BTC you swap. Phantom does not receive this network fee.
+Review the available amount and network fee before confirming. If you manually enter an amount close to your total balance and cannot get a quote, try a smaller amount that leaves enough BTC for the fee.
 “Insufficient funds” or “Not enough SOL/ETH/POL”
 #
 You may have enough of the token you want to swap but not enough of the network’s native token to pay the transaction fee.
-Check the native-token balance on the network you’re using. For example, ETH on Ethereum and ETH on Base are separate balances; ETH on Ethereum cannot pay a Base network fee.
+Check the native-token balance on the network you’re using. For example, ETH on Ethereum and ETH on Base are separate balances. ETH on Ethereum cannot pay a Base network fee.
 If you’re swapping the native token itself, reduce the amount so enough remains for the fee.
 “No quotes available” or “Quote unavailable”
 #
-Phantom may be unable to find a supported route for the token pair or amount. This can happen when liquidity (the tokens available for trading) is too low, or when your swap is below the minimum amount.
+Phantom may be unable to find a supported route for the token pair or amount. This can happen when liquidity (the tokens available for trading) is too low.
 If the swap hasn't been submitted, follow these steps:
-For a cross-chain swap or a swap on Robinhood Chain, check that the amount is at least $2 (USD value). Very small swaps can fail because fixed network and bridge fees take up too much of the amount. If yours is below $2, increase the amount and request a new quote.
+If the network fee is paid from the token you’re selling, leave enough of that token to cover the fee. For BTC, see
+Why less BTC is available to sell
+.
 Wait a few minutes, then request a new quote.
 Check whether the token has an active trading pool. See
 Unable to swap a token due to low liquidity
@@ -174,29 +173,15 @@ History
 and check the source and destination transactions using the available blockchain explorer links.
 What you find
 What to do
-Source transaction is pending
+Source transaction is pending.
 Wait for confirmation. Don’t submit the swap again.
-Source transaction completed; bridge is processing
+Source transaction completed. Bridge is processing.
 Wait for bridge processing. Don’t submit the swap again.
-Destination transaction completed; tokens are missing in Phantom
-Check the destination account and network, then close and reopen Phantom. For Bitcoin, see
-Bitcoin swap completed, but BTC is missing
-.
-Source transaction completed; bridge is stalled or failed
+Destination transaction completed. Tokens are missing in Phantom.
+Check the destination account and network, then close and reopen Phantom.
+Source transaction completed. Bridge is stalled or failed.
 Contact Phantom Support.
-If you cannot determine the swap’s status, contact Support before retrying. Phantom Support cannot reverse a bridge transaction or force completion, but can investigate and escalate to the relevant provider.
-Resetting your wallet will not recover a missing destination transaction.
-Go to
-Settings > Preferences > Preferred Bitcoin Address
-.
-Enable both
-Native SegWit
-and
-Taproot
-.
-Close and reopen Phantom.
-Check your combined Bitcoin balance.
-Balance displays may take a moment to update after a swap completes.
+If you cannot determine the swap’s status, contact Phantom Support before retrying. Phantom Support cannot reverse a bridge transaction or force completion, but can investigate and escalate to the relevant provider.
 A token ended up in your Cash account
 #
 An unsupported Solana token sent to your Cash address may not appear in your Cash balance.
