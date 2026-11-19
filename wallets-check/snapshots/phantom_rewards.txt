@@ -7,10 +7,11 @@ Share your referral link or code
 If your account is eligible to refer others, follow these steps:
 Tap your profile avatar in the upper left.
 Tap
-Refer & Earn
-.
-Copy your referral link, show your QR code for a friend to scan, or choose an available sharing option.
-Find your referral sharing options on the Refer & Earn page
+Earn
+to open the Earn hub.
+Tap
+Invite Friends
+to share your referral link. You can also tap the copy icon beside your link or tap the QR code icon to show a code for your friend to scan.
 Your referral link is
 phantom.com/r/username
 and the referral code is your
@@ -43,10 +44,15 @@ Eligible trades
 Spot trades, perps, and predictions qualify for referral benefits. Each trade must take place within the applicable rebate or earning window.
 Track your referrals and rebates
 #
-Go to
-Cash > Refer & Earn
-to view your referral performance, earnings, and list of referred users.
-Track your referral performance on the Refer & Earn page
+Tap your profile avatar in the upper left, then tap
+Earn
+to open the Earn hub. You can view your
+Total Earned
+,
+Referrals
+, and
+Next Payout
+.
 A referral counts as successful when your friend completes their first eligible trade.
 Phantom sends a notification when referral earnings or rebates are credited to your Cash balance.
 If you haven’t received a payout

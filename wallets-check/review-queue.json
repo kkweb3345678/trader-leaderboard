@@ -164,5 +164,15 @@
     "old_hash": "4ab31e04428f5e4882f00b8883996565c2f81f55328045c1e1def5d5be851db7",
     "new_hash": "ba9aa4c2755c24f38e7cfdbd9b2c1e4e9b942c0abdfd5735b41400665dfe04ea",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-19T03:17:40+00:00",
+    "wallet_id": "phantom",
+    "dimension": "rewards",
+    "url": "https://help.phantom.com/articles/phantom-referral-program-guide-55653835150099",
+    "summary": " Tap\n-Refer & Earn\n-.\n-Copy your referral link, show your QR code for a friend to scan, or choose an available sharing option.\n-Find your referral sharing options on the Refer & Earn page\n+Earn\n+to open the Earn hub.\n+Tap\n+Invite Friends\n+to share your referral link. You can also tap the copy icon beside your link or tap the QR code icon to show a code for your friend to scan.\n Your referral link is\n #\n-Go to\n-Cash > Refer & Earn\n-to view your referral performance, earnings, and list of referred",
+    "old_hash": "52f203e06e726c58399696a75ae3828b7c9a2857740fc70a01d6feb02349f5a4",
+    "new_hash": "353e8eafbbef0873c2205259b75a5cec44a2997afd62217f11cf077f82870f7a",
+    "status": "pending"
   }
 ]
