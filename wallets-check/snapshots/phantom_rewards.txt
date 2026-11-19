@@ -12,6 +12,7 @@ to open the Earn hub.
 Tap
 Invite Friends
 to share your referral link. You can also tap the copy icon beside your link or tap the QR code icon to show a code for your friend to scan.
+In the sidebar, tap Earn to open your referral details
 Your referral link is
 phantom.com/r/username
 and the referral code is your

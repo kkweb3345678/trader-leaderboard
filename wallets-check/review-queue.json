@@ -174,5 +174,25 @@
     "old_hash": "52f203e06e726c58399696a75ae3828b7c9a2857740fc70a01d6feb02349f5a4",
     "new_hash": "353e8eafbbef0873c2205259b75a5cec44a2997afd62217f11cf077f82870f7a",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-19T12:54:25+00:00",
+    "wallet_id": "phantom",
+    "dimension": "rewards",
+    "url": "https://help.phantom.com/articles/phantom-referral-program-guide-55653835150099",
+    "summary": " to share your referral link. You can also tap the copy icon beside your link or tap the QR code icon to show a code for your friend to scan.\n+In the sidebar, tap Earn to open your referral details\n Your referral link is",
+    "old_hash": "353e8eafbbef0873c2205259b75a5cec44a2997afd62217f11cf077f82870f7a",
+    "new_hash": "0c92b4136dfecbf808e4cf49d2164823ff6a31a2eee950866a4411b49b8ed896",
+    "status": "pending"
+  },
+  {
+    "time": "2026-11-19T12:54:25+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " Confirm the swap.\n+When you tap\n+Max\n+to sell Cash for an\n+unverified token\n+, the amount is little lower so there's enough Cash left for fees.\n Browser extension",
+    "old_hash": "ba9aa4c2755c24f38e7cfdbd9b2c1e4e9b942c0abdfd5735b41400665dfe04ea",
+    "new_hash": "8161f7bde9cc7dbfab45474aad82b42164c88928f0850599ef08dc371b2dbd36",
+    "status": "pending"
   }
 ]

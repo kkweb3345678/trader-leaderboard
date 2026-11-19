@@ -62,6 +62,11 @@ Review the fees and price impact. Price impact is how much your own trade affect
 swap settings
 .
 Confirm the swap.
+When you tap
+Max
+to sell Cash for an
+unverified token
+, the amount is little lower so there's enough Cash left for fees.
 Browser extension
 #
 On the
