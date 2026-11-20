@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "cohort": "comparison",
-  "started_at": "2026-11-20T03:04:19+00:00",
-  "last_check": "2026-11-20T03:05:29+00:00",
+  "started_at": "2026-11-20T11:27:12+00:00",
+  "last_check": "2026-11-20T11:28:18+00:00",
   "last_success": "2026-11-18T04:13:27+00:00",
   "expected": 18,
   "configured": 17,
   "checked": 15,
   "failed": 2,
   "skipped": 1,
-  "changed": 1,
+  "changed": 0,
   "baselined": 0,
   "schedule": {
     "enabled": true,
     "provider": "github_actions",
     "cron": "7 * * * *",
     "interval_minutes": 60,
-    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/44665133045"
+    "run_url": "https://github.com/kkweb3345678/trader-leaderboard/actions/runs/44727704515"
   },
   "results": [
     {
@@ -86,7 +86,7 @@
       "wallet_id": "phantom",
       "dimension": "swap_fee",
       "url": "https://help.phantom.com/articles/5985106844435",
-      "status": "changed",
+      "status": "unchanged",
       "final_url": "https://help.phantom.com/articles/5985106844435"
     },
     {
