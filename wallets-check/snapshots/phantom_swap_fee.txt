@@ -9,6 +9,7 @@ Understand network fees
 for more information.
 Mobile app
 #
+For spot swaps started with Buy or Sell, you enter the amount and review the quote on the same trade details screen. The screen with the confirmation slider at the bottom.
 To buy one token with another, follow these steps:
 Open the token you want to buy.
 Tap
@@ -20,13 +21,38 @@ Trade
 >
 Buy
 .
-Choose the token you want to pay with.
+On the trade details screen, tap the payment selector above the number pad and choose the token you want to pay with.
 Enter the amount.
-Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive.
-Review the fees and price impact. Price impact is how much your own trade affects the price. To change slippage, open
+Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive on this screen. Leave **Market** selected at the top for a one-time buy.
+Tap the information
+(i)
+icon next to the quote to open
+Details
+. Review
+Pricing
+,
+Price Impact
+, and
+Fee
+. To change available settings, tap
+Slippage
+or
+Provider
+. See
 swap settings
 .
-Confirm the swap.
+Close
+Details
+, then drag
+Slide to buy
+to the right to confirm.
+To schedule eligible Solana buys instead, tap
+Market
+at the top of the trade details screen and choose
+Recurring
+. See
+Set up recurring buys
+.
 To sell one token for another, follow these steps:
 Open a token you hold.
 Tap
@@ -34,15 +60,31 @@ Sell
 or
 Trade > Sell
 .
-Choose the token you want to receive.
+On the trade details screen, choose the token you want to receive.
 Enter the amount.
-Check the token you’re selling, the amount you're selling, and the amount you’re quoted to receive.
-Review the fees and price impact. Price impact is how much your own trade affects the price. To change slippage, open
+Check the token you’re selling, the amount you're selling, and the amount you’re quoted to receive on this screen.
+Tap the information
+(i)
+icon next to the quote to open
+Details
+. Review
+Pricing
+,
+Price Impact
+, and
+Fee
+. To change available settings, tap
+Slippage
+or
+Provider
+. See
 swap settings
 .
-Confirm the swap.
+Close
+Details
+, then drag the confirmation slider to the right to confirm the sale.
 After the transaction confirms, tokens appear in your portfolio.
-Swap from your Cash account
+Buy tokens with your Cash account
 #
 You can buy tokens across supported networks using your Cash balance.
 Open the token you want to buy.
@@ -53,15 +95,33 @@ Buy More
 , or
 Trade > Buy
 .
-Choose
+On the trade details screen, choose
 Cash
-as the payment source. It’s usually selected by default.
+in the payment selector above the number pad. It’s usually selected by default.
 Enter the amount.
-Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive.
-Review the fees and price impact. Price impact is how much your own trade affects the price. To change slippage, open
+Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive on this screen.
+Tap the information
+(i)
+icon next to the quote to open
+Details
+. Review
+Pricing
+,
+Price Impact
+, and
+Fee
+. To change available settings, tap
+Slippage
+or
+Provider
+. See
 swap settings
 .
-Confirm the swap.
+Close
+Details
+, then drag
+Slide to buy
+to the right to confirm.
 When you tap
 Max
 to sell Cash for an

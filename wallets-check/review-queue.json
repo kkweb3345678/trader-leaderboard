@@ -194,5 +194,15 @@
     "old_hash": "ba9aa4c2755c24f38e7cfdbd9b2c1e4e9b942c0abdfd5735b41400665dfe04ea",
     "new_hash": "8161f7bde9cc7dbfab45474aad82b42164c88928f0850599ef08dc371b2dbd36",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-20T03:04:19+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " #\n+For spot swaps started with Buy or Sell, you enter the amount and review the quote on the same trade details screen. The screen with the confirmation slider at the bottom.\n To buy one token with another, follow these steps:\n .\n-Choose the token you want to pay with.\n-Enter the amount.\n-Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive.\n-Review the fees and price impact. Price impact is how much your own trade affects the price. To change slipp",
+    "old_hash": "8161f7bde9cc7dbfab45474aad82b42164c88928f0850599ef08dc371b2dbd36",
+    "new_hash": "94f3fbd85fad7bbad2b318c14bd58e904b239a8fbeb48274ecc49c977b249641",
+    "status": "pending"
   }
 ]
