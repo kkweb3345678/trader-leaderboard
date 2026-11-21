@@ -1,7 +1,25 @@
 Refer friends and earn with Phantom
-The Phantom Referral Program lets you invite friends and earn 25% of the net trading fees Phantom receives from their eligible trades for three months. Your friends get 10% of their own eligible trading fees back for three months.
-Earnings and rebates are paid in CASH to each person’s Cash balance.
-Referral codes can only be applied during signup in the Phantom mobile app. They can’t be applied when signing up through the browser extension or Phantom Terminal. Once a friend signs up through a referral on mobile, their eligible swaps on the browser extension also count toward referral benefits.
+The Phantom Referral Program lets you invite friends and earn a share of the net trading fees Phantom receives from their eligible trades. Your friends receive a rebate on their own eligible trading fees.
+The standard rates are
+25% for referrers
+and
+10% back for referred friends
+, with benefits lasting three months. Earnings and rebates are paid in CASH to each person’s Cash balance.
+You can share your referral code and track your referral earnings in the Earn hub. To open it, tap your profile avatar in the upper left, then tap
+Earn
+.
+Friends give, friends get: November 20–December 13, 2026
+#
+During the Friends give, friends get campaign, eligible referrals receive higher rates:
+Referrers earn 35%
+of the net trading fees Phantom receives from their friends’ eligible trades, instead of 25%.
+Referred friends receive 15% back
+on their own eligible trading fees, instead of 10%.
+The rebate is paid to your Cash balance. It isn’t deducted from the trading fee upfront.
+The campaign rates apply only to eligible trades made from November 20 through December 13, 2026. After December 13, the standard rates apply for the remainder of each referral’s three-month benefit period. Joining near the end of the campaign doesn’t extend the higher rates.
+The campaign isn’t available to UK users. US predictions trades don’t qualify for referral benefits.
+Phantom Referral Program Terms & Conditions
+apply.
 Share your referral link or code
 #
 If your account is eligible to refer others, follow these steps:
@@ -25,16 +43,24 @@ To receive referral benefits as a new user, sign up in the Phantom mobile app us
 Enter a referral code when creating your Phantom wallet
 Check that the code appears during signup. If it hasn’t been added automatically, enter it manually on the referral screen.
 Referral codes can’t be added after signup.
+They also can’t be applied when signing up through the browser extension or Phantom Terminal.
+Once you sign up through a referral on mobile, your eligible swaps on the browser extension also count toward referral benefits.
 What referred users receive
 #
-As a referred user, you can receive 10% of the fees paid on your own eligible trades back as a rebate. The rebate goes to your Cash balance. It isn’t deducted from the trading fee upfront.
+As a referred user, you can receive a percentage of the fees paid on your own eligible trades back as a rebate. The standard rebate is 10%. During the
+Friends give, friends get campaign
+, the rebate is 15% on qualifying trades.
+The rebate goes to your Cash balance. It isn’t deducted from the trading fee upfront. Phantom shows the rebate percentage in the fee breakdown when you confirm an eligible trade.
 Your referral information appears in the fee breakdown when you confirm an eligible trade
-Phantom shows the rebate percentage at transaction confirmation. Your three-month rebate period starts when the referral code is applied to your new account during mobile signup. The app doesn’t currently show the expiry date or how much time remains.
-When your rebate period ends, the “10% discount on fees” message stops appearing during checkout. The period may end earlier if the program or your eligibility ends.
+Your three-month rebate period starts when the referral code is applied to your new account during mobile signup. The app doesn’t currently show the expiry date or how much time remains.
+When your rebate period ends, the referral discount message stops appearing during checkout. The period may end earlier if the program or your eligibility ends.
 Rates and earning windows may change.
 What referrers earn
 #
-You earn 25% of the net trading fees Phantom receives from each referred user’s eligible trades. You begin earning once your friend funds their wallet and completes their first eligible trade.
+You earn a share of the net trading fees Phantom receives from each referred user’s eligible trades. The standard share is 25%. During the
+Friends give, friends get campaign
+, it is 35% on qualifying trades.
+You begin earning once your friend funds their wallet and completes their first eligible trade.
 Each referral’s three-month earning period starts when your code is applied to your friend’s new account during mobile signup. Only eligible trades within that period count. You won’t earn a fee share on trades where Phantom receives no net trading fee.
 How payments work
 #
@@ -42,7 +68,10 @@ Referral earnings and rebates are paid in CASH to each recipient’s Cash balanc
 Before receiving payment, you may also need to complete identity verification, provide requested information, or maintain an eligible Cash account.
 Eligible trades
 #
-Spot trades, perps, and predictions qualify for referral benefits. Each trade must take place within the applicable rebate or earning window.
+Spot trades, perps, and predictions qualify for referral benefits, subject to program eligibility. US predictions trades are excluded.
+Each trade must take place within the applicable rebate or earning window. To receive the
+Friends give, friends get campaign
+rates, the trade must also take place during the campaign period.
 Track your referrals and rebates
 #
 Tap your profile avatar in the upper left, then tap
