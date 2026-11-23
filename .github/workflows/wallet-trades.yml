@@ -18,7 +18,7 @@ on:
     branches: [main]
 env:
   # Account probe 38986579644; validated artifact 38987131695; publication 38987287037.
-  WALLET_TRADES_AUTOMATION_ENABLED: 'true'
+  WALLET_TRADES_AUTOMATION_ENABLED: 'false'
 permissions:
   contents: read
 # Serialize with weekly holdings; both follow the completed full leaderboard run.
