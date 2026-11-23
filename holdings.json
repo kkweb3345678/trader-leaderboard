@@ -1,97 +1,115 @@
 {
-  "updated_at": "2026-11-16T04:29:53+00:00",
+  "updated_at": "2026-11-23T05:25:47+00:00",
   "wallets": [
     {
-      "address": "8vVrVudDd2DvL5jUGFZWDSh95VjhLpeETRAp1kmFnb61",
-      "snapshot_date": "2026-11-16T12:29:27+08:00",
+      "address": "FCKMi2xPQFKsviofzP6jaoQsaE9xq72o8MbXnGWM1HD3",
+      "snapshot_date": "2026-11-23T13:25:19+08:00",
+      "tokens": [
+        {
+          "symbol": "SOL",
+          "value_usd": 662.4475119392079,
+          "pct": 75.95998391610672
+        },
+        {
+          "symbol": "USDC",
+          "value_usd": 126.2253960667954,
+          "pct": 14.473718871658873
+        },
+        {
+          "symbol": "SOL",
+          "value_usd": 83.13719258222089,
+          "pct": 9.532981402389654
+        },
+        {
+          "symbol": "ANTHROPIC",
+          "value_usd": 0.015058628053774496,
+          "pct": 0.0017267075868620885
+        },
+        {
+          "symbol": "GIFTER",
+          "value_usd": 0.005193669064766818,
+          "pct": 0.000595535512648242
+        }
+      ]
+    },
+    {
+      "address": "HBFVxD6eJra8kGWLJkkzHuyMhy1Qzfn6Pi92ccF2y6YD",
+      "snapshot_date": "2026-11-23T13:25:21+08:00",
+      "tokens": []
+    },
+    {
+      "address": "kzr9H1kLp23UYPVa7PZw6FLNRWzNEfco4gLcuwkEQtg",
+      "snapshot_date": "2026-11-23T13:25:23+08:00",
+      "tokens": [
+        {
+          "symbol": "SOL",
+          "value_usd": 0.715596461843634,
+          "pct": 100.01567708678253
+        }
+      ]
+    },
+    {
+      "address": "2jwR2gbmJ2es1qofqudfQbLDnPTQmtkoPNzPeax2VM2R",
+      "snapshot_date": "2026-11-23T13:25:26+08:00",
+      "tokens": []
+    },
+    {
+      "address": "2UQDJyt9xm528Z8p187RUo3mizU6ihJKarMHa3GGpVkd",
+      "snapshot_date": "2026-11-23T13:25:29+08:00",
+      "tokens": []
+    },
+    {
+      "address": "5sXuJkkaWRBGoeHwkS6QpmMNDcc535fyrAikY6KoWNFi",
+      "snapshot_date": "2026-11-23T13:25:32+08:00",
+      "tokens": [
+        {
+          "symbol": "VICE 6",
+          "value_usd": 1.5961697102912875e-09,
+          "pct": 100.0
+        }
+      ]
+    },
+    {
+      "address": "59tf5uGbWYByG4w4wAB66emX2DYgESL7mWDByaDwx5LW",
+      "snapshot_date": "2026-11-23T13:25:34+08:00",
+      "tokens": []
+    },
+    {
+      "address": "Cx6oCS46dDqJH3aHikveBomDSchstJtR4HbrxVPHhcas",
+      "snapshot_date": "2026-11-23T13:25:36+08:00",
       "tokens": [
         {
           "symbol": "USDC",
-          "value_usd": 0.0009997657562402318,
-          "pct": 100.0
-        }
-      ]
-    },
-    {
-      "address": "9Gpdu3VFDTLir5YReq15T1PXnvRPjqPJYBBEJARCBPzo",
-      "snapshot_date": "2026-11-16T12:29:30+08:00",
-      "tokens": [
+          "value_usd": 2.61436251160293,
+          "pct": 53.22393064311748
+        },
         {
           "symbol": "SOL",
-          "value_usd": 9459.581055480083,
-          "pct": 100.04238657453277
-        }
-      ]
-    },
-    {
-      "address": "GWgp2E59roSAwhtR6uCJRmiqvxisXNEp4W5kas5HV2zm",
-      "snapshot_date": "2026-11-16T12:29:32+08:00",
-      "tokens": [
+          "value_usd": 1.763870411395877,
+          "pct": 35.90937217884946
+        },
         {
-          "symbol": "UDTF",
-          "value_usd": 1.7350183351232067e-09,
-          "pct": 100.0
+          "symbol": "USDT",
+          "value_usd": 0.5332387169307915,
+          "pct": 10.855824454409069
         }
       ]
     },
     {
-      "address": "Dnweb15s5tAQ1XeBuhgvWbLp2mBQXys8V8fZFjCSJFYp",
-      "snapshot_date": "2026-11-16T12:29:35+08:00",
-      "tokens": [
-        {
-          "symbol": "UDTF",
-          "value_usd": 1.4961739808429779e-09,
-          "pct": 100.0
-        }
-      ]
-    },
-    {
-      "address": "DKoVN98RfkLJvki3tBQ6jnzBtJUj1yM9kTytW2csJcb1",
-      "snapshot_date": "2026-11-16T12:29:37+08:00",
-      "tokens": [
-        {
-          "symbol": "FOTF",
-          "value_usd": 1.4973214257833043e-09,
-          "pct": 100.0
-        }
-      ]
-    },
-    {
-      "address": "3u7CZio41YZa7HerEu5eoB241gFMLZYK5XvcVseW8bSS",
-      "snapshot_date": "2026-11-16T12:29:39+08:00",
-      "tokens": [
-        {
-          "symbol": "XTO",
-          "value_usd": 1.5819476380231733e-09,
-          "pct": 100.0
-        }
-      ]
-    },
-    {
-      "address": "HmUoBzVkzojJmDbjzFfykQuLriU71BaxsPSU5e4hxfJp",
-      "snapshot_date": "2026-11-16T12:29:41+08:00",
-      "tokens": [
-        {
-          "symbol": "SOL",
-          "value_usd": 4362.973615881808,
-          "pct": 99.99996123445709
-        }
-      ]
-    },
-    {
-      "address": "2BmtaRFPyVvtWrLA43evUQHqPGSTQSTpbA7BNNtDMmTd",
-      "snapshot_date": "2026-11-16T12:29:44+08:00",
+      "address": "6rraVKzUkTn44TSs7d3xY4fxmADKCqsz9sDJEnshFkum",
+      "snapshot_date": "2026-11-23T13:25:38+08:00",
       "tokens": []
     },
     {
-      "address": "kkEiTPT7KYsEC3ATha58VSn3xa954ZNiAV3RkZHFZr5",
-      "snapshot_date": "2026-11-16T12:29:46+08:00",
-      "tokens": []
-    },
-    {
-      "address": "8fjrgz6RBQeav1ZaiMUTqvVRFMKSvih1apM4UjMBZDuJ",
-      "snapshot_date": "2026-11-16T12:29:48+08:00",
-      "tokens": []
+      "address": "Uvo4PgKrGcdtLKYsLNextkPqTkZpaSQmeDCJKd3WaRP",
+      "snapshot_date": "2026-11-23T13:25:43+08:00",
+      "tokens": [
+        {
+          "symbol": "DCTY",
+          "value_usd": 1.361496656687858e-09,
+          "pct": 100.0
+        }
+      ]
     }
   ]
 }
