@@ -9,7 +9,6 @@ Understand network fees
 for more information.
 Mobile app
 #
-For spot swaps started with Buy or Sell, you enter the amount and review the quote on the same trade details screen. The screen with the confirmation slider at the bottom.
 To buy one token with another, follow these steps:
 Open the token you want to buy.
 Tap
@@ -23,7 +22,9 @@ Buy
 .
 On the trade details screen, tap the payment selector above the number pad and choose the token you want to pay with.
 Enter the amount.
-Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive on this screen. Leave **Market** selected at the top for a one-time buy.
+Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive on this screen. Leave
+Market
+selected at the top for a one-time buy.
 Tap the information
 (i)
 icon next to the quote to open

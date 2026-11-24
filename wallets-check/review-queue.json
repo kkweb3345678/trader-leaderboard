@@ -234,5 +234,15 @@
     "old_hash": "94f3fbd85fad7bbad2b318c14bd58e904b239a8fbeb48274ecc49c977b249641",
     "new_hash": "54aad57d0c1e247ea888512234faea134a09c5359e4d15c7c147d4de0ac7201b",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-24T21:06:53+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " #\n-For spot swaps started with Buy or Sell, you enter the amount and review the quote on the same trade details screen. The screen with the confirmation slider at the bottom.\n To buy one token with another, follow these steps:\n Enter the amount.\n-Check the token you’re buying, the amount you're spending, and the amount you’re quoted to receive on this screen. Leave **Market** selected at the top for a one-time buy.\n+Check the token you’re buying, the amount you're spending, and the amount you’r",
+    "old_hash": "54aad57d0c1e247ea888512234faea134a09c5359e4d15c7c147d4de0ac7201b",
+    "new_hash": "03faec4efe95b739e1f3ca85f99ebac78980b1e393aeef9dddeb93f67e2a480c",
+    "status": "pending"
   }
 ]
