@@ -224,5 +224,15 @@
     "old_hash": "a7a7dff95d3ac9ed598fc91df89d0ae9da73ddca981d7255660a374c0a138536",
     "new_hash": "8f46465cc5d4b9e8842f300d854e12a4c636fbd97bc0129f32571110d41bb6a7",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-24T00:46:01+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " #\n-If your wallet appears as watch-only after Phantom was restored from a backup, your sign-in session may have expired.\n-Before resetting Phantom, make sure you can access the Apple or Google account, recovery phrase, or private key you originally used. You’ll also need the recovery phrases or private keys for any additional wallets you imported.\n+If your wallet became watch-only after Phantom was restored from a device backup, your sign-in session may have expired.\n+Before resetting, make sur",
+    "old_hash": "94f3fbd85fad7bbad2b318c14bd58e904b239a8fbeb48274ecc49c977b249641",
+    "new_hash": "54aad57d0c1e247ea888512234faea134a09c5359e4d15c7c147d4de0ac7201b",
+    "status": "pending"
   }
 ]

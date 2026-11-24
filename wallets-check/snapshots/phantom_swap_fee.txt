@@ -267,13 +267,20 @@ Report a token or collectible as spam
 Changing swap settings cannot remove a token’s contract restrictions.
 Watch-only address
 #
-If your wallet appears as watch-only after Phantom was restored from a backup, your sign-in session may have expired.
-Before resetting Phantom, make sure you can access the Apple or Google account, recovery phrase, or private key you originally used. You’ll also need the recovery phrases or private keys for any additional wallets you imported.
+If your wallet became watch-only after Phantom was restored from a device backup, your sign-in session may have expired.
+Before resetting, make sure you have the credentials to restore every wallet you use:
+Access to the original Google or Apple account and your four-digit PIN, if required.
+Each recovery phrase you use.
+Each separately imported private key.
+Then restore access:
 Go to
 Settings > Security & Privacy > Reset App
 . If you can’t access this option, uninstall Phantom and download it again.
-Open Phantom and restore your wallets using the same Apple or Google account, recovery phrases, or private keys.
-Resetting Phantom clears the app’s local data. It doesn’t delete your wallets or funds.
+Restore your wallet using its original sign-in method or backup. See
+Sign in to or import an existing wallet into Phantom
+.
+Import any additional wallets separately.
+Resetting clears Phantom’s local data. It doesn’t delete your wallets or funds.
 See also
 #
 Understanding gasless transactions on Solana
