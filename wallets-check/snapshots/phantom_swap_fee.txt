@@ -4,9 +4,10 @@ cross-chain swap
 , depending on the tokens you choose.
 What you need
 #
-A small amount of the network's native token to pay network fees. See
-Understand network fees
-for more information.
+Choose the token and network you intend to use. Tokens with the same name or ticker can be different assets. For how to find a specific token, see
+Search for a specific token in Phantom
+.
+You need a supported payment balance and enough native tokens to cover network fees unless a gasless option is available. Check the amount you will receive and the fees before confirming.
 Mobile app
 #
 To buy one token with another, follow these steps:

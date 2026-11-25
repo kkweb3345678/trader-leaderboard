@@ -244,5 +244,15 @@
     "old_hash": "54aad57d0c1e247ea888512234faea134a09c5359e4d15c7c147d4de0ac7201b",
     "new_hash": "03faec4efe95b739e1f3ca85f99ebac78980b1e393aeef9dddeb93f67e2a480c",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-25T15:30:05+00:00",
+    "wallet_id": "phantom",
+    "dimension": "swap_fee",
+    "url": "https://help.phantom.com/articles/5985106844435",
+    "summary": " #\n-A small amount of the network's native token to pay network fees. See\n-Understand network fees\n-for more information.\n+Choose the token and network you intend to use. Tokens with the same name or ticker can be different assets. For how to find a specific token, see\n+Search for a specific token in Phantom\n+.\n+You need a supported payment balance and enough native tokens to cover network fees unless a gasless option is available. Check the amount you will receive and the fees before confirming",
+    "old_hash": "03faec4efe95b739e1f3ca85f99ebac78980b1e393aeef9dddeb93f67e2a480c",
+    "new_hash": "3439d12c1d639611640725b27b232dd65dccba5edbbf1e87524a88ed0de91627",
+    "status": "pending"
   }
 ]
