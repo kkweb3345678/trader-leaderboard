@@ -254,5 +254,15 @@
     "old_hash": "03faec4efe95b739e1f3ca85f99ebac78980b1e393aeef9dddeb93f67e2a480c",
     "new_hash": "3439d12c1d639611640725b27b232dd65dccba5edbbf1e87524a88ed0de91627",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-27T12:03:32+00:00",
+    "wallet_id": "phantom",
+    "dimension": "rewards",
+    "url": "https://help.phantom.com/articles/phantom-referral-program-guide-55653835150099",
+    "summary": "-Refer friends and earn with Phantom\n-The Phantom Referral Program lets you invite friends and earn a share of the net trading fees Phantom receives from their eligible trades. Your friends receive a rebate on their own eligible trading fees.\n+Refer friends with your code and earn from their trades\n+Invite friends to Phantom and earn a share of the net trading fees Phantom receives from their eligible trades. Your friends get a rebate on their own eligible trading fees.\n The standard rates are\n ",
+    "old_hash": "2ae766e821d31794ee7d2703dba0916e468dc55d4824b8c7ea909eeff8ad6410",
+    "new_hash": "b4eee0d8f4a503c5012087d087a43fd8fb49dc74bc172aaedadacd9a528dc85d",
+    "status": "pending"
   }
 ]
