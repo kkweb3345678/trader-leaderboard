@@ -1,30 +1,26 @@
-Your XP and Level are safe. Nothing you've already earned goes away. And you'll keep earning XP after ZERϴ winds down. The only thing changing is which balance counts toward your Daily Earnings.
-What's changing
-Until now, XP accrued based on the assets you held on ZERϴ Network.
-Going forward, XP will accrue based on your total wallet balance across all chains Zerion supports.
-You keep earning XP from the assets you actually hold, just at a different rate.
-Why the rate is being adjusted
-Most users hold a lot more across all chains than they did on ZERϴ alone.
-If the rate was the same, daily XP would jump overnight, and the leveling curve would break for everyone who's already climbed it.
-To keep things fair, we scaled the rate down so the new system rewards holding across all chains at a pace similar to what ZERϴ holders earned before.
-If you held most of your funds on ZERϴ, your daily XP will land in roughly the same range. If you hold a diversified portfolio across many chains, you'll likely earn XP faster than before.
-Do I lose my existing XP or Level?
-No. All XP earned to date is preserved, and your Level stays exactly where it is. The change only affects how
-new
-XP is calculated from here on.
-What about Quests, Gasback, and Referrals?
-Activity XP from Quests and Gasback, and XP from Referrals, are unaffected by the ZERϴ shutdown and continue to work the same way.
-What about Zerion DNA?
-Since Zerion DNA was previously migrated to ZERO and became a soulbound token, wallets that held DNA have inherited all the associated benefits. This includes the address avatars and the 0% Zerion Swap fees from Premium DNA.
-What about my NFTs?
-NFTs on the Zero Network cannot be migrated. These NFTs were not actively traded, as there was no dedicated marketplace and little to no meaningful trading activity on the network. However, any XP earned through minting NFTs remains fully preserved.
-Do I need to do anything?
-For XP: no action needed. The new Daily Earnings kick in automatically.
-For your assets on ZERϴ: yes —
-bridge them out
-before July 31, 2026
-.
-See the bridging guide for step-by-step instructions.
-Related Articles
+ZERϴ Network has shut down. Your XP and your Level were kept, and you still earn XP in Zerion Rewards. This article explains what changed and what did not.
+What changed
+Daily Earnings now come from your whole wallet.
+Before the shutdown, you earned XP every day for the assets you held on ZERϴ Network. Now you earn XP every day based on your balance across all Zerion-supported chains.
+The rate is different.
+An estimated $2,000 worth of assets earns you 1 XP per day. Balance above $1,000,000 does not earn extra XP.
+Boosted Tokens are gone.
+No token or pool earns extra XP anymore. Every asset counts at the same rate.
+What stayed the same
+Your XP and Level.
+XP you earned before the shutdown still counts toward your Level.
+Quests, Gasback and Referrals.
+They work the same way as before.
+The balance requirement for higher levels.
+From Level 5 up, part of the XP for each level must still come from your balance. It now comes from your balance on all chains. See
+Why Am I Not Earning XP at Level 5 in Zerion Rewards?
+Do you need to do anything?
+No. Daily Earnings are calculated from your wallet balance. You do not need to move assets to a specific network to earn XP.
+To see all the ways to earn XP today, read
 How to Earn XP and Level Up in Zerion Rewards?
+Related Articles
+What are gas fees?
+What is Zerion Premium?
+How to Earn XP and Level Up in Zerion Rewards?
+I’ve Completed a Quest but Can’t Claim XP
 Why Am I Not Earning XP at Level 5 in Zerion Rewards?

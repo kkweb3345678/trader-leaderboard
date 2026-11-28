@@ -218,5 +218,15 @@
     "old_hash": "457def6815ad4e5340a49dfe6451556a81f8508a53451fff197eb96e74960199",
     "new_hash": "6277d6be05ed6e8c7ad5f3532dc02689841f79b1a9fb89bde40e3e73effa9f46",
     "status": "pending"
+  },
+  {
+    "time": "2026-11-28T12:55:21+00:00",
+    "wallet_id": "zerion",
+    "dimension": "rewards",
+    "url": "https://help.zerion.io/en/articles/15214295-what-happens-to-xp-and-levels-after-zer%CE%B8-network-shuts-down",
+    "summary": "-Your XP and Level are safe. Nothing you've already earned goes away. And you'll keep earning XP after ZERϴ winds down. The only thing changing is which balance counts toward your Daily Earnings.\n-What's changing\n-Until now, XP accrued based on the assets you held on ZERϴ Network.\n-Going forward, XP will accrue based on your total wallet balance across all chains Zerion supports.\n-You keep earning XP from the assets you actually hold, just at a different rate.\n-Why the rate is being adjusted\n-Mo",
+    "old_hash": "4fbb4ff57ce36837a7a0cab40329323b63ac23cf5cf30f3ec7eff39e968c5226",
+    "new_hash": "f18e011d4609978b7865ac7902976888e0a356e8257cca24cba09fc582defdca",
+    "status": "pending"
   }
 ]
